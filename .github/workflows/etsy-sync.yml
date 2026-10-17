@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "37 10 * * *"   # every day around 6:37am Eastern
   workflow_dispatch:
+    inputs:
+      resort:
+        description: "Re-sort: apply today's rules in data/etsy-sync.json to pieces already on the site"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -31,6 +36,7 @@ jobs:
         env:
           ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
           ETSY_SHARED_SECRET: ${{ secrets.ETSY_SHARED_SECRET }}
+          SYNC_RESORT: ${{ inputs.resort }}
       - name: Save changes (Cloudflare republishes the site a minute later)
         run: |
           git config user.name "Etsy sync"

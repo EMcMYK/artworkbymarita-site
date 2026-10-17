@@ -24,7 +24,7 @@ function fakeEtsy(state) {
     if (!url.startsWith(API)) return json({}); // a photo download
     const p = url.slice(API.length);
     if (p.startsWith("/shops?")) return json({ results: [{ shop_id: 99 }] });
-    if (p === "/shops/99/sections") return json({ results: [{ shop_section_id: 1, title: "Art" }] });
+    if (p === "/shops/99/sections") return json({ results: state.sections || [{ shop_section_id: 1, title: "Art" }] });
     if (p.startsWith("/shops/99/listings/active")) return json({ results: state.active });
     let m = p.match(/^\/listings\/(\d+)\/images$/);
     if (m) return json({ results: [{ listing_image_id: Number(m[1]) * 10, rank: 1, url_fullxfull: "https://i.etsystatic.com/x/il_fullxfull.1.jpg" }] });
@@ -130,4 +130,58 @@ test("a name, section or subject fixed by hand sticks", async () => {
   assert.deepEqual(p.subjects, ["Landscapes", "Bucks County"]);
   assert.equal(p.options[0].price, 300);
   assert.deepEqual(p.description, ["New words."]);
+});
+
+test("sorting: a gift tag doesn't make a painting a gift, shop sections count, generic titles don't merge", async () => {
+  const root = await site();
+  const active = [
+    listing(40, "Sunflower Oil Painting", { quantity: 1, tags: ["sunflower art", "gift for mom"] }),
+    listing(41, "Coyote Original Art", { quantity: 1, shop_section_id: 2 }),
+    listing(42, "Leaf Botanical Hand Pulled Print- copper"),
+    listing(43, "Fox Christmas Tree Ornament", { tags: ["winter decor", "trees"] }),
+    listing(44, "Matte Canvas, Framed (Multi-color) Singing Choir"),
+    listing(45, "Matte Canvas, Framed Winter Bird"),
+    listing(46, "Three Pansies Cyanotype Print", { tags: ["botanical art"] }),
+  ];
+  const state = { active, gone: {}, sections: [{ shop_section_id: 1, title: "Original Art" }, { shop_section_id: 2, title: "Original Collographs" }] };
+  await run(root, state);
+  const products = await read(root);
+  const by = (n) => products.find((p) => p.name.startsWith(n));
+  assert.equal(by("Sunflower Oil Painting").category, "paintings");
+  assert.equal(by("Sunflower Oil Painting").kind, "original");    // a painting is an original even if the title doesn't say so
+  assert.equal(by("Sunflower Oil Painting").oneOfAKind, true);
+  assert.equal(by("Coyote Original Art").category, "printmaking"); // from its Etsy shop section
+  assert.equal(by("Leaf Botanical Hand Pulled Print").category, "printmaking");
+  assert.equal(by("Fox Christmas Tree Ornament").category, "gifts");
+  assert.deepEqual(by("Fox Christmas Tree Ornament").subjects, []);
+  assert.equal(products.filter((p) => p.name.startsWith("Matte Canvas")).length, 2);
+  assert.deepEqual(by("Three Pansies").subjects, ["Florals"]);
+});
+
+test("a fresh import reuses photos already saved, and old photo folders are cleared", async () => {
+  const root = await site();
+  const active = [listing(50, "Peonies Original Watercolor", { quantity: 1 }), listing(51, "Barn Print")];
+  await run(root, { active, gone: {} });
+  await mkdir(path.join(root, "images/old-piece"), { recursive: true });
+  await writeFile(path.join(root, "data/products.json"), JSON.stringify({ products: [] }));
+  let downloads = 0;
+  const etsy = fakeEtsy({ active, gone: {} });
+  await sync({ root, fetch: (u) => { if (!u.startsWith(API)) downloads++; return etsy(u); }, log: () => {}, pause: 0 });
+  assert.equal(downloads, 0);
+  await assert.rejects(readFile(path.join(root, "images/old-piece/x")), /ENOENT/);
+  const { readdir } = await import("node:fs/promises");
+  assert.deepEqual((await readdir(path.join(root, "images"))).sort(), ["barn-print", "peonies-original-watercolor"]);
+});
+
+test("re-sort applies new rules to pieces already on the site, except hand fixes", async () => {
+  const root = await site();
+  await run(root, { active: [listing(60, "Daisy Garden Painting"), listing(61, "Wild Grass Study")], gone: {} });
+  const data = JSON.parse(await readFile(path.join(root, "data/products.json"), "utf8"));
+  data.products[0].category = "gifts";                                   // pretend an old rule got it wrong
+  Object.assign(data.products[1], { category: "prints", siteOnly: ["category"] }); // a hand fix
+  await writeFile(path.join(root, "data/products.json"), JSON.stringify(data));
+  await sync({ root, fetch: fakeEtsy({ active: [listing(60, "Daisy Garden Painting"), listing(61, "Wild Grass Study")], gone: {} }), log: () => {}, pause: 0, resort: true });
+  const [a, b] = await read(root);
+  assert.equal(a.category, "paintings");
+  assert.equal(b.category, "prints");
 });

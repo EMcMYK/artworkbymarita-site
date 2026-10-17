@@ -32,13 +32,23 @@ lists what was added, merged, updated, sold or hidden.
 
 ## What the sync decides, and how to fix it
 
-- **Menu section** (Paintings, Cyanotypes, Printmaking, Prints, Gifts): from words in a new listing's
-  Etsy title, shop section and tags, using `categoryRules` in `data/etsy-sync.json` (first match wins).
-  To fix one piece, change its `"category"` in `data/products.json`; the sync keeps your change. To
-  send a whole Etsy shop section somewhere, add it to `sectionCategories`, e.g.
-  `"sectionCategories": { "Note Cards": "gifts" }`.
-- **Subject filters** (Florals, Leaves, Landscapes, Beach, Bucks County): every subject whose words
-  match the title, section or tags (`subjectRules`). Fix a piece by editing its `"subjects"` list.
+All the rules are in `data/etsy-sync.json`. After changing a rule, run the workflow with
+**re-sort** ticked (Actions → Sync from Etsy → Run workflow) so pieces already on the site follow it.
+
+- **Menu section** (Paintings, Cyanotypes, Printmaking, Prints, Gifts), from the first match, in order:
+  1. `titleRules`: words in the Etsy title ("cyanotype", "linocut", "ornament", "print"…)
+  2. `tagRules`: cyanotype or printmaking words in the Etsy tags
+  3. `sectionCategories`: her Etsy shop section ("Original Linocuts" → Printmaking). A new Etsy
+     section goes here too.
+  4. `fallbackRules`: painting words anywhere, then `defaultCategory`
+
+  A piece in the Paintings section that isn't a print counts as an original, so it moves to the
+  Sold gallery when it sells.
+- **Subject filters** (Florals, Leaves, Landscapes, Beach, Bucks County): every subject in
+  `subjectRules` whose words appear in the title, tags or shop section.
+- **Fixing one piece by hand:** edit its `"category"` or `"subjects"` in `data/products.json`, and add
+  `"siteOnly": ["category", "subjects"]` to it so a re-sort leaves your fix alone. Its `"name"` can
+  be edited freely; the sync never renames a piece.
 - **Merging:** listings with the same title once sizes and words like "matted" are taken out become
   one piece with one "Buy on Etsy" button per listing. Originals and prints of the same piece stay
   separate, and link to each other. To join a listing to a piece by hand, add
@@ -48,10 +58,10 @@ lists what was added, merged, updated, sold or hidden.
 - **Sold and gone:** when a one-of-a-kind original leaves Etsy, it's marked sold and moves to the
   Sold gallery. Any other listing that leaves Etsy is hidden. Both come back if the listing returns.
   Turn the Sold gallery or its prices on or off in `config.js`.
-- **A piece's name:** the start of its Etsy title, without a size. Rename it in `data/products.json`.
 - **Safety stops:** more than `maxNewPerRun` new listings or `maxGonePerRun` listings gone in one run
   changes nothing and fails the run, and GitHub emails you. If it's right (a big batch of new work),
-  raise the number and run again. The first run, with an empty products list, imports everything.
+  raise the number and run again. A run with an empty products list imports the whole shop, reusing
+  any photos already saved.
 
 ## Setup (one time)
 

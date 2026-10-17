@@ -1,22 +1,45 @@
 {
-  "_help": "Settings for the Etsy sync (scripts/etsy-sync.mjs). See README.md, 'Fixing what the sync decided'. categoryRules: checked in order against each NEW listing's Etsy title, shop section and tags; the first match picks its menu section. sectionCategories: an Etsy shop section name (or part of one) that always goes to a menu section, checked before categoryRules. subjectRules: every subject whose words match is added as a filter. merge: an Etsy listing id that should join an existing product (listing id → product id). keepSeparate: Etsy listing ids that should never be merged with another listing. skipTitles and ignoreListingIds: listings never added to the site. maxNewPerRun and maxGonePerRun: safety stops. maxPhotos: photos kept per product.",
+  "_help": "Rules for the Etsy sync (scripts/etsy-sync.mjs); README.md explains each. A new listing's menu section comes from the first match in: titleRules (its Etsy title), tagRules (its tags), sectionCategories (its Etsy shop section), fallbackRules (title and tags), then defaultCategory. subjectRules: every subject whose words appear in the title, tags or section. After changing rules, run the workflow with 're-sort' ticked so pieces already on the site follow them. merge: an Etsy listing id that should join an existing product (listing id → product id). keepSeparate: listing ids never merged. skipTitles, ignoreListingIds: listings never added. maxNewPerRun, maxGonePerRun: safety stops.",
   "shopName": "artworkbymarita",
-  "sectionCategories": {},
-  "categoryRules": [
+  "titleRules": [
     ["cyanotype|sun ?print", "cyanotypes"],
-    ["etching|linocut|lino ?cut|woodcut|wood ?block|block ?print|monotype|monoprint|collagraph|drypoint|intaglio|aquatint|engraving|printmaking|relief print|gelli", "printmaking"],
-    ["\\bcards?\\b|note ?cards?|greeting|ornament|bookmark|magnet|coaster|tote|\\bmug\\b|\\bgift\\b|sticker|postcard|calendar", "gifts"],
-    ["\\boriginal\\b", "paintings"],
-    ["\\bprints?\\b|giclee|giclée|reproduction|matted", "prints"],
-    ["painting|watercolou?r|\\boil\\b|acrylic|gouache|pastel|mixed media", "paintings"]
+    ["etching|linocut|lino ?cut|woodcut|wood ?block|block ?print|monotype|mono ?print|collagraph|collograph|drypoint|intaglio|aquatint|engraving|printmaking|relief print|hand[- ]pulled|gelli", "printmaking"],
+    ["ornament|notebook|journal|garden flag|house flag|\\bflag\\b|banner|note ?cards?|greeting cards?|bookmark|magnet|coaster|tote|\\bmug\\b|sticker|postcard|calendar", "gifts"],
+    ["\\bprints?\\b|poster|giclee|giclée|reproduction|matte canvas|canvas print", "prints"]
+  ],
+  "tagRules": [
+    ["cyanotype|sun ?print", "cyanotypes"],
+    ["etching|linocut|lino ?cut|woodcut|monotype|mono ?print|collagraph|collograph|drypoint|intaglio|aquatint|printmaking|relief print|hand[- ]pulled", "printmaking"]
+  ],
+  "sectionCategories": {
+    "Cyanotypes/Sunprint": "cyanotypes",
+    "Original Linocuts": "printmaking",
+    "Monotypes": "printmaking",
+    "Etchings": "printmaking",
+    "Original Collographs": "printmaking",
+    "Print": "prints",
+    "Giclee Print": "prints",
+    "Framed Prints": "prints",
+    "Holiday Ornaments": "gifts",
+    "Garden Flags": "gifts",
+    "Original Art": "paintings",
+    "Original Watercolors": "paintings",
+    "Floral Art": "paintings",
+    "Landscapes": "paintings",
+    "beach art": "paintings",
+    "Abstract Art": "paintings",
+    "Bucks County Art": "paintings"
+  },
+  "fallbackRules": [
+    ["\\boriginal\\b|painting|watercolou?r|\\boil\\b|acrylic|gouache|pastel|mixed media|collage", "paintings"]
   ],
   "defaultCategory": "paintings",
   "subjectRules": {
-    "Florals": "flower|floral|\\brose|peony|peonies|daisy|daisies|tulip|\\blily|lilies|hydrangea|sunflower|\\biris|wildflower|poppy|poppies|bloom|blossom|bouquet|azalea|black[- ]eyed susan|dahlia|zinnia|lavender|magnolia|dogwood|clematis|cosmos|\\bpansy|lilac|rhododendron",
-    "Leaves": "\\bleaf|leaves|fern|foliage|\\bgrass|botanical|ginkgo|maple|\\bivy\\b|frond",
-    "Landscapes": "landscape|field|meadow|\\bbarn|farm|mountain|\\bhills?\\b|countryside|\\briver|\\bcreek|\\blake\\b|\\bpond|forest|woods|\\btrees?\\b|sunset|sunrise|\\bsky\\b|clouds|snow|winter scene|covered bridge",
-    "Beach": "beach|ocean|\\bsea\\b|seashore|seaside|shore|coast|coastal|\\bwaves?\\b|shell|lighthouse|dune|\\bbay\\b|jersey shore|sailboat|\\bboats?\\b|seagull|sandpiper",
-    "Bucks County": "bucks county|new hope|doylestown|lahaska|peddler'?s village|washington crossing|lambertville|delaware canal|point pleasant|erwinna|tinicum|carversville|lumberville|bowman'?s hill|newtown"
+    "Florals": "flower|floral|\\broses?\\b|rose of sharon|peony|peonies|daisy|daisies|tulip|\\blily|lilies|lilly|hydrangea|sunflower|\\biris|wildflower|poppy|poppies|bloom|blossom|bouquet|azalea|black[- ]eyed susan|dahlia|zinnia|lavender|magnolia|dogwood|clematis|cosmos|\\bpansy|pansies|lilac|rhododendron|crocus|coneflower|morning glory|queen anne'?s lace|\\basters?\\b|waterlily|water lily",
+    "Leaves": "\\bleaf|leaves|fern|foliage|\\bgrass|grasses|ginkgo|maple|\\bivy\\b|frond|caladium|hosta|seed pods",
+    "Landscapes": "landscape|\\bfield\\b|meadow|mountain|\\bhills?\\b|countryside|\\briver\\b|\\bcreek|covered bridge|sunset|sunrise|\\bpark\\b|arboretum|plein air|scenery|\\bvalley\\b|winter scene|seascape|farm landscape",
+    "Beach": "beach|ocean|\\bsea\\b|seashore|seaside|\\bshore\\b|coast|coastal|\\bwaves?\\b|seashells?|lighthouse|dune|jersey shore|cape may|sailboat|seagull|sandpiper",
+    "Bucks County": "bucks county|bucks co\\b|new hope|doylestown|lahaska|peddler'?s village|washington crossing|lambertville|delaware canal|point pleasant|erwinna|tinicum|carversville|lumberville|bowman'?s hill|newtown|perkasie|peace valley|lake galena"
   },
   "merge": {},
   "keepSeparate": [],

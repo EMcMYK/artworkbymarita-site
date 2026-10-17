@@ -11,9 +11,11 @@
     their title with sizes and words like "matted" taken out. Originals and prints of the same piece
     stay separate products. To force a match or a split, see "merge" and "keepSeparate" in
     data/etsy-sync.json.
-  • Each product gets a menu section (Paintings, Cyanotypes, Printmaking, Prints, Gifts) and subject
-    filters (Florals, Leaves…) from words in its Etsy title, tags and shop section. The word lists
-    are in data/etsy-sync.json ("categoryRules", "subjectRules").
+  • Each product gets a menu section (Paintings, Cyanotypes, Printmaking, Prints, Gifts) from, in
+    order: words in its Etsy title, words in its tags, its Etsy shop section, then painting words
+    anywhere. Subject filters (Florals, Leaves…) come from words in its title, tags and section. The
+    rules are in data/etsy-sync.json. After changing them, run the workflow with "re-sort" ticked to
+    apply them to pieces already on the site.
   • Products already on the site take Etsy's description, tags, prices and photos whenever those
     change. The site's own product name, section and subjects stay as they are once set, so a fix
     you make in data/products.json sticks.
@@ -31,7 +33,7 @@ import path from "node:path";
 
 const API = process.env.ETSY_API_BASE || "https://openapi.etsy.com/v3/application";
 
-export async function sync({ root = process.cwd(), fetch = globalThis.fetch, today = new Date(), log = console.log, pause = Number(process.env.ETSY_PAUSE_MS ?? 120) } = {}) {
+export async function sync({ root = process.cwd(), fetch = globalThis.fetch, today = new Date(), log = console.log, pause = Number(process.env.ETSY_PAUSE_MS ?? 120), resort = process.env.SYNC_RESORT === "true" } = {}) {
   const key = process.env.ETSY_API_KEY, secret = process.env.ETSY_SHARED_SECRET;
   if (!key || !secret) throw new Error("Missing ETSY_API_KEY or ETSY_SHARED_SECRET (add them under GitHub → Settings → Secrets and variables → Actions).");
   const headers = { "x-api-key": `${key}:${secret}`, accept: "application/json" };
@@ -133,6 +135,7 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     }
     const lead = p.options[0] === o;
     if (lead) {
+      if (p.etsyTitle !== decode(l.title)) p.etsyTitle = decode(l.title); // kept for re-sorting; the site name stays
       const description = paragraphs(l.description);
       if (!keep.has("description") && description.length && JSON.stringify(p.description) !== JSON.stringify(description)) { p.description = description; changed.push("description"); }
       const tags = (l.tags || []).map(decode);
@@ -169,9 +172,13 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     const section = sections.get(String(l.shop_section_id)) || "";
     const description = paragraphs(l.description);
     const tags = (l.tags || []).map(decode);
-    const kind = kindOf(title);
-    const mkey = `${kind}:${mergeKey(title)}`;
+    const category = categoryFor(title, tags, section, settings);
+    // a painting not called a print is an original, even when its title doesn't say "original"
+    const kind = kindOf(title) === "other" && category === "paintings" ? "original" : kindOf(title);
+    const key = mergeKey(title);
+    const mkey = key ? `${kind}:${key}` : `${kind}:#${lid}`; // a title of only generic words never merges
     const option = {
+      title,
       label: optionLabel(title, description.join("\n")),
       price: money(l.price),
       etsyListingId: Number(l.listing_id),
@@ -193,13 +200,11 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     const images = await etsy(`/listings/${lid}/images`, { optional: true });
     const photos = await savePhotos(root, id, (images?.results || []).slice().sort((a, b) => a.rank - b.rank).slice(0, settings.maxPhotos || 10), fetch, log);
     if (!photos.length) { report.problems.push(`${title}: no photos came back from Etsy, so it wasn't added. It tries again next run.`); continue; }
-    const text = [title, section, tags.join(" ")].join(" \n ");
-    const category = categoryFor(section, text, settings);
     const p = {
       id,
       name,
       category,
-      subjects: subjectsFor(text, settings),
+      subjects: subjectsFor(title, tags, section, settings),
       kind,
       oneOfAKind: kind === "original" && Number(l.quantity) <= 1,
       size: sizeFrom(title + "\n" + description.join("\n")),
@@ -208,6 +213,7 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
       description,
       tags,
       etsySection: section,
+      etsyTitle: title,
       listedOn: new Date(((l.original_creation_timestamp || l.created_timestamp || today.getTime() / 1000)) * 1000).toISOString().slice(0, 10),
       mergeKey: mkey,
     };
@@ -217,10 +223,28 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     report.added.push(`${name} → ${category}${p.subjects.length ? ` (${p.subjects.join(", ")})` : ""}`);
   }
 
+  // 6. Re-sort (Run workflow with "re-sort" ticked): section and subjects again from today's rules.
+  //    A product keeps a hand-made fix if its "siteOnly" list names "category" or "subjects".
+  if (resort) {
+    for (const p of products) {
+      if (!p.etsyTitle) continue;
+      const keep = new Set(p.siteOnly || []), was = `${p.category} ${JSON.stringify(p.subjects)}`;
+      if (!keep.has("category")) p.category = categoryFor(p.etsyTitle, p.tags || [], p.etsySection || "", settings);
+      if (!keep.has("subjects")) p.subjects = subjectsFor(p.etsyTitle, p.tags || [], p.etsySection || "", settings);
+      if (was !== `${p.category} ${JSON.stringify(p.subjects)}`) report.updated.push(`${p.name}: re-sorted to ${p.category}${p.subjects.length ? ` (${p.subjects.join(", ")})` : ""}`);
+    }
+  }
+
   // Cheapest buy button first; a product's options keep their order otherwise.
   for (const p of products) if (p.options.length > 1) p.options.sort((a, b) => (a.available === false) - (b.available === false) || a.price - b.price);
 
   await writeFile(productsPath, JSON.stringify(data, null, 2) + "\n");
+
+  // Photo folders no product uses anymore (images/about stays).
+  const used = new Set(products.map((p) => p.id));
+  for (const dir of await readdir(path.join(root, "images"), { withFileTypes: true }).catch(() => [])) {
+    if (dir.isDirectory() && dir.name !== "about" && !used.has(dir.name)) await rm(path.join(root, "images", dir.name), { recursive: true });
+  }
   return report;
 }
 
@@ -239,7 +263,7 @@ export function kindOf(title) {
 export function mergeKey(title) {
   return shortName(decode(title)).toLowerCase()
     .replace(new RegExp(SIZE.source, "gi"), " ")
-    .replace(/\b(original|signed|matted|framed|unframed|mat|prints?|giclee|giclée|reproduction|fine art|art|small|medium|large|mini|wall|with)\b/g, " ")
+    .replace(/\b(original|signed|matted|framed|unframed|mat|prints?|giclee|giclée|reproduction|fine art|art|small|medium|large|mini|wall|with|classic|premium|matte|glossy|canvas|paper|posters?|size|decor|vertical|horizontal)\b/g, " ")
     .replace(/[^a-z0-9]+/g, " ").trim();
 }
 
@@ -260,15 +284,20 @@ export function optionLabel(title, description = "") {
   return [base, nice, extra].filter(Boolean).join(", ").replace(/^, /, "") || "Buy";
 }
 
-function categoryFor(section, text, settings) {
-  for (const [needle, cat] of Object.entries(settings.sectionCategories || {})) {
-    if (section && section.toLowerCase().includes(needle.toLowerCase())) return cat;
-  }
-  for (const [pattern, cat] of settings.categoryRules || []) if (new RegExp(pattern, "i").test(text)) return cat;
-  return settings.defaultCategory || "paintings";
+// Menu section, from the strongest clue to the weakest: words in the title, words in the tags,
+// the Etsy shop section, then painting words anywhere. (Rules: data/etsy-sync.json.)
+export function categoryFor(title, tags, section, settings) {
+  const first = (rules, text) => { for (const [pattern, cat] of rules || []) if (new RegExp(pattern, "i").test(text)) return cat; return ""; };
+  const tagText = (tags || []).join(" | ");
+  const sections = Object.entries(settings.sectionCategories || {});
+  const bySection = section && ((sections.find(([k]) => k.toLowerCase() === section.toLowerCase()) ||
+    sections.find(([k]) => section.toLowerCase().includes(k.toLowerCase())) || [])[1]);
+  return first(settings.titleRules, title) || first(settings.tagRules, tagText) || bySection ||
+    first(settings.fallbackRules, `${title} | ${tagText}`) || settings.defaultCategory || "paintings";
 }
 
-function subjectsFor(text, settings) {
+export function subjectsFor(title, tags, section, settings) {
+  const text = [title, section, (tags || []).join(" | ")].join(" | ");
   return Object.entries(settings.subjectRules || {}).filter(([, pattern]) => new RegExp(pattern, "i").test(text)).map(([s]) => s);
 }
 
@@ -294,8 +323,11 @@ export function sizeFrom(text) {
   return m ? m[0].replace(/\s*(?:x|×|by)\s*/i, " × ").replace(/\s*(?:["”″]|in(?:ch(?:es)?)?\.?)/gi, "").trim() + " in" : "";
 }
 
+const GENERIC = /^(?:(?:classic|premium|matte|glossy|canvas|paper|posters?|fine|art|prints?|framed|size|wall|decor|vertical|horizontal|giclee|original)\s*)+$/i;
 export function shortName(title) {
-  const short = String(title).split(/\s*[,|]\s*/)[0].trim();
+  const parts = String(title).split(/\s*[,|]\s*/).map((x) => x.trim()).filter(Boolean);
+  let short = parts[0] || "";
+  if (GENERIC.test(short) && parts[1]) short = `${short}, ${parts[1]}`;
   return short.length >= 3 ? short : String(title);
 }
 
@@ -315,6 +347,7 @@ async function savePhotos(root, productId, images, fetch, log) {
   await mkdir(dir, { recursive: true });
   for (const img of images) {
     const file = `${img.listing_image_id}.jpg`;
+    if (await readFile(path.join(dir, file)).then(() => true, () => false)) { kept.push(`images/${productId}/${file}`); continue; }
     const urls = [String(img.url_fullxfull || "").replace("il_fullxfull", "il_794xN"), img.url_fullxfull, img.url_570xN].filter(Boolean);
     let ok = false;
     for (const u of urls) {
