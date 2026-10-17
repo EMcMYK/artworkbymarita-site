@@ -1,0 +1,9 @@
+# Mac
+.DS_Store
+
+# Local test secrets (only if you run the sync on your own computer)
+.env
+
+# Tool folders
+node_modules/
+.wrangler/

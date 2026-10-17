@@ -1,0 +1,45 @@
+# Brings Mom's Etsy shop onto the website (see scripts/etsy-sync.mjs). It only reads Etsy.
+# Runs every morning, and any time you press "Run workflow"
+# (github.com/EMcMYK/artworkbymarita-site → Actions → Sync from Etsy → Run workflow).
+name: Sync from Etsy
+
+on:
+  schedule:
+    - cron: "37 10 * * *"   # every day around 6:37am Eastern
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-data
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45     # the first run downloads every photo in the shop
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the sync still works (tests with a pretend Etsy)
+        run: node --test scripts/*.test.mjs
+      - name: Sync listings and photos
+        run: node scripts/etsy-sync.mjs
+        env:
+          ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
+          ETSY_SHARED_SECRET: ${{ secrets.ETSY_SHARED_SECRET }}
+      - name: Save changes (Cloudflare republishes the site a minute later)
+        run: |
+          git config user.name "Etsy sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data images
+          if git diff --cached --quiet; then
+            echo "Nothing changed on Etsy."
+          else
+            git commit -m "Sync from Etsy"
+            git pull --rebase origin main
+            git push
+          fi

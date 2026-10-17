@@ -1,0 +1,4 @@
+{
+  "_help": "Every product on the site. The Etsy sync fills and updates this file every morning; see README.md. You can change a product's name, category or subjects here and the sync keeps your change.",
+  "products": []
+}
