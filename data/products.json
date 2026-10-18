@@ -5634,7 +5634,10 @@
           "label": "Original, 5 × 7\"",
           "price": 70,
           "etsyListingId": 4522995975,
-          "url": "https://www.etsy.com/listing/4522995975/summer-joy-original-watercolor"
+          "url": "https://www.etsy.com/listing/4522995975/summer-joy-original-watercolor",
+          "available": false,
+          "goneOn": "2026-10-18",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5658,7 +5661,9 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Summer Joy Original Watercolor",
       "listedOn": "2026-06-16",
-      "mergeKey": "original:summer joy watercolor"
+      "mergeKey": "original:summer joy watercolor",
+      "soldOut": true,
+      "soldOn": "2026-10-18"
     },
     {
       "id": "watercolor-sunflower-bouquet-colored-frame-poster",
@@ -5689,7 +5694,10 @@
           "price": 53.93,
           "etsyListingId": 4523004689,
           "url": "https://www.etsy.com/listing/4523004689/watercolor-sunflower-bouquet-colored",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-18",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5715,7 +5723,8 @@
       "etsySection": "",
       "etsyTitle": "Watercolor Sunflower Bouquet Colored Frame Poster | Floral Wall Art",
       "listedOn": "2026-06-16",
-      "mergeKey": "other:watercolor sunflower bouquet colored frame"
+      "mergeKey": "other:watercolor sunflower bouquet colored frame",
+      "hidden": true
     },
     {
       "id": "carefree-planter-original-watercolor",
