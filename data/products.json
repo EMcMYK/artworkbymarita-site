@@ -3346,7 +3346,10 @@
           "label": "Original",
           "price": 130,
           "etsyListingId": 1507753211,
-          "url": "https://www.etsy.com/listing/1507753211/down-by-the-seashore-original-watercolor"
+          "url": "https://www.etsy.com/listing/1507753211/down-by-the-seashore-original-watercolor",
+          "available": false,
+          "goneOn": "2026-10-19",
+          "goneWhy": "inactive"
         }
       ],
       "description": [
@@ -3370,7 +3373,9 @@
       "etsySection": "beach art",
       "etsyTitle": "Down By The Seashore Original watercolor",
       "listedOn": "2023-06-20",
-      "mergeKey": "original:down by the seashore watercolor"
+      "mergeKey": "original:down by the seashore watercolor",
+      "soldOut": true,
+      "soldOn": "2026-10-19"
     },
     {
       "id": "rainbow-angel-watercolor",
@@ -5754,7 +5759,10 @@
           "label": "Original, 8 × 10\"",
           "price": 70,
           "etsyListingId": 4523708183,
-          "url": "https://www.etsy.com/listing/4523708183/carefree-planter-original-watercolor"
+          "url": "https://www.etsy.com/listing/4523708183/carefree-planter-original-watercolor",
+          "available": false,
+          "goneOn": "2026-10-19",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5778,7 +5786,9 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Carefree Planter Original Watercolor",
       "listedOn": "2026-06-17",
-      "mergeKey": "original:carefree planter watercolor"
+      "mergeKey": "original:carefree planter watercolor",
+      "soldOut": true,
+      "soldOn": "2026-10-19"
     },
     {
       "id": "watercolor-floral-vase-colored-frame-poster",
@@ -5809,7 +5819,10 @@
           "price": 53.93,
           "etsyListingId": 4523724976,
           "url": "https://www.etsy.com/listing/4523724976/watercolor-floral-vase-colored-frame",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-19",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5834,7 +5847,8 @@
       "etsySection": "",
       "etsyTitle": "Watercolor Floral Vase Colored Frame Poster | Botanical Wall Art",
       "listedOn": "2026-06-17",
-      "mergeKey": "other:watercolor floral vase colored frame"
+      "mergeKey": "other:watercolor floral vase colored frame",
+      "hidden": true
     },
     {
       "id": "snow-crocus-original-painting",
@@ -8096,6 +8110,54 @@
       "etsyTitle": "Colors Of The Wind Original Mixed Media",
       "listedOn": "2026-10-08",
       "mergeKey": "original:colors of the wind mixed media"
+    },
+    {
+      "id": "chicken-scratch-art",
+      "name": "Chicken Scratch Art",
+      "category": "paintings",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/chicken-scratch-art/6623464714.jpg",
+        "images/chicken-scratch-art/6623464694.jpg",
+        "images/chicken-scratch-art/6623464686.jpg",
+        "images/chicken-scratch-art/6623464708.jpg",
+        "images/chicken-scratch-art/6623464674.jpg",
+        "images/chicken-scratch-art/6671548419.jpg",
+        "images/chicken-scratch-art/6671548441.jpg"
+      ],
+      "options": [
+        {
+          "title": "Chicken Scratch Art",
+          "label": "Buy",
+          "price": 130,
+          "etsyListingId": 1855859490,
+          "url": "https://www.etsy.com/listing/1855859490/chicken-scratch-art"
+        }
+      ],
+      "description": [
+        "An original painting on watercolor paper. Mounted on a wood panel then sealed with cold wax. Ready to hang or sit on a shelf. A colorful chicken to brighten up any space."
+      ],
+      "tags": [
+        "chicken art",
+        "farm art",
+        "bird art",
+        "kitchen art",
+        "mcveigh art",
+        "country art",
+        "colorful chicken",
+        "chicken scratch",
+        "small art",
+        "ready to hang",
+        "whimsical art",
+        "nature",
+        "original art"
+      ],
+      "etsySection": "Original Watercolors",
+      "etsyTitle": "Chicken Scratch Art",
+      "listedOn": "2025-02-05",
+      "mergeKey": "original:chicken scratch"
     }
   ]
 }
