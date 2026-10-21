@@ -8158,6 +8158,51 @@
       "etsyTitle": "Chicken Scratch Art",
       "listedOn": "2025-02-05",
       "mergeKey": "original:chicken scratch"
+    },
+    {
+      "id": "winter-sky-original-oil-painting",
+      "name": "Winter Sky Original Oil Painting",
+      "category": "paintings",
+      "subjects": [
+        "Landscapes"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "11 × 14 in",
+      "images": [
+        "images/winter-sky-original-oil-painting/1800412222.jpg"
+      ],
+      "options": [
+        {
+          "title": "Winter Sky Original Oil Painting",
+          "label": "Original, 11 × 14\"",
+          "price": 150,
+          "etsyListingId": 687909783,
+          "url": "https://www.etsy.com/listing/687909783/winter-sky-original-oil-painting"
+        }
+      ],
+      "description": [
+        "This is an original 11 x 14 inch oil painting of a colorful winter sky and landscape.. It is  framed in a thin decorative gold frame  and is ready to hang in your home or office.   I painted this completely with a palette knife. The brush strokes are thick,  textured and colorful."
+      ],
+      "tags": [
+        "winter sky painting",
+        "wall decor",
+        "winter painting",
+        "landscape painting",
+        "thick brushstrokes",
+        "nature painting",
+        "sky painting",
+        "trees painting",
+        "snow painting",
+        "country art",
+        "farmhouse art",
+        "sky art",
+        "winter art"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Winter Sky Original Oil Painting",
+      "listedOn": "2019-03-04",
+      "mergeKey": "original:winter sky oil painting"
     }
   ]
 }
