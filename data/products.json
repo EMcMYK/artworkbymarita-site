@@ -5127,7 +5127,10 @@
           "label": "12 × 16\"",
           "price": 192,
           "etsyListingId": 4359390931,
-          "url": "https://www.etsy.com/listing/4359390931/water-lily-garden-art"
+          "url": "https://www.etsy.com/listing/4359390931/water-lily-garden-art",
+          "available": false,
+          "goneOn": "2026-10-22",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5151,7 +5154,9 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Water Lily Garden Art",
       "listedOn": "2025-08-27",
-      "mergeKey": "original:water lily garden"
+      "mergeKey": "original:water lily garden",
+      "soldOut": true,
+      "soldOn": "2026-10-22"
     },
     {
       "id": "beach-ball-acrylic-ornament",
@@ -5171,7 +5176,10 @@
           "label": "Buy",
           "price": 20,
           "etsyListingId": 4370648306,
-          "url": "https://www.etsy.com/listing/4370648306/beach-ball-acrylic-ornament-wildwoods"
+          "url": "https://www.etsy.com/listing/4370648306/beach-ball-acrylic-ornament-wildwoods",
+          "available": false,
+          "goneOn": "2026-10-22",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5197,7 +5205,8 @@
       "etsySection": "",
       "etsyTitle": "Beach Ball Acrylic Ornament, Wildwoods Summer Holiday Decor",
       "listedOn": "2025-09-16",
-      "mergeKey": "other:beach ball acrylic ornament"
+      "mergeKey": "other:beach ball acrylic ornament",
+      "hidden": true
     },
     {
       "id": "framed-beach-ball-canvas-art",
@@ -5220,7 +5229,10 @@
           "price": 60.18,
           "etsyListingId": 4370672656,
           "url": "https://www.etsy.com/listing/4370672656/framed-beach-ball-canvas-art-wildwood",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-22",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5246,7 +5258,8 @@
       "etsySection": "",
       "etsyTitle": "Framed Beach Ball Canvas Art | Wildwood Coastal Decor",
       "listedOn": "2025-09-16",
-      "mergeKey": "original:beach ball"
+      "mergeKey": "original:beach ball",
+      "hidden": true
     },
     {
       "id": "colorful-chicken-original-painting",
@@ -8203,6 +8216,58 @@
       "etsyTitle": "Winter Sky Original Oil Painting",
       "listedOn": "2019-03-04",
       "mergeKey": "original:winter sky oil painting"
+    },
+    {
+      "id": "goat-study-print",
+      "name": "Goat Study Print",
+      "category": "prints",
+      "subjects": [],
+      "kind": "print",
+      "oneOfAKind": false,
+      "images": [
+        "images/goat-study-print/8766365885.jpg",
+        "images/goat-study-print/8766365881.jpg",
+        "images/goat-study-print/8766365871.jpg",
+        "images/goat-study-print/8766365877.jpg",
+        "images/goat-study-print/8766365891.jpg",
+        "images/goat-study-print/8718537142.jpg",
+        "images/goat-study-print/8766365911.jpg",
+        "images/goat-study-print/8766365919.jpg",
+        "images/goat-study-print/8766365903.jpg",
+        "images/goat-study-print/8766365905.jpg"
+      ],
+      "options": [
+        {
+          "title": "Goat Study Print",
+          "label": "Print",
+          "price": 35,
+          "etsyListingId": 4600343640,
+          "url": "https://www.etsy.com/listing/4600343640/goat-study-print",
+          "hasVariations": true
+        }
+      ],
+      "description": [
+        "Print of my pastel painting “Goat Study” . Painted from Photos my daughter took on a fun farm outing.  The background is from a cyanotype or sunprint that had an interesting color and pattern."
+      ],
+      "tags": [
+        "goat print",
+        "farm art",
+        "barnyard animal",
+        "animal art",
+        "pastel print",
+        "farm decor",
+        "farmhouse vibe",
+        "whimsical animal",
+        "goat study",
+        "billy goat",
+        "goat portrait",
+        "petting zoo",
+        "8x10"
+      ],
+      "etsySection": "Print",
+      "etsyTitle": "Goat Study Print",
+      "listedOn": "2026-10-21",
+      "mergeKey": "print:goat study"
     }
   ]
 }
