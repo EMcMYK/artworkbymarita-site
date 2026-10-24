@@ -364,7 +364,16 @@ async function savePhotos(root, productId, images, fetch, log) {
 
 // Run directly (GitHub Action): sync, then print a summary on the run's page.
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const report = await sync();
+  let report;
+  try {
+    report = await sync();
+  } catch (e) {
+    // Show why it stopped as a red note on the run's page (and in the summary), not only deep in the log.
+    const msg = String(e.message || e);
+    console.log(`::error title=Etsy sync stopped::${msg.replace(/\r?\n/g, " ")}`);
+    if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, `## Etsy sync stopped\n\n${msg}\n`, { flag: "a" });
+    process.exit(1);
+  }
   const list = (items) => items.length ? "\n  - " + items.join("\n  - ") : " none";
   const lines = [
     "## Etsy sync",
