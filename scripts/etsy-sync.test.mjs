@@ -92,29 +92,49 @@ test("first run imports the whole shop, merges sizes and keeps originals apart",
   assert.equal(by("Color Playground Print").options[0].url, "https://www.etsy.com/listing/1/x");
 });
 
-test("a sold original moves to the Sold gallery, a gone print is hidden, both come back", async () => {
+test("only a sale moves a piece to the Sold gallery; expired, deactivated or deleted ones hide; all come back", async () => {
   const root = await site();
-  const all = [listing(20, "Sunflowers Original Watercolor", { quantity: 1 }), listing(21, "Sunflowers Print 8x10"), listing(22, "Barn in Snow Print")];
+  const all = [listing(20, "Sunflowers Original Watercolor", { quantity: 1 }), listing(21, "Sunflowers Print 8x10"), listing(22, "Barn in Snow Print"),
+    listing(23, "Lilies Original Watercolor", { quantity: 1 }), listing(24, "Pond Original Oil", { quantity: 1 })];
   await run(root, { active: all, gone: {} });
-  const report = await run(root, { active: [all[1]], gone: { 20: { state: "sold_out", quantity: 0 }, 22: { state: "inactive", quantity: 2 } } });
+  const report = await run(root, { active: [all[1]], gone: { 20: { state: "sold_out", quantity: 0 }, 22: { state: "inactive", quantity: 2 }, 23: { state: "expired", quantity: 1 } } }); // 24: deleted (404)
   let products = await read(root);
+  const by = (n) => products.find((p) => p.name === n);
   assert.deepEqual(report.sold, ["Sunflowers Original Watercolor"]);
-  assert.equal(products.find((p) => p.name === "Sunflowers Original Watercolor").soldOut, true);
-  assert.equal(products.find((p) => p.name === "Barn in Snow Print").hidden, true);
+  assert.equal(by("Sunflowers Original Watercolor").soldOut, true);
+  assert.equal(by("Barn in Snow Print").hidden, true);
+  for (const n of ["Lilies Original Watercolor", "Pond Original Oil"]) { assert.equal(by(n).hidden, true); assert.ok(!by(n).soldOut); }
   await run(root, { active: all, gone: {} });
   products = await read(root);
   assert.ok(products.every((p) => !p.soldOut && !p.hidden));
 });
 
-test("safety stops change nothing", async () => {
+test("too many new listings changes nothing; many leaving at once is fine", async () => {
   const root = await site();
   const first = Array.from({ length: 12 }, (_, i) => listing(100 + i, `Piece number ${i} Original`, { quantity: 1 }));
   await run(root, { active: first, gone: {} }); // the first run may import everything
   const before = await readFile(path.join(root, "data/products.json"), "utf8");
-  const more = Array.from({ length: 11 }, (_, i) => listing(200 + i, `New piece ${i} Original`, { quantity: 1 }));
-  await assert.rejects(run(root, { active: first.concat(more), gone: {} }), /11 new Etsy listings/);
-  await assert.rejects(run(root, { active: first.slice(6), gone: {} }), /6 Etsy listings left/);
+  const more = Array.from({ length: 31 }, (_, i) => listing(200 + i, `New piece ${i} Original`, { quantity: 1 }));
+  await assert.rejects(run(root, { active: first.concat(more), gone: {} }), /31 new Etsy listings/);
   assert.equal(await readFile(path.join(root, "data/products.json"), "utf8"), before);
+  const gone = Object.fromEntries(first.slice(0, 8).map((l) => [l.listing_id, { state: "expired", quantity: 1 }]));
+  const report = await run(root, { active: first.slice(8), gone });
+  assert.equal(report.hidden.length, 8);
+  assert.equal(report.sold.length, 0);
+});
+
+test("an original an older sync marked sold, but that only expired, is hidden instead", async () => {
+  const root = await site();
+  const l = listing(70, "Summer Joy Original Watercolor", { quantity: 1 });
+  await run(root, { active: [l], gone: {} });
+  const data = JSON.parse(await readFile(path.join(root, "data/products.json"), "utf8"));
+  Object.assign(data.products[0], { soldOut: true, soldOn: "2026-10-18" });
+  Object.assign(data.products[0].options[0], { available: false, goneOn: "2026-10-18", goneWhy: "expired" });
+  await writeFile(path.join(root, "data/products.json"), JSON.stringify(data));
+  await run(root, { active: [listing(71, "Other Print")], gone: {} });
+  const p = (await read(root)).find((x) => x.name === "Summer Joy Original Watercolor");
+  assert.equal(p.hidden, true);
+  assert.ok(!p.soldOut);
 });
 
 test("a name, section or subject fixed by hand sticks", async () => {

@@ -19,12 +19,11 @@
   • Products already on the site take Etsy's description, tags, prices and photos whenever those
     change. The site's own product name, section and subjects stay as they are once set, so a fix
     you make in data/products.json sticks.
-  • When a listing leaves Etsy: a one-of-a-kind original is marked Sold and kept for the Sold
-    gallery. Anything else (a print that's out of stock or deactivated) is hidden. Either comes
-    back by itself if the listing returns.
-  • Safety stops: more than "maxNewPerRun" new listings, or more than "maxGonePerRun" listings
-    gone in one run, changes nothing and fails the run (GitHub emails you). The very first run
-    (an empty products.json) imports the whole shop.
+  • When a listing leaves Etsy, Etsy says why. Only a listing that SOLD (Etsy: "sold_out") is
+    marked Sold and kept for the Sold gallery. One that expired, was deactivated or was deleted is
+    hidden, however many go at once. Either comes back by itself if the listing returns.
+  • Safety stop: more than "maxNewPerRun" new listings in one run changes nothing and fails the run
+    (GitHub emails you). The very first run (an empty products.json) imports the whole shop.
 
   Keys (GitHub → Settings → Secrets and variables → Actions): ETSY_API_KEY, ETSY_SHARED_SECRET.
 */
@@ -92,7 +91,18 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
       `If they really are all new, raise "maxNewPerRun" in data/etsy-sync.json and run again. New: ${fresh.map((l) => decode(l.title)).join(" | ")}`);
   }
 
-  // 3. Listings that left Etsy, each checked one by one before anything changes.
+  // Earlier syncs marked any original that left Etsy as sold. Only a sale counts now: an original
+  // that expired, was deactivated or was deleted is hidden instead.
+  for (const p of products) {
+    const whys = (p.options || []).map((o) => o.goneWhy).filter(Boolean);
+    if (p.soldOut && whys.length && !whys.includes("sold_out")) {
+      delete p.soldOut; delete p.soldOn; p.hidden = true;
+      report.hidden.push(`${p.name} (${whys.join(", ")} on Etsy, not sold)`);
+    }
+  }
+
+  // 3. Listings that left Etsy, each checked one by one, so Etsy says why: sold, expired, deactivated
+  //    or deleted. Any number may go at once (Marita sometimes takes down or lets expire a batch).
   const gone = [];
   for (const [lid, { p, o }] of byListing) {
     if (active.has(lid) || o.available === false || ignored.has(lid)) continue;
@@ -104,16 +114,11 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     if (l.state !== "active" || Number(l.quantity) < 1) gone.push({ p, o, why: l.state || "inactive" });
     else active.set(lid, l); // still active (missed by paging): update it like any other
   }
-  const maxGone = settings.maxGonePerRun ?? 5;
-  if (gone.length > maxGone) {
-    throw new Error(`${gone.length} Etsy listings left the shop at once (the limit is ${maxGone}), so nothing was changed. ` +
-      `If that's right, raise "maxGonePerRun" in data/etsy-sync.json and run again. They are: ${gone.map(({ p, o }) => `${p.name} (${o.label})`).join(" | ")}`);
-  }
   for (const { o, why } of gone) { o.available = false; o.goneOn = day; o.goneWhy = why; }
   for (const p of new Set(gone.map((g) => g.p))) {
     if ((p.options || []).some((o) => o.available !== false)) { report.updated.push(`${p.name}: an option left Etsy`); continue; }
     const whys = gone.filter((g) => g.p === p).map((g) => g.why);
-    if (p.oneOfAKind || whys.includes("sold_out")) { p.soldOut = true; p.soldOn = day; report.sold.push(p.name); }
+    if (whys.includes("sold_out")) { p.soldOut = true; p.soldOn = day; report.sold.push(p.name); }
     else { p.hidden = true; report.hidden.push(`${p.name} (${whys.join(", ")} on Etsy)`); }
   }
 
@@ -381,7 +386,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     `- Joined an existing product (another size or version):${list(report.merged)}`,
     `- Updated from Etsy:${list(report.updated)}`,
     `- Marked sold (moved to the Sold gallery):${list(report.sold)}`,
-    `- Hidden (left Etsy):${list(report.hidden)}`,
+    `- Hidden (expired, deactivated or deleted on Etsy):${list(report.hidden)}`,
     `- Back on the site:${list(report.back)}`,
     `- Skipped on purpose:${list(report.skipped)}`,
     ...report.problems.map((p) => `- ⚠️ ${p}`),

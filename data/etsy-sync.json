@@ -1,5 +1,5 @@
 {
-  "_help": "Rules for the Etsy sync (scripts/etsy-sync.mjs); README.md explains each. A new listing's menu section comes from the first match in: titleRules (its Etsy title), tagRules (its tags), sectionCategories (its Etsy shop section), fallbackRules (title and tags), then defaultCategory. subjectRules: every subject whose words appear in the title, tags or section. After changing rules, run the workflow with 're-sort' ticked so pieces already on the site follow them. merge: an Etsy listing id that should join an existing product (listing id → product id). keepSeparate: listing ids never merged. skipTitles, ignoreListingIds: listings never added. maxNewPerRun, maxGonePerRun: safety stops.",
+  "_help": "Rules for the Etsy sync (scripts/etsy-sync.mjs); README.md explains each. A new listing's menu section comes from the first match in: titleRules (its Etsy title), tagRules (its tags), sectionCategories (its Etsy shop section), fallbackRules (title and tags), then defaultCategory. subjectRules: every subject whose words appear in the title, tags or section. After changing rules, run the workflow with 're-sort' ticked so pieces already on the site follow them. merge: an Etsy listing id that should join an existing product (listing id → product id). keepSeparate: listing ids never merged. skipTitles, ignoreListingIds: listings never added. maxNewPerRun: safety stop for a flood of new listings.",
   "shopName": "artworkbymarita",
   "titleRules": [
     ["cyanotype|sun ?print", "cyanotypes"],
@@ -45,7 +45,6 @@
   "keepSeparate": [],
   "skipTitles": [],
   "ignoreListingIds": [],
-  "maxNewPerRun": 10,
-  "maxGonePerRun": 5,
+  "maxNewPerRun": 30,
   "maxPhotos": 10
 }

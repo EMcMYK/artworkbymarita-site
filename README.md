@@ -55,12 +55,13 @@ All the rules are in `data/etsy-sync.json`. After changing a rule, run the workf
   `"<etsy listing id>": "<product id>"` to `merge`. To stop a listing merging, add its id to
   `keepSeparate`. (A wrong merge already made: delete that option from the piece in
   `data/products.json` and add its id to `keepSeparate`; the next sync adds it on its own.)
-- **Sold and gone:** when a one-of-a-kind original leaves Etsy, it's marked sold and moves to the
-  Sold gallery. Any other listing that leaves Etsy is hidden. Both come back if the listing returns.
-  Turn the Sold gallery or its prices on or off in `config.js`.
-- **Safety stops:** more than `maxNewPerRun` new listings or `maxGonePerRun` listings gone in one run
-  changes nothing and fails the run, and GitHub emails you. If it's right (a big batch of new work),
-  raise the number and run again. A run with an empty products list imports the whole shop, reusing
+- **Sold and gone:** the sync asks Etsy why each missing listing left. Only a listing that sold
+  is marked sold and moves to the Sold gallery. One that expired, was deactivated or was deleted
+  is hidden, however many go at once. Both come back if the listing returns. Turn the Sold gallery
+  or its prices on or off in `config.js`.
+- **Safety stop:** more than `maxNewPerRun` new listings in one run changes nothing and fails the
+  run, and GitHub emails you. If it's right (a big batch of new work), raise the number and run
+  again. A run with an empty products list imports the whole shop, reusing
   any photos already saved.
 
 ## Setup (one time)
