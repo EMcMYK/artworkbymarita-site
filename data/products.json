@@ -559,7 +559,10 @@
           "label": "Original, 24 × 36\"",
           "price": 500,
           "etsyListingId": 218100047,
-          "url": "https://www.etsy.com/listing/218100047/rusty-cat-original-oil-painting"
+          "url": "https://www.etsy.com/listing/218100047/rusty-cat-original-oil-painting",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -583,7 +586,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Rusty Cat original oil painting",
       "listedOn": "2015-01-11",
-      "mergeKey": "original:rusty cat oil painting"
+      "mergeKey": "original:rusty cat oil painting",
+      "hidden": true
     },
     {
       "id": "rosey-framed-pastel-painting",
@@ -1306,7 +1310,10 @@
           "label": "Buy",
           "price": 125,
           "etsyListingId": 775270431,
-          "url": "https://www.etsy.com/listing/775270431/love-is-love-art"
+          "url": "https://www.etsy.com/listing/775270431/love-is-love-art",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -1323,7 +1330,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Love Is Love Art",
       "listedOn": "2020-02-01",
-      "mergeKey": "original:love is love"
+      "mergeKey": "original:love is love",
+      "hidden": true
     },
     {
       "id": "original-apple-art",
@@ -2487,7 +2495,10 @@
           "label": "Buy",
           "price": 100,
           "etsyListingId": 1255367618,
-          "url": "https://www.etsy.com/listing/1255367618/summertime-kohler-park"
+          "url": "https://www.etsy.com/listing/1255367618/summertime-kohler-park",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -2511,7 +2522,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Summertime Kohler Park",
       "listedOn": "2022-07-16",
-      "mergeKey": "original:summertime kohler park"
+      "mergeKey": "original:summertime kohler park",
+      "hidden": true
     },
     {
       "id": "autumn-at-morris-arboretum",
@@ -2715,7 +2727,10 @@
           "label": "Buy",
           "price": 100,
           "etsyListingId": 1290876592,
-          "url": "https://www.etsy.com/listing/1290876592/summer-garden-watercolor"
+          "url": "https://www.etsy.com/listing/1290876592/summer-garden-watercolor",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -2739,7 +2754,8 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Summer Garden Watercolor",
       "listedOn": "2022-09-13",
-      "mergeKey": "original:summer garden watercolor"
+      "mergeKey": "original:summer garden watercolor",
+      "hidden": true
     },
     {
       "id": "gobble-gobble-watercolor",
@@ -2849,7 +2865,10 @@
           "price": 30.4,
           "etsyListingId": 1323184627,
           "url": "https://www.etsy.com/listing/1323184627/premium-matte-paper-poster-seagulls-at",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -2873,7 +2892,8 @@
       "etsySection": "Print",
       "etsyTitle": "Premium Matte Paper Poster (Seagulls At Sunset)",
       "listedOn": "2022-10-11",
-      "mergeKey": "other:seagulls at sunset"
+      "mergeKey": "other:seagulls at sunset",
+      "hidden": true
     },
     {
       "id": "winter-project-oil-painting",
@@ -3119,7 +3139,10 @@
           "label": "Original",
           "price": 250,
           "etsyListingId": 1413958469,
-          "url": "https://www.etsy.com/listing/1413958469/pink-summer-original-art"
+          "url": "https://www.etsy.com/listing/1413958469/pink-summer-original-art",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -3143,7 +3166,8 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Pink Summer Original Art",
       "listedOn": "2023-02-09",
-      "mergeKey": "original:pink summer"
+      "mergeKey": "original:pink summer",
+      "hidden": true
     },
     {
       "id": "spring-babies-watercolor",
@@ -3374,8 +3398,7 @@
       "etsyTitle": "Down By The Seashore Original watercolor",
       "listedOn": "2023-06-20",
       "mergeKey": "original:down by the seashore watercolor",
-      "soldOut": true,
-      "soldOn": "2026-10-19"
+      "hidden": true
     },
     {
       "id": "rainbow-angel-watercolor",
@@ -3606,7 +3629,10 @@
           "label": "Buy",
           "price": 150,
           "etsyListingId": 1570382212,
-          "url": "https://www.etsy.com/listing/1570382212/sun-kissed-bouquet"
+          "url": "https://www.etsy.com/listing/1570382212/sun-kissed-bouquet",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -3630,7 +3656,8 @@
       "etsySection": "",
       "etsyTitle": "Sun kissed Bouquet",
       "listedOn": "2023-10-09",
-      "mergeKey": "original:sun kissed bouquet"
+      "mergeKey": "original:sun kissed bouquet",
+      "hidden": true
     },
     {
       "id": "abstract-oil-painting-on-wood-panel-city-mood",
@@ -4474,7 +4501,10 @@
           "label": "Print, 11 × 14\"",
           "price": 20.92,
           "etsyListingId": 1851666573,
-          "url": "https://www.etsy.com/listing/1851666573/fine-art-prints-robin-redbreast-bathing"
+          "url": "https://www.etsy.com/listing/1851666573/fine-art-prints-robin-redbreast-bathing",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -4500,7 +4530,8 @@
       "etsySection": "",
       "etsyTitle": "Fine Art Prints, Robin Redbreast Bathing Watercolor Painting, Wall Decor, Home Office Art, Nature Lover Gift, Birdwatching Print",
       "listedOn": "2024-12-31",
-      "mergeKey": "print:robin redbreast bathing watercolor painting"
+      "mergeKey": "print:robin redbreast bathing watercolor painting",
+      "hidden": true
     },
     {
       "id": "tookany-park-oil-painting-framed-landscape-art",
@@ -4726,7 +4757,10 @@
           "price": 71.37,
           "etsyListingId": 4325122565,
           "url": "https://www.etsy.com/listing/4325122565/st-michaels-church-philadelphia-framed",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -4752,7 +4786,8 @@
       "etsySection": "Print",
       "etsyTitle": "St. Michael's Church Philadelphia: Framed Watercolor Art Print",
       "listedOn": "2025-06-23",
-      "mergeKey": "print:st michael s church philadelphia watercolor"
+      "mergeKey": "print:st michael s church philadelphia watercolor",
+      "hidden": true
     },
     {
       "id": "framed-cape-may-lighthouse-poster-coastal-beach-house-wall-a",
@@ -4777,7 +4812,10 @@
           "price": 71.37,
           "etsyListingId": 4325481559,
           "url": "https://www.etsy.com/listing/4325481559/framed-cape-may-lighthouse-poster",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -4803,7 +4841,8 @@
       "etsySection": "Print",
       "etsyTitle": "Framed Cape May Lighthouse Poster: Coastal Beach House Wall Art",
       "listedOn": "2025-06-24",
-      "mergeKey": "other:cape may lighthouse coastal beach house"
+      "mergeKey": "other:cape may lighthouse coastal beach house",
+      "hidden": true
     },
     {
       "id": "vibrant-floral-garden-banner-poly-poplin-canvas-outdoor-deco",
@@ -4823,7 +4862,10 @@
           "label": "Buy",
           "price": 21.92,
           "etsyListingId": 4339734734,
-          "url": "https://www.etsy.com/listing/4339734734/vibrant-floral-garden-banner-poly-poplin"
+          "url": "https://www.etsy.com/listing/4339734734/vibrant-floral-garden-banner-poly-poplin",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -4849,7 +4891,8 @@
       "etsySection": "",
       "etsyTitle": "Vibrant Floral Garden Banner: Poly Poplin-Canvas Outdoor Decor",
       "listedOn": "2025-07-22",
-      "mergeKey": "other:vibrant floral garden banner poly poplin outdoor"
+      "mergeKey": "other:vibrant floral garden banner poly poplin outdoor",
+      "hidden": true
     },
     {
       "id": "autumn-pumpkin-linocut-print-signed-limited-edition-art",
@@ -4925,7 +4968,10 @@
           "label": "11 × 14\"",
           "price": 150,
           "etsyListingId": 4357715610,
-          "url": "https://www.etsy.com/listing/4357715610/rusty-sunflower-painting"
+          "url": "https://www.etsy.com/listing/4357715610/rusty-sunflower-painting",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -4949,7 +4995,8 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Rusty Sunflower Painting",
       "listedOn": "2025-08-24",
-      "mergeKey": "original:rusty sunflower painting"
+      "mergeKey": "original:rusty sunflower painting",
+      "hidden": true
     },
     {
       "id": "nightfall-linocut-print-mushrooms-and-sparkles-signed-limite",
@@ -5155,8 +5202,7 @@
       "etsyTitle": "Water Lily Garden Art",
       "listedOn": "2025-08-27",
       "mergeKey": "original:water lily garden",
-      "soldOut": true,
-      "soldOn": "2026-10-22"
+      "hidden": true
     },
     {
       "id": "beach-ball-acrylic-ornament",
@@ -5330,7 +5376,10 @@
           "price": 35.36,
           "etsyListingId": 4382210924,
           "url": "https://www.etsy.com/listing/4382210924/framed-fox-winter-tree-canvas-print-cozy",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -5342,7 +5391,8 @@
       "etsySection": "",
       "etsyTitle": "Framed Fox & Winter Tree Canvas Print, Cozy Holiday Wall Art",
       "listedOn": "2025-10-06",
-      "mergeKey": "print:fox winter tree"
+      "mergeKey": "print:fox winter tree",
+      "hidden": true
     },
     {
       "id": "fox-christmas-tree-ornament",
@@ -5360,7 +5410,10 @@
           "label": "Buy",
           "price": 17.15,
           "etsyListingId": 4382215578,
-          "url": "https://www.etsy.com/listing/4382215578/fox-christmas-tree-ornament-acrylic"
+          "url": "https://www.etsy.com/listing/4382215578/fox-christmas-tree-ornament-acrylic",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -5385,7 +5438,8 @@
       "etsySection": "",
       "etsyTitle": "Fox Christmas Tree Ornament, Acrylic Holiday Decor, Nature Lover Gift",
       "listedOn": "2025-10-06",
-      "mergeKey": "other:fox christmas tree ornament"
+      "mergeKey": "other:fox christmas tree ornament",
+      "hidden": true
     },
     {
       "id": "ceramic-christmas-ornaments",
@@ -5680,8 +5734,7 @@
       "etsyTitle": "Summer Joy Original Watercolor",
       "listedOn": "2026-06-16",
       "mergeKey": "original:summer joy watercolor",
-      "soldOut": true,
-      "soldOn": "2026-10-18"
+      "hidden": true
     },
     {
       "id": "watercolor-sunflower-bouquet-colored-frame-poster",
@@ -5800,8 +5853,7 @@
       "etsyTitle": "Carefree Planter Original Watercolor",
       "listedOn": "2026-06-17",
       "mergeKey": "original:carefree planter watercolor",
-      "soldOut": true,
-      "soldOn": "2026-10-19"
+      "hidden": true
     },
     {
       "id": "watercolor-floral-vase-colored-frame-poster",
@@ -5940,7 +5992,10 @@
           "label": "Original, 5 × 7\"",
           "price": 70,
           "etsyListingId": 4526846577,
-          "url": "https://www.etsy.com/listing/4526846577/garden-melody-original-watercolor"
+          "url": "https://www.etsy.com/listing/4526846577/garden-melody-original-watercolor",
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5964,7 +6019,8 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Garden Melody Original Watercolor",
       "listedOn": "2026-06-23",
-      "mergeKey": "original:garden melody watercolor"
+      "mergeKey": "original:garden melody watercolor",
+      "hidden": true
     },
     {
       "id": "watercolor-floral-bouquet-colored-frame-poster",
@@ -5994,7 +6050,10 @@
           "price": 53.93,
           "etsyListingId": 4526854081,
           "url": "https://www.etsy.com/listing/4526854081/watercolor-floral-bouquet-colored-frame",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-10-28",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -6020,7 +6079,8 @@
       "etsySection": "",
       "etsyTitle": "Watercolor Floral Bouquet Colored Frame Poster | Tulips Daisies Wall Art",
       "listedOn": "2026-06-23",
-      "mergeKey": "other:watercolor floral bouquet colored frame"
+      "mergeKey": "other:watercolor floral bouquet colored frame",
+      "hidden": true
     },
     {
       "id": "buzzy-original-bee-painting",
@@ -8102,7 +8162,7 @@
         }
       ],
       "description": [
-        "This piece started as a cyanotype/sunprint of Hydrangea Petals. I then added watercolors and gold ink to make a whimsical colorful piece. This is done on watercolor paper and is an original. Available either in matted or matted in an 11x14 white mat. It is unframed"
+        "This Original piece started as a cyanotype/sunprint of Hydrangea Petals. I then added watercolors and gold ink to make a whimsical colorful piece. This is done on watercolor paper and is an original. Available either unmatted or matted in an 11x14 white mat. It is unframed"
       ],
       "tags": [
         "Colorful art",
@@ -8268,6 +8328,632 @@
       "etsyTitle": "Goat Study Print",
       "listedOn": "2026-10-21",
       "mergeKey": "print:goat study"
+    },
+    {
+      "id": "original-etching-greek-chapel",
+      "name": "Original Etching - Greek Chapel",
+      "category": "printmaking",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "7.75 × 9.75 in",
+      "images": [
+        "images/original-etching-greek-chapel/576106046.jpg",
+        "images/original-etching-greek-chapel/576106180.jpg",
+        "images/original-etching-greek-chapel/576224477.jpg"
+      ],
+      "options": [
+        {
+          "title": "Original Etching - Greek Chapel",
+          "label": "Original, 7.75 × 9.75\"",
+          "price": 100,
+          "etsyListingId": 182577050,
+          "url": "https://www.etsy.com/listing/182577050/original-etching-greek-chapel"
+        }
+      ],
+      "description": [
+        "This signed etching is in black and white on arches printmaking paper. It is of a Greek Chapel which was inspired by my daughters many trips to the beautiful country of Greece.  This is not framed but will come in a protective plastic sleeve.  The image measures 7.75 inches by 9.75 inches. The paper size is 11.50 by 13.75 inches.\nFree Shipping"
+      ],
+      "tags": [
+        "etching",
+        "chapel",
+        "cross",
+        "black",
+        "white",
+        "works on paper",
+        "printmaking",
+        "artist proof",
+        "art",
+        "signed",
+        "travel",
+        "window view",
+        "greek art"
+      ],
+      "etsySection": "Etchings",
+      "etsyTitle": "Original Etching - Greek Chapel",
+      "listedOn": "2014-03-13",
+      "mergeKey": "original:etching greek chapel"
+    },
+    {
+      "id": "original-etching-waterfall",
+      "name": "Original Etching - Waterfall",
+      "category": "printmaking",
+      "subjects": [
+        "Landscapes"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "9.75 × 7.75 in",
+      "images": [
+        "images/original-etching-waterfall/578705055.jpg",
+        "images/original-etching-waterfall/578705303.jpg",
+        "images/original-etching-waterfall/578586782.jpg"
+      ],
+      "options": [
+        {
+          "title": "Original Etching - Waterfall",
+          "label": "Original, 9.75 × 7.75\"",
+          "price": 100,
+          "etsyListingId": 183243200,
+          "url": "https://www.etsy.com/listing/183243200/original-etching-waterfall"
+        }
+      ],
+      "description": [
+        "This is an etching in black and white on quality printmaking paper.  It is numbered 2/5 and is signed by me. It is of a beautiful waterfall. This is inked intaglio and is hardground etching. it was made by laying a ground thinly on a heated metal plate and when cold an image was drawn with a sharp tool. The plate was then placed in acid where the image was bitten into the plate. It was then inked and transferred to the paper using a press. This is unframed and the measurements are image (9.75x7.75 inches) paper total 10.5x 12.25 inches.\nThis is not framed."
+      ],
+      "tags": [
+        "etching",
+        "works on paper",
+        "paper art",
+        "printmaking",
+        "black and white",
+        "nature",
+        "art",
+        "unframed",
+        "signed",
+        "hard ground",
+        "intaglio",
+        "waterfall art",
+        "landscape"
+      ],
+      "etsySection": "Etchings",
+      "etsyTitle": "Original Etching - Waterfall",
+      "listedOn": "2014-03-19",
+      "mergeKey": "original:etching waterfall"
+    },
+    {
+      "id": "red-poinsettia-original-framed-pastel-painting",
+      "name": "Red Poinsettia Original framed pastel painting",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "15 × 19 in",
+      "images": [
+        "images/red-poinsettia-original-framed-pastel-painting/630227279.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630122254.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630227635.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630122716.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630122966.jpg"
+      ],
+      "options": [
+        {
+          "title": "Red Poinsettia Original framed pastel painting",
+          "label": "Original, 15 × 19\", framed",
+          "price": 245,
+          "etsyListingId": 197169933,
+          "url": "https://www.etsy.com/listing/197169933/red-poinsettia-original-framed-pastel"
+        }
+      ],
+      "description": [
+        "This is a pastel painting of red poinsettias. It is framed in a gold frame, triple matted, under glass. The close up of the mat will show the pretty design of the mat. Every year I do a painting for my Christmas card.  This is a painting that I did in 2001.\nThe measurements are frame (15x19 inches) , image (9x12 inches)."
+      ],
+      "tags": [
+        "Christmas",
+        "poinsettia",
+        "red",
+        "holiday",
+        "pastel",
+        "painting",
+        "art",
+        "winter",
+        "home decor",
+        "florist",
+        "floral",
+        "flower",
+        "framed"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Red Poinsettia Original framed pastel painting",
+      "listedOn": "2014-07-21",
+      "mergeKey": "original:red poinsettia pastel painting"
+    },
+    {
+      "id": "tres-manzanas",
+      "name": "Tres Manzanas",
+      "category": "paintings",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/tres-manzanas/3333452599.jpg",
+        "images/tres-manzanas/3333452669.jpg"
+      ],
+      "options": [
+        {
+          "title": "Tres Manzanas",
+          "label": "Buy",
+          "price": 65,
+          "etsyListingId": 1059420432,
+          "url": "https://www.etsy.com/listing/1059420432/tres-manzanas"
+        }
+      ],
+      "description": [
+        "This piece is a watercolor painting on Arches 140lb cold pressed paper. Acid Free. This is not framed.\nI placed three apples on the table and painted them. Just something a little different for me."
+      ],
+      "tags": [
+        "apple art",
+        "apple watercolor",
+        "tres manzanas",
+        "3 apples art",
+        "red apples",
+        "apple picking",
+        "apple still life",
+        "fruit still life",
+        "simplicity",
+        "apple tree",
+        "fruit art",
+        "country art",
+        "orchard"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Tres Manzanas",
+      "listedOn": "2021-08-24",
+      "mergeKey": "original:tres manzanas"
+    },
+    {
+      "id": "his-eyes-how-they-twinkled-santa-art",
+      "name": "His Eyes How They Twinkled! Santa Art",
+      "category": "paintings",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/his-eyes-how-they-twinkled-santa-art/3385990557.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3338294192.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3338294274.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3355232086.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3402926027.jpg"
+      ],
+      "options": [
+        {
+          "title": "His Eyes How They Twinkled! Santa Art",
+          "label": "Buy",
+          "price": 45,
+          "etsyListingId": 1087128859,
+          "url": "https://www.etsy.com/listing/1087128859/his-eyes-how-they-twinkled-santa-art"
+        }
+      ],
+      "description": [
+        "I did this painting with watercolor, ink and gouache. A cheerful Santa. It is painted on 140lb cold pressed, acid free watercolor paper."
+      ],
+      "tags": [
+        "santa art",
+        "santa claus",
+        "Christmas art",
+        "Holiday art",
+        "Cheerful art",
+        "Winter art",
+        "St Nick",
+        "Childrens art",
+        "December art",
+        "father christmas",
+        "Kris Kringle",
+        "whimsical",
+        "seasons greetings"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "His Eyes How They Twinkled! Santa Art",
+      "listedOn": "2021-09-18",
+      "mergeKey": "original:his eyes how they twinkled santa"
+    },
+    {
+      "id": "a-winter-day-oil-painting",
+      "name": "A Winter Day Oil painting",
+      "category": "paintings",
+      "subjects": [
+        "Landscapes"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/a-winter-day-oil-painting/4262769005.jpg"
+      ],
+      "options": [
+        {
+          "title": "A Winter Day Oil painting",
+          "label": "Buy",
+          "price": 150,
+          "etsyListingId": 1317108911,
+          "url": "https://www.etsy.com/listing/1317108911/a-winter-day-oil-painting"
+        }
+      ],
+      "description": [
+        "I was inspired to paint this winter scene from looking at the trees outside my window."
+      ],
+      "tags": [
+        "winter art",
+        "tree art",
+        "winter trees",
+        "snow art",
+        "landscape",
+        "winter scene",
+        "alla prima"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "A Winter Day Oil painting",
+      "listedOn": "2022-10-02",
+      "mergeKey": "original:a winter day oil painting"
+    },
+    {
+      "id": "thoughtfulness-original-oil-painting-flowers",
+      "name": "Thoughtfulness original oil painting (flowers)",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/thoughtfulness-original-oil-painting-flowers/5059628158.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5107858797.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5059628522.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5107859341.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5107859395.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5059629078.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5059629152.jpg"
+      ],
+      "options": [
+        {
+          "title": "Thoughtfulness original oil painting (flowers)",
+          "label": "Original",
+          "price": 150,
+          "etsyListingId": 1516718135,
+          "url": "https://www.etsy.com/listing/1516718135/thoughtfulness-original-oil-painting"
+        }
+      ],
+      "description": [
+        "A very thoughtful person gave me this bouquet of a variety of flowers."
+      ],
+      "tags": [
+        "floral art",
+        "flower art",
+        "still life",
+        "roses",
+        "hydrangeas",
+        "bouquet",
+        "garden art",
+        "bright colors",
+        "floral variety",
+        "red roses",
+        "white hydrangeas",
+        "blue hydrangeas",
+        "summer flowers"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Thoughtfulness original oil painting (flowers)",
+      "listedOn": "2023-07-04",
+      "mergeKey": "original:thoughtfulness oil painting flowers"
+    },
+    {
+      "id": "loops-abstract-painting",
+      "name": "Loops Abstract Painting",
+      "category": "paintings",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/loops-abstract-painting/6254028861.jpg",
+        "images/loops-abstract-painting/6254028915.jpg",
+        "images/loops-abstract-painting/6205998552.jpg",
+        "images/loops-abstract-painting/6205998504.jpg",
+        "images/loops-abstract-painting/6205998468.jpg"
+      ],
+      "options": [
+        {
+          "title": "Loops Abstract Painting",
+          "label": "Buy",
+          "price": 154,
+          "etsyListingId": 1766130592,
+          "url": "https://www.etsy.com/listing/1766130592/loops-abstract-painting"
+        }
+      ],
+      "description": [
+        "Layers and layers of loops of different sizes and colors are represented in this original abstract acrylic painting."
+      ],
+      "tags": [
+        "Abstract Art",
+        "Loops",
+        "loopy",
+        "circles",
+        "ellipses",
+        "ovals",
+        "colorful",
+        "patterned art",
+        "whimsical",
+        "black",
+        "pink",
+        "green",
+        "blue"
+      ],
+      "etsySection": "",
+      "etsyTitle": "Loops Abstract Painting",
+      "listedOn": "2024-08-18",
+      "mergeKey": "original:loops abstract painting"
+    },
+    {
+      "id": "irish-cottage-oil-painting",
+      "name": "Irish Cottage Oil Painting",
+      "category": "paintings",
+      "subjects": [
+        "Florals",
+        "Landscapes"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/irish-cottage-oil-painting/6614184065.jpg",
+        "images/irish-cottage-oil-painting/6614184063.jpg",
+        "images/irish-cottage-oil-painting/6566067974.jpg",
+        "images/irish-cottage-oil-painting/6614184055.jpg",
+        "images/irish-cottage-oil-painting/6566067964.jpg",
+        "images/irish-cottage-oil-painting/6566067978.jpg",
+        "images/irish-cottage-oil-painting/6566067946.jpg",
+        "images/irish-cottage-oil-painting/6614184047.jpg"
+      ],
+      "options": [
+        {
+          "title": "Irish Cottage Oil Painting",
+          "label": "Buy",
+          "price": 154,
+          "etsyListingId": 1858262635,
+          "url": "https://www.etsy.com/listing/1858262635/irish-cottage-oil-painting"
+        }
+      ],
+      "description": [
+        "Original signed oil painting of an Irish Cottage. A cottage surrounded by lush greens and flowers."
+      ],
+      "tags": [
+        "Irish cottage",
+        "irish art",
+        "cottage art",
+        "irish landscape",
+        "st patricks day",
+        "garden art",
+        "irish garden",
+        "oil painting",
+        "green",
+        "ireland art",
+        "original art",
+        "thatched roof",
+        "mcveigh art"
+      ],
+      "etsySection": "Landscapes",
+      "etsyTitle": "Irish Cottage Oil Painting",
+      "listedOn": "2025-01-13",
+      "mergeKey": "original:irish cottage oil painting"
+    },
+    {
+      "id": "wildwood-original-oil-painting",
+      "name": "Wildwood Original Oil Painting",
+      "category": "paintings",
+      "subjects": [
+        "Beach"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "10 × 10 in",
+      "images": [
+        "images/wildwood-original-oil-painting/7218996622.jpg",
+        "images/wildwood-original-oil-painting/7218996744.jpg",
+        "images/wildwood-original-oil-painting/7218996766.jpg",
+        "images/wildwood-original-oil-painting/7218996668.jpg",
+        "images/wildwood-original-oil-painting/7218996794.jpg",
+        "images/wildwood-original-oil-painting/7218996798.jpg",
+        "images/wildwood-original-oil-painting/7266963773.jpg",
+        "images/wildwood-original-oil-painting/7266963881.jpg",
+        "images/wildwood-original-oil-painting/7266963843.jpg",
+        "images/wildwood-original-oil-painting/7266963921.jpg"
+      ],
+      "options": [
+        {
+          "title": "Wildwood Original Oil Painting",
+          "label": "Original, 10 × 10\"",
+          "price": 150,
+          "etsyListingId": 4373705560,
+          "url": "https://www.etsy.com/listing/4373705560/wildwood-original-oil-painting"
+        }
+      ],
+      "description": [
+        "Oil painting on wood of the iconic Wildwood sign in Wildwood, NJ. This painting is ready to hang and does not need a frame. Perfect for any Wildwood beach house. Measures 10x10 inches."
+      ],
+      "tags": [
+        "wildwood art",
+        "beach art",
+        "jersey shore art",
+        "wildwood sign",
+        "seashore art",
+        "beach house",
+        "mcveigh art",
+        "beach ball art",
+        "boardwalk art",
+        "bright colors",
+        "new jersey art",
+        "shore house decor",
+        "blue sky"
+      ],
+      "etsySection": "Beach art",
+      "etsyTitle": "Wildwood Original Oil Painting",
+      "listedOn": "2025-09-21",
+      "mergeKey": "original:wildwood oil painting"
+    },
+    {
+      "id": "white-wolf-original-oil-painting",
+      "name": "White Wolf Original Oil Painting",
+      "category": "paintings",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "8 × 10 in",
+      "images": [
+        "images/white-wolf-original-oil-painting/7642909353.jpg",
+        "images/white-wolf-original-oil-painting/7594955834.jpg",
+        "images/white-wolf-original-oil-painting/7594955844.jpg",
+        "images/white-wolf-original-oil-painting/7594955860.jpg",
+        "images/white-wolf-original-oil-painting/7642909327.jpg",
+        "images/white-wolf-original-oil-painting/7642909383.jpg",
+        "images/white-wolf-original-oil-painting/7642909377.jpg",
+        "images/white-wolf-original-oil-painting/7594955836.jpg",
+        "images/white-wolf-original-oil-painting/7642909347.jpg",
+        "images/white-wolf-original-oil-painting/7594955862.jpg"
+      ],
+      "options": [
+        {
+          "title": "White Wolf Original Oil Painting",
+          "label": "Original, 8 × 10\"",
+          "price": 100,
+          "etsyListingId": 4440015639,
+          "url": "https://www.etsy.com/listing/4440015639/white-wolf-original-oil-painting"
+        }
+      ],
+      "description": [
+        "Original 8x10 oil painting of a white wolf against a snowy night sky. Ready to hang in your home or office."
+      ],
+      "tags": [
+        "wolf",
+        "white wolf",
+        "winter night",
+        "celestial",
+        "animal art",
+        "8x10",
+        "small painting",
+        "blue",
+        "white",
+        "mcveigh art",
+        "nighttime art",
+        "snowy",
+        "original art"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "White Wolf Original Oil Painting",
+      "listedOn": "2026-01-12",
+      "mergeKey": "original:white wolf oil painting"
+    },
+    {
+      "id": "starry-night-cyanotype",
+      "name": "Starry Night Cyanotype",
+      "category": "cyanotypes",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "other",
+      "oneOfAKind": false,
+      "images": [
+        "images/starry-night-cyanotype/8731331180.jpg",
+        "images/starry-night-cyanotype/8779159979.jpg",
+        "images/starry-night-cyanotype/8731331488.jpg",
+        "images/starry-night-cyanotype/8779159947.jpg",
+        "images/starry-night-cyanotype/8731331480.jpg",
+        "images/starry-night-cyanotype/8779159945.jpg",
+        "images/starry-night-cyanotype/8731331524.jpg",
+        "images/starry-night-cyanotype/8779159977.jpg"
+      ],
+      "options": [
+        {
+          "title": "Starry Night Cyanotype",
+          "label": "Buy",
+          "price": 35,
+          "etsyListingId": 4601951092,
+          "url": "https://www.etsy.com/listing/4601951092/starry-night-cyanotype",
+          "hasVariations": true
+        }
+      ],
+      "description": [
+        "Starry Night was made as a Cyanotype/sunprint. A cyanotype is a photographic process that uses the sun to process the image. I used sunflower petals, vinegar, turmeric, and a bit of watercolor in a process called a wet cyanotype to make this. This gives it a bit of color besides the blue. The image is a lovely abstract that may remind you of a Starry Night.  It comes matted in a white mat sealed in a plastic sleeve."
+      ],
+      "tags": [
+        "cyanotype",
+        "sunprint",
+        "abstract",
+        "sunflower petals",
+        "watercolor paper",
+        "starry night",
+        "nature art",
+        "botanical vibes",
+        "art pattern",
+        "unframed",
+        "matted",
+        "8x10",
+        "11x14"
+      ],
+      "etsySection": "Cyanotypes/Sunprint",
+      "etsyTitle": "Starry Night Cyanotype",
+      "listedOn": "2026-10-23",
+      "mergeKey": "other:starry night cyanotype"
+    },
+    {
+      "id": "artist-tools-original-cyanotype",
+      "name": "Artist Tools Original Cyanotype",
+      "category": "cyanotypes",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "5 × 7 in",
+      "images": [
+        "images/artist-tools-original-cyanotype/8784237501.jpg",
+        "images/artist-tools-original-cyanotype/8736412682.jpg",
+        "images/artist-tools-original-cyanotype/8736412684.jpg",
+        "images/artist-tools-original-cyanotype/8736412698.jpg",
+        "images/artist-tools-original-cyanotype/8736412686.jpg",
+        "images/artist-tools-original-cyanotype/8736412674.jpg",
+        "images/artist-tools-original-cyanotype/8736412654.jpg",
+        "images/artist-tools-original-cyanotype/8784237805.jpg",
+        "images/artist-tools-original-cyanotype/8784237841.jpg",
+        "images/artist-tools-original-cyanotype/8784237835.jpg"
+      ],
+      "options": [
+        {
+          "title": "Artist Tools Original Cyanotype",
+          "label": "Original, 5 × 7\"",
+          "price": 49,
+          "etsyListingId": 4602528760,
+          "url": "https://www.etsy.com/listing/4602528760/artist-tools-original-cyanotype"
+        }
+      ],
+      "description": [
+        "Original 5x7 Cyanotype in a white 8x10 Mat. A cyanotype also known as a sunprint is a photographic process that uses the sun or UV light to process the image. In this piece i placed paint brushes on the coated paper under glass in the sun. Once done i then used a gold gel pen and markers to compete the image."
+      ],
+      "tags": [
+        "cyanotype",
+        "sunprint",
+        "art brushes",
+        "artist gift",
+        "studio tools",
+        "mixed media",
+        "works on paper",
+        "8x10",
+        "art vibe",
+        "colorful brushes",
+        "matted",
+        "unframed",
+        "whimsical art"
+      ],
+      "etsySection": "Cyanotypes/Sunprint",
+      "etsyTitle": "Artist Tools Original Cyanotype",
+      "listedOn": "2026-10-24",
+      "mergeKey": "original:artist tools cyanotype"
     }
   ]
 }
