@@ -6508,26 +6508,26 @@
       "oneOfAKind": true,
       "size": "8.5 × 11 in",
       "images": [
-        "images/hydrangea-garden-original-watercolor/8285440938.jpg",
-        "images/hydrangea-garden-original-watercolor/8333354439.jpg",
-        "images/hydrangea-garden-original-watercolor/8285440918.jpg",
-        "images/hydrangea-garden-original-watercolor/8333354441.jpg",
         "images/hydrangea-garden-original-watercolor/8333354435.jpg",
-        "images/hydrangea-garden-original-watercolor/8333354447.jpg",
-        "images/hydrangea-garden-original-watercolor/8285440950.jpg",
-        "images/hydrangea-garden-original-watercolor/8285440940.jpg"
+        "images/hydrangea-garden-original-watercolor/8285440940.jpg",
+        "images/hydrangea-garden-original-watercolor/8758695618.jpg",
+        "images/hydrangea-garden-original-watercolor/8806507329.jpg",
+        "images/hydrangea-garden-original-watercolor/8758695598.jpg",
+        "images/hydrangea-garden-original-watercolor/8758695614.jpg",
+        "images/hydrangea-garden-original-watercolor/8806507315.jpg"
       ],
       "options": [
         {
           "title": "Hydrangea Garden Original Watercolor",
           "label": "Original, 8.5 × 11\"",
-          "price": 100,
+          "price": 35,
           "etsyListingId": 4542307730,
-          "url": "https://www.etsy.com/listing/4542307730/hydrangea-garden-original-watercolor"
+          "url": "https://www.etsy.com/listing/4542307730/hydrangea-garden-original-watercolor",
+          "hasVariations": true
         }
       ],
       "description": [
-        "I was inspired to paint this original watercolor from the beautiful hydrangeas blooming in my garden. This piece measures 8.5 x 11 inches. This is not framed."
+        "I was inspired to paint this original watercolor from the beautiful hydrangeas blooming in my garden.  This is a matted print. It is unframed."
       ],
       "tags": [
         "hydrangea art",
@@ -6545,7 +6545,7 @@
         "Marita"
       ],
       "etsySection": "Floral Art",
-      "etsyTitle": "Hydrangea Garden Original Watercolor",
+      "etsyTitle": "Hydrangea Garden Watercolor Print",
       "listedOn": "2026-07-22",
       "mergeKey": "original:hydrangea garden watercolor"
     },
@@ -8954,6 +8954,57 @@
       "etsyTitle": "Artist Tools Original Cyanotype",
       "listedOn": "2026-10-24",
       "mergeKey": "original:artist tools cyanotype"
+    },
+    {
+      "id": "autumn-at-peace-valley-print",
+      "name": "Autumn At Peace Valley Print",
+      "category": "prints",
+      "subjects": [
+        "Landscapes",
+        "Bucks County"
+      ],
+      "kind": "print",
+      "oneOfAKind": false,
+      "images": [
+        "images/autumn-at-peace-valley-print/8758783926.jpg",
+        "images/autumn-at-peace-valley-print/8806595871.jpg",
+        "images/autumn-at-peace-valley-print/8758784284.jpg",
+        "images/autumn-at-peace-valley-print/8758784280.jpg",
+        "images/autumn-at-peace-valley-print/8806595877.jpg",
+        "images/autumn-at-peace-valley-print/8806595869.jpg"
+      ],
+      "options": [
+        {
+          "title": "Autumn At Peace Valley Print",
+          "label": "Print",
+          "price": 35,
+          "etsyListingId": 4605133920,
+          "url": "https://www.etsy.com/listing/4605133920/autumn-at-peace-valley-print",
+          "hasVariations": true
+        }
+      ],
+      "description": [
+        "Matted print of my pastel painting “Autumn At Peace Valley” . This one’s matted in a white mat , it is not framed. Peace Valley Park is located in Bucks County, Pa. It is beautiful in the fall.  The colors are stunning."
+      ],
+      "tags": [
+        "peace valley art",
+        "lake galena",
+        "bucks county art",
+        "autumn pathway",
+        "autumn colors",
+        "walking trail",
+        "nature art",
+        "trees",
+        "pastel",
+        "print",
+        "matted",
+        "white mat",
+        "zen"
+      ],
+      "etsySection": "Bucks County Art",
+      "etsyTitle": "Autumn At Peace Valley Print",
+      "listedOn": "2026-10-28",
+      "mergeKey": "print:autumn at peace valley"
     }
   ]
 }
