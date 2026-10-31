@@ -3927,7 +3927,10 @@
           "label": "Original",
           "price": 125,
           "etsyListingId": 1717157910,
-          "url": "https://www.etsy.com/listing/1717157910/original-pink-tiger-lily-painting-floral"
+          "url": "https://www.etsy.com/listing/1717157910/original-pink-tiger-lily-painting-floral",
+          "available": false,
+          "goneOn": "2026-10-31",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -3951,7 +3954,8 @@
       "etsySection": "",
       "etsyTitle": "Original Pink Tiger Lily Painting: Floral Garden Art",
       "listedOn": "2024-05-14",
-      "mergeKey": "original:pink tiger lily painting floral garden"
+      "mergeKey": "original:pink tiger lily painting floral garden",
+      "hidden": true
     },
     {
       "id": "morning-glory-framed-painting",
@@ -6110,7 +6114,10 @@
           "label": "Original, 9 × 12\"",
           "price": 100,
           "etsyListingId": 4529975556,
-          "url": "https://www.etsy.com/listing/4529975556/buzzy-original-bee-painting"
+          "url": "https://www.etsy.com/listing/4529975556/buzzy-original-bee-painting",
+          "available": false,
+          "goneOn": "2026-10-31",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -6134,7 +6141,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Buzzy Original Bee Painting",
       "listedOn": "2026-06-29",
-      "mergeKey": "original:buzzy bee painting"
+      "mergeKey": "original:buzzy bee painting",
+      "hidden": true
     },
     {
       "id": "mini-bee-oil-painting",
@@ -6164,7 +6172,10 @@
           "label": "5 × 7\"",
           "price": 50,
           "etsyListingId": 4529969681,
-          "url": "https://www.etsy.com/listing/4529969681/mini-bee-oil-painting"
+          "url": "https://www.etsy.com/listing/4529969681/mini-bee-oil-painting",
+          "available": false,
+          "goneOn": "2026-10-31",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -6188,7 +6199,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Mini Bee Oil Painting",
       "listedOn": "2026-06-29",
-      "mergeKey": "original:bee oil painting"
+      "mergeKey": "original:bee oil painting",
+      "hidden": true
     },
     {
       "id": "kool-kat-original-oil-painting",
