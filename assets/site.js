@@ -150,7 +150,7 @@
     const here = SUBJECTS.filter((s) => all.some((p) => (p.subjects || []).includes(s)));
     const list = subject ? all.filter((p) => (p.subjects || []).includes(subject)) : all;
     return `<section class="wrap block">
-      <h1>${esc(c.title)}</h1>
+      <h1 class="splash-heading" data-section="${esc(c.id)}">${esc(c.title)}</h1>
       <p class="lede">${esc(c.note)}</p>
       ${here.length ? `<nav class="filters" aria-label="Filter by subject">
         <a href="#${esc(c.id)}"${subject ? "" : ' aria-current="true"'}>All</a>
