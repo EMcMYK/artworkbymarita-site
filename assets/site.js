@@ -69,12 +69,13 @@
   function navLinks(active) {
     const cur = (id) => active === id ? ' aria-current="page"' : "";
     const sections = CATEGORIES.filter((c) => inCategory(c.id).length || !ALL.length);
-    return sections.map((c) => `<a href="#${esc(c.id)}"${cur(c.id)}>${esc(c.title)}</a>`).join("") +
+    // Each section gets its own brush-line color (data-section, in style.css).
+    return sections.map((c) => `<a href="#${esc(c.id)}" data-section="${esc(c.id)}"${cur(c.id)}>${esc(c.title)}</a>`).join("") +
       (soldGalleryOn() ? `<a href="#sold"${cur("sold")}>Sold</a>` : "") +
-      `<a href="#about"${cur("about")}>About</a><a href="#contact"${cur("contact")}>Contact</a>`;
+      `<a href="#about"${cur("about")}>About</a><a class="nav-contact" href="#contact"${cur("contact")}>Contact me</a>`;
   }
   function renderChrome(active) {
-    document.getElementById("siteName").textContent = CONFIG.siteName || "Marita McVeigh";
+    document.querySelector("#siteName span").textContent = CONFIG.siteName || "Marita McVeigh";
     document.getElementById("nav").innerHTML = navLinks(active);
     document.getElementById("menuPanel").innerHTML = navLinks(active);
     setMenu(false);
@@ -83,7 +84,7 @@
     const btn = document.getElementById("menuBtn"), panel = document.getElementById("menuPanel");
     panel.hidden = !open;
     btn.setAttribute("aria-expanded", String(open));
-    btn.textContent = open ? "Close" : "Menu";
+    btn.setAttribute("aria-label", open ? "Close menu" : "Menu");
   }
   function wireMenu() {
     const btn = document.getElementById("menuBtn"), panel = document.getElementById("menuPanel");
@@ -106,22 +107,33 @@
   }
 
   // ---------- pages ----------
+  // Front-page hero (Hero-1 in Figma): a studio photo with the heading over the bright window.
+  // Phones get a closer crop of the same photo (her face, the bouquet and her palette).
+  function hero(hasNewest) {
+    return `<section class="hero hero-1">
+      <div class="hero-photo">
+        <picture>
+          <source media="(max-width: 759px)" type="image/webp" srcset="images/about/studio-easel-close.webp">
+          <source media="(max-width: 759px)" srcset="images/about/studio-easel-close.jpg">
+          <source type="image/webp" srcset="images/about/studio-easel-wide.webp">
+          <img src="images/about/studio-easel-wide.jpg" alt="Marita at her easel in her studio, painting a bouquet of flowers" width="2426" height="1452" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero-text">
+          <h1>Painting the joyful part of life</h1>
+          ${hasNewest ? `<a class="hero-btn" href="#newest">See what’s new</a>` : ""}
+        </div>
+      </div>
+    </section>`;
+  }
+
   function homePage() {
     if (!ALL.length) return `<div class="wrap"><section class="intro"><h1>${esc(CONFIG.siteName)}</h1><p>${esc(CONFIG.tagline)}</p>
       <p class="empty">Her artwork shows up here after the first sync from Etsy.${CONFIG.etsyUrl ? ` Until then, see it all on <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">her Etsy shop</a>.` : ""}</p></section></div>`;
     const sale = forSale();
-    const lead = newestFirst(sale.filter((p) => p.kind === "original" && p.images?.length))[0] || newestFirst(sale)[0];
     const rooms = CATEGORIES.map((c) => ({ c, list: inCategory(c.id) })).filter((x) => x.list.length);
-    const newest = newestFirst(sale).filter((p) => p !== lead).slice(0, 8);
+    const newest = newestFirst(sale).slice(0, 8);
     return `
-      <section class="intro wrap">
-        <div class="intro-text">
-          <h1>${esc(CONFIG.siteName)}</h1>
-          <p>${esc(CONFIG.tagline)}</p>
-        </div>
-        ${lead ? `<a class="lead" href="#${esc(lead.id)}">${picture(lead, 0, true)}
-          <span class="lead-cap"><span class="card-title">${esc(lead.name)}</span><span class="card-meta">${esc([kindLine(lead), priceText(lead)].filter(Boolean).join(" · "))}</span></span></a>` : ""}
-      </section>
+      ${hero(newest.length > 0)}
       <section class="wrap rooms" aria-label="Browse by kind">
         ${rooms.map(({ c, list }) => `<a class="room" href="#${esc(c.id)}">
           ${picture(list.find((p) => p.images?.length) || list[0])}
@@ -129,7 +141,7 @@
           <span class="card-meta">${esc(c.note)} · ${list.length} ${list.length === 1 ? "piece" : "pieces"}</span>
         </a>`).join("")}
       </section>
-      ${newest.length ? `<section class="wrap block"><h2>Newest work</h2>${grid(newest)}</section>` : ""}
+      ${newest.length ? `<section class="wrap block" id="newest"><h2 tabindex="-1">Newest work</h2>${grid(newest)}</section>` : ""}
       ${soldGalleryOn() ? `<section class="wrap block"><h2>Sold</h2><p class="lede">Originals that have found a home. <a href="#sold">See the Sold gallery</a></p></section>` : ""}`;
   }
 
@@ -289,9 +301,16 @@
     } else if (hash === "about" || hash === "privacy") {
       renderChrome(hash); textPage(hash); document.title = `${hash === "about" ? "About" : "Privacy"} · ${name}`;
     } else {
-      const missing = hash && hash !== "top";
+      const missing = hash && hash !== "top" && hash !== "newest";
       app.innerHTML = (missing ? `<div class="wrap"><p class="notice" role="status">That piece isn't on the site anymore. Here's everything that is.</p></div>` : "") + homePage();
       renderChrome(""); document.title = `${name} · Artwork`;
+      // "See what's new" (/#newest): glide down to the newest work and put keyboard focus there.
+      const newest = hash === "newest" && document.querySelector("#newest h2");
+      if (newest) {
+        newest.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "start" });
+        newest.focus({ preventScroll: true });
+        return;
+      }
     }
     window.scrollTo(0, 0);
   }

@@ -19,6 +19,22 @@
   --display: "Alegreya", Georgia, "Times New Roman", serif;
   --text: "Alegreya Sans", "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
+
+  /* Marita's brand (brand guide, Oct 2026). For now only the header and the front-page hero use
+     these; the rest of the site keeps the tokens above until it's restyled. */
+  --sand: #efe4d0;
+  --paper: #f7f1e6;
+  --warm-ink: #2e2620;
+  --clay: #6b5e52;
+  --cyanotype: #1f4e8c;
+  --line-paintings: #b73557;
+  --line-cyanotypes: #1f4e8c;
+  --line-printmaking: #88431d;
+  --line-prints: #316429;
+  --line-gifts: #8a6200;
+  --brand-heading: "Alegreya Sans", "Trebuchet MS", sans-serif;
+  --brand-body: "Figtree", Helvetica, Arial, sans-serif;
+  --gutter: 24px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -46,21 +62,41 @@ h2 { font-size: clamp(22px, 3vw, 28px); }
 .notice { margin: 20px 0 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--mat); }
 .fineprint { font-size: 14px; color: var(--muted); }
 
-/* header */
-.header { border-bottom: 1px solid var(--line); background: var(--wall); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 14px; }
-.name { font-family: var(--display); font-size: 26px; color: var(--ink); text-decoration: none; white-space: nowrap; }
-.nav { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; }
-.nav a, .menu-panel a { color: var(--ink); text-decoration: none; }
-.nav a:hover, .nav a[aria-current] { color: var(--blue); text-decoration: underline; text-decoration-thickness: 2px; }
-.menu-btn { display: none; font: inherit; font-weight: 500; color: var(--ink); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
-.menu-panel { display: flex; flex-direction: column; border-top: 1px solid var(--line); padding: 6px max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px)); }
+/* header (brand look): tulip and name, section links over brush lines, "Contact me" button */
+.header { background: var(--sand); color: var(--warm-ink); font-family: var(--brand-body); color-scheme: light; border-bottom: 1px solid rgba(46, 38, 32, .08); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 84px; max-width: 1440px; margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+.name { display: flex; align-items: center; gap: 17px; font-family: var(--brand-heading); font-weight: 500; font-size: 25px; line-height: 1; color: var(--cyanotype); text-decoration: none; white-space: nowrap; }
+.name img { width: 28px; height: 49px; }
+.nav { display: flex; align-items: center; gap: clamp(22px, 2.9vw, 42px); }
+.nav a, .menu-panel a { color: var(--warm-ink); text-decoration: none; font-weight: 500; font-size: 18px; line-height: 1.6; }
+/* a hand-painted line under each section, in that section's color */
+.nav a[data-section] { position: relative; padding-bottom: 11px; margin-top: 11px; }
+.nav a[data-section]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--section-line);
+  -webkit-mask: url(menu-line.svg) center / 100% 100% no-repeat; mask: url(menu-line.svg) center / 100% 100% no-repeat; }
+[data-section="paintings"] { --section-line: var(--line-paintings); }
+[data-section="cyanotypes"] { --section-line: var(--line-cyanotypes); }
+[data-section="printmaking"] { --section-line: var(--line-printmaking); }
+[data-section="prints"] { --section-line: var(--line-prints); }
+[data-section="gifts"] { --section-line: var(--line-gifts); }
+.nav a:not([data-section]):not(.nav-contact):hover, .nav a:not(.nav-contact)[aria-current] { color: var(--cyanotype); }
+.nav a[data-section][aria-current]::after { height: 7px; }
+.nav .nav-contact { margin-left: clamp(0px, 3vw - 12px, 8px); padding: 8px 16px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); white-space: nowrap; }
+.nav .nav-contact:hover { filter: brightness(1.15); }
+.header :focus-visible { outline-color: var(--cyanotype); }
+.menu-btn { display: none; place-items: center; width: 44px; height: 44px; margin-right: -10px; color: var(--cyanotype); background: none; border: 0; border-radius: 6px; cursor: pointer; }
+.menu-btn svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.menu-btn .menu-close, .menu-btn[aria-expanded="true"] .menu-open { display: none; }
+.menu-btn[aria-expanded="true"] .menu-close { display: inline; }
+.menu-panel { display: flex; flex-direction: column; border-top: 1px solid rgba(46, 38, 32, .1); padding: 6px max(var(--gutter), env(safe-area-inset-right, 0px)) 16px max(var(--gutter), env(safe-area-inset-left, 0px)); }
 .menu-panel[hidden] { display: none; }
-.menu-panel a { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 19px; }
+.menu-panel a { padding: 11px 0; border-bottom: 1px solid rgba(46, 38, 32, .1); }
+.menu-panel a[data-section] { border-left: 5px solid var(--section-line); padding-left: 12px; }
 .menu-panel a:last-child { border-bottom: 0; }
-.menu-panel a[aria-current] { color: var(--blue); }
-@media (max-width: 860px) { .nav { display: none; } .menu-btn { display: inline-block; } }
-@media (min-width: 861px) { .menu-panel { display: none !important; } }
+.menu-panel a[aria-current] { color: var(--cyanotype); }
+.menu-panel .nav-contact { margin-top: 12px; padding: 10px 16px; border: 0; border-radius: 6px; background: var(--cyanotype); color: var(--paper); text-align: center; }
+@media (max-width: 1099px) { .nav { display: none; } .menu-btn { display: grid; } }
+@media (min-width: 1100px) { .menu-panel { display: none !important; } }
+@media (max-width: 520px) { .header-inner { min-height: 76px; } .name { font-size: 22px; gap: 15px; } .name img { width: 25px; height: 44px; } }
 
 /* a piece on its mat: always whole, never cropped */
 .mat { background: var(--mat); box-shadow: var(--shadow); aspect-ratio: 4 / 5; padding: 8%; display: grid; place-items: center; }
@@ -90,6 +126,29 @@ h2 { font-size: clamp(22px, 3vw, 28px); }
 @media (max-width: 760px) {
   .intro { grid-template-columns: 1fr; gap: 24px; padding-block: 28px 8px; }
   .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; }
+}
+
+/* front-page hero (brand look). Studio photos can be cropped; artwork never is. */
+.hero { background: var(--sand); color: var(--warm-ink); font-family: var(--brand-body); color-scheme: light; padding: 35px max(var(--gutter), env(safe-area-inset-right, 0px)) 56px max(var(--gutter), env(safe-area-inset-left, 0px)); }
+.hero h1 { font-family: var(--brand-heading); font-weight: 500; font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; color: var(--warm-ink); text-wrap: balance; }
+.hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); font-weight: 500; font-size: 18px; line-height: 1.6; text-decoration: none; }
+.hero-btn:hover { filter: brightness(1.15); }
+.hero :focus-visible { outline-color: var(--cyanotype); }
+#newest h2 { scroll-margin-top: 24px; }
+#newest h2:focus { outline: none; }
+
+/* Hero-1: heading and button over the bright window, top left of the photo */
+.hero-1 .hero-photo { position: relative; max-width: 1213px; margin: 0 auto; aspect-ratio: 1213 / 726; border-radius: 8px; overflow: hidden; }
+.hero-1 picture, .hero-1 img { width: 100%; height: 100%; }
+.hero-1 img { object-fit: cover; }
+.hero-1 .hero-text { position: absolute; inset: 0 auto auto 0; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 16px 40px; max-width: min(560px, 60%);
+  background: radial-gradient(ellipse 120% 100% at 0 0, rgba(243, 243, 243, .55), rgba(243, 243, 243, 0) 70%); }
+@media (max-width: 759px) {
+  .hero { padding-block: 16px 40px; }
+  .hero-1 .hero-photo { aspect-ratio: auto; overflow: visible; border-radius: 0; }
+  .hero-1 picture { display: block; aspect-ratio: 342 / 353; border-radius: 8px; overflow: hidden; }
+  .hero-1 .hero-text { position: static; max-width: none; padding: 16px 0 0; background: none; }
+  .hero-btn { align-self: stretch; padding-block: 10px; }
 }
 
 /* subject filters */
