@@ -1932,7 +1932,10 @@
           "label": "Buy",
           "price": 130,
           "etsyListingId": 881071253,
-          "url": "https://www.etsy.com/listing/881071253/autumn-in-woodstock-watercolor"
+          "url": "https://www.etsy.com/listing/881071253/autumn-in-woodstock-watercolor",
+          "available": false,
+          "goneOn": "2026-11-04",
+          "goneWhy": "inactive"
         }
       ],
       "description": [
@@ -1956,7 +1959,8 @@
       "etsySection": "Landscapes",
       "etsyTitle": "Autumn In Woodstock Watercolor",
       "listedOn": "2020-10-03",
-      "mergeKey": "original:autumn in woodstock watercolor"
+      "mergeKey": "original:autumn in woodstock watercolor",
+      "hidden": true
     },
     {
       "id": "magical-landscape-framed-collage",
@@ -3553,7 +3557,10 @@
           "label": "Original",
           "price": 150,
           "etsyListingId": 1554569896,
-          "url": "https://www.etsy.com/listing/1554569896/prehistoric-abstract-original-art"
+          "url": "https://www.etsy.com/listing/1554569896/prehistoric-abstract-original-art",
+          "available": false,
+          "goneOn": "2026-11-04",
+          "goneWhy": "inactive"
         }
       ],
       "description": [
@@ -3571,7 +3578,8 @@
       "etsySection": "Abstract Art",
       "etsyTitle": "Prehistoric Abstract Original Art",
       "listedOn": "2023-09-17",
-      "mergeKey": "original:prehistoric abstract"
+      "mergeKey": "original:prehistoric abstract",
+      "hidden": true
     },
     {
       "id": "old-school-house-whitemarsh-learning-center",
@@ -9127,6 +9135,60 @@
       "etsyTitle": "Salt And Pepper Original Painting",
       "listedOn": "2026-11-02",
       "mergeKey": "original:salt and pepper painting"
+    },
+    {
+      "id": "pin-oak-leaves-cyanotype",
+      "name": "Pin Oak Leaves Cyanotype",
+      "category": "cyanotypes",
+      "subjects": [
+        "Leaves"
+      ],
+      "kind": "other",
+      "oneOfAKind": false,
+      "images": [
+        "images/pin-oak-leaves-cyanotype/8839733507.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912200.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733853.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733819.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733877.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733883.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912112.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912182.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733839.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912154.jpg"
+      ],
+      "options": [
+        {
+          "title": "Pin Oak Leaves Cyanotype",
+          "label": "Buy",
+          "price": 35,
+          "etsyListingId": 4609158151,
+          "url": "https://www.etsy.com/listing/4609158151/pin-oak-leaves-cyanotype",
+          "hasVariations": true
+        }
+      ],
+      "description": [
+        "“Pin Oak Leaves”\nCyanotype/Sunprint made from leaves collected on a walk i took. This process was called a wet cyanotype. Made with leaves, cyanotype solutions, vinegar, turmeric, watercolor, and gel pen.  Placing in the sun under glass to process the image.   This piece has an abstract quality to it. It is matted in a white mat."
+      ],
+      "tags": [
+        "pin oak leaves",
+        "cyanotype",
+        "sunprint",
+        "leaf art",
+        "nature art",
+        "abstract",
+        "autumn art",
+        "blue",
+        "green",
+        "purple",
+        "botanical vibes",
+        "mixed media",
+        "whimsical art"
+      ],
+      "etsySection": "Cyanotypes/Sunprint",
+      "etsyTitle": "Pin Oak Leaves Cyanotype",
+      "listedOn": "2026-11-03",
+      "mergeKey": "other:pin oak leaves cyanotype"
     }
   ]
 }
