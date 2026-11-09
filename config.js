@@ -6,8 +6,8 @@ window.SITE_CONFIG = {
 
   // Links. Leave a link as "" to hide it.
   etsyUrl: "https://www.etsy.com/shop/artworkbymarita",
-  instagramUrl: "",
-  facebookUrl: "",
+  instagramUrl: "https://www.instagram.com/marita1112/",
+  facebookUrl: "https://www.facebook.com/marita.mcveigh/",
   fineArtAmericaUrl: "https://fineartamerica.com/profiles/marita-mcveigh",   // the palette icon in the footer
   // The footer's "Policies" link. Leave "" to use her Etsy shop's policies.
   policiesUrl: "",
