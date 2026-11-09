@@ -115,7 +115,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .card .mat img { position: absolute; inset: 0; object-position: top center; }  /* fills the space left, whole (contain), top-aligned */
 /* Figtree Regular, 22px on desktop cards, smaller on narrow ones. The caption always keeps room for a
    two-line title and the price, so every caption starts at the same height; the price sits right under the title. */
-.card-cap { display: flex; flex-direction: column; flex: none; min-height: calc(3em * 1.35); margin-top: 12px; font-weight: 400; font-size: clamp(16px, 9.5cqi, 22px); line-height: 1.35; }
+.card-cap { display: flex; flex-direction: column; flex: none; min-height: calc(3em * 1.35); margin-top: clamp(14px, 1.5vw, 20px); font-weight: 400; font-size: clamp(16px, 9.5cqi, 22px); line-height: 1.35; }
 .card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
 .card-meta { font-style: italic; color: var(--clay); }
 .dot { display: inline-block; width: .55em; height: .55em; border-radius: 50%; background: var(--sold); margin-right: 6px; vertical-align: .05em; }
