@@ -100,8 +100,9 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 @media (max-width: 520px) { .header-inner { min-height: 76px; } }
 
 /* a piece on its Paper mat: always whole, never cropped */
-.mat { background: var(--paper); box-shadow: var(--shadow); aspect-ratio: 4 / 5; padding: 8%; display: grid; place-items: center; }
-.mat img { width: 100%; height: 100%; object-fit: contain; }
+.mat { background: var(--paper); box-shadow: var(--shadow); aspect-ratio: 4 / 5; padding: 8%; display: grid; place-items: center;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr); }  /* the photo fits the mat; it can't push the mat bigger */
+.mat img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; }
 .no-photo { font-family: var(--heading); font-size: 22px; color: var(--clay); text-align: center; }
 
 /* Grids of pieces. Each is a Paper card: the art whole in a square at the top, then its name and
@@ -111,9 +112,10 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .card { container-type: inline-size; aspect-ratio: 3 / 4; display: flex; flex-direction: column; padding: clamp(12px, 1.8vw, 24px); background: var(--paper); border-radius: 6px;
   color: var(--warm-ink); text-decoration: none; min-width: 0; transition: transform .2s ease, box-shadow .2s ease; }
 .card .mat { position: relative; flex: 1; min-height: 0; aspect-ratio: auto; padding: 0; box-shadow: none; background: none; }
-.card .mat img { position: absolute; inset: 0; }  /* fills the space left, whole (contain) */
+.card .mat img { position: absolute; inset: 0; object-position: top center; }  /* fills the space left, whole (contain), top-aligned */
 .card-cap { display: flex; flex-direction: column; flex: none; margin-top: 12px; font-size: clamp(15px, 7.5cqi, 20px); line-height: 1.45; }
-.card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
+/* the title always takes two lines' room, so every price sits at the same height */
+.card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; min-height: calc(2em * 1.45); }
 .card-meta { font-style: italic; color: var(--clay); }
 .dot { display: inline-block; width: .55em; height: .55em; border-radius: 50%; background: var(--sold); margin-right: 6px; vertical-align: .05em; }
 @media (min-width: 761px) { .card { border-radius: 0; } }
@@ -152,11 +154,11 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
   background: var(--section-splash) center / contain no-repeat; }
 .room img { flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: right center; }  /* art is never cropped */
 .room .arrow { width: 20px; height: 20px; margin-left: auto; }
-@media (max-width: 1099px) { .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; } .room, .room:nth-child(-n + 2) { grid-column: auto; } .room:last-child:nth-child(odd) { grid-column: span 2; } }
+@media (max-width: 1099px) { .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; } .room, .room:nth-child(-n + 2) { grid-column: auto; } .room:first-child:nth-last-child(odd) { grid-column: span 2; } }  /* an odd count: Paintings takes the full row */
 @media (max-width: 759px) {
   .browse-head { flex-direction: column; align-items: flex-start; }
   .rooms { grid-template-columns: minmax(0, 1fr); grid-auto-rows: 109px; }
-  .room:last-child:nth-child(odd) { grid-column: auto; }
+  .room:first-child:nth-last-child(odd) { grid-column: auto; }
   .room-title::before { width: 2.9em; height: 2.9em; }
   .room .arrow { width: 13px; height: 13px; }
 }

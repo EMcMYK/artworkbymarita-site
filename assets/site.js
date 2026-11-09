@@ -48,6 +48,25 @@
     return c;
   }
 
+  // A piece's short title for cards and its page: the Etsy name without the medium and format words
+  // ("Caladium - Original Oil Painting" → "Caladium"). Gifts keep what they are ("Ornament", "Notebook").
+  const MEDIUM = /\b(original|signed|limited edition|hand pulled|framed|matted|matte canvas|mini|large|(oil|acrylic|watercolou?r|pastel|gouache) painting|painting|watercolou?r|gouache|mixed media|collage|(cyanotype|linocut|art|poster|giclee|canvas) print|cyanotype|linocut|etching|monotype|print)\b/gi;
+  const PACKAGING = /\b(original|framed|matte canvas)\b/gi;
+  function shortTitle(p) {
+    const words = p.category === "gifts" ? PACKAGING : MEDIUM;
+    const clean = (s) => s.replace(/\([^)]*\)/g, "").replace(words, "")
+      .replace(/\s+on (wood panel|watercolou?r paper|canvas)\b/gi, "").replace(/\bart\s*$/i, "")
+      .replace(/\s+/g, " ").replace(/^[\s,.;–-]+|[\s,.;:–-]+$/g, "").replace(/^(of an?|of) /i, "");
+    const name = String(p.name || "").trim();
+    // "Etching - Laundry day", "Print-copper": a dash with a space on either side, or straight after "Print", splits the name
+    const [head, ...rest] = name.split(":");
+    const parts = head.replace(/\b(print|painting)-/gi, "$1 - ").split(/\s+[-–]\s*|\s*[-–]\s+/).map(clean).filter(Boolean);
+    let title = parts.join(", ");
+    // "Abstract Oil Painting on Wood Panel: City Mood": the real title is after the colon
+    if (/^(abstract|floral|art)?$/i.test(title) && rest.length) title = clean(rest.join(":").split(/\s+[-–]\s+/)[0]) || title;
+    return title || name;
+  }
+
   // A piece shown whole on its mat, never cropped. `main` = the big photo on a product page.
   function picture(p, index = 0, main = false) {
     const img = p.images && p.images[index];
@@ -61,7 +80,7 @@
     return `<a class="card" href="#${esc(p.id)}">
       ${picture(p)}
       <span class="card-cap">
-        <span class="card-title">${esc(p.name)}</span>
+        <span class="card-title">${esc(shortTitle(p))}</span>
         <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : esc(showPrice ? priceText(p) : "")}</span>
       </span>
     </a>`;
@@ -251,7 +270,7 @@
             `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
         </div>
         <div class="info">
-          <h1>${esc(p.name)}</h1>
+          <h1>${esc(shortTitle(p))}</h1>
           <p class="facts">${esc(kindLine(p))}${p.size && buyable(p).length < 2 ? ` · ${esc(p.size)}` : ""}${p.oneOfAKind && !p.soldOut ? " · One of a kind" : ""}</p>
           ${p.soldOut ? "" : `<p class="price">${esc(priceText(p))}</p>`}
           ${buyButtons(p)}
@@ -334,7 +353,7 @@
     const p = byId(hash);
     if (p) {
       app.innerHTML = productPage(p); renderChrome(p.soldOut ? "sold" : p.category); wirePiece(p);
-      document.title = `${p.name} · ${name}`;
+      document.title = `${shortTitle(p)} · ${name}`;
     } else if (c) {
       const subject = SUBJECTS.find((s) => slug(s) === sub) || "";
       app.innerHTML = sectionPage(c, subject); renderChrome(c.id);
