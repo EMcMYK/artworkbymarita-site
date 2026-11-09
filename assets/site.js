@@ -73,7 +73,8 @@
     const cur = (id) => active === id ? ' aria-current="page"' : "";
     const sections = CATEGORIES.filter((c) => inCategory(c.id).length || !ALL.length);
     // Each section gets its own brush-line color (data-section, in style.css).
-    return sections.map((c) => `<a href="#${esc(c.id)}" data-section="${esc(c.id)}"${cur(c.id)}>${esc(c.title)}</a>`).join("") +
+    // The label's own box carries the hover splash in the phone menu, where the link is full width.
+    return sections.map((c) => `<a href="#${esc(c.id)}" data-section="${esc(c.id)}"${cur(c.id)}><span class="label">${esc(c.title)}</span></a>`).join("") +
       (soldGalleryOn() ? `<a href="#sold"${cur("sold")}>Sold</a>` : "") +
       `<a href="#about"${cur("about")}>About</a><a class="nav-contact" href="#contact"${cur("contact")}>Contact me</a>`;
   }
@@ -96,13 +97,16 @@
     document.addEventListener("click", (e) => { if (!panel.hidden && !e.target.closest(".header")) setMenu(false); });
   }
   // Footer: badge and email, social icons, the studio line, then the small print Etsy requires.
-  // A social icon only shows when its link is filled in config.js.
+  // All four social icons always show; one whose link in config.js is still "" shows but isn't a link.
   function renderFooter() {
     const out = (url, label, body) => `<a href="${esc(url)}" target="_blank" rel="noopener"${label ? ` aria-label="${label}"` : ""}>${body}</a>`;
     const social = [
       ["instagramUrl", "Instagram", "instagram"], ["fineArtAmericaUrl", "Fine Art America", "palette"],
       ["etsyUrl", "Etsy shop", "etsy"], ["facebookUrl", "Facebook", "facebook"]
-    ].filter(([key]) => CONFIG[key]).map(([key, label, icon]) => out(CONFIG[key], label, `<img src="assets/icon-${icon}.svg" alt="">`));
+    ].map(([key, label, icon]) => {
+      const img = `<img src="assets/icon-${icon}.svg" alt="">`;
+      return CONFIG[key] ? out(CONFIG[key], label, img) : `<span title="${label}">${img}</span>`;
+    });
     const email = CONFIG.contactEmail
       ? `<a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a>`
       : `<a href="#contact">Contact me</a>`;
@@ -160,13 +164,13 @@
       <p class="empty">Her artwork shows up here after the first sync from Etsy.${CONFIG.etsyUrl ? ` Until then, see it all on <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">her Etsy shop</a>.` : ""}</p></section></div>`;
     const sale = forSale();
     const rooms = CATEGORIES.map((c) => ({ c, list: inCategory(c.id) })).filter((x) => x.list.length);
-    const newest = newestFirst(sale).slice(0, 6);
+    const newest = newestFirst(sale).slice(0, 8);  // 4 × 2 on desktop; tablets and phones show 6
     return `
       ${hero(newest.length > 0)}
       ${newest.length ? `<section class="wrap home-block" id="newest">
         <h2 class="home-heading" tabindex="-1">What’s new</h2>
         ${grid(newest)}
-        <a class="see-more" href="#new">See more ${arrow}</a>
+        <div class="see-more-row"><a class="see-more" href="#new">See more ${arrow}</a></div>
       </section>` : ""}
       <section class="wrap home-block" aria-labelledby="browse">
         <div class="browse-head">
