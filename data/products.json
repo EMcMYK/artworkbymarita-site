@@ -107,7 +107,10 @@
           "label": "Original, 12 × 15\", framed",
           "price": 225,
           "etsyListingId": 158010958,
-          "url": "https://www.etsy.com/listing/158010958/original-framed-linocut-of-a-scorpion"
+          "url": "https://www.etsy.com/listing/158010958/original-framed-linocut-of-a-scorpion",
+          "available": false,
+          "goneOn": "2026-11-08",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -131,7 +134,8 @@
       "etsySection": "Original Linocuts",
       "etsyTitle": "Original framed linocut of a Scorpion",
       "listedOn": "2013-07-28",
-      "mergeKey": "original:linocut of a scorpion"
+      "mergeKey": "original:linocut of a scorpion",
+      "hidden": true
     },
     {
       "id": "caladium-original-oil-painting",
@@ -560,9 +564,7 @@
           "price": 500,
           "etsyListingId": 218100047,
           "url": "https://www.etsy.com/listing/218100047/rusty-cat-original-oil-painting",
-          "available": false,
-          "goneOn": "2026-10-28",
-          "goneWhy": "expired"
+          "available": true
         }
       ],
       "description": [
@@ -586,8 +588,7 @@
       "etsySection": "Original Art",
       "etsyTitle": "Rusty Cat original oil painting",
       "listedOn": "2015-01-11",
-      "mergeKey": "original:rusty cat oil painting",
-      "hidden": true
+      "mergeKey": "original:rusty cat oil painting"
     },
     {
       "id": "rosey-framed-pastel-painting",
@@ -918,7 +919,10 @@
           "label": "Original",
           "price": 300,
           "etsyListingId": 573237191,
-          "url": "https://www.etsy.com/listing/573237191/sparrow-original-acrylic-painting"
+          "url": "https://www.etsy.com/listing/573237191/sparrow-original-acrylic-painting",
+          "available": false,
+          "goneOn": "2026-11-08",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -938,7 +942,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Sparrow Original acrylic painting",
       "listedOn": "2017-11-18",
-      "mergeKey": "original:sparrow acrylic painting"
+      "mergeKey": "original:sparrow acrylic painting",
+      "hidden": true
     },
     {
       "id": "on-the-road-again-original-watercolor",
@@ -1935,7 +1940,10 @@
           "label": "Buy",
           "price": 130,
           "etsyListingId": 881071253,
-          "url": "https://www.etsy.com/listing/881071253/autumn-in-woodstock-watercolor"
+          "url": "https://www.etsy.com/listing/881071253/autumn-in-woodstock-watercolor",
+          "available": false,
+          "goneOn": "2026-11-04",
+          "goneWhy": "inactive"
         }
       ],
       "description": [
@@ -1959,7 +1967,8 @@
       "etsySection": "Landscapes",
       "etsyTitle": "Autumn In Woodstock Watercolor",
       "listedOn": "2020-10-03",
-      "mergeKey": "original:autumn in woodstock watercolor"
+      "mergeKey": "original:autumn in woodstock watercolor",
+      "hidden": true
     },
     {
       "id": "magical-landscape-framed-collage",
@@ -2444,7 +2453,11 @@
         "images/a-study-in-greens-kohler-park/4008801642.jpg",
         "images/a-study-in-greens-kohler-park/4056444281.jpg",
         "images/a-study-in-greens-kohler-park/4008803762.jpg",
-        "images/a-study-in-greens-kohler-park/4107268638.jpg"
+        "images/a-study-in-greens-kohler-park/8827816975.jpg",
+        "images/a-study-in-greens-kohler-park/8779987910.jpg",
+        "images/a-study-in-greens-kohler-park/8779987920.jpg",
+        "images/a-study-in-greens-kohler-park/8779987928.jpg",
+        "images/a-study-in-greens-kohler-park/8779987924.jpg"
       ],
       "options": [
         {
@@ -2456,7 +2469,7 @@
         }
       ],
       "description": [
-        "This piece is painted with watercolor and ink on 140lb cold pressed, acid free watercolor paper.\nThe scene is a local park. Painted from a photograph i took there. It is a study in greens.\nKohler Park, Horsham, Pa.\nThis is not framed. Pictured is what it could look like framed."
+        "This piece is painted with watercolor and ink on 140lb cold pressed, acid free watercolor paper.\nThe scene is a local park. Painted from a photograph i took there. It is a study in greens.\nKohler Park, Horsham, Pa.\nThis has been mounted on a wood panel and sealed with cold wax. It is ready to hang. No glass or frame is necessary.  Measures 8x10 inches."
       ],
       "tags": [
         "landscape",
@@ -2466,12 +2479,18 @@
         "bridge art",
         "stream",
         "creek",
-        "peaceful decor"
+        "peaceful decor",
+        "bucks county",
+        "watercolor",
+        "mounted wood panel",
+        "plein air painting",
+        "study in green"
       ],
       "etsySection": "",
       "etsyTitle": "A Study In Greens; Kohler Park, Horsham, Pa",
       "listedOn": "2022-07-13",
-      "mergeKey": "original:a study in greens kohler park"
+      "mergeKey": "original:a study in greens kohler park",
+      "size": "8 × 10 in"
     },
     {
       "id": "summertime-kohler-park",
@@ -3546,7 +3565,10 @@
           "label": "Original",
           "price": 150,
           "etsyListingId": 1554569896,
-          "url": "https://www.etsy.com/listing/1554569896/prehistoric-abstract-original-art"
+          "url": "https://www.etsy.com/listing/1554569896/prehistoric-abstract-original-art",
+          "available": false,
+          "goneOn": "2026-11-04",
+          "goneWhy": "inactive"
         }
       ],
       "description": [
@@ -3564,7 +3586,8 @@
       "etsySection": "Abstract Art",
       "etsyTitle": "Prehistoric Abstract Original Art",
       "listedOn": "2023-09-17",
-      "mergeKey": "original:prehistoric abstract"
+      "mergeKey": "original:prehistoric abstract",
+      "hidden": true
     },
     {
       "id": "old-school-house-whitemarsh-learning-center",
@@ -3630,9 +3653,7 @@
           "price": 150,
           "etsyListingId": 1570382212,
           "url": "https://www.etsy.com/listing/1570382212/sun-kissed-bouquet",
-          "available": false,
-          "goneOn": "2026-10-28",
-          "goneWhy": "expired"
+          "available": true
         }
       ],
       "description": [
@@ -3656,8 +3677,7 @@
       "etsySection": "",
       "etsyTitle": "Sun kissed Bouquet",
       "listedOn": "2023-10-09",
-      "mergeKey": "original:sun kissed bouquet",
-      "hidden": true
+      "mergeKey": "original:sun kissed bouquet"
     },
     {
       "id": "abstract-oil-painting-on-wood-panel-city-mood",
@@ -4614,7 +4634,10 @@
           "price": 6.1,
           "etsyListingId": 1863746584,
           "url": "https://www.etsy.com/listing/1863746584/pink-rose-art-print-vintage-floral-wall",
-          "hasVariations": true
+          "hasVariations": true,
+          "available": false,
+          "goneOn": "2026-11-02",
+          "goneWhy": "inactive"
         }
       ],
       "description": [
@@ -4640,7 +4663,8 @@
       "etsySection": "",
       "etsyTitle": "Pink Rose Art Print: Vintage Floral Wall Decor",
       "listedOn": "2025-02-21",
-      "mergeKey": "print:pink rose vintage floral"
+      "mergeKey": "print:pink rose vintage floral",
+      "hidden": true
     },
     {
       "id": "roses-in-vase-poster-print-pastel-painting-by-marita-mcveigh",
@@ -4921,7 +4945,10 @@
           "label": "Print, 6 × 6\"",
           "price": 40,
           "etsyListingId": 4355082742,
-          "url": "https://www.etsy.com/listing/4355082742/autumn-pumpkin-linocut-print-signed"
+          "url": "https://www.etsy.com/listing/4355082742/autumn-pumpkin-linocut-print-signed",
+          "available": false,
+          "goneOn": "2026-11-08",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -4945,7 +4972,8 @@
       "etsySection": "Original Linocuts",
       "etsyTitle": "Autumn Pumpkin Linocut Print: Signed Limited Edition Art",
       "listedOn": "2025-08-19",
-      "mergeKey": "print:autumn pumpkin linocut limited edition"
+      "mergeKey": "print:autumn pumpkin linocut limited edition",
+      "hidden": true
     },
     {
       "id": "rusty-sunflower-painting",
@@ -5334,7 +5362,10 @@
           "label": "Original",
           "price": 200,
           "etsyListingId": 4382212891,
-          "url": "https://www.etsy.com/listing/4382212891/colorful-chicken-original-painting"
+          "url": "https://www.etsy.com/listing/4382212891/colorful-chicken-original-painting",
+          "available": false,
+          "goneOn": "2026-11-08",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -5358,7 +5389,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Colorful Chicken Original Painting",
       "listedOn": "2025-10-06",
-      "mergeKey": "original:colorful chicken painting"
+      "mergeKey": "original:colorful chicken painting",
+      "hidden": true
     },
     {
       "id": "framed-fox-and-winter-tree-canvas-print",
@@ -9017,6 +9049,162 @@
       "etsyTitle": "Autumn At Peace Valley Print",
       "listedOn": "2026-10-28",
       "mergeKey": "print:autumn at peace valley"
+    },
+    {
+      "id": "falling-leaves-original-cyanotype",
+      "name": "Falling Leaves Original Cyanotype.",
+      "category": "cyanotypes",
+      "subjects": [
+        "Leaves"
+      ],
+      "kind": "original",
+      "oneOfAKind": false,
+      "size": "11 × 14 in",
+      "images": [
+        "images/falling-leaves-original-cyanotype/8779731930.jpg",
+        "images/falling-leaves-original-cyanotype/8827561313.jpg",
+        "images/falling-leaves-original-cyanotype/8779732322.jpg",
+        "images/falling-leaves-original-cyanotype/8779732326.jpg",
+        "images/falling-leaves-original-cyanotype/8827561283.jpg",
+        "images/falling-leaves-original-cyanotype/8779732314.jpg",
+        "images/falling-leaves-original-cyanotype/8779732332.jpg",
+        "images/falling-leaves-original-cyanotype/8779732304.jpg",
+        "images/falling-leaves-original-cyanotype/8827561295.jpg"
+      ],
+      "options": [
+        {
+          "title": "Falling Leaves Original Cyanotype.",
+          "label": "Original, 11 × 14\"",
+          "price": 35,
+          "etsyListingId": 4607680964,
+          "url": "https://www.etsy.com/listing/4607680964/falling-leaves-original-cyanotype",
+          "hasVariations": true
+        }
+      ],
+      "description": [
+        "Original Cyanotype. “Falling Leaves”\nA cyanotype also known as a sunprint is a photographic process that uses the sun or UV light to expose the image. On this piece i used a process called wet cyanotype, using vinegar, turmeric, watercolor and pin oak leaves that i collected. I placed it in the sun under glass to create this colorful almost abstract image. This is done on watercolor paper and placed in an 11x14 mat for easy framing. It is not framed.  Prints are also available."
+      ],
+      "tags": [
+        "falling leaves",
+        "pin oak leaves",
+        "botanical vibes",
+        "autumn art",
+        "fall art",
+        "cyanotype",
+        "sunprint",
+        "wet cyanotype",
+        "Matted",
+        "unframed",
+        "works on paper",
+        "blue",
+        "whimsical vibes"
+      ],
+      "etsySection": "Cyanotypes/Sunprint",
+      "etsyTitle": "Falling Leaves Original Cyanotype.",
+      "listedOn": "2026-11-01",
+      "mergeKey": "original:falling leaves cyanotype"
+    },
+    {
+      "id": "salt-and-pepper-original-painting",
+      "name": "Salt And Pepper Original Painting",
+      "category": "paintings",
+      "subjects": [],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "11 × 14 in",
+      "images": [
+        "images/salt-and-pepper-original-painting/8833754087.jpg",
+        "images/salt-and-pepper-original-painting/8785930436.jpg",
+        "images/salt-and-pepper-original-painting/8833754605.jpg",
+        "images/salt-and-pepper-original-painting/8785930432.jpg",
+        "images/salt-and-pepper-original-painting/8785930490.jpg",
+        "images/salt-and-pepper-original-painting/8833754619.jpg"
+      ],
+      "options": [
+        {
+          "title": "Salt And Pepper Original Painting",
+          "label": "Original, 11 × 14\"",
+          "price": 250,
+          "etsyListingId": 4608436946,
+          "url": "https://www.etsy.com/listing/4608436946/salt-and-pepper-original-painting"
+        }
+      ],
+      "description": [
+        "Original framed oil on board. Crystal salt and perr shakers and a creamer.  The painting features a colorful patterned background. The frame is gold and black. The painting measures 11x14 , framed 14x17 inches. I painted this stil life using items i received as an anniversary gift."
+      ],
+      "tags": [
+        "still life",
+        "framed art",
+        "salt and pepper",
+        "creamer",
+        "textures",
+        "patterns",
+        "11x14",
+        "oil on board",
+        "green",
+        "crystal",
+        "colorful art",
+        "granny vibes",
+        "vintage look"
+      ],
+      "etsySection": "Still Lifes",
+      "etsyTitle": "Salt And Pepper Original Painting",
+      "listedOn": "2026-11-02",
+      "mergeKey": "original:salt and pepper painting"
+    },
+    {
+      "id": "pin-oak-leaves-cyanotype",
+      "name": "Pin Oak Leaves Cyanotype",
+      "category": "cyanotypes",
+      "subjects": [
+        "Leaves"
+      ],
+      "kind": "other",
+      "oneOfAKind": false,
+      "images": [
+        "images/pin-oak-leaves-cyanotype/8839733507.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912200.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733853.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733819.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733877.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733883.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912112.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912182.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733839.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912154.jpg"
+      ],
+      "options": [
+        {
+          "title": "Pin Oak Leaves Cyanotype",
+          "label": "Buy",
+          "price": 35,
+          "etsyListingId": 4609158151,
+          "url": "https://www.etsy.com/listing/4609158151/pin-oak-leaves-cyanotype",
+          "hasVariations": true
+        }
+      ],
+      "description": [
+        "“Pin Oak Leaves”\nCyanotype/Sunprint made from leaves collected on a walk i took. This process was called a wet cyanotype. Made with leaves, cyanotype solutions, vinegar, turmeric, watercolor, and gel pen.  Placing in the sun under glass to process the image.   This piece has an abstract quality to it. It is matted in a white mat."
+      ],
+      "tags": [
+        "pin oak leaves",
+        "cyanotype",
+        "sunprint",
+        "leaf art",
+        "nature art",
+        "abstract",
+        "autumn art",
+        "blue",
+        "green",
+        "purple",
+        "botanical vibes",
+        "mixed media",
+        "whimsical art"
+      ],
+      "etsySection": "Cyanotypes/Sunprint",
+      "etsyTitle": "Pin Oak Leaves Cyanotype",
+      "listedOn": "2026-11-03",
+      "mergeKey": "other:pin oak leaves cyanotype"
     }
   ]
 }
