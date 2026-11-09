@@ -56,11 +56,14 @@
       : `<span class="no-photo">${esc(p.name)}</span>`}</div>`;
   }
 
+  // A piece on its Paper card: the art whole, its name, then the price in quiet italic.
   function card(p, { showPrice = true } = {}) {
     return `<a class="card" href="#${esc(p.id)}">
       ${picture(p)}
-      <span class="card-title">${esc(p.name)}</span>
-      <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : esc([kindLine(p), showPrice ? priceText(p) : ""].filter(Boolean).join(" · "))}</span>
+      <span class="card-cap">
+        <span class="card-title">${esc(p.name)}</span>
+        <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : esc(showPrice ? priceText(p) : "")}</span>
+      </span>
     </a>`;
   }
   const grid = (list, opts) => `<div class="grid">${list.map((p) => card(p, opts)).join("")}</div>`;
@@ -92,38 +95,64 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) { setMenu(false); btn.focus(); } });
     document.addEventListener("click", (e) => { if (!panel.hidden && !e.target.closest(".header")) setMenu(false); });
   }
+  // Footer: badge and email, social icons, the studio line, then the small print Etsy requires.
+  // A social icon only shows when its link is filled in config.js.
   function renderFooter() {
-    const links = [
-      CONFIG.etsyUrl && `<a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">Etsy shop</a>`,
-      CONFIG.instagramUrl && `<a href="${esc(CONFIG.instagramUrl)}" target="_blank" rel="noopener">Instagram</a>`,
-      CONFIG.facebookUrl && `<a href="${esc(CONFIG.facebookUrl)}" target="_blank" rel="noopener">Facebook</a>`,
-      `<a href="#about">About</a>`, `<a href="#contact">Contact</a>`, `<a href="#privacy">Privacy</a>`
-    ].filter(Boolean);
-    document.getElementById("footer").innerHTML = `<div class="wrap">
-      <nav aria-label="More">${links.join("")}</nav>
-      <p>Every piece is sold through Etsy, which handles checkout and shipping.</p>
-      <p class="fineprint">The term “Etsy” is a trademark of Etsy, Inc. This site uses the Etsy API but is not endorsed or certified by Etsy, Inc.</p>
+    const out = (url, label, body) => `<a href="${esc(url)}" target="_blank" rel="noopener"${label ? ` aria-label="${label}"` : ""}>${body}</a>`;
+    const social = [
+      ["instagramUrl", "Instagram", "instagram"], ["fineArtAmericaUrl", "Fine Art America", "palette"],
+      ["etsyUrl", "Etsy shop", "etsy"], ["facebookUrl", "Facebook", "facebook"]
+    ].filter(([key]) => CONFIG[key]).map(([key, label, icon]) => out(CONFIG[key], label, `<img src="assets/icon-${icon}.svg" alt="">`));
+    const email = CONFIG.contactEmail
+      ? `<a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a>`
+      : `<a href="#contact">Contact me</a>`;
+    const policies = CONFIG.policiesUrl || (CONFIG.etsyUrl && `${CONFIG.etsyUrl}#policies`);
+    document.getElementById("footer").innerHTML = `<div class="footer-main">
+      <div class="footer-contact">
+        <span class="badge"><img src="assets/tulip.svg" alt=""></span>
+        ${email}
+      </div>
+      <p class="footer-line">Made by hand in my studio, near Philadelphia</p>
+      ${social.length ? `<nav class="social" aria-label="Elsewhere">${social.join("")}</nav>` : ""}
+      <nav class="footer-links" aria-label="More">
+        <a href="#about">About</a>${policies ? out(policies, "", "Policies") : ""}<a href="#privacy">Privacy</a>
+      </nav>
+    </div>
+    <div class="footer-fine">
+      <p class="footer-copy">© ${esc(CONFIG.siteName || "Marita McVeigh")}</p>
+      <p>The term ‘Etsy’ is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.</p>
+      <p>Social icons from <a href="https://iconscout.com" target="_blank" rel="noopener">iconscout.com</a></p>
     </div>`;
   }
 
   // ---------- pages ----------
-  // Front-page hero (Hero-1 in Figma): a studio photo with the heading over the bright window.
-  // Phones get a closer crop of the same photo (her face, the bouquet and her palette).
+  const arrow = `<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.26 13.5H0v-3h18.26l-8.4-8.4L12 0l12 12-12 12-2.14-2.1 8.4-8.4Z"/></svg>`;
+
+  // Front-page hero (Main page in Figma): heading and button on the left, studio photo on the right.
+  // Phones stack a closer crop of the same photo (her face, the bouquet and her palette) on top.
   function hero(hasNewest) {
-    return `<section class="hero hero-1">
-      <div class="hero-photo">
-        <picture>
-          <source media="(max-width: 759px)" type="image/webp" srcset="images/about/studio-easel-close.webp">
-          <source media="(max-width: 759px)" srcset="images/about/studio-easel-close.jpg">
-          <source type="image/webp" srcset="images/about/studio-easel-wide.webp">
-          <img src="images/about/studio-easel-wide.jpg" alt="Marita at her easel in her studio, painting a bouquet of flowers" width="2426" height="1452" fetchpriority="high" decoding="async">
-        </picture>
-        <div class="hero-text">
-          <h1>Painting the joyful part of life</h1>
-          ${hasNewest ? `<a class="hero-btn" href="#newest">See what’s new</a>` : ""}
-        </div>
+    return `<section class="hero"><div class="hero-inner">
+      <div class="hero-text">
+        <h1>Painting the joyful part of life</h1>
+        ${hasNewest ? `<a class="hero-btn" href="#newest">See what’s new</a>` : ""}
       </div>
-    </section>`;
+      <picture class="hero-photo">
+        <source media="(max-width: 759px)" type="image/webp" srcset="images/about/studio-easel-close.webp">
+        <source media="(max-width: 759px)" srcset="images/about/studio-easel-close.jpg">
+        <source type="image/webp" srcset="images/about/studio-easel-desk.webp">
+        <img src="images/about/studio-easel-desk.jpg" alt="Marita at her easel in her studio, painting a bouquet of flowers" width="1484" height="1134" fetchpriority="high" decoding="async">
+      </picture>
+    </div></section>`;
+  }
+
+  // One card per menu section: its name over its splash, a piece from it, and an arrow.
+  function sectionCard(c, list) {
+    const p = list.find((x) => x.images?.length);
+    return `<a class="room" href="#${esc(c.id)}" data-section="${esc(c.id)}">
+      <span class="room-title">${esc(c.title)}</span>
+      ${p ? `<img src="${esc(p.images[0])}" alt="" loading="lazy">` : ""}
+      ${arrow}
+    </a>`;
   }
 
   function homePage() {
@@ -131,18 +160,30 @@
       <p class="empty">Her artwork shows up here after the first sync from Etsy.${CONFIG.etsyUrl ? ` Until then, see it all on <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">her Etsy shop</a>.` : ""}</p></section></div>`;
     const sale = forSale();
     const rooms = CATEGORIES.map((c) => ({ c, list: inCategory(c.id) })).filter((x) => x.list.length);
-    const newest = newestFirst(sale).slice(0, 8);
+    const newest = newestFirst(sale).slice(0, 6);
     return `
       ${hero(newest.length > 0)}
-      <section class="wrap rooms" aria-label="Browse by kind">
-        ${rooms.map(({ c, list }) => `<a class="room" href="#${esc(c.id)}">
-          ${picture(list.find((p) => p.images?.length) || list[0])}
-          <span class="room-title">${esc(c.title)}</span>
-          <span class="card-meta">${esc(c.note)} · ${list.length} ${list.length === 1 ? "piece" : "pieces"}</span>
-        </a>`).join("")}
-      </section>
-      ${newest.length ? `<section class="wrap block" id="newest"><h2 tabindex="-1">Newest work</h2>${grid(newest)}</section>` : ""}
-      ${soldGalleryOn() ? `<section class="wrap block"><h2>Sold</h2><p class="lede">Originals that have found a home. <a href="#sold">See the Sold gallery</a></p></section>` : ""}`;
+      ${newest.length ? `<section class="wrap home-block" id="newest">
+        <h2 class="home-heading" tabindex="-1">What’s new</h2>
+        ${grid(newest)}
+        <a class="see-more" href="#new">See more ${arrow}</a>
+      </section>` : ""}
+      <section class="wrap home-block" aria-labelledby="browse">
+        <div class="browse-head">
+          <h2 class="home-heading" id="browse">Browse the art</h2>
+          <span class="splash-row" aria-hidden="true">${rooms.map(({ c }) => `<img src="assets/splash-${esc(c.id)}.webp" alt="" data-section="${esc(c.id)}">`).join("")}</span>
+        </div>
+        <div class="rooms">${rooms.map(({ c, list }) => sectionCard(c, list)).join("")}</div>
+      </section>`;
+  }
+
+  // "See more": everything for sale, newest first.
+  function newPage() {
+    return `<section class="wrap block">
+      <h1>What’s new</h1>
+      <p class="lede">Everything I have for sale, newest first.</p>
+      ${grid(newestFirst(forSale()))}
+    </section>`;
   }
 
   function sectionPage(c, subject) {
@@ -294,6 +335,8 @@
       const subject = SUBJECTS.find((s) => slug(s) === sub) || "";
       app.innerHTML = sectionPage(c, subject); renderChrome(c.id);
       document.title = `${subject ? subject + " · " : ""}${c.title} · ${name}`;
+    } else if (hash === "new") {
+      app.innerHTML = newPage(); renderChrome(""); document.title = `What’s new · ${name}`;
     } else if (hash === "sold" && CONFIG.showSoldGallery) {
       app.innerHTML = soldPage(); renderChrome("sold"); document.title = `Sold · ${name}`;
     } else if (hash === "contact") {
