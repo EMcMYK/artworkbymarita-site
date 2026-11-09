@@ -12,6 +12,8 @@
   --cyanotype: #1f4e8c;  /* logo, links, buttons */
   --hairline: rgba(46, 38, 32, .14);
   --sold: #b73557;       /* the dot on sold pieces */
+  --lift: 0 2px 6px rgba(46, 38, 32, .08), 0 14px 28px -14px rgba(46, 38, 32, .4);
+  --button-lift: 0 6px 14px -6px rgba(31, 78, 140, .6);
   --shadow: 0 1px 2px rgba(46, 38, 32, .06), 0 6px 18px -10px rgba(46, 38, 32, .25);
   /* each menu section: a line color, and a watercolor splash cut from her cyanotype of petals */
   --line-paintings: #b73557;
@@ -21,7 +23,8 @@
   --line-gifts: #8a6200;
   --heading: "Alegreya Sans", "Trebuchet MS", sans-serif;
   --body: "Figtree", Helvetica, Arial, sans-serif;
-  --gutter: 24px;
+  --gutter: clamp(24px, 5vw - 8px, 64px);  /* page side margins */
+  --page: 1180px;                         /* content width */
   color-scheme: light;
 }
 
@@ -31,10 +34,10 @@ body { background: var(--sand); color: var(--warm-ink); font-family: var(--body)
 img { max-width: 100%; display: block; }
 a { color: var(--cyanotype); text-underline-offset: 3px; }
 :focus-visible { outline: 2px solid var(--cyanotype); outline-offset: 3px; }
-h1, h2 { font-family: var(--heading); font-weight: 500; text-wrap: balance; margin: 0; }
+h1, h2 { font-family: var(--heading); font-weight: 400; text-wrap: balance; margin: 0; }
 h1 { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; }
 h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
-.wrap { max-width: 1260px; margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+.wrap { max-width: calc(var(--page) + 2 * var(--gutter)); margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
 .narrow { max-width: 760px; }
 .block { padding-block: 48px 8px; display: flex; flex-direction: column; gap: 20px; }
 .lede { margin: 0; color: var(--clay); font-style: italic; max-width: 60ch; }
@@ -44,8 +47,8 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 
 /* A section heading with its splash tucked behind the first letters, turned slightly.
    One splash per page, only behind headings. */
-.splash-heading { position: relative; isolation: isolate; align-self: flex-start; padding-left: .3em; }
-.splash-heading::before { content: ""; position: absolute; z-index: -1; left: -.25em; top: 50%; width: 1.6em; height: 1.6em; translate: 0 -50%; rotate: var(--splash-turn);
+.splash-heading { position: relative; isolation: isolate; align-self: flex-start; margin-left: .4em; padding-left: .3em; }
+.splash-heading::before { content: ""; position: absolute; z-index: -1; left: -.15em; top: 50%; width: 1.6em; height: 1.6em; translate: 0 -50%; rotate: var(--splash-turn);
   background: var(--section-splash) center / contain no-repeat; }
 
 /* header (brand look): tulip and name, section links over brush lines, "Contact me" button */
@@ -71,7 +74,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 [data-section="gifts"] { --section-line: var(--line-gifts); --section-splash: url(splash-gifts.webp); --splash-turn: -28deg; }
 .nav a:not([data-section]):not(.nav-contact):hover, .nav a:not([data-section]):not(.nav-contact)[aria-current] { color: var(--cyanotype); --section-line: var(--cyanotype); }
 .nav .nav-contact { margin-left: clamp(0px, 3vw - 24px, 8px); padding: 8px 16px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); white-space: nowrap; }
-.nav .nav-contact:hover { filter: brightness(1.15); }
+
 .header :focus-visible { outline-color: var(--cyanotype); }
 .menu-btn { display: none; place-items: center; width: 44px; height: 44px; margin-right: -10px; color: var(--cyanotype); background: none; border: 0; border-radius: 6px; cursor: pointer; }
 .menu-btn svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
@@ -98,12 +101,10 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 /* Grids of pieces. Each is a Paper card: the art whole in a square at the top, then its name and
    the price in quiet italic. The caption scales with the card, as in the Figma art card. */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 19px; }
-@media (max-width: 520px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } }
+@media (max-width: 759px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } }
 .card { container-type: inline-size; display: flex; flex-direction: column; gap: 6px; padding: clamp(16px, 2.6vw, 37px); background: var(--paper); border-radius: 6px;
-  color: var(--warm-ink); text-decoration: none; min-width: 0; transition: box-shadow .2s; }
-.card:hover { box-shadow: 0 0 0 2px var(--cyanotype); }
-.card .mat { aspect-ratio: 1; padding: 0; box-shadow: none; background: none; place-items: start center; }
-.card .mat img { object-position: top center; }
+  color: var(--warm-ink); text-decoration: none; min-width: 0; transition: transform .2s ease, box-shadow .2s ease; }
+.card .mat { aspect-ratio: 5 / 4; padding: 0; box-shadow: none; background: none; }
 .card-cap { display: flex; flex-direction: column; justify-content: flex-end; flex: 1; margin-top: 13px; font-size: clamp(16px, 8.5cqi, 30px); line-height: 1.6; }
 .card-title { overflow-wrap: anywhere; }
 .card-meta { font-style: italic; color: var(--clay); }
@@ -113,17 +114,18 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 /* front page */
 .intro { display: flex; flex-direction: column; gap: 12px; padding-block: 48px 16px; }
 .intro p { margin: 0; }
-.home-block { display: flex; flex-direction: column; gap: clamp(12px, 2.6vw, 38px); max-width: 1266px; padding-top: clamp(24px, 3.6vw, 52px); }
+.home-block { display: flex; flex-direction: column; gap: clamp(12px, 2.6vw, 38px); padding-top: clamp(24px, 3.6vw, 52px); }
 .home-heading { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; }
 #newest .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18.66px; }
-@media (max-width: 520px) { #newest .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } }
+@media (max-width: 759px) { #newest .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } }
 #newest .home-heading { scroll-margin-top: 24px; }
 #newest .home-heading:focus { outline: none; }
 .see-more { align-self: flex-end; display: inline-flex; align-items: center; gap: clamp(8px, 1.4vw, 20px); padding-bottom: 2px; border-bottom: 2.5px solid var(--cyanotype);
-  font-family: var(--heading); font-weight: 500; font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; text-decoration: none; }
+  font-family: var(--heading); font-weight: 400; font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; text-decoration: none; }
 .see-more .arrow { width: clamp(16px, 1.7vw, 24px); height: auto; }
 .arrow { fill: var(--cyanotype); flex: none; }
-.see-more:hover { border-bottom-width: 4px; }
+.see-more .arrow { transition: translate .15s ease; }
+.see-more:hover .arrow { translate: 4px 0; }
 
 /* "Browse the art": the five splashes, then a card per section */
 .browse-head { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 13px; margin-bottom: clamp(12px, 4.9vw - 30px, 32px); }
@@ -131,11 +133,15 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .splash-row img { height: clamp(26px, 3.6vw, 52px); width: auto; rotate: var(--splash-turn); margin-right: -4px; }
 .rooms { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: 201px; gap: 16px; }
 .room { grid-column: span 2; display: flex; align-items: center; gap: 8px; min-width: 0; padding: 8px 12px 8px 8px; background: var(--paper); border-radius: 6px;
-  color: var(--warm-ink); text-decoration: none; transition: box-shadow .2s; }
+  color: var(--warm-ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
 .room:nth-child(-n + 2) { grid-column: span 3; }
-.room:hover { box-shadow: 0 0 0 2px var(--cyanotype); }
-.room-title { position: relative; isolation: isolate; flex: none; padding: 0 16px; font-family: var(--heading); font-weight: 500; font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
-.room-title::before { content: ""; position: absolute; z-index: -1; left: -8px; top: 50%; width: 2.75em; height: 2.75em; translate: 0 -50%; rotate: var(--splash-turn);
+/* lift on hover, only where there's a mouse (a tap on a phone would leave it stuck) */
+@media (hover: hover) {
+  .card:hover, .room:hover { transform: translateY(-4px) rotate(-.6deg); box-shadow: var(--lift); }
+  .card:nth-child(even):hover, .room:nth-child(even):hover { transform: translateY(-4px) rotate(.6deg); }
+}
+.room-title { position: relative; isolation: isolate; flex: none; margin-left: 14px; padding: 0 16px; font-family: var(--heading); font-weight: 400; font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
+.room-title::before { content: ""; position: absolute; z-index: -1; left: -4px; top: 50%; width: 2.75em; height: 2.75em; translate: 0 -50%; rotate: var(--splash-turn);
   background: var(--section-splash) center / contain no-repeat; }
 .room img { flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: right center; }  /* art is never cropped */
 .room .arrow { width: 20px; height: 20px; margin-left: auto; }
@@ -151,13 +157,13 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 /* front-page hero: heading and button on the left, studio photo on the right.
    Studio photos can be cropped; artwork never is. */
 .hero { padding: clamp(48px, 7.4vw, 107px) max(var(--gutter), env(safe-area-inset-right, 0px)) clamp(48px, 7.4vw, 107px) max(var(--gutter), env(safe-area-inset-left, 0px)); }
-.hero-inner { display: grid; grid-template-columns: minmax(0, 406fr) minmax(0, 742fr); gap: clamp(32px, 4.3vw, 62px); align-items: center; max-width: 1210px; margin: 0 auto; }
+.hero-inner { display: grid; grid-template-columns: minmax(0, 406fr) minmax(0, 742fr); gap: clamp(32px, 4.3vw, 62px); align-items: center; max-width: var(--page); margin: 0 auto; }
 .hero h1 { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; }
 .hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(24px, 3.6vw, 52px); }
 .hero-photo { display: block; aspect-ratio: 742 / 567; border-radius: 8px; overflow: hidden; }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); font-weight: 600; font-size: 18px; line-height: 1.6; text-decoration: none; }
-.hero-btn:hover { filter: brightness(1.15); }
+
 @media (max-width: 759px) {
   .hero { padding-block: 16px 8px; }
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 16px; }
@@ -189,7 +195,10 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .price { margin: 0; font-size: 24px; font-variant-numeric: tabular-nums; }
 .buy { display: flex; flex-direction: column; gap: 8px; }
 .btn { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); text-decoration: none; font-weight: 600; font-size: 18px; }
-.btn:hover { filter: brightness(1.15); }
+/* buttons lift a little on hover */
+.btn, .hero-btn, .nav .nav-contact, .menu-panel .nav-contact { box-shadow: 0 1px 2px rgba(31, 78, 140, .25); transition: transform .15s ease, box-shadow .15s ease, filter .15s; }
+@media (hover: hover) { .btn:hover, .hero-btn:hover, .nav .nav-contact:hover, .menu-panel .nav-contact:hover { transform: translateY(-2px); box-shadow: var(--button-lift); filter: brightness(1.1); } }
+.btn:active, .hero-btn:active, .nav .nav-contact:active, .menu-panel .nav-contact:active { transform: none; box-shadow: none; }
 .btn-price { font-weight: 500; font-variant-numeric: tabular-nums; }
 .buy-note { margin: 2px 0 0; font-size: 16px; line-height: 1.5; color: var(--clay); }
 .sold-note { margin: 0; padding: 12px 16px; background: var(--paper); border-radius: 6px; }
@@ -242,4 +251,4 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
   .footer-copy { border-top: 0; padding-top: 0; }
 }
 
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } .card:hover, .room:hover, .btn:hover, .hero-btn:hover, .nav-contact:hover { transform: none !important; } }

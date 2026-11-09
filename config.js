@@ -8,7 +8,7 @@ window.SITE_CONFIG = {
   etsyUrl: "https://www.etsy.com/shop/artworkbymarita",
   instagramUrl: "",
   facebookUrl: "",
-  fineArtAmericaUrl: "",   // the palette icon in the footer
+  fineArtAmericaUrl: "https://fineartamerica.com/profiles/marita-mcveigh",   // the palette icon in the footer
   // The footer's "Policies" link. Leave "" to use her Etsy shop's policies.
   policiesUrl: "",
 
