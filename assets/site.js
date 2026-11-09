@@ -48,6 +48,25 @@
     return c;
   }
 
+  // A piece's short title for cards and its page: the Etsy name without the medium and format words
+  // ("Caladium - Original Oil Painting" → "Caladium"). Gifts keep what they are ("Ornament", "Notebook").
+  const MEDIUM = /\b(original|signed|limited edition|hand pulled|framed|matted|matte canvas|mini|large|(oil|acrylic|watercolou?r|pastel|gouache) painting|painting|watercolou?r|gouache|mixed media|collage|(cyanotype|linocut|art|poster|giclee|canvas) print|cyanotype|linocut|etching|monotype|print)\b/gi;
+  const PACKAGING = /\b(original|framed|matte canvas)\b/gi;
+  function shortTitle(p) {
+    const words = p.category === "gifts" ? PACKAGING : MEDIUM;
+    const clean = (s) => s.replace(/\([^)]*\)/g, "").replace(words, "")
+      .replace(/\s+on (wood panel|watercolou?r paper|canvas)\b/gi, "").replace(/\bart\s*$/i, "")
+      .replace(/\s+/g, " ").replace(/^[\s,.;–-]+|[\s,.;:–-]+$/g, "").replace(/^(of an?|of) /i, "");
+    const name = String(p.name || "").trim();
+    // "Etching - Laundry day", "Print-copper": a dash with a space on either side, or straight after "Print", splits the name
+    const [head, ...rest] = name.split(":");
+    const parts = head.replace(/\b(print|painting)-/gi, "$1 - ").split(/\s+[-–]\s*|\s*[-–]\s+/).map(clean).filter(Boolean);
+    let title = parts.join(", ");
+    // "Abstract Oil Painting on Wood Panel: City Mood": the real title is after the colon
+    if (/^(abstract|floral|art)?$/i.test(title) && rest.length) title = clean(rest.join(":").split(/\s+[-–]\s+/)[0]) || title;
+    return title || name;
+  }
+
   // A piece shown whole on its mat, never cropped. `main` = the big photo on a product page.
   function picture(p, index = 0, main = false) {
     const img = p.images && p.images[index];
@@ -56,11 +75,14 @@
       : `<span class="no-photo">${esc(p.name)}</span>`}</div>`;
   }
 
+  // A piece on its Paper card: the art whole, its name, then the price in quiet italic.
   function card(p, { showPrice = true } = {}) {
     return `<a class="card" href="#${esc(p.id)}">
       ${picture(p)}
-      <span class="card-title">${esc(p.name)}</span>
-      <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : esc([kindLine(p), showPrice ? priceText(p) : ""].filter(Boolean).join(" · "))}</span>
+      <span class="card-cap">
+        <span class="card-title">${esc(shortTitle(p))}</span>
+        <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : esc(showPrice ? priceText(p) : "")}</span>
+      </span>
     </a>`;
   }
   const grid = (list, opts) => `<div class="grid">${list.map((p) => card(p, opts)).join("")}</div>`;
@@ -69,12 +91,14 @@
   function navLinks(active) {
     const cur = (id) => active === id ? ' aria-current="page"' : "";
     const sections = CATEGORIES.filter((c) => inCategory(c.id).length || !ALL.length);
-    return sections.map((c) => `<a href="#${esc(c.id)}"${cur(c.id)}>${esc(c.title)}</a>`).join("") +
+    // Each section gets its own brush-line color (data-section, in style.css).
+    // The label's own box carries the hover splash in the phone menu, where the link is full width.
+    return sections.map((c) => `<a href="#${esc(c.id)}" data-section="${esc(c.id)}"${cur(c.id)}><span class="label">${esc(c.title)}</span></a>`).join("") +
       (soldGalleryOn() ? `<a href="#sold"${cur("sold")}>Sold</a>` : "") +
-      `<a href="#about"${cur("about")}>About</a><a href="#contact"${cur("contact")}>Contact</a>`;
+      `<a href="#about"${cur("about")}>About</a><a class="nav-contact" href="#contact"${cur("contact")}>Contact me</a>`;
   }
   function renderChrome(active) {
-    document.getElementById("siteName").textContent = CONFIG.siteName || "Marita McVeigh";
+    document.querySelector("#siteName span").textContent = CONFIG.siteName || "Marita McVeigh";
     document.getElementById("nav").innerHTML = navLinks(active);
     document.getElementById("menuPanel").innerHTML = navLinks(active);
     setMenu(false);
@@ -83,7 +107,7 @@
     const btn = document.getElementById("menuBtn"), panel = document.getElementById("menuPanel");
     panel.hidden = !open;
     btn.setAttribute("aria-expanded", String(open));
-    btn.textContent = open ? "Close" : "Menu";
+    btn.setAttribute("aria-label", open ? "Close menu" : "Menu");
   }
   function wireMenu() {
     const btn = document.getElementById("menuBtn"), panel = document.getElementById("menuPanel");
@@ -91,46 +115,98 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) { setMenu(false); btn.focus(); } });
     document.addEventListener("click", (e) => { if (!panel.hidden && !e.target.closest(".header")) setMenu(false); });
   }
+  // Footer: badge and email, social icons, the studio line, then the small print Etsy requires.
+  // All four social icons always show; one whose link in config.js is still "" shows but isn't a link.
   function renderFooter() {
-    const links = [
-      CONFIG.etsyUrl && `<a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">Etsy shop</a>`,
-      CONFIG.instagramUrl && `<a href="${esc(CONFIG.instagramUrl)}" target="_blank" rel="noopener">Instagram</a>`,
-      CONFIG.facebookUrl && `<a href="${esc(CONFIG.facebookUrl)}" target="_blank" rel="noopener">Facebook</a>`,
-      `<a href="#about">About</a>`, `<a href="#contact">Contact</a>`, `<a href="#privacy">Privacy</a>`
-    ].filter(Boolean);
-    document.getElementById("footer").innerHTML = `<div class="wrap">
-      <nav aria-label="More">${links.join("")}</nav>
-      <p>Every piece is sold through Etsy, which handles checkout and shipping.</p>
-      <p class="fineprint">The term “Etsy” is a trademark of Etsy, Inc. This site uses the Etsy API but is not endorsed or certified by Etsy, Inc.</p>
+    const out = (url, label, body) => `<a href="${esc(url)}" target="_blank" rel="noopener"${label ? ` aria-label="${label}"` : ""}>${body}</a>`;
+    const social = [
+      ["instagramUrl", "Instagram", "instagram"], ["fineArtAmericaUrl", "Fine Art America", "palette"],
+      ["etsyUrl", "Etsy shop", "etsy"], ["facebookUrl", "Facebook", "facebook"]
+    ].map(([key, label, icon]) => {
+      const img = `<img src="assets/icon-${icon}.svg" alt="">`;
+      return CONFIG[key] ? out(CONFIG[key], label, img) : `<span title="${label}">${img}</span>`;
+    });
+    const email = CONFIG.contactEmail
+      ? `<a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a>`
+      : `<a href="#contact">Contact me</a>`;
+    const policies = CONFIG.policiesUrl || (CONFIG.etsyUrl && `${CONFIG.etsyUrl}#policies`);
+    document.getElementById("footer").innerHTML = `<div class="footer-main">
+      <div class="footer-contact">
+        <span class="badge"><img src="assets/tulip.svg" alt=""></span>
+        ${email}
+      </div>
+      <p class="footer-line">Made by hand in my studio, near Philadelphia</p>
+      ${social.length ? `<nav class="social" aria-label="Elsewhere">${social.join("")}</nav>` : ""}
+      <nav class="footer-links" aria-label="More">
+        <a href="#about">About</a>${policies ? out(policies, "", "Policies") : ""}<a href="#privacy">Privacy</a>
+      </nav>
+    </div>
+    <div class="footer-fine">
+      <p class="footer-copy">© ${esc(CONFIG.siteName || "Marita McVeigh")}</p>
+      <p>The term ‘Etsy’ is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.</p>
+      <p>Social icons from <a href="https://iconscout.com" target="_blank" rel="noopener">iconscout.com</a></p>
     </div>`;
   }
 
   // ---------- pages ----------
+  const arrow = `<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.26 13.5H0v-3h18.26l-8.4-8.4L12 0l12 12-12 12-2.14-2.1 8.4-8.4Z"/></svg>`;
+
+  // Front-page hero (Main page in Figma): heading and button on the left, studio photo on the right.
+  // Phones stack a closer crop of the same photo (her face, the bouquet and her palette) on top.
+  function hero(hasNewest) {
+    return `<section class="hero"><div class="hero-inner">
+      <div class="hero-text">
+        <h1>Painting the joyful part of life</h1>
+        ${hasNewest ? `<a class="hero-btn" href="#newest">See what’s new</a>` : ""}
+      </div>
+      <picture class="hero-photo">
+        <source media="(max-width: 759px)" type="image/webp" srcset="images/about/studio-easel-close.webp">
+        <source media="(max-width: 759px)" srcset="images/about/studio-easel-close.jpg">
+        <source type="image/webp" srcset="images/about/studio-easel-desk.webp">
+        <img src="images/about/studio-easel-desk.jpg" alt="Marita at her easel in her studio, painting a bouquet of flowers" width="1484" height="1134" fetchpriority="high" decoding="async">
+      </picture>
+    </div></section>`;
+  }
+
+  // One card per menu section: its name over its splash, a piece from it, and an arrow.
+  function sectionCard(c, list) {
+    const p = list.find((x) => x.images?.length);
+    return `<a class="room" href="#${esc(c.id)}" data-section="${esc(c.id)}">
+      <span class="room-title">${esc(c.title)}</span>
+      ${p ? `<img src="${esc(p.images[0])}" alt="" loading="lazy">` : ""}
+      ${arrow}
+    </a>`;
+  }
+
   function homePage() {
     if (!ALL.length) return `<div class="wrap"><section class="intro"><h1>${esc(CONFIG.siteName)}</h1><p>${esc(CONFIG.tagline)}</p>
       <p class="empty">Her artwork shows up here after the first sync from Etsy.${CONFIG.etsyUrl ? ` Until then, see it all on <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">her Etsy shop</a>.` : ""}</p></section></div>`;
     const sale = forSale();
-    const lead = newestFirst(sale.filter((p) => p.kind === "original" && p.images?.length))[0] || newestFirst(sale)[0];
     const rooms = CATEGORIES.map((c) => ({ c, list: inCategory(c.id) })).filter((x) => x.list.length);
-    const newest = newestFirst(sale).filter((p) => p !== lead).slice(0, 8);
+    const newest = newestFirst(sale).slice(0, 8);  // 4 × 2 on desktop; tablets and phones show 6
     return `
-      <section class="intro wrap">
-        <div class="intro-text">
-          <h1>${esc(CONFIG.siteName)}</h1>
-          <p>${esc(CONFIG.tagline)}</p>
+      ${hero(newest.length > 0)}
+      ${newest.length ? `<section class="wrap home-block" id="newest">
+        <h2 class="home-heading" tabindex="-1">What’s new</h2>
+        ${grid(newest)}
+        <div class="see-more-row"><a class="see-more" href="#new">See more ${arrow}</a></div>
+      </section>` : ""}
+      <section class="wrap home-block" aria-labelledby="browse">
+        <div class="browse-head">
+          <h2 class="home-heading" id="browse">Browse the art</h2>
+          <span class="splash-row" aria-hidden="true">${rooms.map(({ c }) => `<img src="assets/splash-${esc(c.id)}.webp" alt="" data-section="${esc(c.id)}">`).join("")}</span>
         </div>
-        ${lead ? `<a class="lead" href="#${esc(lead.id)}">${picture(lead, 0, true)}
-          <span class="lead-cap"><span class="card-title">${esc(lead.name)}</span><span class="card-meta">${esc([kindLine(lead), priceText(lead)].filter(Boolean).join(" · "))}</span></span></a>` : ""}
-      </section>
-      <section class="wrap rooms" aria-label="Browse by kind">
-        ${rooms.map(({ c, list }) => `<a class="room" href="#${esc(c.id)}">
-          ${picture(list.find((p) => p.images?.length) || list[0])}
-          <span class="room-title">${esc(c.title)}</span>
-          <span class="card-meta">${esc(c.note)} · ${list.length} ${list.length === 1 ? "piece" : "pieces"}</span>
-        </a>`).join("")}
-      </section>
-      ${newest.length ? `<section class="wrap block"><h2>Newest work</h2>${grid(newest)}</section>` : ""}
-      ${soldGalleryOn() ? `<section class="wrap block"><h2>Sold</h2><p class="lede">Originals that have found a home. <a href="#sold">See the Sold gallery</a></p></section>` : ""}`;
+        <div class="rooms">${rooms.map(({ c, list }) => sectionCard(c, list)).join("")}</div>
+      </section>`;
+  }
+
+  // "See more": everything for sale, newest first.
+  function newPage() {
+    return `<section class="wrap block">
+      <h1>What’s new</h1>
+      <p class="lede">Everything I have for sale, newest first.</p>
+      ${grid(newestFirst(forSale()))}
+    </section>`;
   }
 
   function sectionPage(c, subject) {
@@ -138,7 +214,7 @@
     const here = SUBJECTS.filter((s) => all.some((p) => (p.subjects || []).includes(s)));
     const list = subject ? all.filter((p) => (p.subjects || []).includes(subject)) : all;
     return `<section class="wrap block">
-      <h1>${esc(c.title)}</h1>
+      <h1 class="splash-heading" data-section="${esc(c.id)}">${esc(c.title)}</h1>
       <p class="lede">${esc(c.note)}</p>
       ${here.length ? `<nav class="filters" aria-label="Filter by subject">
         <a href="#${esc(c.id)}"${subject ? "" : ' aria-current="true"'}>All</a>
@@ -194,7 +270,7 @@
             `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
         </div>
         <div class="info">
-          <h1>${esc(p.name)}</h1>
+          <h1>${esc(shortTitle(p))}</h1>
           <p class="facts">${esc(kindLine(p))}${p.size && buyable(p).length < 2 ? ` · ${esc(p.size)}` : ""}${p.oneOfAKind && !p.soldOut ? " · One of a kind" : ""}</p>
           ${p.soldOut ? "" : `<p class="price">${esc(priceText(p))}</p>`}
           ${buyButtons(p)}
@@ -277,11 +353,13 @@
     const p = byId(hash);
     if (p) {
       app.innerHTML = productPage(p); renderChrome(p.soldOut ? "sold" : p.category); wirePiece(p);
-      document.title = `${p.name} · ${name}`;
+      document.title = `${shortTitle(p)} · ${name}`;
     } else if (c) {
       const subject = SUBJECTS.find((s) => slug(s) === sub) || "";
       app.innerHTML = sectionPage(c, subject); renderChrome(c.id);
       document.title = `${subject ? subject + " · " : ""}${c.title} · ${name}`;
+    } else if (hash === "new") {
+      app.innerHTML = newPage(); renderChrome(""); document.title = `What’s new · ${name}`;
     } else if (hash === "sold" && CONFIG.showSoldGallery) {
       app.innerHTML = soldPage(); renderChrome("sold"); document.title = `Sold · ${name}`;
     } else if (hash === "contact") {
@@ -289,9 +367,16 @@
     } else if (hash === "about" || hash === "privacy") {
       renderChrome(hash); textPage(hash); document.title = `${hash === "about" ? "About" : "Privacy"} · ${name}`;
     } else {
-      const missing = hash && hash !== "top";
+      const missing = hash && hash !== "top" && hash !== "newest";
       app.innerHTML = (missing ? `<div class="wrap"><p class="notice" role="status">That piece isn't on the site anymore. Here's everything that is.</p></div>` : "") + homePage();
       renderChrome(""); document.title = `${name} · Artwork`;
+      // "See what's new" (/#newest): glide down to the newest work and put keyboard focus there.
+      const newest = hash === "newest" && document.querySelector("#newest h2");
+      if (newest) {
+        newest.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "start" });
+        newest.focus({ preventScroll: true });
+        return;
+      }
     }
     window.scrollTo(0, 0);
   }
