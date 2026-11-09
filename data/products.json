@@ -920,9 +920,7 @@
           "price": 300,
           "etsyListingId": 573237191,
           "url": "https://www.etsy.com/listing/573237191/sparrow-original-acrylic-painting",
-          "available": false,
-          "goneOn": "2026-11-08",
-          "goneWhy": "expired"
+          "available": true
         }
       ],
       "description": [
@@ -942,8 +940,7 @@
       "etsySection": "Original Art",
       "etsyTitle": "Sparrow Original acrylic painting",
       "listedOn": "2017-11-18",
-      "mergeKey": "original:sparrow acrylic painting",
-      "hidden": true
+      "mergeKey": "original:sparrow acrylic painting"
     },
     {
       "id": "on-the-road-again-original-watercolor",
@@ -4946,9 +4943,7 @@
           "price": 40,
           "etsyListingId": 4355082742,
           "url": "https://www.etsy.com/listing/4355082742/autumn-pumpkin-linocut-print-signed",
-          "available": false,
-          "goneOn": "2026-11-08",
-          "goneWhy": "expired"
+          "available": true
         }
       ],
       "description": [
@@ -4972,8 +4967,7 @@
       "etsySection": "Original Linocuts",
       "etsyTitle": "Autumn Pumpkin Linocut Print: Signed Limited Edition Art",
       "listedOn": "2025-08-19",
-      "mergeKey": "print:autumn pumpkin linocut limited edition",
-      "hidden": true
+      "mergeKey": "print:autumn pumpkin linocut limited edition"
     },
     {
       "id": "rusty-sunflower-painting",
@@ -6260,7 +6254,10 @@
           "label": "Original, 11 × 14\"",
           "price": 200,
           "etsyListingId": 4534127530,
-          "url": "https://www.etsy.com/listing/4534127530/kool-kat-original-oil-painting"
+          "url": "https://www.etsy.com/listing/4534127530/kool-kat-original-oil-painting",
+          "available": false,
+          "goneOn": "2026-11-09",
+          "goneWhy": "expired"
         }
       ],
       "description": [
@@ -6284,7 +6281,8 @@
       "etsySection": "Original Art",
       "etsyTitle": "Kool Kat Original Oil Painting",
       "listedOn": "2026-07-07",
-      "mergeKey": "original:kool kat oil painting"
+      "mergeKey": "original:kool kat oil painting",
+      "hidden": true
     },
     {
       "id": "our-deer-friend-original-painting",
