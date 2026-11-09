@@ -179,12 +179,14 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); font-weight: 600; font-size: 18px; line-height: 1.6; text-decoration: none; }
 
 @media (max-width: 759px) {
-  .hero { min-height: 0; padding-block: 16px 8px; }
+  /* phones too: the hero fills the screen under the header; photo, heading and button stay at the top */
+  .hero { justify-content: flex-start; padding-block: 16px 8px; }
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .hero-photo { order: -1; aspect-ratio: 342 / 353; }
   .hero-text { gap: 16px; }
   .hero-btn { align-self: stretch; padding: 8px 16px; font-weight: 500; }
 }
+@media (max-width: 520px) { .hero { min-height: calc(100svh - 77px); } }  /* the phone header is 77px */
 
 /* subject filters and subject tags */
 .filters, .tags { display: flex; flex-wrap: wrap; gap: 8px; }
