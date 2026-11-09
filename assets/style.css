@@ -166,9 +166,9 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 
 /* front-page hero: heading and button on the left, studio photo on the right.
    Studio photos can be cropped; artwork never is. */
-/* On tablets and desktops the hero fills the window under the header, so "What's new" starts just below
-   the fold (capped so very tall screens don't get a big gap). 85px = header, 24px = space above What's new. */
-.hero { display: flex; flex-direction: column; justify-content: center; min-height: min(calc(100svh - 85px - 24px), 900px);
+/* On tablets and desktops the hero fills the window under the header (85px), so "What's new" is never
+   on the first screen: "See what's new" is how you get there. */
+.hero { display: flex; flex-direction: column; justify-content: center; min-height: calc(100svh - 85px);
   padding: clamp(32px, 4vw, 64px) max(var(--gutter), env(safe-area-inset-right, 0px)) clamp(32px, 4vw, 64px) max(var(--gutter), env(safe-area-inset-left, 0px)); }
 .hero + #newest { padding-top: 24px; }
 .hero-inner { display: grid; grid-template-columns: minmax(0, 406fr) minmax(0, 742fr); gap: clamp(32px, 4.3vw, 62px); align-items: center; max-width: var(--page); margin: 0 auto; }
