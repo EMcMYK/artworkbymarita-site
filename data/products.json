@@ -9203,6 +9203,61 @@
       "etsyTitle": "Pin Oak Leaves Cyanotype",
       "listedOn": "2026-11-03",
       "mergeKey": "other:pin oak leaves cyanotype"
+    },
+    {
+      "id": "blue-morning-glory-watercolor",
+      "name": "Blue Morning Glory Watercolor",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": false,
+      "size": "11 × 14 in",
+      "images": [
+        "images/blue-morning-glory-watercolor/8880345501.jpg",
+        "images/blue-morning-glory-watercolor/8880345705.jpg",
+        "images/blue-morning-glory-watercolor/8832543482.jpg",
+        "images/blue-morning-glory-watercolor/8880345715.jpg",
+        "images/blue-morning-glory-watercolor/8832543492.jpg",
+        "images/blue-morning-glory-watercolor/8832543480.jpg",
+        "images/blue-morning-glory-watercolor/8832543470.jpg",
+        "images/blue-morning-glory-watercolor/8832543486.jpg",
+        "images/blue-morning-glory-watercolor/8880345689.jpg",
+        "images/blue-morning-glory-watercolor/8832543484.jpg"
+      ],
+      "options": [
+        {
+          "title": "Blue Morning Glory Watercolor",
+          "label": "11 × 14\"",
+          "price": 35,
+          "etsyListingId": 4614169104,
+          "url": "https://www.etsy.com/listing/4614169104/blue-morning-glory-watercolor",
+          "hasVariations": true
+        }
+      ],
+      "description": [
+        "Original Watercolor and Ink of a blue morning glory in a colorful background. Painted on 140lb cold pressed acid free watercolor paper matted in a white mat measuring 11x14 inches. Prints are also available."
+      ],
+      "tags": [
+        "blue morning glory",
+        "watercolor",
+        "ink",
+        "garden art",
+        "flower painting",
+        "floral art",
+        "botanical vibe",
+        "cottage core",
+        "colorful art",
+        "whimsical",
+        "works on paper",
+        "blue decor",
+        "flower prints"
+      ],
+      "etsySection": "Floral Art",
+      "etsyTitle": "Blue Morning Glory Watercolor",
+      "listedOn": "2026-11-10",
+      "mergeKey": "original:blue morning glory watercolor"
     }
   ]
 }
