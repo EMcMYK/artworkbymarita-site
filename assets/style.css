@@ -109,13 +109,18 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
    the price in quiet italic. The caption scales with the card, as in the Figma art card. */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 19px; }
 @media (max-width: 759px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } }
-.card { container-type: inline-size; aspect-ratio: 3 / 4; display: flex; flex-direction: column; padding: clamp(12px, 1.8vw, 24px); background: var(--paper); border-radius: 6px;
+/* Each card spans three rows of the grid (art, title, price) and shares them with the cards beside it
+   (subgrid). So in a row, every title starts at the same height and every price lines up, and a row only
+   makes room for a second title line when one of its titles wraps. */
+.card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start;
+  padding: clamp(12px, 1.8vw, 24px); background: var(--paper); border-radius: 6px;
   color: var(--warm-ink); text-decoration: none; min-width: 0; transition: transform .2s ease, box-shadow .2s ease; }
-.card .mat { position: relative; flex: 1; min-height: 0; aspect-ratio: auto; padding: 0; box-shadow: none; background: none; }
-.card .mat img { position: absolute; inset: 0; object-position: top center; }  /* fills the space left, whole (contain), top-aligned */
-/* Figtree Regular, 22px on desktop cards, smaller on narrow ones. The caption always keeps room for a
-   two-line title and the price, so every caption starts at the same height; the price sits right under the title. */
-.card-cap { display: flex; flex-direction: column; flex: none; min-height: calc(3em * 1.35); margin-top: clamp(14px, 1.5vw, 20px); font-weight: 400; font-size: clamp(16px, 9.5cqi, 22px); line-height: 1.35; }
+.card .mat { position: relative; aspect-ratio: 15 / 14; margin-bottom: clamp(14px, 1.5vw, 20px); padding: 0; box-shadow: none; background: none; }
+.card .mat img { position: absolute; inset: 0; object-position: top center; }  /* fills the art box, whole (contain), top-aligned */
+/* Figtree Regular: 22px on desktop, about 19px on tablets, 16px on phones (a size container on the card
+   would scale it with the card, but breaks the shared rows in Chrome). The caption's title and price sit in the
+   card's own rows, so the wrapper itself steps aside (display: contents) and just passes the type down. */
+.card-cap { display: contents; font-weight: 400; font-size: clamp(16px, .6vw + 13.5px, 22px); line-height: 1.35; }
 .card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
 .card-meta { font-style: italic; color: var(--clay); }
 .dot { display: inline-block; width: .55em; height: .55em; border-radius: 50%; background: var(--sold); margin-right: 6px; vertical-align: .05em; }
