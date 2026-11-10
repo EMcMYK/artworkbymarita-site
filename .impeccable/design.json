@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T22:09:27+00:00",
+  "title": "Design System: Marita McVeigh",
+  "extensions": {
+    "colorMeta": {
+      "sand": {
+        "role": "neutral",
+        "displayName": "Sand",
+        "canonical": "#efe4d0",
+        "tonalRamp": [
+          "oklch(15.0% 0.012 82.6)",
+          "oklch(26.4% 0.020 82.6)",
+          "oklch(37.9% 0.026 82.6)",
+          "oklch(49.3% 0.029 82.6)",
+          "oklch(60.7% 0.029 82.6)",
+          "oklch(72.1% 0.026 82.6)",
+          "oklch(83.6% 0.020 82.6)",
+          "oklch(95.0% 0.012 82.6)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f7f1e6",
+        "tonalRamp": [
+          "oklch(15.0% 0.006 82.8)",
+          "oklch(26.4% 0.011 82.8)",
+          "oklch(37.9% 0.014 82.8)",
+          "oklch(49.3% 0.016 82.8)",
+          "oklch(60.7% 0.016 82.8)",
+          "oklch(72.1% 0.014 82.8)",
+          "oklch(83.6% 0.011 82.8)",
+          "oklch(95.0% 0.006 82.8)"
+        ]
+      },
+      "warm-ink": {
+        "role": "neutral",
+        "displayName": "Warm Ink",
+        "canonical": "#2e2620",
+        "tonalRamp": [
+          "oklch(15.0% 0.007 58.9)",
+          "oklch(26.4% 0.011 58.9)",
+          "oklch(37.9% 0.014 58.9)",
+          "oklch(49.3% 0.016 58.9)",
+          "oklch(60.7% 0.016 58.9)",
+          "oklch(72.1% 0.014 58.9)",
+          "oklch(83.6% 0.011 58.9)",
+          "oklch(95.0% 0.007 58.9)"
+        ]
+      },
+      "clay-gray": {
+        "role": "neutral",
+        "displayName": "Clay Gray",
+        "canonical": "#6b5e52",
+        "tonalRamp": [
+          "oklch(15.0% 0.010 64.9)",
+          "oklch(26.4% 0.018 64.9)",
+          "oklch(37.9% 0.022 64.9)",
+          "oklch(49.3% 0.025 64.9)",
+          "oklch(60.7% 0.025 64.9)",
+          "oklch(72.1% 0.022 64.9)",
+          "oklch(83.6% 0.018 64.9)",
+          "oklch(95.0% 0.010 64.9)"
+        ]
+      },
+      "cyanotype-blue": {
+        "role": "primary",
+        "displayName": "Cyanotype Blue",
+        "canonical": "#1f4e8c",
+        "tonalRamp": [
+          "oklch(15.0% 0.047 256.6)",
+          "oklch(26.4% 0.080 256.6)",
+          "oklch(37.9% 0.102 256.6)",
+          "oklch(49.3% 0.113 256.6)",
+          "oklch(60.7% 0.113 256.6)",
+          "oklch(72.1% 0.102 256.6)",
+          "oklch(83.6% 0.080 256.6)",
+          "oklch(95.0% 0.047 256.6)"
+        ]
+      },
+      "sold-rose": {
+        "role": "secondary",
+        "displayName": "Sold Rose",
+        "canonical": "#b73557",
+        "tonalRamp": [
+          "oklch(15.0% 0.068 9.4)",
+          "oklch(26.4% 0.116 9.4)",
+          "oklch(37.9% 0.149 9.4)",
+          "oklch(49.3% 0.165 9.4)",
+          "oklch(60.7% 0.165 9.4)",
+          "oklch(72.1% 0.149 9.4)",
+          "oklch(83.6% 0.116 9.4)",
+          "oklch(95.0% 0.068 9.4)"
+        ]
+      },
+      "line-paintings": {
+        "role": "secondary",
+        "displayName": "Paintings Rose",
+        "canonical": "#b73557",
+        "tonalRamp": [
+          "oklch(15.0% 0.068 9.4)",
+          "oklch(26.4% 0.116 9.4)",
+          "oklch(37.9% 0.149 9.4)",
+          "oklch(49.3% 0.165 9.4)",
+          "oklch(60.7% 0.165 9.4)",
+          "oklch(72.1% 0.149 9.4)",
+          "oklch(83.6% 0.116 9.4)",
+          "oklch(95.0% 0.068 9.4)"
+        ]
+      },
+      "line-cyanotypes": {
+        "role": "secondary",
+        "displayName": "Cyanotypes Blue",
+        "canonical": "#1f4e8c",
+        "tonalRamp": [
+          "oklch(15.0% 0.047 256.6)",
+          "oklch(26.4% 0.080 256.6)",
+          "oklch(37.9% 0.102 256.6)",
+          "oklch(49.3% 0.113 256.6)",
+          "oklch(60.7% 0.113 256.6)",
+          "oklch(72.1% 0.102 256.6)",
+          "oklch(83.6% 0.080 256.6)",
+          "oklch(95.0% 0.047 256.6)"
+        ]
+      },
+      "line-printmaking": {
+        "role": "secondary",
+        "displayName": "Printmaking Rust",
+        "canonical": "#88431d",
+        "tonalRamp": [
+          "oklch(15.0% 0.044 46.8)",
+          "oklch(26.4% 0.075 46.8)",
+          "oklch(37.9% 0.095 46.8)",
+          "oklch(49.3% 0.106 46.8)",
+          "oklch(60.7% 0.106 46.8)",
+          "oklch(72.1% 0.095 46.8)",
+          "oklch(83.6% 0.075 46.8)",
+          "oklch(95.0% 0.044 46.8)"
+        ]
+      },
+      "line-prints": {
+        "role": "secondary",
+        "displayName": "Prints Leaf Green",
+        "canonical": "#316429",
+        "tonalRamp": [
+          "oklch(15.0% 0.043 141.0)",
+          "oklch(26.4% 0.074 141.0)",
+          "oklch(37.9% 0.094 141.0)",
+          "oklch(49.3% 0.104 141.0)",
+          "oklch(60.7% 0.104 141.0)",
+          "oklch(72.1% 0.094 141.0)",
+          "oklch(83.6% 0.074 141.0)",
+          "oklch(95.0% 0.043 141.0)"
+        ]
+      },
+      "line-gifts": {
+        "role": "secondary",
+        "displayName": "Gifts Mustard",
+        "canonical": "#8a6200",
+        "tonalRamp": [
+          "oklch(15.0% 0.044 80.6)",
+          "oklch(26.4% 0.076 80.6)",
+          "oklch(37.9% 0.097 80.6)",
+          "oklch(49.3% 0.107 80.6)",
+          "oklch(60.7% 0.107 80.6)",
+          "oklch(72.1% 0.097 80.6)",
+          "oklch(83.6% 0.076 80.6)",
+          "oklch(95.0% 0.044 80.6)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(46, 38, 32, 0.14)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero heading, front-page section headings, section page titles."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Piece titles on their page, Browse card names, See more."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "Pull quotes in Marita's own words (italic)."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Marita McVeigh beside the tulip, in Cyanotype blue."
+      },
+      "title": {
+        "displayName": "Card Title",
+        "purpose": "Piece names and prices on cards; scales 16 to 22px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Everything you read; never under 18px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Menu words and the Contact me button."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Buy on Etsy, See what's new."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Filter chips, the Etsy note, captions."
+      }
+    },
+    "shadows": [
+      {
+        "name": "mat",
+        "value": "0 1px 2px rgba(46, 38, 32, .06), 0 6px 18px -10px rgba(46, 38, 32, .25)",
+        "purpose": "The mat behind a piece's main photo."
+      },
+      {
+        "name": "lift",
+        "value": "0 2px 6px rgba(46, 38, 32, .08), 0 14px 28px -14px rgba(46, 38, 32, .4)",
+        "purpose": "Piece and section cards on mouse hover, with a 4px rise."
+      },
+      {
+        "name": "button-rest",
+        "value": "0 1px 2px rgba(31, 78, 140, .25)",
+        "purpose": "Blue buttons at rest."
+      },
+      {
+        "name": "button-lift",
+        "value": "0 6px 14px -6px rgba(31, 78, 140, .6)",
+        "purpose": "Blue buttons on mouse hover, with a 2px rise."
+      }
+    ],
+    "motion": [
+      {
+        "name": "card-lift",
+        "value": "transform .2s ease, box-shadow .2s ease",
+        "purpose": "Cards rising on hover (mouse only)."
+      },
+      {
+        "name": "button-lift",
+        "value": "transform .15s ease, box-shadow .15s ease, filter .15s",
+        "purpose": "Buttons rising and brightening on hover."
+      },
+      {
+        "name": "splash-paint-in",
+        "value": "clip-path .4s cubic-bezier(.3, .7, .4, 1)",
+        "purpose": "A section splash revealed left to right behind a menu word."
+      },
+      {
+        "name": "underline-thicken",
+        "value": "border-bottom-width .15s ease",
+        "purpose": "See more underline growing from 2.5px to 5px."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-header",
+        "value": "520px"
+      },
+      {
+        "name": "stack",
+        "value": "760px"
+      },
+      {
+        "name": "piece-stack",
+        "value": "860px"
+      },
+      {
+        "name": "menu-button",
+        "value": "1000px"
+      },
+      {
+        "name": "three-across",
+        "value": "1100px"
+      },
+      {
+        "name": "wordmark-small",
+        "value": "1180px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Buy on Etsy: the one button style, only as wide as its words.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Buy on Etsy</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 32px; border-radius: 6px; background: var(--cyanotype, #1f4e8c); color: var(--paper, #f7f1e6); font: 600 18px/1.4 Figtree, Helvetica, Arial, sans-serif; text-decoration: none; box-shadow: 0 1px 2px rgba(31, 78, 140, .25); transition: transform .15s ease, box-shadow .15s ease, filter .15s; } .ds-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 14px -6px rgba(31, 78, 140, .6); filter: brightness(1.1); } .ds-btn:active { transform: none; box-shadow: none; } .ds-btn:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
+    },
+    {
+      "name": "Menu Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "A menu word over its 5px section-colored brush line (shown here as a soft line; the site uses a hand-painted mask).",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#b73557\">Paintings</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#1f4e8c\">Cyanotypes</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#88431d\">Printmaking</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#316429\">Prints</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#8a6200\">Gifts</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#2e2620\">About</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 32px; background: var(--sand, #efe4d0); padding: 16px 24px; } .ds-nav-link { position: relative; padding-bottom: 11px; color: var(--warm-ink, #2e2620); font: 500 18px/1.6 Figtree, Helvetica, Arial, sans-serif; text-decoration: none; } .ds-nav-link::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; border-radius: 3px 1px 3px 1px; background: var(--line); } .ds-nav-link:hover::after { height: 7px; } .ds-nav-link:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Subject filters and tags: outlined pills; the selected one fills blue.",
+      "html": "<div class=\"ds-chips\"><a href=\"#\" class=\"ds-chip is-on\">All</a><a href=\"#\" class=\"ds-chip\">Florals</a><a href=\"#\" class=\"ds-chip\">Leaves</a></div>",
+      "css": ".ds-chips { display: flex; gap: 8px; } .ds-chip { border: 1px solid var(--warm-ink, #2e2620); border-radius: 999px; padding: 3px 14px; color: var(--warm-ink, #2e2620); font: 400 16px/1.5 Figtree, Helvetica, Arial, sans-serif; text-decoration: none; } .ds-chip:hover { border-color: var(--cyanotype, #1f4e8c); color: var(--cyanotype, #1f4e8c); } .ds-chip.is-on { background: var(--cyanotype, #1f4e8c); border-color: var(--cyanotype, #1f4e8c); color: var(--paper, #f7f1e6); } .ds-chip:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
+    },
+    {
+      "name": "Piece Card",
+      "kind": "card",
+      "refersTo": "piece-card",
+      "description": "A piece on Paper: the art whole in a 15:14 box, the name, then the price in quiet italic. Lifts on hover.",
+      "html": "<a href=\"#\" class=\"ds-card\"><span class=\"ds-card-art\"><span class=\"ds-card-piece\"></span></span><span class=\"ds-card-title\">Blue Morning Glory</span><span class=\"ds-card-price\">From $35</span></a>",
+      "css": ".ds-card { display: flex; flex-direction: column; width: 240px; padding: 20px; background: var(--paper, #f7f1e6); color: var(--warm-ink, #2e2620); text-decoration: none; font: 400 20px/1.35 Figtree, Helvetica, Arial, sans-serif; transition: transform .2s ease, box-shadow .2s ease; } .ds-card-art { display: grid; place-items: start center; aspect-ratio: 15 / 14; margin-bottom: 18px; } .ds-card-piece { width: 78%; aspect-ratio: 4 / 5; background: linear-gradient(135deg, #2c5aa0, #6fa8dc 55%, #f2c94c); } .ds-card-price { font-style: italic; color: var(--clay, #6b5e52); } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 2px 6px rgba(46, 38, 32, .08), 0 14px 28px -14px rgba(46, 38, 32, .4); } .ds-card:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Card",
+      "kind": "custom",
+      "refersTo": "section-card",
+      "description": "Browse the art: the section name over its watercolor splash, a whole piece, an arrow (splash shown as a soft blob here).",
+      "html": "<a href=\"#\" class=\"ds-room\"><span class=\"ds-room-title\">Paintings</span><span class=\"ds-room-piece\"></span><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" aria-hidden=\"true\" style=\"fill:var(--cyanotype, #1f4e8c)\"><path d=\"M18.26 13.5H0v-3h18.26l-8.4-8.4L12 0l12 12-12 12-2.14-2.1 8.4-8.4Z\"/></svg></a>",
+      "css": ".ds-room { display: flex; align-items: center; gap: 8px; width: 420px; height: 150px; padding: 8px 12px 8px 8px; background: var(--paper, #f7f1e6); border-radius: 6px; color: var(--warm-ink, #2e2620); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; } .ds-room-title { position: relative; isolation: isolate; margin-left: 14px; padding: 0 16px; font: 400 32px/1.2 'Alegreya Sans', 'Trebuchet MS', sans-serif; } .ds-room-title::before { content: \"\"; position: absolute; z-index: -1; left: -4px; top: 50%; width: 2.6em; height: 2.4em; translate: 0 -50%; rotate: 9deg; border-radius: 48% 52% 44% 56% / 55% 45% 55% 45%; background: radial-gradient(circle at 40% 40%, #ff799e, #ff799ecc 60%, #ff799e00 72%); } .ds-room-piece { flex: 1; align-self: stretch; margin-left: auto; max-width: 150px; background: linear-gradient(135deg, #f2c94c, #e79200 50%, #3d6330); } .ds-room svg { width: 20px; height: 20px; flex: none; } .ds-room:hover { transform: translateY(-4px); box-shadow: 0 2px 6px rgba(46, 38, 32, .08), 0 14px 28px -14px rgba(46, 38, 32, .4); } .ds-room:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
+    },
+    {
+      "name": "See More Link",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Headline-size link with a blue underline that thickens on hover inside a fixed-height row, so nothing below moves.",
+      "html": "<div class=\"ds-more-row\"><a href=\"#\" class=\"ds-more\">See more <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" aria-hidden=\"true\" style=\"fill:var(--cyanotype, #1f4e8c)\"><path d=\"M18.26 13.5H0v-3h18.26l-8.4-8.4L12 0l12 12-12 12-2.14-2.1 8.4-8.4Z\"/></svg></a></div>",
+      "css": ".ds-more-row { display: flex; align-items: flex-start; height: calc(1.2em + 10px); font: 400 36px/1.2 'Alegreya Sans', 'Trebuchet MS', sans-serif; } .ds-more { display: inline-flex; align-items: center; gap: 20px; padding-bottom: 2px; border-bottom: 2.5px solid var(--cyanotype, #1f4e8c); color: var(--cyanotype, #1f4e8c); text-decoration: none; transition: border-bottom-width .15s ease; } .ds-more:hover { border-bottom-width: 5px; } .ds-more:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Paint on a Palette",
+    "overview": "The site is the palette, and the color is Marita's paint. Everything structural is warm and neutral: Sand walls, Paper cards and mats, Warm ink type. The color comes from two places only: her artwork, always shown whole, and five hand-cut watercolor splashes, one per menu section, made from her own cyanotype of petals. Cyanotype blue, from her sun prints, is the single interface color, kept for the logo, links and buttons.\n\nPages are simple and uncrowded: generous margins, one idea per band, the art first. The handmade shows up in small, deliberate places, never as texture spread over everything: a brushstroke line under each menu word, a splash tucked behind a section name, a splash that paints itself in on hover. Surfaces stay flat at rest and lift a little when touched, like picking a card off a table.\n\nIt must never read as a cold white gallery (the site's earlier placeholder look), a corporate or salesy shop, a busy marketplace, or anything dark and moody.",
+    "keyCharacteristics": [
+      "Warm neutral ground; color only from the art and the five section splashes.",
+      "One interface color: Cyanotype blue.",
+      "Artwork always whole: contained, never cropped. Studio photos may be cropped.",
+      "Alegreya Sans for headings, Figtree for everything you read or tap.",
+      "Flat paper surfaces; lift appears only on hover, and only with a mouse.",
+      "Handmade marks are small and specific: brush lines, splashes, the tulip."
+    ],
+    "rules": [
+      {
+        "name": "The Paint Comes From Her Rule",
+        "body": "The interface adds no color of its own beyond Cyanotype blue. Anything bright on the page is her artwork or one of the five section splashes.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Splash Rule",
+        "body": "A splash belongs to one section and appears only behind that section's name or menu word, never behind body text or art, and never stacked with another splash. The only place all five appear together is the small row beside \"Browse the art\".",
+        "section": "colors"
+      },
+      {
+        "name": "The Regular Headings Rule",
+        "body": "Headings are Alegreya Sans Regular (400). Medium (500) is only for the wordmark and quotes.",
+        "section": "typography"
+      },
+      {
+        "name": "The Readable Floor Rule",
+        "body": "Body text is never smaller than 18px. Only card captions on phones and small print go below it, never under 16px (the Etsy notice in the footer is the single 15px exception).",
+        "section": "typography"
+      },
+      {
+        "name": "The Below-the-Fold Rule",
+        "body": "On the front page nothing but the hero is visible before scrolling; the next section starts just past the fold.",
+        "section": "layout"
+      },
+      {
+        "name": "The Picked-Up Card Rule",
+        "body": "Surfaces are flat at rest. Lift is a reaction to a mouse, never a resting state, and never on touch screens where a tap would leave it stuck.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** show every artwork whole (`object-fit: contain`), in any card, mat, thumbnail or preview.",
+      "**Do** keep Sand as the page and Paper for anything that holds something.",
+      "**Do** use Cyanotype blue for every link, button and focus ring, and nothing decorative.",
+      "**Do** give each section its own line color and splash, and use them only for that section.",
+      "**Do** keep headings in Alegreya Sans Regular and body text at 18px or larger.",
+      "**Do** keep surfaces flat at rest; lift only on mouse hover, and respect reduced motion.",
+      "**Do** use the simplified tulip badge only below 96px; the full outline badge from 96px up."
+    ],
+    "donts": [
+      "**Don't** crop a piece of art to fit a frame. Crop studio photos only.",
+      "**Don't** go back to cool gallery white, gray or serif headings: the old placeholder look.",
+      "**Don't** add sale banners, badges, countdowns, \"shop now\" urgency or stock-photo polish.",
+      "**Don't** build marketplace density: ratings, crowded filters, ads, many columns of tiny thumbnails.",
+      "**Don't** use dark backgrounds or moody, high-contrast styling.",
+      "**Don't** add new interface colors, gradients or decorative color; brightness comes from her art and the splashes.",
+      "**Don't** put a splash behind body text or artwork, or stack two splashes."
+    ]
+  }
+}
