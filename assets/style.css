@@ -148,7 +148,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .splash-row { display: flex; align-items: center; }
 .splash-row img { height: clamp(26px, 3.6vw, 52px); width: auto; rotate: var(--splash-turn); margin-right: -4px; }
 .rooms { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: 201px; gap: 16px; }
-.room { grid-column: span 2; display: flex; align-items: center; gap: 8px; min-width: 0; padding: 8px 12px 8px 8px; background: var(--paper); border-radius: 6px;
+.room { container-type: inline-size; grid-column: span 2; display: flex; align-items: center; gap: 8px; min-width: 0; padding: 8px 12px 8px 8px; background: var(--paper); border-radius: 6px;
   color: var(--warm-ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
 .room:nth-child(-n + 2) { grid-column: span 3; }
 /* lift on hover, only where there's a mouse (a tap on a phone would leave it stuck) */
@@ -160,6 +160,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
   background: var(--section-splash) center / contain no-repeat; }
 .room img { flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: right center; }  /* art is never cropped */
 .room .arrow { width: 20px; height: 20px; margin-left: auto; }
+@container (max-width: 280px) { .room img { display: none; } }  /* too narrow: just the name and the arrow */
 @media (max-width: 1099px) { .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; } .room, .room:nth-child(-n + 2) { grid-column: auto; } .room:first-child:nth-last-child(odd) { grid-column: span 2; } }  /* an odd count: Paintings takes the full row */
 @media (max-width: 759px) {
   .browse-head { flex-direction: column; align-items: flex-start; }
@@ -210,18 +211,22 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .thumbs button[aria-pressed="true"] { border-color: var(--cyanotype); box-shadow: 0 0 0 1px var(--cyanotype); }
 .thumbs img { width: 100%; height: 100%; object-fit: contain; }
 .gallery { min-width: 0; }
-.info { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.info { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.info-head { display: flex; flex-direction: column; gap: 6px; }
 .info h1 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; } /* names are long: H2 size */
 .facts { margin: 0; color: var(--clay); font-style: italic; }
-.price { margin: 0; font-size: 24px; font-variant-numeric: tabular-nums; }
-.buy { display: flex; flex-direction: column; gap: 8px; }
-.btn { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); text-decoration: none; font-weight: 600; font-size: 18px; }
-/* buttons lift a little on hover */
+.info .prose p:last-child, .info .prose ul:last-child { margin-bottom: 0; }
+/* the purchase block: price, a button sized to its words, the Etsy note */
+.purchase { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 24px; border-top: 1px solid var(--hairline); }
+.price { margin: 0; font-size: 24px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.buy { display: inline-grid; gap: 8px; }  /* several buttons share the widest one's width */
+.btn { display: inline-flex; justify-content: center; align-items: center; gap: 16px; padding: 12px 32px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); text-decoration: none; font-weight: 600; font-size: 18px; line-height: 1.4; }
 .btn, .hero-btn, .nav .nav-contact, .menu-panel .nav-contact { box-shadow: 0 1px 2px rgba(31, 78, 140, .25); transition: transform .15s ease, box-shadow .15s ease, filter .15s; }
 @media (hover: hover) { .btn:hover, .hero-btn:hover, .nav .nav-contact:hover, .menu-panel .nav-contact:hover { transform: translateY(-2px); box-shadow: var(--button-lift); filter: brightness(1.1); } }
 .btn:active, .hero-btn:active, .nav .nav-contact:active, .menu-panel .nav-contact:active { transform: none; box-shadow: none; }
 .btn-price { font-weight: 500; font-variant-numeric: tabular-nums; }
-.buy-note { margin: 2px 0 0; font-size: 16px; line-height: 1.5; color: var(--clay); }
+.btn:has(.btn-price) { justify-content: space-between; }  /* several options: label left, price right */
+.buy-note { margin: 0; font-size: 16px; line-height: 1.5; color: var(--clay); }
 .sold-note { margin: 0; padding: 12px 16px; background: var(--paper); border-radius: 6px; }
 .also { margin: 0; }
 @media (max-width: 860px) {

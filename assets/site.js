@@ -247,13 +247,14 @@
       return `<p class="sold-note"><span class="dot" aria-hidden="true"></span>This original has sold.${other && !other.soldOut ? ` <a href="#${esc(other.id)}">Prints are available</a>.` : ""}</p>`;
     }
     if (!opts.length) return "";
+    // One option: a plain "Buy on Etsy" (the price is shown just above it). Several: one button each, with its price.
     const many = opts.length > 1;
     return `<div class="buy">
-      ${opts.map((o) => `<a class="btn" href="${esc(o.url)}" target="_blank" rel="noopener">
-        <span>${many ? esc(o.label) : "Buy on Etsy"}</span>
-        <span class="btn-price">${o.hasVariations ? `from ${money(o.price)}` : money(o.price)}</span></a>`).join("")}
-      <p class="buy-note">${many ? "Each button opens that version on Etsy. " : ""}${opts.some((o) => o.hasVariations) ? "Choose a size on Etsy. " : ""}Checkout and shipping happen on Etsy.</p>
-    </div>`;
+      ${opts.map((o) => `<a class="btn" href="${esc(o.url)}" target="_blank" rel="noopener">${many
+        ? `<span>${esc(o.label)}</span><span class="btn-price">${o.hasVariations ? `from ${money(o.price)}` : money(o.price)}</span>`
+        : "Buy on Etsy"}</a>`).join("")}
+    </div>
+    <p class="buy-note">${many ? "Each button opens that version on Etsy. " : ""}${opts.some((o) => o.hasVariations) ? "Choose a size on Etsy. " : ""}Checkout and shipping happen on Etsy.</p>`;
   }
 
   function productPage(p) {
@@ -270,12 +271,16 @@
             `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
         </div>
         <div class="info">
-          <h1>${esc(shortTitle(p))}</h1>
-          <p class="facts">${esc(kindLine(p))}${p.size && buyable(p).length < 2 ? ` · ${esc(p.size)}` : ""}${p.oneOfAKind && !p.soldOut ? " · One of a kind" : ""}</p>
-          ${p.soldOut ? "" : `<p class="price">${esc(priceText(p))}</p>`}
-          ${buyButtons(p)}
-          ${other && !p.soldOut && !other.soldOut ? `<p class="also"><a href="#${esc(other.id)}">${other.kind === "original" ? "See the original" : "Prints of this piece"}</a></p>` : ""}
+          <div class="info-head">
+            <h1>${esc(shortTitle(p))}</h1>
+            <p class="facts">${esc(kindLine(p))}${p.size && buyable(p).length < 2 ? ` · ${esc(p.size)}` : ""}${p.oneOfAKind && !p.soldOut ? " · One of a kind" : ""}</p>
+          </div>
           <div class="prose">${describe(p.description || [])}</div>
+          <div class="purchase">
+            ${p.soldOut ? "" : `<p class="price">${esc(priceText(p))}</p>`}
+            ${buyButtons(p)}
+            ${other && !p.soldOut && !other.soldOut ? `<p class="also"><a href="#${esc(other.id)}">${other.kind === "original" ? "See the original" : "Prints of this piece"}</a></p>` : ""}
+          </div>
           ${(p.subjects || []).length && !p.soldOut ? `<p class="tags">${p.subjects.map((s) => `<a href="#${esc(p.category)}/${slug(s)}">${esc(s)}</a>`).join("")}</p>` : ""}
         </div>
       </article>
