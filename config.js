@@ -20,12 +20,13 @@ window.SITE_CONFIG = {
   showSoldPrices: false,
 
   // Menu sections, in order. Each product's "category" in data/products.json is one of these ids.
+  // "one" is the name for a single piece, used on its own page ("Original · Cyanotype").
   categories: [
-    { id: "paintings", title: "Paintings", note: "Original oils and watercolors" },
-    { id: "cyanotypes", title: "Cyanotypes", note: "Sun prints in Prussian blue" },
-    { id: "printmaking", title: "Printmaking", note: "Etchings and hand-pulled prints" },
-    { id: "prints", title: "Prints", note: "Prints of her paintings, in several sizes" },
-    { id: "gifts", title: "Gifts", note: "Cards and smaller pieces" }
+    { id: "paintings", title: "Paintings", one: "Painting", note: "Original oils and watercolors" },
+    { id: "cyanotypes", title: "Cyanotypes", one: "Cyanotype", note: "Sun prints in Prussian blue" },
+    { id: "printmaking", title: "Printmaking", one: "Printmaking", note: "Etchings and hand-pulled prints" },
+    { id: "prints", title: "Prints", one: "Print", note: "Prints of her paintings, in several sizes" },
+    { id: "gifts", title: "Gifts", one: "Gift", note: "Cards and smaller pieces" }
   ],
 
   // Subject filters, in the order they're offered (names match "subjectRules" in data/etsy-sync.json).

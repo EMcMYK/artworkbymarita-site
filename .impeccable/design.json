@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-11T04:07:27+00:00",
+  "generatedAt": "2026-11-11T04:30:18+00:00",
   "title": "Design System: Marita McVeigh",
   "extensions": {
     "colorMeta": {
@@ -376,6 +376,11 @@
       {
         "name": "The Readable Floor Rule",
         "body": "Body text is never smaller than 18px. Only card captions on phones and small print go below it, and nothing goes under 16px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two-Line Hero Rule",
+        "body": "The hero heading breaks only between its two phrases, never inside one, at every width down to 360px.",
         "section": "typography"
       },
       {

@@ -184,7 +184,7 @@ Warm, low-contrast neutrals carry the page; one blue does all the interface work
 **Character:** Alegreya Sans is friendly and a little organic, like handwriting that has been tidied; Figtree is open and plain, so the reading never feels corporate. Both stay at regular weights except where noted.
 
 ### Hierarchy
-- **Display** (Alegreya Sans 400, 60px desktop to 40px phone, line height 1.1): the hero heading and section page titles. One per page.
+- **Display** (Alegreya Sans 400, 60px desktop to 40px phone, line height 1.1): the hero heading and section page titles. One per page. The hero heading always sets as two lines, "I like painting the / joyful part of life": each half stays whole and the column grows to hold it.
 - **Section** (Alegreya Sans 400, 44px to 32px, 1.15): front-page section headings ("What's new", "Browse the art"), one step under the hero so it leads.
 - **Headline** (Alegreya Sans 400, 36px to 28px, 1.2): piece titles on their own page, section names on the Browse cards, headings inside descriptions.
 - **Quote** (Alegreya Sans Medium Italic 500, 26px, 1.3): pull quotes in her own words.
@@ -201,6 +201,8 @@ Warm, low-contrast neutrals carry the page; one blue does all the interface work
 **The Regular Headings Rule.** Headings are Alegreya Sans Regular (400). Medium (500) is only for the wordmark and quotes.
 
 **The Readable Floor Rule.** Body text is never smaller than 18px. Only card captions on phones and small print go below it, and nothing goes under 16px.
+
+**The Two-Line Hero Rule.** The hero heading breaks only between its two phrases, never inside one, at every width down to 360px.
 
 **The Her Own Words Rule.** The front page speaks as Marita in the first person, starting in the hero: who she is, where she paints, and that every piece is for sale in her Etsy shop.
 
@@ -259,14 +261,17 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 - **Phone menu (under 1000px):** a blue three-line button opens a panel of full-width 52px rows; each section word sits over the same 5px hand-painted line as the desktop menu, and the current section's splash paints in as the panel opens.
 - **Wordmark:** the outline tulip and "Marita McVeigh" in Cyanotype blue at the far left.
 
+### Photo strip (piece page)
+Thumbnails 64px square on Paper with a hairline border; the current one gets a Cyanotype blue outline. When the photos run past the edge, that edge fades out (48px) and the strip snaps from photo to photo; on phones a "1 of 9 photos" count in Clay gray sits under it. The details line under the piece title names a single piece in the singular: "Original · Cyanotype", "Cyanotype print", "Gift".
+
 ### See more link
 Figtree 500, 18px, Cyanotype blue with a 2px underline and a small arrow, right-aligned under the What's new grid. On mouse hover the underline thickens to 4px inside a fixed-height row, so nothing below moves.
 
 ### Section heading with splash
-The section's watercolor splash tucked behind the first letters of its name, turned to that section's angle, with room on the left so the splash never pokes past the page margin. Used on section page titles and the Browse cards.
+The section's watercolor splash tucked behind the first letters of its name, turned to that section's angle. On page titles the text lines up with the page's left edge like everything below it, and the splash hangs out into the margin (by 0.45em). On the Browse cards the splash sits inside the card. Used on section page titles and the Browse cards.
 
 ### Footer
-A thin Cyanotype blue rule, then the simplified tulip badge (a blue disc, since it's under 96px) with the email (or Contact me), the studio line ("Made by hand in my studio, near Philadelphia") in Warm ink at the center, and About, Policies and Privacy at the right; the four social icons in blue below. Every link is at least 44px tall to tap; the icons stay 27px (22px on phones) inside 44px squares. Then the small print centered in Clay gray at 16px: © Marita McVeigh, the required Etsy notice, the icon credit. Stacks and centers under 1000px.
+A thin Cyanotype blue rule, then the simplified tulip badge (a blue disc, since it's under 96px) with the email (or Contact me), the studio line ("Made by hand in my studio, near Philadelphia") in Warm ink at the center, and About, Policies and Privacy at the right; the four social icons in blue below. Every link is at least 44px tall to tap; the icons stay 27px (22px on phones) inside 44px squares. Hover is easy to see: text links turn Warm ink with a 3px blue underline; social icons get a Paper circle and rise 2px. Then the small print centered in Clay gray at 16px: © Marita McVeigh, the required Etsy notice, the icon credit. Stacks and centers under 1000px.
 
 ## Do's and Don'ts
 

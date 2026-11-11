@@ -41,11 +41,12 @@
     const low = Math.min(...opts.map((o) => o.price));
     return opts.length > 1 || opts.some((o) => o.hasVariations) ? `From ${money(low)}` : money(low);
   }
+  // What a single piece is, in the singular: "Original · Cyanotype", "Cyanotype print", "Gift".
   function kindLine(p) {
-    const c = categoryOf(p.category).title;
-    if (p.kind === "original") return p.category === "paintings" ? "Original" : `Original · ${c}`;
-    if (p.kind === "print") return p.category === "prints" ? "Print" : `${c} · print`;
-    return c;
+    const cat = categoryOf(p.category), one = cat.one || cat.title.replace(/s$/, "");
+    if (p.kind === "original") return p.category === "paintings" ? "Original" : `Original · ${one}`;
+    if (p.kind === "print") return p.category === "prints" ? "Print" : `${one} print`;
+    return one;
   }
 
   // A piece's short title for cards and its page: the Etsy name without the medium and format words
@@ -157,7 +158,7 @@
   function hero(hasNewest) {
     return `<section class="hero"><div class="hero-inner">
       <div class="hero-text">
-        <h1>I like painting the joyful part of life</h1>
+        <h1><span class="phrase">I like painting the</span> <span class="phrase">joyful part of life</span></h1>
         <p class="hero-lede">I’m Marita McVeigh, and I paint in my studio near Philadelphia. Flowers are my favorite. Every piece here is for sale in my Etsy shop.</p>
         ${hasNewest ? `<a class="hero-btn" href="#newest">See what’s new</a>` : ""}
       </div>
@@ -271,7 +272,8 @@
         <div class="gallery">
           <div class="stage" id="stage"><div id="main-pic">${picture(p, 0, true)}</div></div>
           ${photos.length > 1 ? `<div class="thumbs" role="group" aria-label="Photos">${photos.map((src, i) =>
-            `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
+            `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>
+            <p class="photo-count" aria-hidden="true">1 of ${photos.length} photos</p>` : ""}
         </div>
         <div class="info">
           <div class="info-head">
@@ -299,8 +301,24 @@
       shown = (i + total) % total;
       document.getElementById("main-pic").innerHTML = picture(p, shown, true);
       document.querySelectorAll("[data-pic]").forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.pic) === shown)));
+      const count = document.querySelector(".photo-count");
+      if (count) count.textContent = `${shown + 1} of ${total} photos`;
     };
-    document.querySelectorAll("[data-pic]").forEach((b) => b.addEventListener("click", () => show(Number(b.dataset.pic))));
+    document.querySelectorAll("[data-pic]").forEach((b) => b.addEventListener("click", () => {
+      show(Number(b.dataset.pic));
+      b.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduced() ? "auto" : "smooth" });
+    }));
+    // When the photos run past the edge of the strip, that edge fades and shows a nudge, so it reads as scrollable.
+    const thumbs = document.querySelector(".thumbs");
+    if (thumbs) {
+      const edges = () => {
+        thumbs.classList.toggle("more-left", thumbs.scrollLeft > 2);
+        thumbs.classList.toggle("more-right", thumbs.scrollLeft + thumbs.clientWidth < thumbs.scrollWidth - 2);
+      };
+      thumbs.addEventListener("scroll", edges, { passive: true });
+      new ResizeObserver(edges).observe(thumbs);
+      edges();
+    }
     const stage = document.getElementById("stage");
     let x0 = null, y0 = null;
     stage.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
@@ -355,21 +373,31 @@
   // Back and Forward return you to the spot you left. Before a link on the site is followed, the
   // current scroll position is saved in this page's history entry; Back or Forward reads it back.
   // A link you follow (or a typed address) starts at the top.
-  let followingLink = false;
+  // A link back to the page you just came from (the "‹ Cyanotypes" breadcrumb, say) steps back through
+  // history instead, so it also lands where you left off.
+  const sameHash = (a, b) => (a === "#" ? "" : a) === (b === "#" ? "" : b);
+  let followingLink = false, lastHash = location.hash;
   document.addEventListener("click", (e) => {
     const a = e.target.closest('a[href^="#"]');
     if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const target = a.getAttribute("href");
-    if (target === location.hash || (target === "#" && !location.hash)) return;  // already here: nothing changes
+    if (sameHash(target, location.hash)) return;  // already here: nothing changes
     e.preventDefault();
+    if (history.state && "from" in history.state && sameHash(target, history.state.from)) { history.back(); return; }
     history.replaceState({ ...history.state, scrollY: window.scrollY }, "");
     followingLink = true;
     location.hash = target;
   });
   function onHashChange() {
-    const restoreTo = followingLink ? undefined : history.state?.scrollY;
-    followingLink = false;
-    route(restoreTo);
+    const cameFrom = lastHash;
+    lastHash = location.hash;
+    if (followingLink) {
+      followingLink = false;
+      route();
+      history.replaceState({ from: cameFrom }, "");  // remember where this page was opened from
+    } else {
+      route(history.state?.scrollY);
+    }
   }
 
   function route(restoreTo) {
