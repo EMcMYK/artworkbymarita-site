@@ -124,10 +124,12 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 /* Each card spans three rows of the grid (art, title, price) and shares them with the cards beside it
    (subgrid). So in a row, every title starts at the same height and every price lines up, and a row only
    makes room for a second title line when one of its titles wraps. */
-.card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start;
+/* One column that can't grow past the card: Safari otherwise sizes the art box from the row's height and
+   lets it spill out of the card on phones. The art box takes the card's width and gets its height from that. */
+.card { display: grid; grid-row: span 3; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); row-gap: 0; align-content: start;
   padding: clamp(12px, 1.8vw, 24px); background: var(--paper); border-radius: 6px;
   color: var(--warm-ink); text-decoration: none; min-width: 0; transition: transform .2s ease, box-shadow .2s ease; }
-.card .mat { position: relative; aspect-ratio: 15 / 14; margin-bottom: clamp(14px, 1.5vw, 20px); padding: 0; box-shadow: none; background: none; }
+.card .mat { position: relative; width: 100%; height: auto; aspect-ratio: 15 / 14; margin-bottom: clamp(14px, 1.5vw, 20px); padding: 0; box-shadow: none; background: none; }
 .card .mat img { position: absolute; inset: 0; object-position: top center; }  /* fills the art box, whole (contain), top-aligned */
 /* Figtree Regular: 22px on desktop, about 19px on tablets, 16px on phones (a size container on the card
    would scale it with the card, but breaks the shared rows in Chrome). The caption's title and price sit in the
