@@ -26,6 +26,8 @@
     (GitHub emails you). The very first run (an empty products.json) imports the whole shop.
 
   Keys (GitHub → Settings → Secrets and variables → Actions): ETSY_API_KEY, ETSY_SHARED_SECRET.
+  Optional: ETSY_REFRESH_TOKEN (Marita's Etsy sign-in, made by scripts/etsy-signin.mjs) lets the sync read
+  each listing's options; GH_SECRETS_TOKEN lets the workflow save the renewed sign-in every morning.
 */
 import { readFile, writeFile, mkdir, readdir, rm } from "node:fs/promises";
 import path from "node:path";
@@ -93,9 +95,21 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
   if (!listings.length && byListing.size) throw new Error("Etsy returned no active listings at all, so nothing was changed.");
   const active = new Map(listings.map((l) => [String(l.listing_id), l]));
 
-  // Test (changes nothing): can the sync read Etsy's listing options ("Original 11x14 mat", "Print 8x10 mat")
-  // with the current key, or does Etsy want Marita's sign-in? The answer goes in the run's summary.
-  report.optionsCheck = await checkOptions(listings.filter((l) => l.has_variations).slice(0, 3).map((l) => String(l.listing_id)), (p) => fetch(API + p, { headers }));
+  // Listing options ("Original 11x14 mat $75", "Print 8x10 mat $35"), read with Marita's Etsy sign-in.
+  // They say for certain whether a listing sells the original, prints or both, and when the original sold.
+  // Without the sign-in (or if it fails) the usual rules below decide, and the summary says why.
+  const choices = new Map();
+  const signin = await renewSignin({ fetch, key, headers, refreshToken: process.env.ETSY_REFRESH_TOKEN, saveTo: process.env.ETSY_TOKEN_OUT, log });
+  if (signin.accessToken) {
+    const ids = listings.filter((l) => l.has_variations).map((l) => String(l.listing_id));
+    const got = await readChoices(ids, (p) => fetch(API + p, { headers: { ...headers, authorization: `Bearer ${signin.accessToken}` } }));
+    for (const [lid, list] of got.choices) choices.set(lid, list);
+    report.options = got.problem ? `couldn't read them (${got.problem})` : `read for ${got.choices.size} of ${ids.length} listings with options`;
+    if (got.problem) report.problems.push(`Etsy options: ${got.problem}. Used the usual rules instead.`);
+  } else {
+    report.options = signin.problem || "not signed in (see README → Etsy sign-in)";
+    if (signin.problem) report.problems.push(`Etsy sign-in: ${signin.problem} Used the usual rules instead. If this keeps happening, redo the sign-in (README → Etsy sign-in).`);
+  }
 
   // 2. New listings.
   const fresh = listings.filter((l) => {
@@ -165,7 +179,14 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
       if (!keep.has("description") && description.length && JSON.stringify(p.description) !== JSON.stringify(description)) { p.description = description; changed.push("description"); }
       const tags = (l.tags || []).map(decode);
       if (!keep.has("tags") && JSON.stringify(p.tags || []) !== JSON.stringify(tags)) { p.tags = tags; changed.push("tags"); }
-      if (!keep.has("kind")) { const kind = kindFor(decode(l.title), description, p.category, lid, settings); if (kind !== p.kind) { p.kind = kind; changed.push("original or print"); } }
+      const opts = choices.get(lid);
+      if (opts && JSON.stringify(o.choices || []) !== JSON.stringify(opts)) { o.choices = opts; changed.push("options"); }
+      if (opts) {
+        const sold = originalSold(opts);
+        if (sold && !p.originalSold) { p.originalSold = true; p.originalSoldOn = day; report.sold.push(`${p.name} (the original; prints are still for sale)`); }
+        if (!sold && p.originalSold) { delete p.originalSold; delete p.originalSoldOn; }
+      }
+      if (!keep.has("kind")) { const kind = kindFor(decode(l.title), description, p.category, lid, settings, opts); if (kind !== p.kind) { p.kind = kind; changed.push("original or print"); } }
       if (!keep.has("size")) { const size = sizeFrom(decode(l.title) + "\n" + description.join("\n")); if (size && size !== p.size) { p.size = size; changed.push("size"); } }
       if (!keep.has("photos")) {
         const images = await etsy(`/listings/${lid}/images`, { optional: true });
@@ -205,7 +226,7 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     const description = paragraphs(l.description);
     const tags = (l.tags || []).map(decode);
     const category = categoryFor(title, tags, section, settings);
-    const kind = kindFor(title, description, category, lid, settings);
+    const kind = kindFor(title, description, category, lid, settings, choices.get(lid));
     const key = mergeKey(title);
     const mkey = key ? `${kind}:${key}` : `${kind}:#${lid}`; // a title of only generic words never merges
     const option = {
@@ -215,6 +236,7 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
       etsyListingId: Number(l.listing_id),
       url: cleanUrl(l.url || `https://www.etsy.com/listing/${lid}`),
       ...(l.has_variations ? { hasVariations: true } : {}),
+      ...(choices.get(lid) ? { choices: choices.get(lid) } : {}),
     };
     let target = forced[lid] ? products.find((p) => p.id === forced[lid]) : null;
     if (!target && !separate.has(lid)) target = products.find((p) => p.mergeKey === mkey && !p.options.some((o) => separate.has(String(o.etsyListingId))));
@@ -282,32 +304,73 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
   return report;
 }
 
-// Tries Etsy's two ways of reading listing options. Returns what each said, and the option names it got.
-export async function checkOptions(ids, get) {
-  if (!ids.length) return { result: "no listings with options to try" };
-  const names = (json) => {
-    const out = new Set();
-    const walk = (x) => {
-      if (Array.isArray(x)) return x.forEach(walk);
-      if (!x || typeof x !== "object") return;
-      if (Array.isArray(x.property_values)) for (const v of x.property_values) for (const n of v.values || []) out.add(String(n));
-      Object.values(x).forEach(walk);
+// ---------- Etsy sign-in and listing options ----------
+
+const ORIGINAL = /\boriginal\b/i;
+const PRINT = /\b(prints?|giclee|giclée|reproduction|posters?|matte canvas)\b/i;
+
+// Original, print or both, from the options a listing offers; null when its options don't say.
+export function kindFromChoices(choices) {
+  if (!choices?.length) return null;
+  const originals = choices.filter((c) => ORIGINAL.test(c.name)), prints = choices.filter((c) => PRINT.test(c.name) && !ORIGINAL.test(c.name));
+  if (!originals.length) return prints.length ? "print" : null;
+  const originalLeft = originals.some((c) => c.available);
+  if (!prints.length) return originalLeft ? "original" : null;  // only an original: Etsy marks the whole listing sold
+  return originalLeft ? "both" : "print";
+}
+// The listing sold its original but still sells prints.
+export const originalSold = (choices) => kindFromChoices(choices) === "print" && choices.some((c) => ORIGINAL.test(c.name));
+
+// Trade the saved sign-in (refresh token) for a one-hour access token. Etsy hands back a new refresh
+// token each time; it's written to `saveTo` so the workflow can store it as the secret for tomorrow.
+export async function renewSignin({ fetch, key, headers, refreshToken, saveTo, log = () => {}, tokenUrl = "https://api.etsy.com/v3/public/oauth/token" }) {
+  if (!refreshToken) return {};
+  try {
+    const res = await fetch(tokenUrl, {
+      method: "POST",
+      headers: { ...headers, "content-type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ grant_type: "refresh_token", client_id: key, refresh_token: refreshToken }).toString(),
+    });
+    const t = await res.json().catch(() => ({}));
+    if (!res.ok || !t.access_token) return { problem: `Etsy didn't renew it (${res.status}: ${t.error_description || t.error || "no reason given"}).` };
+    if (process.env.GITHUB_ACTIONS) { console.log(`::add-mask::${t.access_token}`); if (t.refresh_token) console.log(`::add-mask::${t.refresh_token}`); }
+    if (saveTo && t.refresh_token) await writeFile(saveTo, t.refresh_token, { mode: 0o600 });
+    log("Etsy sign-in renewed.");
+    return { accessToken: t.access_token };
+  } catch (e) { return { problem: `couldn't reach Etsy to renew it (${String(e.message || e).slice(0, 120)}).` }; }
+}
+
+// Each listing's options: [{ name: "Original 11x14 Mat", price: 75, available: true }, …].
+// Asks for up to 100 listings at once; falls back to one at a time if Etsy won't do the batch.
+export async function readChoices(ids, get) {
+  const out = new Map();
+  const toChoices = (products) => (products || []).filter((pr) => !pr.is_deleted).map((pr) => {
+    const name = (pr.property_values || []).flatMap((v) => v.values || []).join(" / ");
+    const offers = (pr.offerings || []).filter((o) => !o.is_deleted);
+    return {
+      name,
+      price: offers[0]?.price ? Math.round((offers[0].price.amount / offers[0].price.divisor) * 100) / 100 : null,
+      available: offers.some((o) => o.is_enabled !== false && Number(o.quantity) > 0),
     };
-    walk(json);
-    return [...out].slice(0, 6);
-  };
-  const tryOne = async (p) => {
-    try {
-      const res = await get(p);
-      const text = await res.text();
-      if (!res.ok) return { status: res.status, said: text.slice(0, 160) };
-      return { status: res.status, options: names(JSON.parse(text)) };
-    } catch (e) { return { status: 0, said: String(e.message || e).slice(0, 160) }; }
-  };
-  const batch = await tryOne(`/listings/batch/inventory?listing_ids=${ids.join(",")}`);
-  const single = await tryOne(`/listings/${ids[0]}/inventory`);
-  const worked = [batch, single].some((r) => r.status === 200 && r.options?.length);
-  return { result: worked ? "worked" : "refused", listings: ids, batch, single };
+  }).filter((c) => c.name);
+  const add = (lid, inv) => { const list = toChoices(inv?.products); if (list.length) out.set(String(lid), list); };
+  let problem = null;
+  for (let i = 0; i < ids.length; i += 100) {
+    const chunk = ids.slice(i, i + 100);
+    const res = await get(`/listings/batch/inventory?listing_ids=${chunk.join(",")}`);
+    if (res.ok) {
+      const body = await res.json();
+      for (const r of body.results || []) add(r.listing_id, r.inventory || r);
+      continue;
+    }
+    for (const lid of chunk) {
+      const one = await get(`/listings/${lid}/inventory`);
+      if (one.ok) add(lid, await one.json());
+      else { problem = `Etsy said ${one.status}`; break; }
+    }
+    if (problem) break;
+  }
+  return { choices: out, problem: problem && !out.size ? problem : null };
 }
 
 // ---------- matching and sorting ----------
@@ -322,9 +385,12 @@ export function kindOf(title) {
 }
 
 // Original, print, or "both" (one listing that sells the original and prints as Etsy options).
-// In order: the rules file's "kinds" (by Etsy listing id), words in the title, a painting is an original,
+// In order: the listing's Etsy options (with the sign-in), the rules file's "kinds" (by Etsy listing id),
+// words in the title, a painting is an original,
 // and a description that says "original" without mentioning a print.
-export function kindFor(title, description, category, listingId, settings = {}) {
+export function kindFor(title, description, category, listingId, settings = {}, choices = null) {
+  const fromOptions = kindFromChoices(choices);
+  if (fromOptions) return fromOptions;
   const forced = (settings.kinds || {})[String(listingId)];
   if (["original", "print", "both", "other"].includes(forced)) return forced;
   const k = kindOf(title);
@@ -481,8 +547,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     `- Back on the site:${list(report.back)}`,
     `- Skipped on purpose:${list(report.skipped)}`,
     ...report.problems.map((p) => `- ⚠️ ${p}`),
-    ...(report.optionsCheck ? [`- Etsy options check (test only, changes nothing): **${report.optionsCheck.result}**`,
-      "  ```", "  " + JSON.stringify(report.optionsCheck), "  ```"] : []),
+    `- Etsy listing options: ${report.options || "not checked"}`,
   ].join("\n");
   console.log(lines);
   if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, lines + "\n", { flag: "a" });

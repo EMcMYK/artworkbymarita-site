@@ -30,7 +30,9 @@
   const byId = (id) => ALL.find((p) => p.id === id);
   const categoryOf = (id) => CATEGORIES.find((c) => c.id === id) || { id, title: id, note: "" };
   const forSale = () => ALL.filter((p) => !p.soldOut);
-  const sold = () => ALL.filter((p) => p.soldOut).sort((a, b) => String(b.soldOn || "").localeCompare(String(a.soldOn || "")));
+  // Sold originals, including an original sold from a listing that still sells prints of it.
+  const soldOn = (p) => String(p.soldOn || p.originalSoldOn || "");
+  const sold = () => ALL.filter((p) => p.soldOut || (p.originalSold && !p.hidden)).sort((a, b) => soldOn(b).localeCompare(soldOn(a)));
   const newestFirst = (list) => list.slice().sort((a, b) => String(b.listedOn || "").localeCompare(String(a.listedOn || "")));
   // A piece shows in its own section, and prints show in two: prints of paintings in Paintings and Prints,
   // cyanotype prints (and listings selling the original or a print) in Cyanotypes and Prints.
@@ -101,7 +103,7 @@
       ${picture(p)}
       <span class="card-cap">
         <span class="card-title">${esc(shortTitle(p))}</span>
-        <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : esc(showPrice ? priceText(p) : "")}</span>
+        <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : !showPrice && p.originalSold ? `<span class="dot" aria-hidden="true"></span>Original sold` : esc(showPrice ? priceText(p) : "")}</span>
       </span>
     </a>`;
   }
@@ -309,6 +311,7 @@
             <h1>${esc(shortTitle(p))}</h1>
             <p class="facts">${esc(kindLine(p))}${p.size && buyable(p).length < 2 ? ` · ${esc(p.size)}` : ""}${p.oneOfAKind && !p.soldOut ? " · One of a kind" : ""}</p>
             ${p.soldOut ? "" : `<p class="price">${esc(priceText(p))}</p>`}
+            ${p.originalSold && !p.soldOut ? `<p class="sold-note"><span class="dot" aria-hidden="true"></span>The original has sold. Prints are still available.</p>` : ""}
           </div>
           <div class="prose">${describe(p.description || [], p)}</div>
           <div class="purchase">

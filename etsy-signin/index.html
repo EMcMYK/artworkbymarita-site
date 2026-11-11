@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy sign-in · Marita McVeigh</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400&family=Figtree:wght@400;600&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+<!--
+  Etsy sends Marita back here after she lets the website read her listing options.
+  This page only shows the one-time code from the address bar so it can be pasted into
+  scripts/etsy-signin.mjs. The code is useless without that script (it holds the other half),
+  works once, and expires within minutes. Nothing is stored or sent from this page.
+-->
+<style>
+  .signin { max-width: 640px; margin: 0 auto; padding: 64px var(--gutter); }
+  .signin h1 { margin: 0 0 16px; }
+  .code { display: block; margin: 20px 0 12px; padding: 16px; background: var(--paper); border-radius: 6px; box-shadow: var(--shadow);
+    font: 400 16px/1.5 ui-monospace, Menlo, monospace; overflow-wrap: anywhere; user-select: all; }
+  .copy { font: inherit; font-weight: 600; border: 0; cursor: pointer; }
+</style>
+</head>
+<body>
+<main class="signin" id="app">
+  <h1>Etsy sign-in</h1>
+  <div id="result"><p>Checking what Etsy sent back…</p></div>
+</main>
+<script>
+  const q = new URLSearchParams(location.search);
+  const box = document.getElementById("result");
+  const code = q.get("code"), state = q.get("state"), error = q.get("error");
+  if (code && state) {
+    box.innerHTML = `<p>Thank you! Etsy said yes. Copy this code and paste it into the terminal window that's waiting for it:</p>
+      <code class="code" id="code"></code>
+      <button type="button" class="btn copy" id="copy">Copy the code</button>
+      <p class="fineprint">The code works once and only for a few minutes. You can close this page after pasting it.</p>`;
+    // The terminal script checks the state part, so both travel together.
+    document.getElementById("code").textContent = `${state}:${code}`;
+    document.getElementById("copy").addEventListener("click", async (e) => {
+      try { await navigator.clipboard.writeText(`${state}:${code}`); e.target.textContent = "Copied"; }
+      catch { e.target.textContent = "Select the code above and copy it"; }
+    });
+  } else if (error) {
+    box.innerHTML = `<p>Etsy didn't give permission this time (<span id="err"></span>). Nothing changed. Start again from the terminal when you're ready.</p>`;
+    document.getElementById("err").textContent = q.get("error_description") || error;
+  } else {
+    box.innerHTML = `<p>This page is only used during the Etsy sign-in. <a href="/">Go to the website</a>.</p>`;
+  }
+</script>
+</body>
+</html>

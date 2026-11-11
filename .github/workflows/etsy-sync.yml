@@ -36,6 +36,8 @@ jobs:
         env:
           ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
           ETSY_SHARED_SECRET: ${{ secrets.ETSY_SHARED_SECRET }}
+          ETSY_REFRESH_TOKEN: ${{ secrets.ETSY_REFRESH_TOKEN }}   # Marita's Etsy sign-in (optional; README → Etsy sign-in)
+          ETSY_TOKEN_OUT: ${{ runner.temp }}/etsy-refresh-token    # where the sync leaves the renewed sign-in
           SYNC_RESORT: ${{ inputs.resort }}
       - name: Save changes (Cloudflare republishes the site a minute later)
         run: |
@@ -49,3 +51,16 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+      # Etsy gives a new sign-in token each morning; save it so tomorrow's run can use it.
+      # Runs even if an earlier step failed, so a renewed sign-in is never lost.
+      - name: Keep the Etsy sign-in fresh
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
+        run: |
+          f="$RUNNER_TEMP/etsy-refresh-token"
+          if [ ! -s "$f" ]; then echo "No Etsy sign-in to save."; exit 0; fi
+          if [ -z "$GH_TOKEN" ]; then echo "::error title=Etsy sign-in not saved::Add the GH_SECRETS_TOKEN secret (README → Etsy sign-in), or the sign-in stops working."; rm -f "$f"; exit 1; fi
+          gh secret set ETSY_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" < "$f"
+          rm -f "$f"
+          echo "Saved the renewed Etsy sign-in."

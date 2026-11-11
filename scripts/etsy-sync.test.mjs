@@ -260,15 +260,77 @@ test("original or print: posters and canvases are prints, descriptions and the r
   assert.equal((await read(root))[0].kind, "both");
 });
 
-test("options check: reports what Etsy said, and the option names when it shares them", async () => {
-  const { checkOptions } = await import("./etsy-sync.mjs");
-  const reply = (status, body) => ({ ok: status < 400, status, text: async () => JSON.stringify(body) });
-  const refused = await checkOptions(["1"], async () => reply(403, { error: "Missing scope listings_r" }));
-  assert.equal(refused.result, "refused");
-  assert.equal(refused.batch.status, 403);
-  const inventory = { products: [{ property_values: [{ property_name: "size", values: ["Original 11x14 mat"] }] }, { property_values: [{ values: ["Print 8x10 mat"] }] }] };
-  const worked = await checkOptions(["1"], async (p) => p.includes("batch") ? reply(403, {}) : reply(200, inventory));
-  assert.equal(worked.result, "worked");
-  assert.deepEqual(worked.single.options, ["Original 11x14 mat", "Print 8x10 mat"]);
-  assert.equal((await checkOptions([], async () => reply(200, {}))).result, "no listings with options to try");
+const opt = (name, quantity = 1, cents = 3500) => ({ property_values: [{ property_name: "size", values: [name] }], offerings: [{ price: { amount: cents, divisor: 100 }, quantity, is_enabled: true }] });
+
+test("listing options decide original, print or both, and notice when the original sold", async () => {
+  const { kindFromChoices, originalSold, readChoices } = await import("./etsy-sync.mjs");
+  const c = (name, available = true) => ({ name, price: 35, available });
+  assert.equal(kindFromChoices([c("Original 11x14 Mat"), c("Print 8x10 Mat")]), "both");
+  assert.equal(kindFromChoices([c("Original 11x14 Mat", false), c("Print 8x10 Mat")]), "print");
+  assert.ok(originalSold([c("Original 11x14 Mat", false), c("Print 8x10 Mat")]));
+  assert.equal(kindFromChoices([c("Print 8x10 Mat"), c("Print 11x14 Mat")]), "print");
+  assert.equal(kindFromChoices([c("Small"), c("Large")]), null);  // options that don't say: the usual rules decide
+  assert.equal(kindFromChoices(null), null);
+
+  const reply = (status, body) => ({ ok: status < 400, status, json: async () => body });
+  // The batch way works:
+  let got = await readChoices(["5"], async () => reply(200, { results: [{ listing_id: 5, inventory: { products: [opt("Original 11x14 Mat", 1, 7500), opt("Print 8x10 Mat", 0)] } }] }));
+  assert.deepEqual(got.choices.get("5"), [{ name: "Original 11x14 Mat", price: 75, available: true }, { name: "Print 8x10 Mat", price: 35, available: false }]);
+  // Only one at a time works:
+  got = await readChoices(["5"], async (p) => p.includes("batch") ? reply(404, {}) : reply(200, { products: [opt("Print 8x10 Mat")] }));
+  assert.equal(got.choices.get("5")[0].name, "Print 8x10 Mat");
+  // Neither works:
+  got = await readChoices(["5"], async () => reply(401, {}));
+  assert.equal(got.problem, "Etsy said 401");
+});
+
+test("with Marita's sign-in, the sync reads options, saves the renewed sign-in, and marks a sold original", async () => {
+  const { readFile: rf, mkdtemp: mk } = await import("node:fs/promises");
+  const root = await site();
+  const active = [listing(80, "Pin Oak Leaves Cyanotype", { has_variations: true })];
+  let products = [opt("Original 11x14 Mat", 1, 7500), opt("Print 8x10 Mat", 5)];
+  const etsy = fakeEtsy({ active, gone: {} });
+  const calls = [];
+  const fetch = async (url, opts = {}) => {
+    if (url.includes("/oauth/token")) {
+      calls.push(String(opts.body));
+      return { ok: true, status: 200, json: async () => ({ access_token: "1.access", refresh_token: "1.newrefresh" }) };
+    }
+    if (url.includes("/inventory")) {
+      assert.equal(opts.headers.authorization, "Bearer 1.access");
+      return { ok: true, status: 200, json: async () => ({ results: [{ listing_id: 80, inventory: { products } }] }) };
+    }
+    return etsy(url);
+  };
+  const out = path.join(await mk(path.join(tmpdir(), "tok-")), "token");
+  process.env.ETSY_REFRESH_TOKEN = "1.oldrefresh"; process.env.ETSY_TOKEN_OUT = out;
+  try {
+    let report = await sync({ root, fetch, log: () => {}, pause: 0 });
+    let [p] = await read(root);
+    assert.equal(p.kind, "both");
+    assert.equal(p.options[0].choices.length, 2);
+    assert.match(calls[0], /grant_type=refresh_token/);
+    assert.equal(await rf(out, "utf8"), "1.newrefresh");
+    assert.match(report.options, /read for 1 of 1/);
+
+    products = [opt("Original 11x14 Mat", 0, 7500), opt("Print 8x10 Mat", 5)];  // the original sells
+    report = await sync({ root, fetch, log: () => {}, pause: 0 });
+    [p] = await read(root);
+    assert.equal(p.kind, "print");
+    assert.equal(p.originalSold, true);
+    assert.ok(report.sold.some((s) => s.includes("the original")));
+    assert.ok(!p.soldOut, "the listing stays for sale: prints are still available");
+  } finally { delete process.env.ETSY_REFRESH_TOKEN; delete process.env.ETSY_TOKEN_OUT; }
+});
+
+test("a sign-in Etsy won't renew falls back to the usual rules and says so", async () => {
+  const root = await site();
+  const etsy = fakeEtsy({ active: [listing(81, "Wild Grass Cyanotype", { has_variations: true })], gone: {} });
+  const fetch = async (url, opts) => url.includes("/oauth/token") ? { ok: false, status: 400, json: async () => ({ error: "invalid_grant" }) } : etsy(url, opts);
+  process.env.ETSY_REFRESH_TOKEN = "expired";
+  try {
+    const report = await sync({ root, fetch, log: () => {}, pause: 0 });
+    assert.ok(report.problems.some((x) => x.includes("redo the sign-in")));
+    assert.equal((await read(root))[0].kind, "other");
+  } finally { delete process.env.ETSY_REFRESH_TOKEN; }
 });

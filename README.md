@@ -79,6 +79,34 @@ All the rules are in `data/etsy-sync.json`. After changing a rule, run the workf
    Framework preset: None. Build command: leave empty. Build output directory: `/`.
 3. Run **Sync from Etsy** once by hand. The first run downloads every photo, so it takes a while.
 
+## Etsy sign-in (reads listing options)
+
+Some listings sell the original and prints as Etsy options ("Original 11x14 mat", "Print 8x10 mat").
+Etsy only shares options with Marita's permission. With it, the sync knows for certain whether a
+listing sells the original, prints or both, and when the original sells it moves to the Sold gallery
+while the prints stay for sale. Without it, the `kinds` rule and the title words decide.
+
+It's read-only (Etsy permission `listings_r`): it can't change anything in her shop.
+
+**One time (about 15 minutes):**
+1. **Etsy app:** etsy.com/developers/your-apps → the app → add this callback URL exactly:
+   `https://artworkbymarita-site.pages.dev/etsy-signin/`
+2. **GitHub token so the sync can keep the sign-in fresh:** github.com → your picture → Settings →
+   Developer settings → Personal access tokens → Fine-grained tokens → Generate new token.
+   Name it "Etsy sync sign-in", expiration 1 year, Repository access: only `artworkbymarita-site`,
+   Repository permissions → Secrets: Read and write. Copy it, then in the repo: Settings → Secrets and
+   variables → Actions → New repository secret, name `GH_SECRETS_TOKEN`, paste, Add secret.
+3. **Sign-in:** in Terminal, in this folder, run `node scripts/etsy-signin.mjs`. Type the Etsy keystring
+   and shared secret when asked (hidden). Copy the link it prints into a private browser window,
+   Marita signs in to her Etsy account and clicks Allow access, then click "Copy the code" and paste it
+   into Terminal. It checks it's the artworkbymarita shop and saves `ETSY_REFRESH_TOKEN` to GitHub.
+4. **Check:** Actions → Sync from Etsy → Run workflow. The run's summary should say
+   "Etsy listing options: read for N of N listings with options".
+
+**Upkeep:** the sync renews the sign-in every morning. If a run's summary says "Etsy sign-in: … redo
+the sign-in", run step 3 again. The GitHub token from step 2 expires after a year: make a new one the
+same way and replace the `GH_SECRETS_TOKEN` secret (GitHub emails a reminder before it expires).
+
 ## Etsy's terms
 
 The footer carries the notice Etsy requires of sites that use its API. Keep it.
