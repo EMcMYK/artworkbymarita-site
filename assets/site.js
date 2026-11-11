@@ -132,7 +132,7 @@
     const policies = CONFIG.policiesUrl || (CONFIG.etsyUrl && `${CONFIG.etsyUrl}#policies`);
     document.getElementById("footer").innerHTML = `<div class="footer-main">
       <div class="footer-contact">
-        <span class="badge"><img src="assets/tulip.svg" alt=""></span>
+        <img class="badge" src="favicon.svg" alt="" width="49" height="49">
         ${email}
       </div>
       <p class="footer-line">Made by hand in my studio, near Philadelphia</p>
@@ -153,10 +153,12 @@
 
   // Front-page hero (Main page in Figma): heading and button on the left, studio photo on the right.
   // Phones stack a closer crop of the same photo (her face, the bouquet and her palette) on top.
+  // The words are hers (brand guide quote) and say plainly that buying happens on Etsy.
   function hero(hasNewest) {
     return `<section class="hero"><div class="hero-inner">
       <div class="hero-text">
-        <h1>Painting the joyful part of life</h1>
+        <h1>I like painting the joyful part of life</h1>
+        <p class="hero-lede">I’m Marita McVeigh, and I paint in my studio near Philadelphia. Flowers are my favorite. Every piece here is for sale in my Etsy shop.</p>
         ${hasNewest ? `<a class="hero-btn" href="#newest">See what’s new</a>` : ""}
       </div>
       <picture class="hero-photo">
@@ -169,8 +171,9 @@
   }
 
   // One card per menu section: its name over its splash, a piece from it, and an arrow.
-  function sectionCard(c, list) {
-    const p = list.find((x) => x.images?.length);
+  // The piece is one not already shown in What's new, so the two sections don't repeat each other.
+  function sectionCard(c, list, shown) {
+    const p = list.find((x) => x.images?.length && !shown.has(x)) || list.find((x) => x.images?.length);
     return `<a class="room" href="#${esc(c.id)}" data-section="${esc(c.id)}">
       <span class="room-title">${esc(c.title)}</span>
       ${p ? `<img src="${esc(p.images[0])}" alt="" loading="lazy">` : ""}
@@ -196,7 +199,7 @@
           <h2 class="home-heading" id="browse">Browse the art</h2>
           <span class="splash-row" aria-hidden="true">${rooms.map(({ c }) => `<img src="assets/splash-${esc(c.id)}.webp" alt="" data-section="${esc(c.id)}">`).join("")}</span>
         </div>
-        <div class="rooms">${rooms.map(({ c, list }) => sectionCard(c, list)).join("")}</div>
+        <div class="rooms">${rooms.map(({ c, list }) => sectionCard(c, list, new Set(newest))).join("")}</div>
       </section>`;
   }
 
@@ -349,7 +352,27 @@
   }
 
   // ---------- router ----------
-  function route() {
+  // Back and Forward return you to the spot you left. Before a link on the site is followed, the
+  // current scroll position is saved in this page's history entry; Back or Forward reads it back.
+  // A link you follow (or a typed address) starts at the top.
+  let followingLink = false;
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const target = a.getAttribute("href");
+    if (target === location.hash || (target === "#" && !location.hash)) return;  // already here: nothing changes
+    e.preventDefault();
+    history.replaceState({ ...history.state, scrollY: window.scrollY }, "");
+    followingLink = true;
+    location.hash = target;
+  });
+  function onHashChange() {
+    const restoreTo = followingLink ? undefined : history.state?.scrollY;
+    followingLink = false;
+    route(restoreTo);
+  }
+
+  function route(restoreTo) {
     gallery = null;
     const hash = decodeURIComponent(location.hash.slice(1));
     const [head, sub] = hash.split("/");
@@ -376,14 +399,14 @@
       app.innerHTML = (missing ? `<div class="wrap"><p class="notice" role="status">That piece isn't on the site anymore. Here's everything that is.</p></div>` : "") + homePage();
       renderChrome(""); document.title = `${name} · Artwork`;
       // "See what's new" (/#newest): glide down to the newest work and put keyboard focus there.
-      const newest = hash === "newest" && document.querySelector("#newest h2");
+      const newest = hash === "newest" && restoreTo === undefined && document.querySelector("#newest h2");
       if (newest) {
         newest.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "start" });
         newest.focus({ preventScroll: true });
         return;
       }
     }
-    window.scrollTo(0, 0);
+    window.scrollTo(0, restoreTo || 0);
   }
 
   async function start() {
@@ -392,11 +415,14 @@
       const data = window.SITE_PRODUCTS || await (await fetch("data/products.json", { cache: "no-cache" })).json();
       ALL = (data.products || []).filter((p) => !p.hidden);
     } catch (e) {
-      console.error(e);
-      app.innerHTML = `<div class="wrap"><p class="notice">The artwork list didn't load. If data/products.json was just edited by hand, check it for a missing comma or quote.</p></div>`;
+      console.error(e);  // for Ed: data/products.json didn't load or isn't valid JSON
+      app.innerHTML = `<div class="wrap"><div class="notice load-error" role="alert">
+        <p>My artwork didn’t load just now. Please try again in a moment.</p>
+        <p><button type="button" class="link-btn" onclick="location.reload()">Try again</button>${CONFIG.etsyUrl ? ` or see everything in <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">my Etsy shop</a>.` : ""}</p>
+      </div></div>`;
       return;
     }
-    window.addEventListener("hashchange", route);
+    window.addEventListener("hashchange", onHashChange);
     route();
   }
   start();

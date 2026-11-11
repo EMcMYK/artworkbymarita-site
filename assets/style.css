@@ -43,7 +43,9 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .lede { margin: 0; color: var(--clay); font-style: italic; max-width: 60ch; }
 .empty, .notice { color: var(--clay); }
 .notice { margin: 20px 0 0; padding: 12px 16px; border-radius: 6px; background: var(--paper); }
-.fineprint { font-size: 15px; line-height: 1.5; color: var(--clay); }
+.load-error p { margin: 0; }
+.load-error p + p { margin-top: 8px; }
+.fineprint { font-size: 16px; line-height: 1.5; color: var(--clay); }
 
 /* A section heading with its splash tucked behind the first letters, turned slightly.
    One splash per page, only behind headings. */
@@ -89,7 +91,9 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .menu-panel { display: flex; flex-direction: column; border-top: 1px solid rgba(46, 38, 32, .1); padding: 6px max(var(--gutter), env(safe-area-inset-right, 0px)) 16px max(var(--gutter), env(safe-area-inset-left, 0px)); }
 .menu-panel[hidden] { display: none; }
 .menu-panel a { padding: 11px 0; border-bottom: 1px solid rgba(46, 38, 32, .1); }
-.menu-panel a[data-section] { border-left: 5px solid var(--section-line); padding-left: 12px; }
+.menu-panel a[data-section] .label { padding-bottom: 6px; }
+.menu-panel a[data-section] .label::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--section-line);
+  -webkit-mask: url(menu-line.svg) center / 100% 100% no-repeat; mask: url(menu-line.svg) center / 100% 100% no-repeat; }
 .menu-panel a:last-child { border-bottom: 0; }
 .menu-panel a[aria-current] { color: var(--cyanotype); }
 .menu-panel .nav-contact { margin-top: 12px; padding: 10px 16px; border: 0; border-radius: 6px; background: var(--cyanotype); color: var(--paper); text-align: center; }
@@ -130,24 +134,24 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .intro { display: flex; flex-direction: column; gap: 12px; padding-block: 48px 16px; }
 .intro p { margin: 0; }
 .home-block { display: flex; flex-direction: column; gap: clamp(12px, 2.6vw, 38px); padding-top: clamp(24px, 3.6vw, 52px); }
-.home-heading { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; }
+.home-heading { font-size: clamp(32px, 1.5vw + 22px, 44px); line-height: 1.15; }  /* one step under the hero's 60px */
 #newest .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1099px) { #newest .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } #newest .card:nth-child(n + 7) { display: none; } }
 @media (max-width: 759px) { #newest .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 #newest .home-heading { scroll-margin-top: 24px; }
 #newest .home-heading:focus { outline: none; }
-.see-more-row { display: flex; justify-content: flex-end; align-items: flex-start; height: calc(1.2em + 10px); font-family: var(--heading); font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
-.see-more { display: inline-flex; align-items: center; gap: clamp(8px, 1.4vw, 20px); padding-bottom: 2px; border-bottom: 2.5px solid var(--cyanotype); text-decoration: none;
+.see-more-row { display: flex; justify-content: flex-end; align-items: flex-start; height: calc(1.6em + 12px); font-size: 18px; line-height: 1.6; }
+.see-more { display: inline-flex; align-items: center; gap: 10px; padding-bottom: 2px; border-bottom: 2px solid var(--cyanotype); font-weight: 500; text-decoration: none;
   transition: border-bottom-width .15s ease; }
-.see-more:hover { border-bottom-width: 5px; }
-.see-more .arrow { width: clamp(16px, 1.7vw, 24px); height: auto; }
+@media (hover: hover) { .see-more:hover { border-bottom-width: 4px; } }
+.see-more .arrow { width: 16px; height: auto; }
 .arrow { fill: var(--cyanotype); flex: none; }
 
 /* "Browse the art": the five splashes, then a card per section */
 .browse-head { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 13px; margin-bottom: clamp(12px, 4.9vw - 30px, 32px); }
 .splash-row { display: flex; align-items: center; }
 .splash-row img { height: clamp(26px, 3.6vw, 52px); width: auto; rotate: var(--splash-turn); margin-right: -4px; }
-.rooms { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: 201px; gap: 16px; }
+.rooms { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: 300px; gap: 16px; }
 .room { container-type: inline-size; grid-column: span 2; display: flex; align-items: center; gap: 8px; min-width: 0; padding: 8px 12px 8px 8px; background: var(--paper); border-radius: 6px;
   color: var(--warm-ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
 .room:nth-child(-n + 2) { grid-column: span 3; }
@@ -160,6 +164,13 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
   background: var(--section-splash) center / contain no-repeat; }
 .room img { flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: right center; }  /* art is never cropped */
 .room .arrow { width: 20px; height: 20px; margin-left: auto; }
+/* desktop: the name over its splash and the arrow along the top, the piece filling the rest, whole */
+@media (min-width: 1100px) {
+  .room { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto minmax(0, 1fr); align-items: center; gap: 16px 8px; padding: 30px 20px 20px 12px; }
+  .room-title { grid-area: 1 / 1; justify-self: start; }
+  .room .arrow { grid-area: 1 / 2; }
+  .room img { grid-area: 2 / 1 / 3 / 3; width: 100%; height: 100%; object-position: center; }
+}
 @container (max-width: 280px) { .room img { display: none; } }  /* too narrow: just the name and the arrow */
 @media (max-width: 1099px) { .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; } .room, .room:nth-child(-n + 2) { grid-column: auto; } .room:first-child:nth-last-child(odd) { grid-column: span 2; } }  /* an odd count: Paintings takes the full row */
 @media (max-width: 759px) {
@@ -170,29 +181,27 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
   .room .arrow { width: 13px; height: 13px; }
 }
 
-/* front-page hero: heading and button on the left, studio photo on the right.
-   Studio photos can be cropped; artwork never is. */
-/* On tablets and desktops the hero fills the window under the header (85px), so "What's new" is never
-   on the first screen: "See what's new" is how you get there. */
-.hero { display: flex; flex-direction: column; justify-content: center; min-height: calc(100svh - 85px);
-  padding: clamp(32px, 4vw, 64px) max(var(--gutter), env(safe-area-inset-right, 0px)) clamp(32px, 4vw, 64px) max(var(--gutter), env(safe-area-inset-left, 0px)); }
+/* front-page hero: heading, her words and the button on the left, studio photo on the right.
+   Studio photos can be cropped; artwork never is. The hero is only as tall as it needs to be (the photo
+   tops out at 58% of the window), so the first row of What's new shows at the bottom of the first screen. */
+.hero { padding: clamp(24px, 3vw, 40px) max(var(--gutter), env(safe-area-inset-right, 0px)) clamp(24px, 3vw, 40px) max(var(--gutter), env(safe-area-inset-left, 0px)); }
 .hero + #newest { padding-top: 24px; }
 .hero-inner { display: grid; grid-template-columns: minmax(0, 406fr) minmax(0, 742fr); gap: clamp(32px, 4.3vw, 62px); align-items: center; max-width: var(--page); margin: 0 auto; }
 .hero h1 { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; }
-.hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(24px, 3.6vw, 52px); }
-.hero-photo { display: block; aspect-ratio: 742 / 567; border-radius: 8px; overflow: hidden; }
+.hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(16px, 2vw, 24px); }
+.hero-lede { margin: 0 0 clamp(4px, 1.4vw, 20px); font-size: 20px; line-height: 1.5; max-width: 34ch; text-wrap: pretty; }
+.hero-photo { display: block; justify-self: end; width: min(100%, 742px, 58svh * 742 / 567); aspect-ratio: 742 / 567; border-radius: 8px; overflow: hidden; background: var(--paper); }  /* Paper shows while it loads */
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); font-weight: 600; font-size: 18px; line-height: 1.6; text-decoration: none; }
 
 @media (max-width: 759px) {
-  /* phones too: the hero fills the screen under the header; photo, heading and button stay at the top */
-  .hero { justify-content: flex-start; padding-block: 16px 8px; }
+  .hero { padding-block: 16px 8px; }
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-  .hero-photo { order: -1; aspect-ratio: 342 / 353; }
-  .hero-text { gap: 16px; }
-  .hero-btn { align-self: stretch; padding: 8px 16px; font-weight: 500; }
+  .hero-photo { order: -1; justify-self: stretch; width: 100%; aspect-ratio: 342 / 280; }
+  .hero-text { gap: 12px; }
+  .hero-lede { font-size: 18px; margin-bottom: 4px; }
+  .hero-btn { align-self: stretch; padding: 8px 16px; }
 }
-@media (max-width: 520px) { .hero { min-height: calc(100svh - 77px); } }  /* the phone header is 77px */
 
 /* subject filters and subject tags */
 .filters, .tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -250,28 +259,28 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 
 /* footer: badge and email, the studio line, links; then the small print, centered */
 .footer { margin-top: clamp(64px, 7.4vw, 107px); border-top: 1px solid var(--cyanotype); padding: 16px 0 24px; color: var(--clay); font-size: 18px; line-height: 1.35; }
+.footer-contact a, .footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
 .footer a { color: var(--cyanotype); text-decoration-thickness: 1px; }
 .footer-main { display: grid; grid-template-columns: 1fr auto 1fr; grid-template-areas: "contact line links" "social . ."; align-items: center; gap: 4px 24px;
   padding: 0 max(var(--gutter), env(safe-area-inset-right, 0px)) 0 max(var(--gutter), env(safe-area-inset-left, 0px)); }
 .footer-contact { grid-area: contact; display: flex; align-items: center; gap: 21.5px; padding-block: 6px; }
-.badge { display: grid; place-items: center; flex: none; width: 49px; height: 49px; border: 1.5px solid var(--cyanotype); border-radius: 50%; }
-.badge img { width: 18px; height: 32px; }
+.badge { flex: none; width: 49px; height: 49px; }  /* the simplified badge: it's under 96px */
 .footer-line { grid-area: line; margin: 0; color: var(--warm-ink); text-align: center; }
 .footer-links { grid-area: links; justify-self: end; display: flex; gap: 29px; padding-right: 28px; }
-.social { grid-area: social; display: flex; align-items: center; gap: 27px; padding-left: 70.5px; }
+.social { grid-area: social; display: flex; align-items: center; gap: 10px; padding-left: 62px; }
+.social a, .social span { display: grid; place-items: center; min-width: 44px; min-height: 44px; }  /* easy to tap; the icon stays 27px */
 .social img { height: 27px; width: auto; }
 .social a:hover { opacity: .75; }
-.footer-fine { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 20px; padding: 6px var(--gutter) 0; text-align: center; }
+.footer-fine { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px; padding: 6px var(--gutter) 0; text-align: center; font-size: 16px; line-height: 1.5; }
 .footer-fine p { margin: 0; }
 .footer-copy { width: min(580px, 100%); padding-top: 16px; border-top: 1px solid rgba(107, 94, 82, .5); }
 @media (max-width: 999px) {
   .footer-main { grid-template-columns: minmax(0, 1fr); grid-template-areas: "contact" "links" "line" "social"; justify-items: center; gap: 16px; text-align: center; }
   .footer-contact { flex-direction: column; gap: 8.5px; padding: 0; }
-  .badge { width: 33px; height: 33px; border-width: 1px; }
-  .badge img { width: 12px; height: 22px; }
-  .footer-links { justify-self: center; flex-direction: column; align-items: center; gap: 8px; padding: 0; }
+  .badge { width: 33px; height: 33px; }
+  .footer-links { justify-self: center; flex-direction: column; align-items: center; gap: 0; padding: 0; }
   .footer-line { margin-top: 8px; }
-  .social { padding: 0; gap: 22px; }
+  .social { padding: 0; gap: 0; }
   .social img { height: 22px; }
   .footer-fine { gap: 8px; margin-top: 24px; }
   .footer-copy { border-top: 0; padding-top: 0; }

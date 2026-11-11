@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T22:09:27+00:00",
+  "generatedAt": "2026-11-11T04:07:27+00:00",
   "title": "Design System: Marita McVeigh",
   "extensions": {
     "colorMeta": {
@@ -178,11 +178,11 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero heading, front-page section headings, section page titles."
+        "purpose": "The hero heading and section page titles. One per page."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Piece titles on their page, Browse card names, See more."
+        "purpose": "Piece titles on their page, Browse card names, headings inside descriptions."
       },
       "quote": {
         "displayName": "Quote",
@@ -210,7 +210,19 @@
       },
       "small": {
         "displayName": "Small",
-        "purpose": "Filter chips, the Etsy note, captions."
+        "purpose": "Filter chips, the Etsy note, captions, the footer's small print."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Front-page section headings, one step under the hero."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The hero's introduction in Marita's words; the Contact page email."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "The price above Buy on Etsy on a piece page."
       }
     },
     "shadows": [
@@ -297,7 +309,7 @@
       "name": "Menu Link",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "A menu word over its 5px section-colored brush line (shown here as a soft line; the site uses a hand-painted mask).",
+      "description": "A menu word over its 5px section-colored brush line, on desktop and in the phone menu (shown here as a soft line; the site uses a hand-painted mask).",
       "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#b73557\">Paintings</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#1f4e8c\">Cyanotypes</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#88431d\">Printmaking</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#316429\">Prints</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#8a6200\">Gifts</a><a href=\"#\" class=\"ds-nav-link\" style=\"--line:#2e2620\">About</a></nav>",
       "css": ".ds-nav { display: flex; gap: 32px; background: var(--sand, #efe4d0); padding: 16px 24px; } .ds-nav-link { position: relative; padding-bottom: 11px; color: var(--warm-ink, #2e2620); font: 500 18px/1.6 Figtree, Helvetica, Arial, sans-serif; text-decoration: none; } .ds-nav-link::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; border-radius: 3px 1px 3px 1px; background: var(--line); } .ds-nav-link:hover::after { height: 7px; } .ds-nav-link:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
     },
@@ -329,9 +341,9 @@
       "name": "See More Link",
       "kind": "custom",
       "refersTo": null,
-      "description": "Headline-size link with a blue underline that thickens on hover inside a fixed-height row, so nothing below moves.",
+      "description": "An 18px link with a blue underline that thickens on mouse hover inside a fixed-height row, so nothing below moves.",
       "html": "<div class=\"ds-more-row\"><a href=\"#\" class=\"ds-more\">See more <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" aria-hidden=\"true\" style=\"fill:var(--cyanotype, #1f4e8c)\"><path d=\"M18.26 13.5H0v-3h18.26l-8.4-8.4L12 0l12 12-12 12-2.14-2.1 8.4-8.4Z\"/></svg></a></div>",
-      "css": ".ds-more-row { display: flex; align-items: flex-start; height: calc(1.2em + 10px); font: 400 36px/1.2 'Alegreya Sans', 'Trebuchet MS', sans-serif; } .ds-more { display: inline-flex; align-items: center; gap: 20px; padding-bottom: 2px; border-bottom: 2.5px solid var(--cyanotype, #1f4e8c); color: var(--cyanotype, #1f4e8c); text-decoration: none; transition: border-bottom-width .15s ease; } .ds-more:hover { border-bottom-width: 5px; } .ds-more:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
+      "css": ".ds-more-row { display: flex; align-items: flex-start; height: calc(1.6em + 12px); font: 500 18px/1.6 Figtree, Helvetica, Arial, sans-serif; } .ds-more { display: inline-flex; align-items: center; gap: 10px; padding-bottom: 2px; border-bottom: 2px solid var(--cyanotype, #1f4e8c); color: var(--cyanotype, #1f4e8c); text-decoration: none; transition: border-bottom-width .15s ease; } .ds-more svg { width: 16px; height: auto; } .ds-more:hover { border-bottom-width: 4px; } .ds-more:focus-visible { outline: 2px solid var(--cyanotype, #1f4e8c); outline-offset: 3px; }"
     }
   ],
   "narrative": {
@@ -363,12 +375,17 @@
       },
       {
         "name": "The Readable Floor Rule",
-        "body": "Body text is never smaller than 18px. Only card captions on phones and small print go below it, never under 16px (the Etsy notice in the footer is the single 15px exception).",
+        "body": "Body text is never smaller than 18px. Only card captions on phones and small print go below it, and nothing goes under 16px.",
         "section": "typography"
       },
       {
-        "name": "The Below-the-Fold Rule",
-        "body": "On the front page nothing but the hero is visible before scrolling; the next section starts just past the fold.",
+        "name": "The Her Own Words Rule",
+        "body": "The front page speaks as Marita in the first person, starting in the hero: who she is, where she paints, and that every piece is for sale in her Etsy shop.",
+        "section": "typography"
+      },
+      {
+        "name": "The Art Peeks In Rule",
+        "body": "On the front page the first row of new work starts showing at the bottom of the first screen (about 100px at 1440×900 and on a 390×844 phone), so a whole painting is always one small scroll away.",
         "section": "layout"
       },
       {
@@ -384,7 +401,8 @@
       "**Do** give each section its own line color and splash, and use them only for that section.",
       "**Do** keep headings in Alegreya Sans Regular and body text at 18px or larger.",
       "**Do** keep surfaces flat at rest; lift only on mouse hover, and respect reduced motion.",
-      "**Do** use the simplified tulip badge only below 96px; the full outline badge from 96px up."
+      "**Do** use the simplified tulip badge only below 96px; the full outline badge from 96px up.",
+      "**Do** make every link and button at least 44px tall to tap, even when its visible mark is smaller."
     ],
     "donts": [
       "**Don't** crop a piece of art to fit a frame. Crop studio photos only.",
@@ -393,7 +411,8 @@
       "**Don't** build marketplace density: ratings, crowded filters, ads, many columns of tiny thumbnails.",
       "**Don't** use dark backgrounds or moody, high-contrast styling.",
       "**Don't** add new interface colors, gradients or decorative color; brightness comes from her art and the splashes.",
-      "**Don't** put a splash behind body text or artwork, or stack two splashes."
+      "**Don't** put a splash behind body text or artwork, or stack two splashes.",
+      "**Don't** mark list rows or cards with a thick colored bar down one side; section color lives in the hand-painted line under the word."
     ]
   }
 }

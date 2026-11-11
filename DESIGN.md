@@ -25,6 +25,11 @@ typography:
     fontSize: "clamp(28px, 1.1vw + 21px, 36px)"
     fontWeight: 400
     lineHeight: 1.2
+  section:
+    fontFamily: "Alegreya Sans, Trebuchet MS, sans-serif"
+    fontSize: "clamp(32px, 1.5vw + 22px, 44px)"
+    fontWeight: 400
+    lineHeight: 1.15
   quote:
     fontFamily: "Alegreya Sans, Trebuchet MS, sans-serif"
     fontSize: "26px"
@@ -40,6 +45,16 @@ typography:
     fontSize: "clamp(16px, 0.6vw + 13.5px, 22px)"
     fontWeight: 400
     lineHeight: 1.35
+  lede:
+    fontFamily: "Figtree, Helvetica, Arial, sans-serif"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: 1.5
+  price:
+    fontFamily: "Figtree, Helvetica, Arial, sans-serif"
+    fontSize: "24px"
+    fontWeight: 400
+    lineHeight: 1.2
   body:
     fontFamily: "Figtree, Helvetica, Arial, sans-serif"
     fontSize: "18px"
@@ -169,32 +184,37 @@ Warm, low-contrast neutrals carry the page; one blue does all the interface work
 **Character:** Alegreya Sans is friendly and a little organic, like handwriting that has been tidied; Figtree is open and plain, so the reading never feels corporate. Both stay at regular weights except where noted.
 
 ### Hierarchy
-- **Display** (Alegreya Sans 400, 60px desktop to 40px phone, line height 1.1): the hero heading, front-page section headings ("What's new", "Browse the art") and section page titles.
-- **Headline** (Alegreya Sans 400, 36px to 28px, 1.2): piece titles on their own page, section names on the Browse cards, "See more", headings inside descriptions.
+- **Display** (Alegreya Sans 400, 60px desktop to 40px phone, line height 1.1): the hero heading and section page titles. One per page.
+- **Section** (Alegreya Sans 400, 44px to 32px, 1.15): front-page section headings ("What's new", "Browse the art"), one step under the hero so it leads.
+- **Headline** (Alegreya Sans 400, 36px to 28px, 1.2): piece titles on their own page, section names on the Browse cards, headings inside descriptions.
 - **Quote** (Alegreya Sans Medium Italic 500, 26px, 1.3): pull quotes in her own words.
 - **Wordmark** (Alegreya Sans 500, 25px, 22px under 1180px): "Marita McVeigh" beside the tulip, in Cyanotype blue.
 - **Title** (Figtree 400, 22px desktop, about 19px tablet, 16px phone, 1.35): piece names and prices on cards. Names clamp to two lines.
+- **Lede** (Figtree 400, 20px, 1.5; 18px on phones): the hero's introduction in her words, and the email on the Contact page.
+- **Price** (Figtree 400, 24px, 1.2): the price above Buy on Etsy on a piece page.
 - **Body** (Figtree 400, 18px, 1.6): descriptions, About, everything you read. Lines stay under 65 characters.
 - **Label** (Figtree 500, 18px, 1.6): menu words, the Contact me button.
 - **Button** (Figtree 600, 18px, 1.4): Buy on Etsy and See what's new.
-- **Small** (Figtree 400, 16px, 1.5): filter chips, the Etsy note under the buy button, captions.
+- **Small** (Figtree 400, 16px, 1.5): filter chips, the Etsy note under the buy button, captions, the footer's small print.
 
 ### Named Rules
 **The Regular Headings Rule.** Headings are Alegreya Sans Regular (400). Medium (500) is only for the wordmark and quotes.
 
-**The Readable Floor Rule.** Body text is never smaller than 18px. Only card captions on phones and small print go below it, never under 16px (the Etsy notice in the footer is the single 15px exception).
+**The Readable Floor Rule.** Body text is never smaller than 18px. Only card captions on phones and small print go below it, and nothing goes under 16px.
+
+**The Her Own Words Rule.** The front page speaks as Marita in the first person, starting in the hero: who she is, where she paints, and that every piece is for sale in her Etsy shop.
 
 ## Layout
 
 One centered column of content 1180px wide (`page`), with side margins that grow from 24px on phones to 64px on wide screens (`gutter`); at 1440px that leaves about 130px each side. The header spans wider (up to 1440px).
 
-- **Front page:** the hero fills the first screen under the header on every device, so "What's new" always starts below the fold and the hero button is the way down. Desktop hero: heading and button left, studio photo right (742:567). Phones stack photo, heading, then a full-width button.
+- **Front page:** the hero is only as tall as its content, and the studio photo tops out at 58% of the window, so the first row of What's new shows at the bottom of the first screen. Desktop hero: heading, her introduction and the button on the left, studio photo on the right (742:567). Phones stack a shorter photo (342:280), heading, introduction, then a full-width button.
 - **Grids of pieces:** four across on the front page (desktop), three on tablets, two on phones; section pages fill rows of cards at least 230px wide. Gaps are 19px, 8px on phones.
-- **Browse the art:** two wide cards then three on desktop; two across on tablets (Paintings takes the full row when the count is odd); one per row on phones.
+- **Browse the art:** two wide cards then three on desktop, each 300px tall with the name along the top and the piece filling the rest; two across on tablets (Paintings takes the full row when the count is odd); one per row on phones.
 - **Piece page:** photo on the left, details on the right (about 57/43); stacks below 860px.
 - **Breakpoints:** 1180px (wordmark shrinks), 1100px (four to three across), 1000px (menu button replaces the menu), 860px (piece page stacks), 760px (hero stacks, two-across cards), 520px (phone header).
 
-**The Below-the-Fold Rule.** On the front page nothing but the hero is visible before scrolling; the next section starts just past the fold.
+**The Art Peeks In Rule.** On the front page the first row of new work starts showing at the bottom of the first screen (about 100px at 1440×900 and on a 390×844 phone), so a whole painting is always one small scroll away.
 
 ## Elevation & Depth
 
@@ -230,20 +250,23 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 ### Cards / Containers
 **Piece card.** Paper, padded 12 to 24px, soft 6px corners on phones and square on wider screens, no border or shadow at rest. The art sits whole in a slightly wide box (15:14), top-aligned; below it the name (two lines at most) and the price in Clay gray italic. Cards in a row share their title and price lines, so prices line up, and a row only makes room for a second title line when one of its names wraps. Hover: the lift.
 
-**Section card (Browse the art).** Paper, 6px corners, a fixed height per breakpoint (201px desktop, 150px tablet, 109px phone). The section name in Alegreya Sans over its splash on the left, a whole piece from that section on the right, a blue arrow at the end. When the card is too narrow (under 280px inside), the picture drops out. Hover: the lift.
+**Section card (Browse the art).** Paper, 6px corners, a fixed height per breakpoint (300px desktop, 150px tablet, 109px phone). The section name in Alegreya Sans over its splash, a whole piece from that section, and a blue arrow: on desktop the name and arrow run along the top and the piece fills the card below; on tablets and phones they sit in a row with the piece at the right. The piece is one not already in What's new. When the card is too narrow (under 280px inside), the picture drops out. Hover: the lift.
 
 **Mat.** Behind a piece's main photo: Paper with the mat shadow, art contained with room around it.
 
 ### Navigation
 - **Desktop menu:** the five sections, then About (and Sold once something has sold), in Figtree 500 18px Warm ink, each over a 5px hand-painted brush line in its section color (Warm ink for About and Sold). Hover or the current page paints the section's splash in from left to right behind the word, squashed into a brushstroke and turned -5°. The Contact me button ends the row.
-- **Phone menu (under 1000px):** a blue three-line button opens a panel of full-width rows, each section marked by a 5px bar in its color; the current section's splash paints in as the panel opens.
+- **Phone menu (under 1000px):** a blue three-line button opens a panel of full-width 52px rows; each section word sits over the same 5px hand-painted line as the desktop menu, and the current section's splash paints in as the panel opens.
 - **Wordmark:** the outline tulip and "Marita McVeigh" in Cyanotype blue at the far left.
+
+### See more link
+Figtree 500, 18px, Cyanotype blue with a 2px underline and a small arrow, right-aligned under the What's new grid. On mouse hover the underline thickens to 4px inside a fixed-height row, so nothing below moves.
 
 ### Section heading with splash
 The section's watercolor splash tucked behind the first letters of its name, turned to that section's angle, with room on the left so the splash never pokes past the page margin. Used on section page titles and the Browse cards.
 
 ### Footer
-A thin Cyanotype blue rule, then the tulip badge with the email (or Contact me), the studio line ("Made by hand in my studio, near Philadelphia") in Warm ink at the center, and About, Policies and Privacy at the right; the four social icons in blue below. Then the small print centered in Clay gray: © Marita McVeigh, the required Etsy notice, the icon credit. Stacks and centers under 1000px.
+A thin Cyanotype blue rule, then the simplified tulip badge (a blue disc, since it's under 96px) with the email (or Contact me), the studio line ("Made by hand in my studio, near Philadelphia") in Warm ink at the center, and About, Policies and Privacy at the right; the four social icons in blue below. Every link is at least 44px tall to tap; the icons stay 27px (22px on phones) inside 44px squares. Then the small print centered in Clay gray at 16px: © Marita McVeigh, the required Etsy notice, the icon credit. Stacks and centers under 1000px.
 
 ## Do's and Don'ts
 
@@ -255,6 +278,7 @@ A thin Cyanotype blue rule, then the tulip badge with the email (or Contact me),
 - **Do** keep headings in Alegreya Sans Regular and body text at 18px or larger.
 - **Do** keep surfaces flat at rest; lift only on mouse hover, and respect reduced motion.
 - **Do** use the simplified tulip badge only below 96px; the full outline badge from 96px up.
+- **Do** make every link and button at least 44px tall to tap, even when its visible mark is smaller.
 
 ### Don't:
 - **Don't** crop a piece of art to fit a frame. Crop studio photos only.
@@ -264,3 +288,4 @@ A thin Cyanotype blue rule, then the tulip badge with the email (or Contact me),
 - **Don't** use dark backgrounds or moody, high-contrast styling.
 - **Don't** add new interface colors, gradients or decorative color; brightness comes from her art and the splashes.
 - **Don't** put a splash behind body text or artwork, or stack two splashes.
+- **Don't** mark list rows or cards with a thick colored bar down one side; section color lives in the hand-painted line under the word.
