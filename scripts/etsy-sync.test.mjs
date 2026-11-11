@@ -259,3 +259,16 @@ test("original or print: posters and canvases are prints, descriptions and the r
   await run(root, { active, gone: {} });
   assert.equal((await read(root))[0].kind, "both");
 });
+
+test("options check: reports what Etsy said, and the option names when it shares them", async () => {
+  const { checkOptions } = await import("./etsy-sync.mjs");
+  const reply = (status, body) => ({ ok: status < 400, status, text: async () => JSON.stringify(body) });
+  const refused = await checkOptions(["1"], async () => reply(403, { error: "Missing scope listings_r" }));
+  assert.equal(refused.result, "refused");
+  assert.equal(refused.batch.status, 403);
+  const inventory = { products: [{ property_values: [{ property_name: "size", values: ["Original 11x14 mat"] }] }, { property_values: [{ values: ["Print 8x10 mat"] }] }] };
+  const worked = await checkOptions(["1"], async (p) => p.includes("batch") ? reply(403, {}) : reply(200, inventory));
+  assert.equal(worked.result, "worked");
+  assert.deepEqual(worked.single.options, ["Original 11x14 mat", "Print 8x10 mat"]);
+  assert.equal((await checkOptions([], async () => reply(200, {}))).result, "no listings with options to try");
+});

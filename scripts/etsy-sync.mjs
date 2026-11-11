@@ -93,6 +93,10 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
   if (!listings.length && byListing.size) throw new Error("Etsy returned no active listings at all, so nothing was changed.");
   const active = new Map(listings.map((l) => [String(l.listing_id), l]));
 
+  // Test (changes nothing): can the sync read Etsy's listing options ("Original 11x14 mat", "Print 8x10 mat")
+  // with the current key, or does Etsy want Marita's sign-in? The answer goes in the run's summary.
+  report.optionsCheck = await checkOptions(listings.filter((l) => l.has_variations).slice(0, 3).map((l) => String(l.listing_id)), (p) => fetch(API + p, { headers }));
+
   // 2. New listings.
   const fresh = listings.filter((l) => {
     const id = String(l.listing_id);
@@ -278,6 +282,34 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
   return report;
 }
 
+// Tries Etsy's two ways of reading listing options. Returns what each said, and the option names it got.
+export async function checkOptions(ids, get) {
+  if (!ids.length) return { result: "no listings with options to try" };
+  const names = (json) => {
+    const out = new Set();
+    const walk = (x) => {
+      if (Array.isArray(x)) return x.forEach(walk);
+      if (!x || typeof x !== "object") return;
+      if (Array.isArray(x.property_values)) for (const v of x.property_values) for (const n of v.values || []) out.add(String(n));
+      Object.values(x).forEach(walk);
+    };
+    walk(json);
+    return [...out].slice(0, 6);
+  };
+  const tryOne = async (p) => {
+    try {
+      const res = await get(p);
+      const text = await res.text();
+      if (!res.ok) return { status: res.status, said: text.slice(0, 160) };
+      return { status: res.status, options: names(JSON.parse(text)) };
+    } catch (e) { return { status: 0, said: String(e.message || e).slice(0, 160) }; }
+  };
+  const batch = await tryOne(`/listings/batch/inventory?listing_ids=${ids.join(",")}`);
+  const single = await tryOne(`/listings/${ids[0]}/inventory`);
+  const worked = [batch, single].some((r) => r.status === 200 && r.options?.length);
+  return { result: worked ? "worked" : "refused", listings: ids, batch, single };
+}
+
 // ---------- matching and sorting ----------
 
 const SIZE = /\b\d+(?:\.\d+)?\s*(?:["”″]|in(?:ch(?:es)?)?\.?)?\s*(?:x|×|by)\s*\d+(?:\.\d+)?\s*(?:["”″]|in(?:ch(?:es)?)?\.?)?/i;
@@ -449,6 +481,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     `- Back on the site:${list(report.back)}`,
     `- Skipped on purpose:${list(report.skipped)}`,
     ...report.problems.map((p) => `- ⚠️ ${p}`),
+    ...(report.optionsCheck ? [`- Etsy options check (test only, changes nothing): **${report.optionsCheck.result}**`,
+      "  ```", "  " + JSON.stringify(report.optionsCheck), "  ```"] : []),
   ].join("\n");
   console.log(lines);
   if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, lines + "\n", { flag: "a" });
