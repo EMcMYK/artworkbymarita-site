@@ -223,8 +223,12 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .back { display: inline-flex; align-items: center; min-height: 44px; margin: 14px 0 6px; font-size: 16px; }
 .back::before { content: "‹ "; }
 .piece { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: start; }
-.stage .mat { aspect-ratio: auto; height: auto; min-height: 240px; grid-template: auto / minmax(0, 1fr); padding: clamp(16px, 3vw, 40px); }
-.stage .mat img { width: auto; height: auto; max-width: 100%; max-height: min(70vh, 680px); }  /* the mat follows the piece's own shape */
+.stage { container-type: inline-size; --mat-pad: clamp(16px, 3vw, 40px); --img-max: min(70vh, 680px); }
+/* The mat is as tall as this piece's tallest photo (--tallest = its height / width, measured in site.js),
+   so switching photos never moves the page. A single-photo piece gets a mat that fits it exactly. */
+.stage .mat { aspect-ratio: auto; height: auto; grid-template: auto / minmax(0, 1fr); padding: var(--mat-pad);
+  min-height: max(240px, calc(min(var(--img-max), (100cqw - 2 * var(--mat-pad)) * var(--tallest, 0)) + 2 * var(--mat-pad))); }
+.stage .mat img { width: auto; height: auto; max-width: 100%; max-height: var(--img-max); }
 /* the photo is a button: click or tap to see it larger */
 .zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .zoom:focus-visible { outline-offset: 4px; }
@@ -263,7 +267,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .also { margin: 0; }
 @media (max-width: 999px) {
   .piece { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .stage .mat img { max-height: min(62vh, 600px); }
+  .stage { --img-max: min(62vh, 600px); }
 }
 
 /* text pages and descriptions */

@@ -351,6 +351,17 @@
       edges();
     }
     const stage = document.getElementById("stage");
+    // Size the mat for the tallest photo, so switching photos doesn't move the page.
+    // Photos are measured as they load; the tallest so far wins.
+    let tallest = 0;
+    for (const src of p.images || []) {
+      const im = new Image();
+      im.src = src;
+      im.decode().then(() => {
+        const r = im.naturalHeight / im.naturalWidth;
+        if (r > tallest) { tallest = r; stage.style.setProperty("--tallest", r.toFixed(4)); }
+      }, () => {});
+    }
     let x0 = null, y0 = null;
     for (const el of [stage, box]) el.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
     for (const el of [stage, box]) el.addEventListener("touchend", (e) => {

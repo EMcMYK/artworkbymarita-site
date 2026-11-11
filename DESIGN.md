@@ -255,7 +255,7 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 
 **Section card (Browse the art).** Paper, 6px corners, a fixed height per breakpoint (300px desktop, 150px tablet, 109px phone). The section name in Alegreya Sans over its splash, a whole piece from that section, and a blue arrow: on desktop the name and arrow run along the top and the piece fills the card below; on tablets and phones they sit in a row with the piece at the right. The piece is one not already in What's new. When the card is too narrow (under 280px inside), the picture drops out. Hover: the lift.
 
-**Mat.** Behind a piece's main photo: Paper with the mat shadow, art contained with room around it. The mat takes the piece's own shape (no fixed box), so a wide piece doesn't float in empty paper; the art is at most 70% of the window tall. Tapping the photo opens it larger.
+**Mat.** Behind a piece's main photo: Paper with the mat shadow, art contained with room around it. The mat is as tall as the piece's tallest photo (at most 70% of the window), so switching photos never moves the page; a piece with one photo gets a mat that fits it exactly, and a wide photo among tall ones sits centered with more paper above and below. Tapping the photo opens it larger.
 
 **Enlarged photo.** A full-screen view over a Sand wash: the photo on Paper with the mat shadow, a Close pill at the top right. Arrow keys and swipes move between photos; Escape, Close or a tap outside closes it.
 
