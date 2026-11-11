@@ -48,6 +48,7 @@
     const cat = categoryOf(p.category), one = cat.one || cat.title.replace(/s$/, "");
     if (p.category === "gifts") return "Gift";
     if (p.kind === "original") return p.category === "paintings" ? "Original" : `Original · ${one}`;
+    if (p.kind === "both") return `Original or print · ${one}`;  // one listing sells both, as Etsy options
     if (p.kind === "print") {
       if (p.category === "cyanotypes") return "Cyanotype print";
       const medium = String(p.name).match(/\b(linocut|etching|monotype|giclee|giclée)\b/i);
@@ -217,18 +218,18 @@
   }
 
   // "See more": everything for sale, newest first.
-  // What's new, with a chip per section that has something for sale (#new/paintings and so on).
-  function newPage(section) {
+  // What's new, with the same subject filters as the section pages (#new/florals and so on).
+  function newPage(subject) {
     const all = newestFirst(forSale());
-    const here = CATEGORIES.filter((c) => all.some((p) => p.category === c.id));
-    const list = section ? all.filter((p) => p.category === section.id) : all;
+    const here = SUBJECTS.filter((s) => all.some((p) => (p.subjects || []).includes(s)));
+    const list = subject ? all.filter((p) => (p.subjects || []).includes(subject)) : all;
     return `<section class="wrap block">
       <h1>What’s new</h1>
       <p class="lede">Everything I have for sale, newest first.</p>
-      <nav class="filters" aria-label="Filter by section">
-        <a href="#new"${section ? "" : ' aria-current="true"'}>All</a>
-        ${here.map((c) => `<a href="#new/${esc(c.id)}"${section && c.id === section.id ? ' aria-current="true"' : ""}>${esc(c.title)}</a>`).join("")}
-      </nav>
+      ${here.length ? `<nav class="filters" aria-label="Filter by subject">
+        <a href="#new"${subject ? "" : ' aria-current="true"'}>All</a>
+        ${here.map((s) => `<a href="#new/${slug(s)}"${s === subject ? ' aria-current="true"' : ""}>${esc(s)}</a>`).join("")}
+      </nav>` : ""}
       ${grid(list)}
     </section>`;
   }
@@ -484,9 +485,9 @@
       const subject = SUBJECTS.find((s) => slug(s) === sub) || "";
       app.innerHTML = sectionPage(c, subject); renderChrome(c.id);
       document.title = `${subject ? subject + " · " : ""}${c.title} · ${name}`;
-    } else if (head === "new" && (!sub || CATEGORIES.some((x) => x.id === sub))) {
-      const section = CATEGORIES.find((x) => x.id === sub);
-      app.innerHTML = newPage(section); renderChrome(""); document.title = `${section ? section.title + " · " : ""}What’s new · ${name}`;
+    } else if (head === "new" && (!sub || SUBJECTS.some((s) => slug(s) === sub))) {
+      const subject = SUBJECTS.find((s) => slug(s) === sub) || "";
+      app.innerHTML = newPage(subject); renderChrome(""); document.title = `${subject ? subject + " · " : ""}What’s new · ${name}`;
     } else if (hash === "sold" && CONFIG.showSoldGallery) {
       app.innerHTML = soldPage(); renderChrome("sold"); document.title = `Sold · ${name}`;
     } else if (hash === "contact") {

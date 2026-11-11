@@ -43,6 +43,13 @@
   },
   "merge": {},
   "keepSeparate": [],
+  "kinds": {
+    "_help": "Original or print, by Etsy listing id, when the title doesn't say: \"original\", \"print\", or \"both\" (the original and prints are options in one listing).",
+    "4609158151": "both",
+    "4569748536": "both",
+    "4589771917": "both",
+    "4601951092": "both"
+  },
   "skipTitles": [],
   "ignoreListingIds": [],
   "maxNewPerRun": 30,

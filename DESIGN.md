@@ -249,7 +249,7 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 - **Style:** subject filters and tags are outlined pills: 1px Warm ink border, Warm ink text, Figtree 16px, 3px by 14px.
 - **State:** hover turns border and text Cyanotype blue; the selected filter fills Cyanotype blue with Paper text.
 - **Tap area:** 44px tall, wider than the visible pill, for both the filters and the tags.
-- **Where:** subject filters on each section page; section filters (Paintings, Cyanotypes…) on What's new.
+- **Where:** subject filters on each section page; the same subject filters on What's new.
 
 ### Cards / Containers
 **Piece card.** Paper, padded 12 to 24px, soft 6px corners on phones and square on wider screens, no border or shadow at rest. The art sits whole in a slightly wide box (15:14), top-aligned; below it the name (two lines at most) and the price in Clay gray italic. Cards in a row share their title and price lines, so prices line up, and a row only makes room for a second title line when one of its names wraps. Hover: the lift.

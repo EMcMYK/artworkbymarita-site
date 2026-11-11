@@ -44,6 +44,13 @@ All the rules are in `data/etsy-sync.json`. After changing a rule, run the workf
 
   A piece in the Paintings section that isn't a print counts as an original, so it moves to the
   Sold gallery when it sells.
+- **Original or print** (checked every run, not only for new pieces), from the first match:
+  1. `kinds`: by Etsy listing id, `"original"`, `"print"`, or `"both"` when one listing sells the
+     original and prints as options (the site says "Original or print").
+  2. Words in the title: "original"; or "print", "giclee", "poster", "matte canvas"… for a print.
+  3. A painting not called a print is an original.
+  4. A description that says "original" and never mentions a print.
+  Add `"kind"` to a piece's `"siteOnly"` to keep a hand fix.
 - **Subject filters** (Florals, Leaves, Landscapes, Beach, Bucks County): every subject in
   `subjectRules` whose words appear in the title, tags or shop section.
 - **Fixing one piece by hand:** edit its `"category"` or `"subjects"` in `data/products.json`, and add

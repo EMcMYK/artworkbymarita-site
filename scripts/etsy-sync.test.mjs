@@ -238,3 +238,24 @@ test("small copies of photos: saved for new pieces, filled in for older ones, re
   assert.deepEqual(p.thumbs, ["images/tulips-original-oil/777-small.jpg"]);
   assert.deepEqual((await readdir(path.join(root, "images/tulips-original-oil"))).sort(), ["777-small.jpg", "777.jpg"]);
 });
+
+test("original or print: posters and canvases are prints, descriptions and the rules file decide the rest", async () => {
+  const { kindFor } = await import("./etsy-sync.mjs");
+  assert.equal(kindFor("Classic Matte Paper Poster size 8x10 inches", [], "prints", 1), "print");
+  assert.equal(kindFor("Matte Canvas, Framed (Multi-color) Singing Choir", [], "prints", 1), "print");
+  assert.equal(kindFor("Original Campfire Painting, 16x20 Canvas Art", [], "paintings", 1), "original");
+  assert.equal(kindFor("Daylily Garden Cyanotype", ["My original cyanotype of a daylily from my garden."], "cyanotypes", 1), "original");
+  assert.equal(kindFor("Tulip Cyanotype", ["A print of my original cyanotype."], "cyanotypes", 1), "other");
+  assert.equal(kindFor("Pin Oak Leaves Cyanotype", [], "cyanotypes", 42, { kinds: { 42: "both" } }), "both");
+
+  // A piece already on the site is re-checked when its Etsy listing changes.
+  const root = await site();
+  const active = [listing(70, "Wild Grass Cyanotype")];
+  await run(root, { active, gone: {} });
+  assert.equal((await read(root))[0].kind, "other");
+  const settings = JSON.parse(await readFile(path.join(root, "data/etsy-sync.json"), "utf8"));
+  settings.kinds = { 70: "both" };
+  await writeFile(path.join(root, "data/etsy-sync.json"), JSON.stringify(settings));
+  await run(root, { active, gone: {} });
+  assert.equal((await read(root))[0].kind, "both");
+});

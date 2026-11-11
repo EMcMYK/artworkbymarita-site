@@ -161,6 +161,7 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
       if (!keep.has("description") && description.length && JSON.stringify(p.description) !== JSON.stringify(description)) { p.description = description; changed.push("description"); }
       const tags = (l.tags || []).map(decode);
       if (!keep.has("tags") && JSON.stringify(p.tags || []) !== JSON.stringify(tags)) { p.tags = tags; changed.push("tags"); }
+      if (!keep.has("kind")) { const kind = kindFor(decode(l.title), description, p.category, lid, settings); if (kind !== p.kind) { p.kind = kind; changed.push("original or print"); } }
       if (!keep.has("size")) { const size = sizeFrom(decode(l.title) + "\n" + description.join("\n")); if (size && size !== p.size) { p.size = size; changed.push("size"); } }
       if (!keep.has("photos")) {
         const images = await etsy(`/listings/${lid}/images`, { optional: true });
@@ -200,8 +201,7 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     const description = paragraphs(l.description);
     const tags = (l.tags || []).map(decode);
     const category = categoryFor(title, tags, section, settings);
-    // a painting not called a print is an original, even when its title doesn't say "original"
-    const kind = kindOf(title) === "other" && category === "paintings" ? "original" : kindOf(title);
+    const kind = kindFor(title, description, category, lid, settings);
     const key = mergeKey(title);
     const mkey = key ? `${kind}:${key}` : `${kind}:#${lid}`; // a title of only generic words never merges
     const option = {
@@ -285,7 +285,21 @@ const SIZE = /\b\d+(?:\.\d+)?\s*(?:["”″]|in(?:ch(?:es)?)?\.?)?\s*(?:x|×|by)
 // "original", "print" or "other": originals and prints of the same piece stay separate products.
 export function kindOf(title) {
   if (/\boriginal\b/i.test(title)) return "original";
-  if (/\b(prints?|giclee|giclée|reproduction|matted)\b/i.test(title)) return "print";
+  if (/\b(prints?|giclee|giclée|reproduction|matted|posters?|matte canvas)\b/i.test(title)) return "print";  // posters and canvases are print on demand
+  return "other";
+}
+
+// Original, print, or "both" (one listing that sells the original and prints as Etsy options).
+// In order: the rules file's "kinds" (by Etsy listing id), words in the title, a painting is an original,
+// and a description that says "original" without mentioning a print.
+export function kindFor(title, description, category, listingId, settings = {}) {
+  const forced = (settings.kinds || {})[String(listingId)];
+  if (["original", "print", "both", "other"].includes(forced)) return forced;
+  const k = kindOf(title);
+  if (k !== "other") return k;
+  if (category === "paintings") return "original";
+  const text = (description || []).join(" ");
+  if (category !== "gifts" && /\boriginal\b/i.test(text) && !/\b(prints?|giclee|giclée|reproduction|posters?)\b/i.test(text)) return "original";
   return "other";
 }
 
