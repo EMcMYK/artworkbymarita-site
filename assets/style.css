@@ -34,6 +34,11 @@ body { background: var(--sand); color: var(--warm-ink); font-family: var(--body)
 img { max-width: 100%; display: block; }
 a { color: var(--cyanotype); text-underline-offset: 3px; }
 :focus-visible { outline: 2px solid var(--cyanotype); outline-offset: 3px; }
+h1[tabindex="-1"]:focus { outline: none; }  /* focus lands on a page's heading after a page change; no ring needed there */
+/* Skip link: hidden until a keyboard user tabs onto it, first thing on every page */
+.skip { position: absolute; top: 8px; left: 8px; z-index: 100; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+  background: var(--paper); color: var(--cyanotype); border-radius: 6px; box-shadow: var(--shadow); transform: translateY(-200%); }
+.skip:focus { transform: none; }
 h1, h2 { font-family: var(--heading); font-weight: 400; text-wrap: balance; margin: 0; }
 h1 { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; }
 h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
@@ -148,6 +153,8 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
   transition: border-bottom-width .15s ease; }
 @media (hover: hover) { .see-more:hover { border-bottom-width: 4px; } }
 .see-more .arrow { width: 16px; height: auto; }
+.see-more { position: relative; }
+.see-more::after { content: ""; position: absolute; inset: -6px -4px; }  /* a 44px-tall tap area; the underline stays where it is */
 .arrow { fill: var(--cyanotype); flex: none; }
 
 /* "Browse the art": the five splashes, then a card per section */
@@ -216,8 +223,8 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .filters a:hover, .tags a:hover { border-color: var(--cyanotype); color: var(--cyanotype); }
 .filters a[aria-current] { background: var(--cyanotype); border-color: var(--cyanotype); color: var(--paper); }
 .tags { margin: 4px 0 0; }
-.tags a { position: relative; }
-.tags a::after { content: ""; position: absolute; inset: -5px -2px; }  /* a 44px-tall tap area around the 34px pill */
+.filters a, .tags a { position: relative; }
+.filters a::after, .tags a::after { content: ""; position: absolute; inset: -5px -2px; }  /* a 44px-tall tap area around the 34px pill */
 
 /* one piece */
 .back { display: inline-flex; align-items: center; min-height: 44px; margin: 14px 0 6px; font-size: 16px; }

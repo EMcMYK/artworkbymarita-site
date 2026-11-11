@@ -205,3 +205,36 @@ test("re-sort applies new rules to pieces already on the site, except hand fixes
   assert.equal(a.category, "paintings");
   assert.equal(b.category, "prints");
 });
+
+test("small copies of photos: saved for new pieces, filled in for older ones, replaced with the photos", async () => {
+  const { readdir } = await import("node:fs/promises");
+  const root = await site();
+  const active = [listing(60, "Tulips Original Oil", { quantity: 1 })];
+  const urls = [];
+  const etsy = fakeEtsy({ active, gone: {} });
+  const spy = (u) => { if (!u.startsWith(API)) urls.push(u); return etsy(u); };
+  await sync({ root, fetch: spy, log: () => {}, pause: 0 });
+  let [p] = await read(root);
+  assert.deepEqual(p.thumbs, ["images/tulips-original-oil/600-small.jpg"]);
+  assert.ok(urls.some((u) => u.includes("il_570xN")), "the small copy is Etsy's uncropped 570px size");
+
+  // A piece saved before small copies existed gets them on the next run.
+  delete p.thumbs;
+  await writeFile(path.join(root, "data/products.json"), JSON.stringify({ products: [p] }));
+  const { rm } = await import("node:fs/promises");
+  await rm(path.join(root, "images/tulips-original-oil/600-small.jpg"));
+  await sync({ root, fetch: spy, log: () => {}, pause: 0 });
+  [p] = await read(root);
+  assert.deepEqual(p.thumbs, ["images/tulips-original-oil/600-small.jpg"]);
+
+  // New photos on Etsy: the old photo and its small copy go, the new ones come in.
+  const swapped = async (u) => {
+    if (/\/listings\/60\/images$/.test(u)) return { ok: true, status: 200, json: async () => ({ results: [{ listing_image_id: 777, rank: 1, url_fullxfull: "https://i.etsystatic.com/x/il_fullxfull.2.jpg" }] }) };
+    return etsy(u);
+  };
+  await sync({ root, fetch: swapped, log: () => {}, pause: 0 });
+  [p] = await read(root);
+  assert.deepEqual(p.images, ["images/tulips-original-oil/777.jpg"]);
+  assert.deepEqual(p.thumbs, ["images/tulips-original-oil/777-small.jpg"]);
+  assert.deepEqual((await readdir(path.join(root, "images/tulips-original-oil"))).sort(), ["777-small.jpg", "777.jpg"]);
+});

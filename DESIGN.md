@@ -248,7 +248,7 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 ### Chips
 - **Style:** subject filters and tags are outlined pills: 1px Warm ink border, Warm ink text, Figtree 16px, 3px by 14px.
 - **State:** hover turns border and text Cyanotype blue; the selected filter fills Cyanotype blue with Paper text.
-- **Tap area:** 44px tall, wider than the visible pill.
+- **Tap area:** 44px tall, wider than the visible pill, for both the filters and the tags.
 
 ### Cards / Containers
 **Piece card.** Paper, padded 12 to 24px, soft 6px corners on phones and square on wider screens, no border or shadow at rest. The art sits whole in a slightly wide box (15:14), top-aligned; below it the name (two lines at most) and the price in Clay gray italic. Cards in a row share their title and price lines, so prices line up, and a row only makes room for a second title line when one of its names wraps. Hover: the lift.
@@ -263,9 +263,11 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 - **Desktop menu:** the five sections, then About (and Sold once something has sold), in Figtree 500 18px Warm ink, each over a 5px hand-painted brush line in its section color (Warm ink for About and Sold). Hover or the current page paints the section's splash in from left to right behind the word, squashed into a brushstroke and turned -5°. The Contact me button ends the row.
 - **Phone menu (under 1000px):** a blue three-line button opens a panel of full-width 52px rows; each section word sits over the same 5px hand-painted line as the desktop menu, and the current section's splash paints in as the panel opens.
 - **Wordmark:** the outline tulip and "Marita McVeigh" in Cyanotype blue at the far left.
+- **Skip link:** "Skip to the art", hidden until the first Tab press, then a 44px Paper pill at the top left.
+- **Page changes:** focus moves to the new page's heading, so screen readers announce it; the scroll position is left alone.
 
 ### Photo strip (piece page)
-Thumbnails 64px square on Paper with a hairline border; the current one gets a Cyanotype blue outline. When the photos run past the edge, that edge fades out (48px) and the strip snaps from photo to photo; on phones a "1 of 9 photos" count in Clay gray sits under it. The details line under the piece title names a single piece in the singular: "Original · Cyanotype", "Cyanotype print", "Linocut print", "Gift". Arrow keys move through the photos, the strip follows the current one, and screen readers hear "Photo 2 of 10".
+Thumbnails 64px square on Paper with a hairline border, using the sync's small copy of each photo; the current one gets a Cyanotype blue outline. When the photos run past the edge, that edge fades out (48px) and the strip snaps from photo to photo; on phones a "1 of 9 photos" count in Clay gray sits under it. The details line under the piece title names a single piece in the singular: "Original · Cyanotype", "Cyanotype print", "Linocut print", "Gift". Arrow keys move through the photos, the strip follows the current one, and screen readers hear "Photo 2 of 10".
 
 ### Piece page extras
 - **Breadcrumb:** 44px tall; it goes back to where you came from, keeping the subject filter and the scroll.

@@ -167,14 +167,20 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
         const want = (images?.results || []).slice().sort((a, b) => a.rank - b.rank).slice(0, settings.maxPhotos || 10);
         if (want.length) {
           const wantPaths = want.map((img) => `images/${p.id}/${img.listing_image_id}.jpg`);
+          const smallPaths = want.map((img) => `images/${p.id}/${img.listing_image_id}${SMALL}`);
           if (JSON.stringify(p.images) !== JSON.stringify(wantPaths)) {
             const have = new Set(await readdir(path.join(root, "images", p.id)).catch(() => []));
             const missing = want.filter((img) => !have.has(`${img.listing_image_id}.jpg`));
             const got = await savePhotos(root, p.id, missing, fetch, log);
             if (got.length === missing.length) {
-              for (const f of have) if (!wantPaths.includes(`images/${p.id}/${f}`)) await rm(path.join(root, "images", p.id, f));
-              p.images = wantPaths; changed.push("photos");
+              const keepFiles = new Set([...wantPaths, ...smallPaths]);
+              for (const f of have) if (!keepFiles.has(`images/${p.id}/${f}`)) await rm(path.join(root, "images", p.id, f));
+              p.images = wantPaths; delete p.thumbs; changed.push("photos");
             } else report.problems.push(`${p.name}: some new photos didn't download, kept the current ones. It tries again next run.`);
+          }
+          // Small copies for cards and the photo strip; also fills them in for pieces saved before they existed.
+          if (JSON.stringify(p.images) === JSON.stringify(wantPaths) && JSON.stringify(p.thumbs) !== JSON.stringify(smallPaths)) {
+            if ((await saveSmallPhotos(root, p.id, want, fetch, log)).length === want.length) p.thumbs = smallPaths;
           }
         } else if (images) report.problems.push(`${p.name}: Etsy returned no photos, kept the current ones.`);
       }
@@ -219,8 +225,10 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
     const name = displayName(title);
     const id = uniqueId(name, products);
     const images = await etsy(`/listings/${lid}/images`, { optional: true });
-    const photos = await savePhotos(root, id, (images?.results || []).slice().sort((a, b) => a.rank - b.rank).slice(0, settings.maxPhotos || 10), fetch, log);
+    const want = (images?.results || []).slice().sort((a, b) => a.rank - b.rank).slice(0, settings.maxPhotos || 10);
+    const photos = await savePhotos(root, id, want, fetch, log);
     if (!photos.length) { report.problems.push(`${title}: no photos came back from Etsy, so it wasn't added. It tries again next run.`); continue; }
+    const small = photos.length === want.length ? await saveSmallPhotos(root, id, want, fetch, log) : [];
     const p = {
       id,
       name,
@@ -230,6 +238,7 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
       oneOfAKind: kind === "original" && Number(l.quantity) <= 1,
       size: sizeFrom(title + "\n" + description.join("\n")),
       images: photos,
+      ...(small.length === photos.length ? { thumbs: small } : {}),
       options: [option],
       description,
       tags,
@@ -379,6 +388,26 @@ async function savePhotos(root, productId, images, fetch, log) {
     }
     if (ok) kept.push(`images/${productId}/${file}`);
     else log(`Couldn't download photo ${img.listing_image_id} for ${productId}`);
+  }
+  return kept;
+}
+
+// A smaller copy of each photo (Etsy's 570px-wide size, never cropped) for cards and the photo strip,
+// so a page of cards doesn't download full-size photos. Saved next to the photo as <id>-small.jpg.
+const SMALL = "-small.jpg";
+async function saveSmallPhotos(root, productId, images, fetch, log) {
+  const kept = [];
+  const dir = path.join(root, "images", productId);
+  await mkdir(dir, { recursive: true });
+  for (const img of images) {
+    const file = `${img.listing_image_id}${SMALL}`;
+    if (await readFile(path.join(dir, file)).then(() => true, () => false)) { kept.push(`images/${productId}/${file}`); continue; }
+    const url = img.url_570xN || String(img.url_fullxfull || "").replace("il_fullxfull", "il_570xN");
+    try {
+      const res = url ? await fetch(url) : null;
+      if (res?.ok) { await writeFile(path.join(dir, file), Buffer.from(await res.arrayBuffer())); kept.push(`images/${productId}/${file}`); continue; }
+    } catch { /* tried again next run */ }
+    log(`Couldn't download the small copy of photo ${img.listing_image_id} for ${productId}`);
   }
   return kept;
 }

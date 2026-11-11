@@ -24,7 +24,7 @@ lists what was added, merged, updated, sold or hidden.
 | `data/products.json` | Every piece on the site (the sync writes this) | Only to fix a name, section or subject |
 | `data/etsy-sync.json` | The sync's rules: which words put a piece in which section or subject, merges, safety stops | To fix sorting |
 | `data/about.html`, `data/privacy.html` | The About and Privacy pages | Yes, the words |
-| `images/` | Photos (the sync saves product photos here; About photos go in `images/about/`) | About photos only |
+| `images/` | Photos (the sync saves product photos here, each with a smaller `-small.jpg` copy for cards and thumbnails; About photos go in `images/about/`) | About photos only |
 | `assets/style.css` | Colors and fonts (tokens at the top) | Only to change the look |
 | `assets/site.js` | Draws the pages | No |
 | `scripts/etsy-sync.mjs` | The sync | No |

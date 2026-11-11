@@ -76,9 +76,12 @@
     return title || name;
   }
 
+  // The smaller copy of a photo (saved by the sync) for cards and thumbnails; the full photo if there isn't one yet.
+  const smallPhoto = (p, i = 0) => (p.thumbs && p.thumbs[i]) || (p.images && p.images[i]);
+
   // A piece shown whole on its mat, never cropped. `main` = the big photo on a product page.
   function picture(p, index = 0, main = false) {
-    const img = p.images && p.images[index];
+    const img = main ? p.images && p.images[index] : smallPhoto(p, index);
     return `<div class="mat">${img
       ? `<img src="${esc(img)}" alt="${esc(p.name)}" ${main ? 'fetchpriority="high" decoding="async"' : 'loading="lazy"'}>`
       : `<span class="no-photo">${esc(p.name)}</span>`}</div>`;
@@ -186,7 +189,7 @@
     const p = list.find((x) => x.images?.length && !shown.has(x)) || list.find((x) => x.images?.length);
     return `<a class="room" href="#${esc(c.id)}" data-section="${esc(c.id)}">
       <span class="room-title">${esc(c.title)}</span>
-      ${p ? `<img src="${esc(p.images[0])}" alt="" loading="lazy">` : ""}
+      ${p ? `<img src="${esc(smallPhoto(p))}" alt="" loading="lazy">` : ""}
       ${arrow}
     </a>`;
   }
@@ -207,7 +210,7 @@
       <section class="wrap home-block" aria-labelledby="browse">
         <div class="browse-head">
           <h2 class="home-heading" id="browse">Browse the art</h2>
-          <span class="splash-row" aria-hidden="true">${rooms.map(({ c }) => `<img src="assets/splash-${esc(c.id)}.webp" alt="" data-section="${esc(c.id)}">`).join("")}</span>
+          <span class="splash-row" aria-hidden="true">${rooms.map(({ c }) => `<img src="assets/splash-${esc(c.id)}.webp" alt="" loading="lazy" data-section="${esc(c.id)}">`).join("")}</span>
         </div>
         <div class="rooms">${rooms.map(({ c, list }) => sectionCard(c, list, new Set(newest))).join("")}</div>
       </section>`;
@@ -280,8 +283,8 @@
       <article class="piece">
         <div class="gallery">
           <div class="stage" id="stage"><button type="button" class="zoom" id="main-pic" aria-label="See this photo larger">${picture(p, 0, true)}</button></div>
-          ${photos.length > 1 ? `<div class="thumbs" role="group" aria-label="Photos">${photos.map((src, i) =>
-            `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>
+          ${photos.length > 1 ? `<div class="thumbs" role="group" aria-label="Photos">${photos.map((_, i) =>
+            `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(smallPhoto(p, i))}" alt="" loading="lazy"></button>`).join("")}</div>
             <p class="photo-count" aria-hidden="true">1 of ${photos.length} photos</p>` : ""}
           <p class="sr-only" aria-live="polite" id="photo-status"></p>
         </div>
@@ -352,15 +355,15 @@
     }
     const stage = document.getElementById("stage");
     // Size the mat for the tallest photo, so switching photos doesn't move the page.
-    // Photos are measured as they load; the tallest so far wins.
+    // Photos are measured as they load (the small copies: same shape, fewer bytes); the tallest so far wins.
     let tallest = 0;
-    for (const src of p.images || []) {
+    for (const src of (p.images || []).map((_, i) => smallPhoto(p, i))) {
       const im = new Image();
-      im.src = src;
-      im.decode().then(() => {
+      im.onload = () => {
         const r = im.naturalHeight / im.naturalWidth;
         if (r > tallest) { tallest = r; stage.style.setProperty("--tallest", r.toFixed(4)); }
-      }, () => {});
+      };
+      im.src = src;
     }
     let x0 = null, y0 = null;
     for (const el of [stage, box]) el.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
@@ -422,6 +425,7 @@
   document.addEventListener("click", (e) => {
     const a = e.target.closest('a[href^="#"]');
     if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (a.classList.contains("skip")) { e.preventDefault(); a.blur(); focusPage(); app.scrollIntoView(); return; }  // skip link: no page change
     const target = a.getAttribute("href");
     if (sameHash(target, location.hash)) return;  // already here: nothing changes
     e.preventDefault();
@@ -441,10 +445,25 @@
     } else {
       route(history.state?.scrollY);
     }
+    pageReady.then(focusPage);
+  }
+
+  // About and Privacy load their text after the page appears; this settles once the heading is there.
+  let pageReady = Promise.resolve();
+
+  // After moving to another page, put keyboard and screen-reader focus on its heading, so the change
+  // is announced and Tab continues from the top of the new page. The scroll position is left alone.
+  function focusPage() {
+    if (app.contains(document.activeElement)) return;  // "See what's new" already focused its heading
+    const h = app.querySelector("h1");
+    if (!h) return;
+    h.tabIndex = -1;
+    h.focus({ preventScroll: true });
   }
 
   function route(restoreTo) {
     gallery = null;
+    pageReady = Promise.resolve();
     const hash = decodeURIComponent(location.hash.slice(1));
     const [head, sub] = hash.split("/");
     const name = CONFIG.siteName || "Marita McVeigh";
@@ -464,7 +483,7 @@
     } else if (hash === "contact") {
       app.innerHTML = contactPage(); renderChrome("contact"); wireContact(); document.title = `Contact · ${name}`;
     } else if (hash === "about" || hash === "privacy") {
-      renderChrome(hash); textPage(hash); document.title = `${hash === "about" ? "About" : "Privacy"} · ${name}`;
+      renderChrome(hash); pageReady = textPage(hash); document.title = `${hash === "about" ? "About" : "Privacy"} · ${name}`;
     } else {
       const missing = hash && hash !== "top" && hash !== "newest";
       const gone = missing && GONE.has(hash);  // a piece that was on the site and has since come down
