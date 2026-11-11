@@ -249,6 +249,7 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 - **Style:** subject filters and tags are outlined pills: 1px Warm ink border, Warm ink text, Figtree 16px, 3px by 14px.
 - **State:** hover turns border and text Cyanotype blue; the selected filter fills Cyanotype blue with Paper text.
 - **Tap area:** 44px tall, wider than the visible pill, for both the filters and the tags.
+- **Where:** subject filters on each section page; section filters (Paintings, Cyanotypes…) on What's new.
 
 ### Cards / Containers
 **Piece card.** Paper, padded 12 to 24px, soft 6px corners on phones and square on wider screens, no border or shadow at rest. The art sits whole in a slightly wide box (15:14), top-aligned; below it the name (two lines at most) and the price in Clay gray italic. Cards in a row share their title and price lines, so prices line up, and a row only makes room for a second title line when one of its names wraps. Hover: the lift.
@@ -282,7 +283,7 @@ Figtree 500, 18px, Cyanotype blue with a 2px underline and a small arrow, right-
 The section's watercolor splash tucked behind the first letters of its name, turned to that section's angle. On page titles the text lines up with the page's left edge like everything below it, and the splash hangs out into the margin (by 0.45em). On the Browse cards the splash sits inside the card. Used on section page titles and the Browse cards.
 
 ### Footer
-A thin Cyanotype blue rule, then the simplified tulip badge (a blue disc, since it's under 96px) with the email (or Contact me), the studio line ("Made by hand in my studio, near Philadelphia") in Warm ink at the center, and About, Policies and Privacy at the right; the four social icons in blue below. Every link is at least 44px tall to tap; the icons stay 27px (22px on phones) inside 44px squares. Hover is easy to see: text links turn Warm ink with a 3px blue underline; social icons get a Paper circle and rise 2px. Then the small print centered in Clay gray at 16px: © Marita McVeigh, the required Etsy notice, the icon credit. Stacks and centers under 1000px.
+A thin Cyanotype blue rule, then the simplified tulip badge (a blue disc, since it's under 96px) with the email (or Contact me), the studio line ("Made by hand in my studio, near Philadelphia") in Warm ink at the center, and About, Policies and Privacy at the right; the four social icons in blue below. Every link is at least 44px tall to tap; the icons stay 27px (22px on phones) inside 44px squares. Hover is easy to see: text links stay blue and their underline grows to 3px; social icons get a Paper rounded square (6px corners) and rise 2px. Then the small print centered in Clay gray at 16px: © Marita McVeigh, the required Etsy notice, the icon credit. Stacks and centers under 1000px.
 
 ## Do's and Don'ts
 

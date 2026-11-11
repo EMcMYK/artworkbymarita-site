@@ -217,11 +217,19 @@
   }
 
   // "See more": everything for sale, newest first.
-  function newPage() {
+  // What's new, with a chip per section that has something for sale (#new/paintings and so on).
+  function newPage(section) {
+    const all = newestFirst(forSale());
+    const here = CATEGORIES.filter((c) => all.some((p) => p.category === c.id));
+    const list = section ? all.filter((p) => p.category === section.id) : all;
     return `<section class="wrap block">
       <h1>What’s new</h1>
       <p class="lede">Everything I have for sale, newest first.</p>
-      ${grid(newestFirst(forSale()))}
+      <nav class="filters" aria-label="Filter by section">
+        <a href="#new"${section ? "" : ' aria-current="true"'}>All</a>
+        ${here.map((c) => `<a href="#new/${esc(c.id)}"${section && c.id === section.id ? ' aria-current="true"' : ""}>${esc(c.title)}</a>`).join("")}
+      </nav>
+      ${grid(list)}
     </section>`;
   }
 
@@ -476,8 +484,9 @@
       const subject = SUBJECTS.find((s) => slug(s) === sub) || "";
       app.innerHTML = sectionPage(c, subject); renderChrome(c.id);
       document.title = `${subject ? subject + " · " : ""}${c.title} · ${name}`;
-    } else if (hash === "new") {
-      app.innerHTML = newPage(); renderChrome(""); document.title = `What’s new · ${name}`;
+    } else if (head === "new" && (!sub || CATEGORIES.some((x) => x.id === sub))) {
+      const section = CATEGORIES.find((x) => x.id === sub);
+      app.innerHTML = newPage(section); renderChrome(""); document.title = `${section ? section.title + " · " : ""}What’s new · ${name}`;
     } else if (hash === "sold" && CONFIG.showSoldGallery) {
       app.innerHTML = soldPage(); renderChrome("sold"); document.title = `Sold · ${name}`;
     } else if (hash === "contact") {
