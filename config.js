@@ -25,7 +25,7 @@ window.SITE_CONFIG = {
     { id: "paintings", title: "Paintings", one: "Painting", note: "Original oils and watercolors" },
     { id: "cyanotypes", title: "Cyanotypes", one: "Cyanotype", note: "Sun prints in Prussian blue" },
     { id: "printmaking", title: "Printmaking", one: "Printmaking", note: "Etchings and hand-pulled prints" },
-    { id: "prints", title: "Prints", one: "Print", note: "Prints of her paintings, in several sizes" },
+    { id: "prints", title: "Prints", one: "Print", note: "Prints of my paintings and cyanotypes, in several sizes" },
     { id: "gifts", title: "Gifts", one: "Gift", note: "Cards and smaller pieces" }
   ],
 

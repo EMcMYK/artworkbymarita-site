@@ -32,7 +32,14 @@
   const forSale = () => ALL.filter((p) => !p.soldOut);
   const sold = () => ALL.filter((p) => p.soldOut).sort((a, b) => String(b.soldOn || "").localeCompare(String(a.soldOn || "")));
   const newestFirst = (list) => list.slice().sort((a, b) => String(b.listedOn || "").localeCompare(String(a.listedOn || "")));
-  const inCategory = (id) => newestFirst(forSale().filter((p) => p.category === id));
+  // A piece shows in its own section, and prints show in two: prints of paintings in Paintings and Prints,
+  // cyanotype prints (and listings selling the original or a print) in Cyanotypes and Prints.
+  // Printmaking prints stay in Printmaking only: they're a different kind of print.
+  const isPrint = (p) => p.kind === "print" || p.kind === "both";
+  const inSection = (p, id) => p.category === id
+    || (id === "prints" && isPrint(p) && (p.category === "cyanotypes" || p.category === "paintings"))
+    || (id === "paintings" && p.category === "prints");
+  const inCategory = (id) => newestFirst(forSale().filter((p) => inSection(p, id)));
   const buyable = (p) => (p.options || []).filter((o) => o.available !== false);
   const soldGalleryOn = () => CONFIG.showSoldGallery && sold().length > 0;
 
