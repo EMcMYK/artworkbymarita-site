@@ -216,12 +216,18 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .filters a:hover, .tags a:hover { border-color: var(--cyanotype); color: var(--cyanotype); }
 .filters a[aria-current] { background: var(--cyanotype); border-color: var(--cyanotype); color: var(--paper); }
 .tags { margin: 4px 0 0; }
+.tags a { position: relative; }
+.tags a::after { content: ""; position: absolute; inset: -5px -2px; }  /* a 44px-tall tap area around the 34px pill */
 
 /* one piece */
-.back { display: inline-block; margin: 24px 0 16px; font-size: 16px; }
+.back { display: inline-flex; align-items: center; min-height: 44px; margin: 14px 0 6px; font-size: 16px; }
 .back::before { content: "‹ "; }
 .piece { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: start; }
-.stage .mat { aspect-ratio: auto; height: min(78vh, 760px); padding: 5%; }
+.stage .mat { aspect-ratio: auto; height: auto; min-height: 240px; grid-template: auto / minmax(0, 1fr); padding: clamp(16px, 3vw, 40px); }
+.stage .mat img { width: auto; height: auto; max-width: 100%; max-height: min(70vh, 680px); }  /* the mat follows the piece's own shape */
+/* the photo is a button: click or tap to see it larger */
+.zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.zoom:focus-visible { outline-offset: 4px; }
 .thumbs { display: flex; gap: 8px; margin-top: 12px; overflow-x: auto; padding-bottom: 4px; scroll-snap-type: x proximity; scroll-padding-inline: 24px;
   --fade-left: 0px; --fade-right: 0px;
   -webkit-mask-image: linear-gradient(to right, transparent, var(--warm-ink) var(--fade-left), var(--warm-ink) calc(100% - var(--fade-right)), transparent);
@@ -232,7 +238,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .thumbs button { scroll-snap-align: start; }
 /* phones: say how many photos there are, since the strip runs off the screen */
 .photo-count { display: none; margin: 4px 0 0; font-size: 16px; color: var(--clay); }
-@media (max-width: 860px) { .photo-count { display: block; } }
+@media (max-width: 999px) { .photo-count { display: block; } }
 .thumbs button { flex: none; width: 64px; height: 64px; padding: 4px; border: 1px solid var(--hairline); background: var(--paper); cursor: pointer; border-radius: 4px; }
 .thumbs button[aria-pressed="true"] { border-color: var(--cyanotype); box-shadow: 0 0 0 1px var(--cyanotype); }
 .thumbs img { width: 100%; height: 100%; object-fit: contain; }
@@ -244,7 +250,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .info .prose p:last-child, .info .prose ul:last-child { margin-bottom: 0; }
 /* the purchase block: price, a button sized to its words, the Etsy note */
 .purchase { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 24px; border-top: 1px solid var(--hairline); }
-.price { margin: 0; font-size: 24px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.price { margin: 6px 0 0; font-size: 24px; line-height: 1.2; font-variant-numeric: tabular-nums; }  /* under the title and details line */
 .buy { display: inline-grid; gap: 8px; }  /* several buttons share the widest one's width */
 .btn { display: inline-flex; justify-content: center; align-items: center; gap: 16px; padding: 12px 32px; border-radius: 6px; background: var(--cyanotype); color: var(--paper); text-decoration: none; font-weight: 600; font-size: 18px; line-height: 1.4; }
 .btn, .hero-btn, .nav .nav-contact, .menu-panel .nav-contact { box-shadow: 0 1px 2px rgba(31, 78, 140, .25); transition: transform .15s ease, box-shadow .15s ease, filter .15s; }
@@ -255,9 +261,9 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .buy-note { margin: 0; font-size: 16px; line-height: 1.5; color: var(--clay); }
 .sold-note { margin: 0; padding: 12px 16px; background: var(--paper); border-radius: 6px; }
 .also { margin: 0; }
-@media (max-width: 860px) {
+@media (max-width: 999px) {
   .piece { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .stage .mat { height: auto; aspect-ratio: 4 / 5; }
+  .stage .mat img { max-height: min(62vh, 600px); }
 }
 
 /* text pages and descriptions */
@@ -265,6 +271,23 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .prose p, .prose ul { margin: 0 0 14px; white-space: pre-line; }
 .prose ul { white-space: normal; padding-left: 22px; }
 .prose h2 { font-size: 28px; margin: 24px 0 8px; }
+/* print-on-demand specs ("Product features", "Care instructions") fold away under Details */
+.spec { margin-top: 16px; border-top: 1px solid var(--hairline); padding-top: 12px; }
+.spec summary { display: inline-flex; align-items: center; min-height: 44px; color: var(--cyanotype); font-weight: 500; cursor: pointer; }
+.spec summary::marker { color: var(--cyanotype); }
+.spec[open] summary { margin-bottom: 4px; }
+.spec h2 { font-size: 22px; margin: 12px 0 4px; }
+
+/* the larger view: the photo whole on Sand, a Close button, Escape or a click outside closes it */
+.lightbox { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 56px var(--gutter) 24px; border: 0; background: transparent; }
+.lightbox[open] { display: grid; place-items: center; }
+.lightbox::backdrop { background: color-mix(in srgb, var(--sand) 96%, transparent); }
+.lightbox img { max-width: 100%; max-height: calc(100dvh - 96px); width: auto; height: auto; object-fit: contain; background: var(--paper); padding: 12px; box-shadow: var(--shadow); }
+.lightbox-close { position: fixed; top: 12px; right: max(var(--gutter), env(safe-area-inset-right, 0px)); min-height: 44px; padding: 0 18px; border: 1px solid var(--cyanotype); border-radius: 999px; background: var(--paper); color: var(--cyanotype); font: 500 16px/1 var(--body); cursor: pointer; }
+.lightbox-close:hover { background: var(--cyanotype); color: var(--paper); }
+
+/* read by screen readers only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .prose blockquote { margin: 24px 0; font-family: var(--heading); font-weight: 500; font-style: italic; font-size: 26px; line-height: 1.3; }
 .page h1 { margin-bottom: 18px; }
 .page figure { margin: 20px 0; }

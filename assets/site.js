@@ -19,6 +19,7 @@
   const CATEGORIES = CONFIG.categories || [];
   const SUBJECTS = CONFIG.subjects || [];
   let ALL = [];       // everything in products.json except hidden pieces
+  let GONE = new Set(); // ids of pieces that were on the site and are now hidden
   let gallery = null; // the product page's photo controls, for the left/right keys
 
   // ---------- helpers ----------
@@ -41,12 +42,19 @@
     const low = Math.min(...opts.map((o) => o.price));
     return opts.length > 1 || opts.some((o) => o.hasVariations) ? `From ${money(low)}` : money(low);
   }
-  // What a single piece is, in the singular: "Original · Cyanotype", "Cyanotype print", "Gift".
+  // What a single piece is, in the singular: "Original · Cyanotype", "Cyanotype print", "Linocut print", "Gift".
+  // A piece Etsy doesn't mark as original or print says so honestly instead of guessing.
   function kindLine(p) {
     const cat = categoryOf(p.category), one = cat.one || cat.title.replace(/s$/, "");
+    if (p.category === "gifts") return "Gift";
     if (p.kind === "original") return p.category === "paintings" ? "Original" : `Original · ${one}`;
-    if (p.kind === "print") return p.category === "prints" ? "Print" : `${one} print`;
-    return one;
+    if (p.kind === "print") {
+      if (p.category === "cyanotypes") return "Cyanotype print";
+      const medium = String(p.name).match(/\b(linocut|etching|monotype|giclee|giclée)\b/i);
+      return medium ? `${medium[1][0].toUpperCase()}${medium[1].slice(1).toLowerCase()} print` : "Print";
+    }
+    if (p.category === "prints") return "Print";
+    return (p.options || []).some((o) => o.hasVariations) ? `${one} · several options on Etsy` : one;
   }
 
   // A piece's short title for cards and its page: the Etsy name without the medium and format words
@@ -259,7 +267,7 @@
         ? `<span>${esc(o.label)}</span><span class="btn-price">${o.hasVariations ? `from ${money(o.price)}` : money(o.price)}</span>`
         : "Buy on Etsy"}</a>`).join("")}
     </div>
-    <p class="buy-note">${many ? "Each button opens that version on Etsy. " : ""}${opts.some((o) => o.hasVariations) ? "Choose a size on Etsy. " : ""}Checkout and shipping happen on Etsy.</p>`;
+    <p class="buy-note">${many ? "Each button opens that version on Etsy. " : ""}${opts.some((o) => o.hasVariations) ? "Choose your size or option on Etsy. " : ""}Checkout and shipping happen on Etsy.</p>`;
   }
 
   function productPage(p) {
@@ -271,44 +279,66 @@
       <a class="back" href="#${p.soldOut ? "sold" : esc(c.id)}">${p.soldOut ? "Sold gallery" : esc(c.title)}</a>
       <article class="piece">
         <div class="gallery">
-          <div class="stage" id="stage"><div id="main-pic">${picture(p, 0, true)}</div></div>
+          <div class="stage" id="stage"><button type="button" class="zoom" id="main-pic" aria-label="See this photo larger">${picture(p, 0, true)}</button></div>
           ${photos.length > 1 ? `<div class="thumbs" role="group" aria-label="Photos">${photos.map((src, i) =>
             `<button type="button" data-pic="${i}" aria-pressed="${i === 0}" aria-label="Photo ${i + 1} of ${photos.length}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("")}</div>
             <p class="photo-count" aria-hidden="true">1 of ${photos.length} photos</p>` : ""}
+          <p class="sr-only" aria-live="polite" id="photo-status"></p>
         </div>
         <div class="info">
           <div class="info-head">
             <h1>${esc(shortTitle(p))}</h1>
             <p class="facts">${esc(kindLine(p))}${p.size && buyable(p).length < 2 ? ` · ${esc(p.size)}` : ""}${p.oneOfAKind && !p.soldOut ? " · One of a kind" : ""}</p>
-          </div>
-          <div class="prose">${describe(p.description || [])}</div>
-          <div class="purchase">
             ${p.soldOut ? "" : `<p class="price">${esc(priceText(p))}</p>`}
+          </div>
+          <div class="prose">${describe(p.description || [], p)}</div>
+          <div class="purchase">
             ${buyButtons(p)}
             ${other && !p.soldOut && !other.soldOut ? `<p class="also"><a href="#${esc(other.id)}">${other.kind === "original" ? "See the original" : "Prints of this piece"}</a></p>` : ""}
           </div>
           ${(p.subjects || []).length && !p.soldOut ? `<p class="tags">${p.subjects.map((s) => `<a href="#${esc(p.category)}/${slug(s)}">${esc(s)}</a>`).join("")}</p>` : ""}
         </div>
       </article>
-      ${more.length ? `<section class="block"><h2>${p.soldOut ? "More sold work" : `More ${esc(c.title.toLowerCase())}`}</h2>${grid(more, { showPrice: !p.soldOut || CONFIG.showSoldPrices })}</section>` : ""}
+      ${more.length ? `<section class="block"><h2>${p.soldOut ? "More sold work" : `More ${esc(c.title.toLowerCase())}`}</h2>${grid(more, { showPrice: !p.soldOut || CONFIG.showSoldPrices })}
+        ${p.soldOut ? "" : `<div class="see-more-row"><a class="see-more" href="#${esc(c.id)}">See all ${esc(c.title.toLowerCase())} ${arrow}</a></div>`}</section>` : ""}
+      <dialog class="lightbox" id="lightbox" aria-label="${esc(shortTitle(p))}, larger">
+        <img id="lightbox-img" alt="${esc(p.name)}">
+        <button type="button" class="lightbox-close" id="lightbox-close">Close</button>
+      </dialog>
     </div>`;
   }
 
   function wirePiece(p) {
     const total = (p.images || []).length;
     let shown = 0;
+    const box = document.getElementById("lightbox"), boxImg = document.getElementById("lightbox-img");
     const show = (i) => {
       if (total < 2) return;
       shown = (i + total) % total;
-      document.getElementById("main-pic").innerHTML = picture(p, shown, true);
-      document.querySelectorAll("[data-pic]").forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.pic) === shown)));
+      // the new photo replaces the old one once it has loaded, so the mat never flashes empty
+      const next = new Image();
+      next.src = p.images[shown];
+      const swap = () => { document.getElementById("main-pic").innerHTML = picture(p, shown, true); };
+      next.decode ? next.decode().then(swap, swap) : swap();
+      if (box.open) boxImg.src = p.images[shown];
+      document.querySelectorAll("[data-pic]").forEach((b) => {
+        const on = Number(b.dataset.pic) === shown;
+        b.setAttribute("aria-pressed", String(on));
+        if (on) b.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduced() ? "auto" : "smooth" });
+      });
       const count = document.querySelector(".photo-count");
       if (count) count.textContent = `${shown + 1} of ${total} photos`;
+      document.getElementById("photo-status").textContent = `Photo ${shown + 1} of ${total}`;
     };
-    document.querySelectorAll("[data-pic]").forEach((b) => b.addEventListener("click", () => {
-      show(Number(b.dataset.pic));
-      b.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduced() ? "auto" : "smooth" });
-    }));
+    document.querySelectorAll("[data-pic]").forEach((b) => b.addEventListener("click", () => show(Number(b.dataset.pic))));
+    // Click or tap the photo to see it larger, still whole. Close with the button, Escape or a click outside it.
+    document.getElementById("main-pic").addEventListener("click", () => {
+      if (!p.images?.length) return;
+      boxImg.src = p.images[shown];
+      box.showModal();
+    });
+    document.getElementById("lightbox-close").addEventListener("click", () => box.close());
+    box.addEventListener("click", (e) => { if (e.target === box) box.close(); });
     // When the photos run past the edge of the strip, that edge fades and shows a nudge, so it reads as scrollable.
     const thumbs = document.querySelector(".thumbs");
     if (thumbs) {
@@ -322,8 +352,8 @@
     }
     const stage = document.getElementById("stage");
     let x0 = null, y0 = null;
-    stage.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
-    stage.addEventListener("touchend", (e) => {
+    for (const el of [stage, box]) el.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    for (const el of [stage, box]) el.addEventListener("touchend", (e) => {
       if (x0 === null) return;
       const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
       if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) show(shown + (dx < 0 ? 1 : -1));
@@ -384,7 +414,8 @@
     const target = a.getAttribute("href");
     if (sameHash(target, location.hash)) return;  // already here: nothing changes
     e.preventDefault();
-    if (history.state && "from" in history.state && sameHash(target, history.state.from)) { history.back(); return; }
+    const from = history.state && "from" in history.state ? history.state.from : null;
+    if (from !== null && (sameHash(target, from) || (a.classList.contains("back") && from.startsWith(target + "/")))) { history.back(); return; }
     history.replaceState({ ...history.state, scrollY: window.scrollY }, "");
     followingLink = true;
     location.hash = target;
@@ -425,7 +456,10 @@
       renderChrome(hash); textPage(hash); document.title = `${hash === "about" ? "About" : "Privacy"} · ${name}`;
     } else {
       const missing = hash && hash !== "top" && hash !== "newest";
-      app.innerHTML = (missing ? `<div class="wrap"><p class="notice" role="status">That piece isn't on the site anymore. Here's everything that is.</p></div>` : "") + homePage();
+      const gone = missing && GONE.has(hash);  // a piece that was on the site and has since come down
+      app.innerHTML = (missing ? `<div class="wrap"><p class="notice" role="status">${gone
+        ? "That piece isn't on the site anymore. Here's everything that is."
+        : "I couldn't find that page. Here's everything on the site."}</p></div>` : "") + homePage();
       renderChrome(""); document.title = `${name} · Artwork`;
       // "See what's new" (/#newest): glide down to the newest work and put keyboard focus there.
       const newest = hash === "newest" && restoreTo === undefined && document.querySelector("#newest h2");
@@ -443,6 +477,7 @@
     try {
       const data = window.SITE_PRODUCTS || await (await fetch("data/products.json", { cache: "no-cache" })).json();
       ALL = (data.products || []).filter((p) => !p.hidden);
+      GONE = new Set((data.products || []).filter((p) => p.hidden).map((p) => p.id));
     } catch (e) {
       console.error(e);  // for Ed: data/products.json didn't load or isn't valid JSON
       app.innerHTML = `<div class="wrap"><div class="notice load-error" role="alert">
@@ -456,19 +491,34 @@
   }
   start();
 
-  // Etsy descriptions → paragraphs, with "•" or "-" lines as lists and short lines ending in ":" as headings.
-  function describe(paragraphs) {
+  // Etsy descriptions → paragraphs, with "•" or "-" lines as lists and short label lines ("Size:", "Product
+  // features") as headings. Light tidying only, never rewording: a first line that just repeats the title goes,
+  // runs of spaces close up, a lone "i" becomes "I". Product-spec sections from print-on-demand listings
+  // ("Product features", "Care instructions") fold behind a Details toggle at the end.
+  function describe(paragraphs, p) {
     const isBullet = (l) => /^\s*[•\-–*]\s+/.test(l);
     const strip = (l) => l.replace(/^\s*[•\-–*]\s+/, "");
-    let out = "";
+    const tidy = (l) => l.replace(/[ \t\u00a0]{2,}/g, " ").replace(/(^|[\s(])i(?=[\s',.!?)]|$)/g, "$1I").trim();
+    const plain = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const titles = p ? [plain(p.name), plain(shortTitle(p))] : [];
+    const isLabel = (l) => (/:\s*$/.test(l) && l.length <= 40) || (l.length <= 30 && !/[.!?,]$/.test(l) && /^[A-Z]/.test(l) && l.split(" ").length <= 4);
+    const isSpec = (h) => /^(product features|features|care instructions|care|specifications|details|product details)$/i.test(h);
+    let out = "", spec = "", first = true;
     for (const para of paragraphs) {
-      let lines = String(para).split("\n").map((l) => l.trim()).filter(Boolean);
-      if (lines.length > 1 && /:\s*$/.test(lines[0]) && lines[0].length <= 40) { out += `<h2>${esc(lines[0].replace(/:\s*$/, ""))}</h2>`; lines = lines.slice(1); }
-      const first = lines.findIndex(isBullet);
-      if (first === -1) { out += `<p>${esc(lines.join("\n"))}</p>`; continue; }
-      if (first > 0) out += `<p>${esc(lines.slice(0, first).join("\n"))}</p>`;
-      out += `<ul>${lines.slice(first).map((l) => `<li>${esc(strip(l))}</li>`).join("")}</ul>`;
+      let lines = String(para).split("\n").map(tidy).filter(Boolean);
+      if (first && lines.length && titles.includes(plain(lines[0]))) lines = lines.slice(1);  // "“Pin Oak Leaves”" above the text
+      first = false;
+      if (!lines.length) continue;
+      let html = "", heading = "";
+      if (lines.length > 1 && isLabel(lines[0])) { heading = lines[0].replace(/:\s*$/, ""); html += `<h2>${esc(heading)}</h2>`; lines = lines.slice(1); }
+      const firstBullet = lines.findIndex(isBullet);
+      if (firstBullet === -1) html += `<p>${esc(lines.join("\n"))}</p>`;
+      else {
+        if (firstBullet > 0) html += `<p>${esc(lines.slice(0, firstBullet).join("\n"))}</p>`;
+        html += `<ul>${lines.slice(firstBullet).map((l) => `<li>${esc(strip(l))}</li>`).join("")}</ul>`;
+      }
+      if (heading && isSpec(heading)) spec += html; else out += html;
     }
-    return out;
+    return out + (spec ? `<details class="spec"><summary>Details</summary>${spec}</details>` : "");
   }
 })();

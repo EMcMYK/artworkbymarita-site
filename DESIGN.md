@@ -213,8 +213,8 @@ One centered column of content 1180px wide (`page`), with side margins that grow
 - **Front page:** the hero is only as tall as its content, and the studio photo tops out at 58% of the window, so the first row of What's new shows at the bottom of the first screen. Desktop hero: heading, her introduction and the button on the left, studio photo on the right (742:567). Phones stack a shorter close crop of the photo (342:280), heading, introduction, then a full-width button; small tablets (521–759px) stack the wide crop at 16:10 so the button stays on the first screen. When stacked, the introduction runs the full width (two lines on a small tablet).
 - **Grids of pieces:** four across on the front page (desktop), three on tablets, two on phones; section pages fill rows of cards at least 230px wide. Gaps are 19px, 8px on phones.
 - **Browse the art:** two wide cards then three on desktop, each 300px tall with the name along the top and the piece filling the rest; two across on tablets (Paintings takes the full row when the count is odd); one per row on phones.
-- **Piece page:** photo on the left, details on the right (about 57/43); stacks below 860px.
-- **Breakpoints:** 1180px (wordmark shrinks), 1100px (four to three across), 1000px (menu button replaces the menu), 860px (piece page stacks), 760px (hero stacks, two-across cards), 520px (phone header).
+- **Piece page:** photo on the left, details on the right (about 57/43); stacks below 1000px. Under the title: the details line, then the price, so what it is and what it costs read together; her description follows, then Buy on Etsy. On a phone the price shows on the first screen.
+- **Breakpoints:** 1180px (wordmark shrinks), 1100px (four to three across), 1000px (menu button replaces the menu, piece page stacks), 760px (hero stacks, two-across cards), 520px (phone header).
 
 **The Art Peeks In Rule.** On the front page the first row of new work starts showing at the bottom of the first screen (about 100px at 1440×900 and on a 390×844 phone), so a whole painting is always one small scroll away.
 
@@ -248,13 +248,16 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 ### Chips
 - **Style:** subject filters and tags are outlined pills: 1px Warm ink border, Warm ink text, Figtree 16px, 3px by 14px.
 - **State:** hover turns border and text Cyanotype blue; the selected filter fills Cyanotype blue with Paper text.
+- **Tap area:** 44px tall, wider than the visible pill.
 
 ### Cards / Containers
 **Piece card.** Paper, padded 12 to 24px, soft 6px corners on phones and square on wider screens, no border or shadow at rest. The art sits whole in a slightly wide box (15:14), top-aligned; below it the name (two lines at most) and the price in Clay gray italic. Cards in a row share their title and price lines, so prices line up, and a row only makes room for a second title line when one of its names wraps. Hover: the lift.
 
 **Section card (Browse the art).** Paper, 6px corners, a fixed height per breakpoint (300px desktop, 150px tablet, 109px phone). The section name in Alegreya Sans over its splash, a whole piece from that section, and a blue arrow: on desktop the name and arrow run along the top and the piece fills the card below; on tablets and phones they sit in a row with the piece at the right. The piece is one not already in What's new. When the card is too narrow (under 280px inside), the picture drops out. Hover: the lift.
 
-**Mat.** Behind a piece's main photo: Paper with the mat shadow, art contained with room around it.
+**Mat.** Behind a piece's main photo: Paper with the mat shadow, art contained with room around it. The mat takes the piece's own shape (no fixed box), so a wide piece doesn't float in empty paper; the art is at most 70% of the window tall. Tapping the photo opens it larger.
+
+**Enlarged photo.** A full-screen view over a Sand wash: the photo on Paper with the mat shadow, a Close pill at the top right. Arrow keys and swipes move between photos; Escape, Close or a tap outside closes it.
 
 ### Navigation
 - **Desktop menu:** the five sections, then About (and Sold once something has sold), in Figtree 500 18px Warm ink, each over a 5px hand-painted brush line in its section color (Warm ink for About and Sold). Hover or the current page paints the section's splash in from left to right behind the word, squashed into a brushstroke and turned -5°. The Contact me button ends the row.
@@ -262,7 +265,13 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 - **Wordmark:** the outline tulip and "Marita McVeigh" in Cyanotype blue at the far left.
 
 ### Photo strip (piece page)
-Thumbnails 64px square on Paper with a hairline border; the current one gets a Cyanotype blue outline. When the photos run past the edge, that edge fades out (48px) and the strip snaps from photo to photo; on phones a "1 of 9 photos" count in Clay gray sits under it. The details line under the piece title names a single piece in the singular: "Original · Cyanotype", "Cyanotype print", "Gift".
+Thumbnails 64px square on Paper with a hairline border; the current one gets a Cyanotype blue outline. When the photos run past the edge, that edge fades out (48px) and the strip snaps from photo to photo; on phones a "1 of 9 photos" count in Clay gray sits under it. The details line under the piece title names a single piece in the singular: "Original · Cyanotype", "Cyanotype print", "Linocut print", "Gift". Arrow keys move through the photos, the strip follows the current one, and screen readers hear "Photo 2 of 10".
+
+### Piece page extras
+- **Breadcrumb:** 44px tall; it goes back to where you came from, keeping the subject filter and the scroll.
+- **Description:** her words as she wrote them, tidied (doubled spaces, a lone "i"); short label lines become small headings, and product specs and care notes fold under a "Details" toggle.
+- **More from this section:** ends with a "See all Cyanotypes" link (not on sold pieces).
+- **Missing pages:** a mistyped address says "I couldn't find that page"; a piece that's been taken down says "That piece isn't on the site anymore". Both show everything on the site below.
 
 ### See more link
 Figtree 500, 18px, Cyanotype blue with a 2px underline and a small arrow, right-aligned under the What's new grid. On mouse hover the underline thickens to 4px inside a fixed-height row, so nothing below moves.
