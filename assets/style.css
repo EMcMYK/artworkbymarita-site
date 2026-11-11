@@ -103,7 +103,8 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 @media (min-width: 1000px) { .menu-panel { display: none !important; } }
 @media (max-width: 520px) { .header-inner { min-height: 76px; } }
 /* small tablets (stacked hero): the wide studio crop, kept short so the button stays on the first screen */
-@media (min-width: 521px) and (max-width: 759px) { .hero .hero-photo { aspect-ratio: 16 / 10; } .hero .hero-photo img { object-position: center 40%; } }
+@media (min-width: 521px) and (max-width: 759px) { .hero .hero-photo { aspect-ratio: 16 / 10; } .hero .hero-photo img { object-position: center 40%; }
+  .hero .hero-text h1 { font-size: min(60px, 9vw); } }  /* a heading big enough to hold its own over the full-width paragraph */
 
 /* a piece on its Paper mat: always whole, never cropped */
 .mat { background: var(--paper); box-shadow: var(--shadow); aspect-ratio: 4 / 5; padding: 8%; display: grid; place-items: center;
@@ -189,12 +190,11 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .hero { padding: clamp(24px, 3vw, 40px) max(var(--gutter), env(safe-area-inset-right, 0px)) clamp(24px, 3vw, 40px) max(var(--gutter), env(safe-area-inset-left, 0px)); }
 .hero + #newest { padding-top: 24px; }
 .hero-inner { display: grid; grid-template-columns: minmax(min-content, 406fr) minmax(0, 742fr); gap: clamp(32px, 4.3vw, 62px); align-items: center; max-width: var(--page); margin: 0 auto; }
-.hero h1 { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; text-wrap: wrap; }
+.hero h1 { font-size: min(clamp(40px, 2.6vw + 23px, 60px), (100vw - 48px) / 7); line-height: 1.1; text-wrap: wrap; }  /* the second cap keeps "I like painting the" on one line on the smallest phones */
 /* always two lines: "I like painting the / joyful part of life", even where both halves would fit on one.
-   Each half stays whole, and the text column grows to hold the longer one (only the narrowest phones let a
-   half wrap). */
+   Each half stays whole; the text column grows to hold the longer one, and on the smallest phones the
+   heading shrinks a little instead of breaking a half. */
 .hero h1 .phrase { display: block; white-space: nowrap; }
-@media (max-width: 359px) { .hero h1 .phrase { white-space: normal; } }
 .hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(16px, 2vw, 24px); }
 .hero-lede { margin: 0 0 clamp(4px, 1.4vw, 20px); font-size: 20px; line-height: 1.5; max-width: 34ch; text-wrap: pretty; }
 .hero-photo { display: block; justify-self: end; width: min(100%, 742px, 58svh * 742 / 567); aspect-ratio: 742 / 567; border-radius: 8px; overflow: hidden; background: var(--paper); }  /* Paper shows while it loads */

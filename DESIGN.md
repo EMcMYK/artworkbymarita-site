@@ -202,7 +202,7 @@ Warm, low-contrast neutrals carry the page; one blue does all the interface work
 
 **The Readable Floor Rule.** Body text is never smaller than 18px. Only card captions on phones and small print go below it, and nothing goes under 16px.
 
-**The Two-Line Hero Rule.** The hero heading is always two lines, broken between its two phrases and never inside one, at every width down to 360px.
+**The Two-Line Hero Rule.** The hero heading is always two lines, broken between its two phrases and never inside one, at every width. On small tablets it grows (up to 60px, 9vw) to hold its own over the full-width introduction; on the smallest phones it shrinks a little (down to about 36px at 300px wide) rather than break a phrase.
 
 **The Her Own Words Rule.** The front page speaks as Marita in the first person, starting in the hero: who she is, where she paints, and that every piece is for sale in her Etsy shop.
 
