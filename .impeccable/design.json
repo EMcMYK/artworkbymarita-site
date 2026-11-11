@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-11T04:30:18+00:00",
+  "generatedAt": "2026-11-11T04:41:09+00:00",
   "title": "Design System: Marita McVeigh",
   "extensions": {
     "colorMeta": {
@@ -380,7 +380,7 @@
       },
       {
         "name": "The Two-Line Hero Rule",
-        "body": "The hero heading breaks only between its two phrases, never inside one, at every width down to 360px.",
+        "body": "The hero heading is always two lines, broken between its two phrases and never inside one, at every width down to 360px.",
         "section": "typography"
       },
       {

@@ -102,6 +102,8 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 @media (max-width: 999px) { .nav { display: none; } .menu-btn { display: grid; } }
 @media (min-width: 1000px) { .menu-panel { display: none !important; } }
 @media (max-width: 520px) { .header-inner { min-height: 76px; } }
+/* small tablets (stacked hero): the wide studio crop, kept short so the button stays on the first screen */
+@media (min-width: 521px) and (max-width: 759px) { .hero .hero-photo { aspect-ratio: 16 / 10; } .hero .hero-photo img { object-position: center 40%; } }
 
 /* a piece on its Paper mat: always whole, never cropped */
 .mat { background: var(--paper); box-shadow: var(--shadow); aspect-ratio: 4 / 5; padding: 8%; display: grid; place-items: center;
@@ -188,9 +190,10 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .hero + #newest { padding-top: 24px; }
 .hero-inner { display: grid; grid-template-columns: minmax(min-content, 406fr) minmax(0, 742fr); gap: clamp(32px, 4.3vw, 62px); align-items: center; max-width: var(--page); margin: 0 auto; }
 .hero h1 { font-size: clamp(40px, 2.6vw + 23px, 60px); line-height: 1.1; text-wrap: wrap; }
-/* two lines whenever they fit: "I like painting the / joyful part of life". Each half stays whole, and the
-   text column grows to hold the longer one (only the narrowest phones let a half wrap). */
-.hero h1 .phrase { display: inline-block; white-space: nowrap; }
+/* always two lines: "I like painting the / joyful part of life", even where both halves would fit on one.
+   Each half stays whole, and the text column grows to hold the longer one (only the narrowest phones let a
+   half wrap). */
+.hero h1 .phrase { display: block; white-space: nowrap; }
 @media (max-width: 359px) { .hero h1 .phrase { white-space: normal; } }
 .hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(16px, 2vw, 24px); }
 .hero-lede { margin: 0 0 clamp(4px, 1.4vw, 20px); font-size: 20px; line-height: 1.5; max-width: 34ch; text-wrap: pretty; }
@@ -203,7 +206,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .hero-photo { order: -1; justify-self: stretch; width: 100%; aspect-ratio: 342 / 280; }
   .hero-text { gap: 12px; }
-  .hero-lede { font-size: 18px; margin-bottom: 4px; }
+  .hero-lede { font-size: 18px; margin-bottom: 4px; max-width: none; }  /* stacked: as wide as the heading */
   .hero-btn { align-self: stretch; padding: 8px 16px; }
 }
 

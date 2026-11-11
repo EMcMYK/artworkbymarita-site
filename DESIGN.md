@@ -184,7 +184,7 @@ Warm, low-contrast neutrals carry the page; one blue does all the interface work
 **Character:** Alegreya Sans is friendly and a little organic, like handwriting that has been tidied; Figtree is open and plain, so the reading never feels corporate. Both stay at regular weights except where noted.
 
 ### Hierarchy
-- **Display** (Alegreya Sans 400, 60px desktop to 40px phone, line height 1.1): the hero heading and section page titles. One per page. The hero heading always sets as two lines, "I like painting the / joyful part of life": each half stays whole and the column grows to hold it.
+- **Display** (Alegreya Sans 400, 60px desktop to 40px phone, line height 1.1): the hero heading and section page titles. One per page. The hero heading always sets as two lines, "I like painting the / joyful part of life", even where both halves would fit on one: each half stays whole and the column grows to hold it.
 - **Section** (Alegreya Sans 400, 44px to 32px, 1.15): front-page section headings ("What's new", "Browse the art"), one step under the hero so it leads.
 - **Headline** (Alegreya Sans 400, 36px to 28px, 1.2): piece titles on their own page, section names on the Browse cards, headings inside descriptions.
 - **Quote** (Alegreya Sans Medium Italic 500, 26px, 1.3): pull quotes in her own words.
@@ -202,7 +202,7 @@ Warm, low-contrast neutrals carry the page; one blue does all the interface work
 
 **The Readable Floor Rule.** Body text is never smaller than 18px. Only card captions on phones and small print go below it, and nothing goes under 16px.
 
-**The Two-Line Hero Rule.** The hero heading breaks only between its two phrases, never inside one, at every width down to 360px.
+**The Two-Line Hero Rule.** The hero heading is always two lines, broken between its two phrases and never inside one, at every width down to 360px.
 
 **The Her Own Words Rule.** The front page speaks as Marita in the first person, starting in the hero: who she is, where she paints, and that every piece is for sale in her Etsy shop.
 
@@ -210,7 +210,7 @@ Warm, low-contrast neutrals carry the page; one blue does all the interface work
 
 One centered column of content 1180px wide (`page`), with side margins that grow from 24px on phones to 64px on wide screens (`gutter`); at 1440px that leaves about 130px each side. The header spans wider (up to 1440px).
 
-- **Front page:** the hero is only as tall as its content, and the studio photo tops out at 58% of the window, so the first row of What's new shows at the bottom of the first screen. Desktop hero: heading, her introduction and the button on the left, studio photo on the right (742:567). Phones stack a shorter photo (342:280), heading, introduction, then a full-width button.
+- **Front page:** the hero is only as tall as its content, and the studio photo tops out at 58% of the window, so the first row of What's new shows at the bottom of the first screen. Desktop hero: heading, her introduction and the button on the left, studio photo on the right (742:567). Phones stack a shorter close crop of the photo (342:280), heading, introduction, then a full-width button; small tablets (521–759px) stack the wide crop at 16:10 so the button stays on the first screen. When stacked, the introduction runs the full width (two lines on a small tablet).
 - **Grids of pieces:** four across on the front page (desktop), three on tablets, two on phones; section pages fill rows of cards at least 230px wide. Gaps are 19px, 8px on phones.
 - **Browse the art:** two wide cards then three on desktop, each 300px tall with the name along the top and the piece filling the rest; two across on tablets (Paintings takes the full row when the count is odd); one per row on phones.
 - **Piece page:** photo on the left, details on the right (about 57/43); stacks below 860px.

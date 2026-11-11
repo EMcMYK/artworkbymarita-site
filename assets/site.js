@@ -153,7 +153,8 @@
   const arrow = `<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.26 13.5H0v-3h18.26l-8.4-8.4L12 0l12 12-12 12-2.14-2.1 8.4-8.4Z"/></svg>`;
 
   // Front-page hero (Main page in Figma): heading and button on the left, studio photo on the right.
-  // Phones stack a closer crop of the same photo (her face, the bouquet and her palette) on top.
+  // Phones stack a closer crop of the same photo (her face, the bouquet and her palette) on top;
+  // small tablets stack the wide crop.
   // The words are hers (brand guide quote) and say plainly that buying happens on Etsy.
   function hero(hasNewest) {
     return `<section class="hero"><div class="hero-inner">
@@ -163,8 +164,8 @@
         ${hasNewest ? `<a class="hero-btn" href="#newest">See what’s new</a>` : ""}
       </div>
       <picture class="hero-photo">
-        <source media="(max-width: 759px)" type="image/webp" srcset="images/about/studio-easel-close.webp">
-        <source media="(max-width: 759px)" srcset="images/about/studio-easel-close.jpg">
+        <source media="(max-width: 520px)" type="image/webp" srcset="images/about/studio-easel-close.webp">
+        <source media="(max-width: 520px)" srcset="images/about/studio-easel-close.jpg">
         <source type="image/webp" srcset="images/about/studio-easel-desk.webp">
         <img src="images/about/studio-easel-desk.jpg" alt="Marita at her easel in her studio, painting a bouquet of flowers" width="1484" height="1134" fetchpriority="high" decoding="async">
       </picture>
