@@ -41,7 +41,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "November Still Life Original Oil Painting",
       "listedOn": "2012-11-16",
-      "mergeKey": "original:november still life oil painting"
+      "mergeKey": "original:november still life oil painting",
+      "thumbs": [
+        "images/november-still-life-original-oil-painting/395933324-small.jpg"
+      ]
     },
     {
       "id": "original-oil-painting-black-eyed-susans-opening-up",
@@ -87,7 +90,11 @@
       "etsySection": "Original Art",
       "etsyTitle": "Original Oil Painting Black Eyed Susans Opening up.",
       "listedOn": "2013-01-11",
-      "mergeKey": "original:oil painting black eyed susans opening up"
+      "mergeKey": "original:oil painting black eyed susans opening up",
+      "thumbs": [
+        "images/original-oil-painting-black-eyed-susans-opening-up/414668177-small.jpg",
+        "images/original-oil-painting-black-eyed-susans-opening-up/478085191-small.jpg"
+      ]
     },
     {
       "id": "original-framed-linocut-of-a-scorpion",
@@ -181,7 +188,10 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Caladium -  Original Oil Painting",
       "listedOn": "2013-08-05",
-      "mergeKey": "original:caladium oil painting"
+      "mergeKey": "original:caladium oil painting",
+      "thumbs": [
+        "images/caladium-original-oil-painting/506507664-small.jpg"
+      ]
     },
     {
       "id": "original-signed-etching-laundry-day",
@@ -225,7 +235,10 @@
       "etsySection": "Etchings",
       "etsyTitle": "Original Signed Etching - Laundry day",
       "listedOn": "2013-12-23",
-      "mergeKey": "original:etching laundry day"
+      "mergeKey": "original:etching laundry day",
+      "thumbs": [
+        "images/original-signed-etching-laundry-day/542898342-small.jpg"
+      ]
     },
     {
       "id": "sleepy-kitty-original-acrylic-painting",
@@ -271,7 +284,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Sleepy Kitty - Original Acrylic painting",
       "listedOn": "2014-01-15",
-      "mergeKey": "original:sleepy kitty acrylic painting"
+      "mergeKey": "original:sleepy kitty acrylic painting",
+      "thumbs": [
+        "images/sleepy-kitty-original-acrylic-painting/551286052-small.jpg",
+        "images/sleepy-kitty-original-acrylic-painting/551375179-small.jpg",
+        "images/sleepy-kitty-original-acrylic-painting/551286536-small.jpg",
+        "images/sleepy-kitty-original-acrylic-painting/551375683-small.jpg"
+      ]
     },
     {
       "id": "crocus-original-oil-painting",
@@ -315,7 +334,12 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Crocus Original Oil Painting",
       "listedOn": "2014-02-04",
-      "mergeKey": "original:crocus oil painting"
+      "mergeKey": "original:crocus oil painting",
+      "thumbs": [
+        "images/crocus-original-oil-painting/560155437-small.jpg",
+        "images/crocus-original-oil-painting/560043956-small.jpg",
+        "images/crocus-original-oil-painting/560155979-small.jpg"
+      ]
     },
     {
       "id": "valley-green-original-framed-oil-painting",
@@ -359,7 +383,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Valley Green Original Framed Oil Painting",
       "listedOn": "2014-04-24",
-      "mergeKey": "original:valley green oil painting"
+      "mergeKey": "original:valley green oil painting",
+      "thumbs": [
+        "images/valley-green-original-framed-oil-painting/594384696-small.jpg"
+      ]
     },
     {
       "id": "flowers-for-mommy-original-oil-painting",
@@ -404,7 +431,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Flowers For Mommy Original Oil Painting",
       "listedOn": "2014-09-06",
-      "mergeKey": "original:flowers for mommy oil painting"
+      "mergeKey": "original:flowers for mommy oil painting",
+      "thumbs": [
+        "images/flowers-for-mommy-original-oil-painting/650153360-small.jpg"
+      ]
     },
     {
       "id": "south-perkasie-covered-bridge-original-oil-painting",
@@ -453,7 +483,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "South Perkasie Covered Bridge Original Oil Painting",
       "listedOn": "2014-09-21",
-      "mergeKey": "original:south perkasie covered bridge oil painting"
+      "mergeKey": "original:south perkasie covered bridge oil painting",
+      "thumbs": [
+        "images/south-perkasie-covered-bridge-original-oil-painting/5404159190-small.jpg",
+        "images/south-perkasie-covered-bridge-original-oil-painting/5452307695-small.jpg",
+        "images/south-perkasie-covered-bridge-original-oil-painting/5404159404-small.jpg",
+        "images/south-perkasie-covered-bridge-original-oil-painting/5404159536-small.jpg"
+      ]
     },
     {
       "id": "west-palm-beach-original-oil-painting",
@@ -498,7 +534,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "West Palm Beach original oil painting",
       "listedOn": "2014-12-29",
-      "mergeKey": "original:west palm beach oil painting"
+      "mergeKey": "original:west palm beach oil painting",
+      "thumbs": [
+        "images/west-palm-beach-original-oil-painting/704271217-small.jpg"
+      ]
     },
     {
       "id": "sienna-original-horse-painting",
@@ -541,7 +580,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Sienna Original Horse painting",
       "listedOn": "2014-12-31",
-      "mergeKey": "original:sienna horse painting"
+      "mergeKey": "original:sienna horse painting",
+      "thumbs": [
+        "images/sienna-original-horse-painting/705064656-small.jpg"
+      ]
     },
     {
       "id": "rusty-cat-original-oil-painting",
@@ -588,7 +630,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Rusty Cat original oil painting",
       "listedOn": "2015-01-11",
-      "mergeKey": "original:rusty cat oil painting"
+      "mergeKey": "original:rusty cat oil painting",
+      "thumbs": [
+        "images/rusty-cat-original-oil-painting/710129850-small.jpg",
+        "images/rusty-cat-original-oil-painting/710130112-small.jpg",
+        "images/rusty-cat-original-oil-painting/710253093-small.jpg",
+        "images/rusty-cat-original-oil-painting/710130534-small.jpg"
+      ]
     },
     {
       "id": "rosey-framed-pastel-painting",
@@ -633,7 +681,10 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Rosey - Framed Pastel Painting",
       "listedOn": "2015-07-06",
-      "mergeKey": "original:rosey pastel painting"
+      "mergeKey": "original:rosey pastel painting",
+      "thumbs": [
+        "images/rosey-framed-pastel-painting/798094636-small.jpg"
+      ]
     },
     {
       "id": "pretzel-park",
@@ -678,7 +729,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Pretzel Park, Manayunk, Philadelphia, Painting",
       "listedOn": "2015-07-09",
-      "mergeKey": "original:pretzel park"
+      "mergeKey": "original:pretzel park",
+      "thumbs": [
+        "images/pretzel-park/799660156-small.jpg"
+      ]
     },
     {
       "id": "original-oil-painting-of-a-swan",
@@ -723,7 +777,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Original Oil painting of a Swan",
       "listedOn": "2015-08-09",
-      "mergeKey": "original:oil painting of a swan"
+      "mergeKey": "original:oil painting of a swan",
+      "thumbs": [
+        "images/original-oil-painting-of-a-swan/814883608-small.jpg"
+      ]
     },
     {
       "id": "original-campfire-painting",
@@ -766,7 +823,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Original Campfire Painting, Roasting Marshmallows, 16x20 Canvas Art",
       "listedOn": "2016-12-06",
-      "mergeKey": "original:campfire painting"
+      "mergeKey": "original:campfire painting",
+      "thumbs": [
+        "images/original-campfire-painting/1146634525-small.jpg"
+      ]
     },
     {
       "id": "the-silvery-moon-original-watercolor-painting",
@@ -811,7 +871,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "The Silvery Moon Original watercolor painting",
       "listedOn": "2017-01-15",
-      "mergeKey": "original:the silvery moon watercolor painting"
+      "mergeKey": "original:the silvery moon watercolor painting",
+      "thumbs": [
+        "images/the-silvery-moon-original-watercolor-painting/1122557138-small.jpg"
+      ]
     },
     {
       "id": "lilacs-original-watercolor-painting",
@@ -856,7 +919,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Lilacs - Original Watercolor Painting",
       "listedOn": "2017-04-25",
-      "mergeKey": "original:lilacs watercolor painting"
+      "mergeKey": "original:lilacs watercolor painting",
+      "thumbs": [
+        "images/lilacs-original-watercolor-painting/1235077893-small.jpg"
+      ]
     },
     {
       "id": "the-old-bike-original-watercolor",
@@ -901,7 +967,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "The Old Bike -  original watercolor",
       "listedOn": "2017-07-14",
-      "mergeKey": "original:the old bike watercolor"
+      "mergeKey": "original:the old bike watercolor",
+      "thumbs": [
+        "images/the-old-bike-original-watercolor/1287274667-small.jpg"
+      ]
     },
     {
       "id": "sparrow-original-acrylic-painting",
@@ -940,7 +1009,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Sparrow Original acrylic painting",
       "listedOn": "2017-11-18",
-      "mergeKey": "original:sparrow acrylic painting"
+      "mergeKey": "original:sparrow acrylic painting",
+      "thumbs": [
+        "images/sparrow-original-acrylic-painting/1355933444-small.jpg"
+      ]
     },
     {
       "id": "on-the-road-again-original-watercolor",
@@ -980,7 +1052,11 @@
       "etsySection": "Original Art",
       "etsyTitle": "On The Road Again Original watercolor",
       "listedOn": "2018-07-09",
-      "mergeKey": "original:on the road again watercolor"
+      "mergeKey": "original:on the road again watercolor",
+      "thumbs": [
+        "images/on-the-road-again-original-watercolor/1554343314-small.jpg",
+        "images/on-the-road-again-original-watercolor/1601797227-small.jpg"
+      ]
     },
     {
       "id": "hope-lodge-original-oil-painting",
@@ -1024,7 +1100,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Hope Lodge Original oil painting",
       "listedOn": "2018-10-31",
-      "mergeKey": "original:hope lodge oil painting"
+      "mergeKey": "original:hope lodge oil painting",
+      "thumbs": [
+        "images/hope-lodge-original-oil-painting/1669364728-small.jpg"
+      ]
     },
     {
       "id": "fading-blossom-original-watercolor-painting",
@@ -1068,7 +1147,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Fading Blossom Original Watercolor Painting",
       "listedOn": "2019-01-11",
-      "mergeKey": "original:fading blossom watercolor painting"
+      "mergeKey": "original:fading blossom watercolor painting",
+      "thumbs": [
+        "images/fading-blossom-original-watercolor-painting/1790009339-small.jpg"
+      ]
     },
     {
       "id": "blue-pattern-with-flower-original-linocut",
@@ -1117,7 +1199,14 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Blue Pattern With Flower Original Linocut",
       "listedOn": "2019-04-11",
-      "mergeKey": "original:blue pattern flower linocut"
+      "mergeKey": "original:blue pattern flower linocut",
+      "thumbs": [
+        "images/blue-pattern-with-flower-original-linocut/1890456009-small.jpg",
+        "images/blue-pattern-with-flower-original-linocut/1842969298-small.jpg",
+        "images/blue-pattern-with-flower-original-linocut/1842969392-small.jpg",
+        "images/blue-pattern-with-flower-original-linocut/1890456371-small.jpg",
+        "images/blue-pattern-with-flower-original-linocut/1842969692-small.jpg"
+      ]
     },
     {
       "id": "beach-day-original-watercolor",
@@ -1149,7 +1238,11 @@
       "etsySection": "Original Art",
       "etsyTitle": "Beach Day Original Watercolor",
       "listedOn": "2019-08-09",
-      "mergeKey": "original:beach day watercolor"
+      "mergeKey": "original:beach day watercolor",
+      "thumbs": [
+        "images/beach-day-original-watercolor/2017777723-small.jpg",
+        "images/beach-day-original-watercolor/1970223090-small.jpg"
+      ]
     },
     {
       "id": "splashing-ducks-original-gouache",
@@ -1198,7 +1291,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Splashing Ducks Original Gouache",
       "listedOn": "2019-09-15",
-      "mergeKey": "original:splashing ducks gouache"
+      "mergeKey": "original:splashing ducks gouache",
+      "thumbs": [
+        "images/splashing-ducks-original-gouache/2057894763-small.jpg",
+        "images/splashing-ducks-original-gouache/3271396442-small.jpg",
+        "images/splashing-ducks-original-gouache/3271396520-small.jpg",
+        "images/splashing-ducks-original-gouache/3271396672-small.jpg"
+      ]
     },
     {
       "id": "sunset-original-large-painting",
@@ -1246,7 +1345,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Sunset Original Large painting",
       "listedOn": "2019-11-03",
-      "mergeKey": "original:sunset painting"
+      "mergeKey": "original:sunset painting",
+      "thumbs": [
+        "images/sunset-original-large-painting/2116976263-small.jpg",
+        "images/sunset-original-large-painting/2116976335-small.jpg",
+        "images/sunset-original-large-painting/2116976393-small.jpg",
+        "images/sunset-original-large-painting/2116976485-small.jpg"
+      ]
     },
     {
       "id": "peace-valley-original-oil-painting",
@@ -1290,7 +1395,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Peace Valley Original oil painting",
       "listedOn": "2020-01-16",
-      "mergeKey": "original:peace valley oil painting"
+      "mergeKey": "original:peace valley oil painting",
+      "thumbs": [
+        "images/peace-valley-original-oil-painting/2202338637-small.jpg",
+        "images/peace-valley-original-oil-painting/2202338831-small.jpg",
+        "images/peace-valley-original-oil-painting/2202338889-small.jpg",
+        "images/peace-valley-original-oil-painting/2154777732-small.jpg"
+      ]
     },
     {
       "id": "love-is-love-art",
@@ -1372,7 +1483,16 @@
       "etsySection": "Original Art",
       "etsyTitle": "Original Apple Art",
       "listedOn": "2020-02-15",
-      "mergeKey": "original:apple"
+      "mergeKey": "original:apple",
+      "thumbs": [
+        "images/original-apple-art/2239202187-small.jpg",
+        "images/original-apple-art/2191653562-small.jpg",
+        "images/original-apple-art/2191653662-small.jpg",
+        "images/original-apple-art/2191653722-small.jpg",
+        "images/original-apple-art/2191653784-small.jpg",
+        "images/original-apple-art/2239202519-small.jpg",
+        "images/original-apple-art/2191653916-small.jpg"
+      ]
     },
     {
       "id": "serenity-original-watercolor",
@@ -1418,7 +1538,12 @@
       "etsySection": "Original Art",
       "etsyTitle": "Serenity Original Watercolor",
       "listedOn": "2020-02-22",
-      "mergeKey": "original:serenity watercolor"
+      "mergeKey": "original:serenity watercolor",
+      "thumbs": [
+        "images/serenity-original-watercolor/3285931164-small.jpg",
+        "images/serenity-original-watercolor/3333625571-small.jpg",
+        "images/serenity-original-watercolor/3333625667-small.jpg"
+      ]
     },
     {
       "id": "waterlilies-original-oil-painting",
@@ -1460,7 +1585,15 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Waterlilies Original Oil Painting",
       "listedOn": "2020-02-28",
-      "mergeKey": "original:waterlilies oil painting"
+      "mergeKey": "original:waterlilies oil painting",
+      "thumbs": [
+        "images/waterlilies-original-oil-painting/2207765596-small.jpg",
+        "images/waterlilies-original-oil-painting/2207765656-small.jpg",
+        "images/waterlilies-original-oil-painting/2255364627-small.jpg",
+        "images/waterlilies-original-oil-painting/2207765756-small.jpg",
+        "images/waterlilies-original-oil-painting/2207765810-small.jpg",
+        "images/waterlilies-original-oil-painting/2207765866-small.jpg"
+      ]
     },
     {
       "id": "white-covered-bridge-original-oil-painting",
@@ -1508,7 +1641,15 @@
       "etsySection": "Original Art",
       "etsyTitle": "White Covered Bridge Original Oil Painting",
       "listedOn": "2020-02-29",
-      "mergeKey": "original:white covered bridge oil painting"
+      "mergeKey": "original:white covered bridge oil painting",
+      "thumbs": [
+        "images/white-covered-bridge-original-oil-painting/2256295573-small.jpg",
+        "images/white-covered-bridge-original-oil-painting/2256295723-small.jpg",
+        "images/white-covered-bridge-original-oil-painting/2208699236-small.jpg",
+        "images/white-covered-bridge-original-oil-painting/2208699294-small.jpg",
+        "images/white-covered-bridge-original-oil-painting/2256295867-small.jpg",
+        "images/white-covered-bridge-original-oil-painting/2256295991-small.jpg"
+      ]
     },
     {
       "id": "pennsylvania-farm-original-watercolor",
@@ -1548,7 +1689,11 @@
       "etsySection": "Original Art",
       "etsyTitle": "Pennsylvania Farm Original Watercolor",
       "listedOn": "2020-03-03",
-      "mergeKey": "original:pennsylvania farm watercolor"
+      "mergeKey": "original:pennsylvania farm watercolor",
+      "thumbs": [
+        "images/pennsylvania-farm-original-watercolor/2260261071-small.jpg",
+        "images/pennsylvania-farm-original-watercolor/2212663908-small.jpg"
+      ]
     },
     {
       "id": "brandywine-river-museum-painting-framed-landscape-art",
@@ -1596,7 +1741,17 @@
       "etsySection": "Original Art",
       "etsyTitle": "Brandywine River Museum Painting: Framed Landscape Art",
       "listedOn": "2020-05-16",
-      "mergeKey": "original:brandywine river museum painting landscape"
+      "mergeKey": "original:brandywine river museum painting landscape",
+      "thumbs": [
+        "images/brandywine-river-museum-painting-framed-landscape-art/2314371340-small.jpg",
+        "images/brandywine-river-museum-painting-framed-landscape-art/2361960259-small.jpg",
+        "images/brandywine-river-museum-painting-framed-landscape-art/2361960303-small.jpg",
+        "images/brandywine-river-museum-painting-framed-landscape-art/2361960379-small.jpg",
+        "images/brandywine-river-museum-painting-framed-landscape-art/2361960497-small.jpg",
+        "images/brandywine-river-museum-painting-framed-landscape-art/2314372196-small.jpg",
+        "images/brandywine-river-museum-painting-framed-landscape-art/6535152638-small.jpg",
+        "images/brandywine-river-museum-painting-framed-landscape-art/6583270943-small.jpg"
+      ]
     },
     {
       "id": "coyote-original-art",
@@ -1635,7 +1790,11 @@
       "etsySection": "Original Collographs",
       "etsyTitle": "Coyote Original Art",
       "listedOn": "2020-06-10",
-      "mergeKey": "original:coyote"
+      "mergeKey": "original:coyote",
+      "thumbs": [
+        "images/coyote-original-art/2355875894-small.jpg",
+        "images/coyote-original-art/2355875956-small.jpg"
+      ]
     },
     {
       "id": "giraffe-oil-painting",
@@ -1673,7 +1832,15 @@
       "etsySection": "Original Art",
       "etsyTitle": "Giraffe Oil Painting",
       "listedOn": "2020-06-29",
-      "mergeKey": "original:giraffe oil painting"
+      "mergeKey": "original:giraffe oil painting",
+      "thumbs": [
+        "images/giraffe-oil-painting/2386603718-small.jpg",
+        "images/giraffe-oil-painting/2434218073-small.jpg",
+        "images/giraffe-oil-painting/2434218241-small.jpg",
+        "images/giraffe-oil-painting/2386602940-small.jpg",
+        "images/giraffe-oil-painting/2434218383-small.jpg",
+        "images/giraffe-oil-painting/2434218507-small.jpg"
+      ]
     },
     {
       "id": "gathering-queen-annes-lace-original-watercolor",
@@ -1719,7 +1886,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Gathering Queen Annes Lace Original Watercolor",
       "listedOn": "2020-07-18",
-      "mergeKey": "original:gathering queen annes lace watercolor"
+      "mergeKey": "original:gathering queen annes lace watercolor",
+      "thumbs": [
+        "images/gathering-queen-annes-lace-original-watercolor/2467312655-small.jpg",
+        "images/gathering-queen-annes-lace-original-watercolor/2467312775-small.jpg",
+        "images/gathering-queen-annes-lace-original-watercolor/2419688576-small.jpg",
+        "images/gathering-queen-annes-lace-original-watercolor/2467312915-small.jpg"
+      ]
     },
     {
       "id": "blue-hydrangeas-mini-painting",
@@ -1766,7 +1939,12 @@
       "etsySection": "Original Art",
       "etsyTitle": "Blue Hydrangeas Mini Painting",
       "listedOn": "2020-07-28",
-      "mergeKey": "original:blue hydrangeas painting"
+      "mergeKey": "original:blue hydrangeas painting",
+      "thumbs": [
+        "images/blue-hydrangeas-mini-painting/2437347256-small.jpg",
+        "images/blue-hydrangeas-mini-painting/2437347408-small.jpg",
+        "images/blue-hydrangeas-mini-painting/2484974689-small.jpg"
+      ]
     },
     {
       "id": "daisy-garden-painting",
@@ -1815,7 +1993,14 @@
       "etsySection": "Original Art",
       "etsyTitle": "Daisy Garden Painting",
       "listedOn": "2020-07-28",
-      "mergeKey": "original:daisy garden painting"
+      "mergeKey": "original:daisy garden painting",
+      "thumbs": [
+        "images/daisy-garden-painting/2437694482-small.jpg",
+        "images/daisy-garden-painting/2437694540-small.jpg",
+        "images/daisy-garden-painting/2485323385-small.jpg",
+        "images/daisy-garden-painting/2485323423-small.jpg",
+        "images/daisy-garden-painting/2439137012-small.jpg"
+      ]
     },
     {
       "id": "original-floral-watercolor-painting",
@@ -1866,7 +2051,16 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Original Floral Watercolor Painting",
       "listedOn": "2020-08-22",
-      "mergeKey": "original:floral watercolor painting"
+      "mergeKey": "original:floral watercolor painting",
+      "thumbs": [
+        "images/original-floral-watercolor-painting/2483098686-small.jpg",
+        "images/original-floral-watercolor-painting/2483098770-small.jpg",
+        "images/original-floral-watercolor-painting/2483098868-small.jpg",
+        "images/original-floral-watercolor-painting/2530772759-small.jpg",
+        "images/original-floral-watercolor-painting/2530772979-small.jpg",
+        "images/original-floral-watercolor-painting/2530773061-small.jpg",
+        "images/original-floral-watercolor-painting/2530773171-small.jpg"
+      ]
     },
     {
       "id": "morgan-log-house-original-painting",
@@ -1909,7 +2103,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Morgan Log House Original Painting",
       "listedOn": "2020-09-15",
-      "mergeKey": "original:morgan log house painting"
+      "mergeKey": "original:morgan log house painting",
+      "thumbs": [
+        "images/morgan-log-house-original-painting/2830191817-small.jpg",
+        "images/morgan-log-house-original-painting/2830192127-small.jpg",
+        "images/morgan-log-house-original-painting/2782515002-small.jpg",
+        "images/morgan-log-house-original-painting/2782527942-small.jpg"
+      ]
     },
     {
       "id": "autumn-in-woodstock-watercolor",
@@ -2014,7 +2214,15 @@
       "etsySection": "Original Art",
       "etsyTitle": "Magical Landscape Framed Collage",
       "listedOn": "2020-12-17",
-      "mergeKey": "original:magical landscape collage"
+      "mergeKey": "original:magical landscape collage",
+      "thumbs": [
+        "images/magical-landscape-framed-collage/2788800563-small.jpg",
+        "images/magical-landscape-framed-collage/2741108188-small.jpg",
+        "images/magical-landscape-framed-collage/2788801177-small.jpg",
+        "images/magical-landscape-framed-collage/2741108608-small.jpg",
+        "images/magical-landscape-framed-collage/2788801441-small.jpg",
+        "images/magical-landscape-framed-collage/2788802381-small.jpg"
+      ]
     },
     {
       "id": "black-eyed-susans-original-painting",
@@ -2064,7 +2272,16 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Black Eyed Susans Original painting",
       "listedOn": "2021-03-13",
-      "mergeKey": "original:black eyed susans painting"
+      "mergeKey": "original:black eyed susans painting",
+      "thumbs": [
+        "images/black-eyed-susans-original-painting/2939527536-small.jpg",
+        "images/black-eyed-susans-original-painting/2987224601-small.jpg",
+        "images/black-eyed-susans-original-painting/2939528272-small.jpg",
+        "images/black-eyed-susans-original-painting/2939528358-small.jpg",
+        "images/black-eyed-susans-original-painting/2987224889-small.jpg",
+        "images/black-eyed-susans-original-painting/2939528826-small.jpg",
+        "images/black-eyed-susans-original-painting/2939529382-small.jpg"
+      ]
     },
     {
       "id": "matted-angel-print-colorful-acrylic-painting",
@@ -2109,7 +2326,12 @@
       "etsySection": "Print",
       "etsyTitle": "Matted Angel Print: Colorful Acrylic Painting (11x14)",
       "listedOn": "2021-05-09",
-      "mergeKey": "print:angel colorful acrylic painting"
+      "mergeKey": "print:angel colorful acrylic painting",
+      "thumbs": [
+        "images/matted-angel-print-colorful-acrylic-painting/3070886998-small.jpg",
+        "images/matted-angel-print-colorful-acrylic-painting/3070887444-small.jpg",
+        "images/matted-angel-print-colorful-acrylic-painting/3118621419-small.jpg"
+      ]
     },
     {
       "id": "my-favorite-things-floral-painting",
@@ -2158,7 +2380,15 @@
       "etsySection": "Original Art",
       "etsyTitle": "My Favorite Things Floral Painting",
       "listedOn": "2021-06-02",
-      "mergeKey": "original:my favorite things floral painting"
+      "mergeKey": "original:my favorite things floral painting",
+      "thumbs": [
+        "images/my-favorite-things-floral-painting/3122225472-small.jpg",
+        "images/my-favorite-things-floral-painting/3122225662-small.jpg",
+        "images/my-favorite-things-floral-painting/3122226186-small.jpg",
+        "images/my-favorite-things-floral-painting/3169950511-small.jpg",
+        "images/my-favorite-things-floral-painting/3169951031-small.jpg",
+        "images/my-favorite-things-floral-painting/3122227800-small.jpg"
+      ]
     },
     {
       "id": "autumn-still-life-framed-art",
@@ -2197,7 +2427,12 @@
       "etsySection": "Original Art",
       "etsyTitle": "Autumn Still Life Framed art",
       "listedOn": "2021-08-17",
-      "mergeKey": "original:autumn still life"
+      "mergeKey": "original:autumn still life",
+      "thumbs": [
+        "images/autumn-still-life-framed-art/3319096197-small.jpg",
+        "images/autumn-still-life-framed-art/3271413912-small.jpg",
+        "images/autumn-still-life-framed-art/3271414046-small.jpg"
+      ]
     },
     {
       "id": "autumn-observation-original-oil-painting",
@@ -2242,7 +2477,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Autumn Observation Original Oil Painting",
       "listedOn": "2021-08-17",
-      "mergeKey": "original:autumn observation oil painting"
+      "mergeKey": "original:autumn observation oil painting",
+      "thumbs": [
+        "images/autumn-observation-original-oil-painting/3319172007-small.jpg",
+        "images/autumn-observation-original-oil-painting/3319172047-small.jpg",
+        "images/autumn-observation-original-oil-painting/3271489992-small.jpg",
+        "images/autumn-observation-original-oil-painting/3271490060-small.jpg"
+      ]
     },
     {
       "id": "the-littlest-angel-original-painting",
@@ -2288,7 +2529,14 @@
       "etsySection": "Original Art",
       "etsyTitle": "The Littlest Angel Original Painting",
       "listedOn": "2021-09-19",
-      "mergeKey": "original:the littlest angel painting"
+      "mergeKey": "original:the littlest angel painting",
+      "thumbs": [
+        "images/the-littlest-angel-original-painting/3339659748-small.jpg",
+        "images/the-littlest-angel-original-painting/3387352173-small.jpg",
+        "images/the-littlest-angel-original-painting/3387352275-small.jpg",
+        "images/the-littlest-angel-original-painting/3339658874-small.jpg",
+        "images/the-littlest-angel-original-painting/3387352437-small.jpg"
+      ]
     },
     {
       "id": "curious-original-framed-bird-art",
@@ -2336,7 +2584,13 @@
       "etsySection": "Original Art",
       "etsyTitle": "Curious Original Framed Bird Art",
       "listedOn": "2021-10-24",
-      "mergeKey": "original:curious bird"
+      "mergeKey": "original:curious bird",
+      "thumbs": [
+        "images/curious-original-framed-bird-art/3466536957-small.jpg",
+        "images/curious-original-framed-bird-art/3418863852-small.jpg",
+        "images/curious-original-framed-bird-art/3418863888-small.jpg",
+        "images/curious-original-framed-bird-art/3466537543-small.jpg"
+      ]
     },
     {
       "id": "first-snowfall-painting",
@@ -2388,7 +2642,17 @@
       "etsySection": "Original Art",
       "etsyTitle": "First Snowfall Painting",
       "listedOn": "2022-01-24",
-      "mergeKey": "original:first snowfall painting"
+      "mergeKey": "original:first snowfall painting",
+      "thumbs": [
+        "images/first-snowfall-painting/3668267483-small.jpg",
+        "images/first-snowfall-painting/3668267611-small.jpg",
+        "images/first-snowfall-painting/3620659154-small.jpg",
+        "images/first-snowfall-painting/3620659252-small.jpg",
+        "images/first-snowfall-painting/3668267865-small.jpg",
+        "images/first-snowfall-painting/3668267997-small.jpg",
+        "images/first-snowfall-painting/3620659572-small.jpg",
+        "images/first-snowfall-painting/3668268229-small.jpg"
+      ]
     },
     {
       "id": "sunflower-oil-painting",
@@ -2434,7 +2698,11 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Sunflower Oil Painting, Original Floral Art (11x14 in)",
       "listedOn": "2022-02-06",
-      "mergeKey": "original:sunflower oil painting"
+      "mergeKey": "original:sunflower oil painting",
+      "thumbs": [
+        "images/sunflower-oil-painting/3651058676-small.jpg",
+        "images/sunflower-oil-painting/3651058802-small.jpg"
+      ]
     },
     {
       "id": "a-study-in-greens-kohler-park",
@@ -2487,7 +2755,18 @@
       "etsyTitle": "A Study In Greens; Kohler Park, Horsham, Pa",
       "listedOn": "2022-07-13",
       "mergeKey": "original:a study in greens kohler park",
-      "size": "8 × 10 in"
+      "size": "8 × 10 in",
+      "thumbs": [
+        "images/a-study-in-greens-kohler-park/4056442549-small.jpg",
+        "images/a-study-in-greens-kohler-park/4008801642-small.jpg",
+        "images/a-study-in-greens-kohler-park/4056444281-small.jpg",
+        "images/a-study-in-greens-kohler-park/4008803762-small.jpg",
+        "images/a-study-in-greens-kohler-park/8827816975-small.jpg",
+        "images/a-study-in-greens-kohler-park/8779987910-small.jpg",
+        "images/a-study-in-greens-kohler-park/8779987920-small.jpg",
+        "images/a-study-in-greens-kohler-park/8779987928-small.jpg",
+        "images/a-study-in-greens-kohler-park/8779987924-small.jpg"
+      ]
     },
     {
       "id": "summertime-kohler-park",
@@ -2585,7 +2864,11 @@
       "etsySection": "Original Art",
       "etsyTitle": "Autumn At Morris Arboretum",
       "listedOn": "2022-07-17",
-      "mergeKey": "original:autumn at morris arboretum"
+      "mergeKey": "original:autumn at morris arboretum",
+      "thumbs": [
+        "images/autumn-at-morris-arboretum/4017126864-small.jpg",
+        "images/autumn-at-morris-arboretum/4017127614-small.jpg"
+      ]
     },
     {
       "id": "a-hint-of-autumn-watercolor",
@@ -2629,7 +2912,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "A Hint Of Autumn watercolor",
       "listedOn": "2022-08-03",
-      "mergeKey": "original:a hint of autumn watercolor"
+      "mergeKey": "original:a hint of autumn watercolor",
+      "thumbs": [
+        "images/a-hint-of-autumn-watercolor/4056089592-small.jpg"
+      ]
     },
     {
       "id": "fresh-from-the-garden-floral-still-life",
@@ -2678,7 +2964,15 @@
       "etsySection": "Original Art",
       "etsyTitle": "Fresh From The Garden Floral Still Life",
       "listedOn": "2022-08-16",
-      "mergeKey": "original:fresh from the garden floral still life"
+      "mergeKey": "original:fresh from the garden floral still life",
+      "thumbs": [
+        "images/fresh-from-the-garden-floral-still-life/4134971881-small.jpg",
+        "images/fresh-from-the-garden-floral-still-life/4134972219-small.jpg",
+        "images/fresh-from-the-garden-floral-still-life/4087320456-small.jpg",
+        "images/fresh-from-the-garden-floral-still-life/4134972411-small.jpg",
+        "images/fresh-from-the-garden-floral-still-life/4087320632-small.jpg",
+        "images/fresh-from-the-garden-floral-still-life/4154820767-small.jpg"
+      ]
     },
     {
       "id": "winter",
@@ -2723,7 +3017,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Winter, Point Pleasant, PA",
       "listedOn": "2022-09-04",
-      "mergeKey": "original:winter"
+      "mergeKey": "original:winter",
+      "thumbs": [
+        "images/winter/4184055705-small.jpg"
+      ]
     },
     {
       "id": "summer-garden-watercolor",
@@ -2811,14 +3108,21 @@
       "etsySection": "Original Art",
       "etsyTitle": "Gobble Gobble Watercolor",
       "listedOn": "2022-09-27",
-      "mergeKey": "original:gobble gobble watercolor"
+      "mergeKey": "original:gobble gobble watercolor",
+      "thumbs": [
+        "images/gobble-gobble-watercolor/4201477212-small.jpg",
+        "images/gobble-gobble-watercolor/4249132999-small.jpg",
+        "images/gobble-gobble-watercolor/4201478802-small.jpg",
+        "images/gobble-gobble-watercolor/4249134573-small.jpg",
+        "images/gobble-gobble-watercolor/4201480960-small.jpg"
+      ]
     },
     {
       "id": "classic-matte-paper-poster-size",
       "name": "Classic Matte Paper Poster size",
       "category": "prints",
       "subjects": [],
-      "kind": "other",
+      "kind": "print",
       "oneOfAKind": false,
       "size": "8 × 10 in",
       "images": [
@@ -2857,7 +3161,12 @@
       "etsySection": "",
       "etsyTitle": "Classic Matte Paper Poster size 8x10 inches",
       "listedOn": "2022-10-09",
-      "mergeKey": "other:#1307899174"
+      "mergeKey": "other:#1307899174",
+      "thumbs": [
+        "images/classic-matte-paper-poster-size/4284066535-small.jpg",
+        "images/classic-matte-paper-poster-size/4284066591-small.jpg",
+        "images/classic-matte-paper-poster-size/4236416028-small.jpg"
+      ]
     },
     {
       "id": "premium-matte-paper-poster-seagulls-at-sunset",
@@ -2950,7 +3259,15 @@
       "etsySection": "Original Art",
       "etsyTitle": "Winter Project Oil Painting",
       "listedOn": "2022-11-23",
-      "mergeKey": "original:winter project oil painting"
+      "mergeKey": "original:winter project oil painting",
+      "thumbs": [
+        "images/winter-project-oil-painting/4422952137-small.jpg",
+        "images/winter-project-oil-painting/4422952535-small.jpg",
+        "images/winter-project-oil-painting/4375562988-small.jpg",
+        "images/winter-project-oil-painting/4422952739-small.jpg",
+        "images/winter-project-oil-painting/4375563290-small.jpg",
+        "images/winter-project-oil-painting/4375563482-small.jpg"
+      ]
     },
     {
       "id": "cabin-landscape-linocut-print",
@@ -2994,7 +3311,15 @@
       "etsySection": "",
       "etsyTitle": "Cabin Landscape Linocut Print, Black and White Art",
       "listedOn": "2022-11-30",
-      "mergeKey": "print:cabin landscape linocut"
+      "mergeKey": "print:cabin landscape linocut",
+      "thumbs": [
+        "images/cabin-landscape-linocut-print/4443671579-small.jpg",
+        "images/cabin-landscape-linocut-print/4443673303-small.jpg",
+        "images/cabin-landscape-linocut-print/4443675421-small.jpg",
+        "images/cabin-landscape-linocut-print/4443677165-small.jpg",
+        "images/cabin-landscape-linocut-print/4396286440-small.jpg",
+        "images/cabin-landscape-linocut-print/4443680553-small.jpg"
+      ]
     },
     {
       "id": "saved-from-the-bouquet-painting",
@@ -3043,7 +3368,15 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Saved From The Bouquet painting",
       "listedOn": "2022-12-06",
-      "mergeKey": "original:saved from the bouquet painting"
+      "mergeKey": "original:saved from the bouquet painting",
+      "thumbs": [
+        "images/saved-from-the-bouquet-painting/4414653006-small.jpg",
+        "images/saved-from-the-bouquet-painting/4462026939-small.jpg",
+        "images/saved-from-the-bouquet-painting/4414653300-small.jpg",
+        "images/saved-from-the-bouquet-painting/4414653450-small.jpg",
+        "images/saved-from-the-bouquet-painting/4414654666-small.jpg",
+        "images/saved-from-the-bouquet-painting/4462028535-small.jpg"
+      ]
     },
     {
       "id": "moonglow-original-linocut",
@@ -3090,7 +3423,12 @@
       "etsySection": "Original Linocuts",
       "etsyTitle": "Moonglow Original Linocut",
       "listedOn": "2022-12-07",
-      "mergeKey": "original:moonglow linocut"
+      "mergeKey": "original:moonglow linocut",
+      "thumbs": [
+        "images/moonglow-original-linocut/4417074290-small.jpg",
+        "images/moonglow-original-linocut/4464444977-small.jpg",
+        "images/moonglow-original-linocut/4464445833-small.jpg"
+      ]
     },
     {
       "id": "autumn-at-prophecy-creek-park",
@@ -3130,7 +3468,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Autumn At Prophecy Creek Park",
       "listedOn": "2023-01-09",
-      "mergeKey": "original:autumn at prophecy creek park"
+      "mergeKey": "original:autumn at prophecy creek park",
+      "thumbs": [
+        "images/autumn-at-prophecy-creek-park/4552945705-small.jpg"
+      ]
     },
     {
       "id": "pink-summer-original-art",
@@ -3229,7 +3570,14 @@
       "etsySection": "",
       "etsyTitle": "Spring Babies Watercolor",
       "listedOn": "2023-05-07",
-      "mergeKey": "original:spring babies watercolor"
+      "mergeKey": "original:spring babies watercolor",
+      "thumbs": [
+        "images/spring-babies-watercolor/4885262048-small.jpg",
+        "images/spring-babies-watercolor/4885263168-small.jpg",
+        "images/spring-babies-watercolor/4885264674-small.jpg",
+        "images/spring-babies-watercolor/4933535717-small.jpg",
+        "images/spring-babies-watercolor/4933536697-small.jpg"
+      ]
     },
     {
       "id": "leaf-botanical-hand-pulled-print-copper",
@@ -3273,7 +3621,14 @@
       "etsySection": "Monotypes",
       "etsyTitle": "Leaf Botanical Hand Pulled Print-copper",
       "listedOn": "2023-06-02",
-      "mergeKey": "print:leaf botanical hand pulled copper"
+      "mergeKey": "print:leaf botanical hand pulled copper",
+      "thumbs": [
+        "images/leaf-botanical-hand-pulled-print-copper/4965314108-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-copper/5013580037-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-copper/5013585515-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-copper/4965325110-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-copper/5013590485-small.jpg"
+      ]
     },
     {
       "id": "leaf-botanical-hand-pulled-print-black-and-white",
@@ -3317,7 +3672,14 @@
       "etsySection": "Monotypes",
       "etsyTitle": "Leaf Botanical Hand Pulled Print- black and white",
       "listedOn": "2023-06-02",
-      "mergeKey": "print:leaf botanical hand pulled black and white"
+      "mergeKey": "print:leaf botanical hand pulled black and white",
+      "thumbs": [
+        "images/leaf-botanical-hand-pulled-print-black-and-white/5013701453-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-black-and-white/5013701593-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-black-and-white/5013701735-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-black-and-white/5013701907-small.jpg",
+        "images/leaf-botanical-hand-pulled-print-black-and-white/4965439420-small.jpg"
+      ]
     },
     {
       "id": "leaf-pattern-botanical-hand-pulled-print-multi-colored",
@@ -3361,7 +3723,14 @@
       "etsySection": "",
       "etsyTitle": "Leaf pattern Botanical Hand Pulled Print- multi colored",
       "listedOn": "2023-06-03",
-      "mergeKey": "print:leaf pattern botanical hand pulled multi colored"
+      "mergeKey": "print:leaf pattern botanical hand pulled multi colored",
+      "thumbs": [
+        "images/leaf-pattern-botanical-hand-pulled-print-multi-colored/4967960740-small.jpg",
+        "images/leaf-pattern-botanical-hand-pulled-print-multi-colored/5016222545-small.jpg",
+        "images/leaf-pattern-botanical-hand-pulled-print-multi-colored/5016222681-small.jpg",
+        "images/leaf-pattern-botanical-hand-pulled-print-multi-colored/4967961186-small.jpg",
+        "images/leaf-pattern-botanical-hand-pulled-print-multi-colored/5016222909-small.jpg"
+      ]
     },
     {
       "id": "down-by-the-seashore-original-watercolor",
@@ -3455,7 +3824,17 @@
       "etsySection": "Original Art",
       "etsyTitle": "Rainbow Angel Watercolor",
       "listedOn": "2023-07-11",
-      "mergeKey": "original:rainbow angel watercolor"
+      "mergeKey": "original:rainbow angel watercolor",
+      "thumbs": [
+        "images/rainbow-angel-watercolor/5079967092-small.jpg",
+        "images/rainbow-angel-watercolor/5128196769-small.jpg",
+        "images/rainbow-angel-watercolor/5128196911-small.jpg",
+        "images/rainbow-angel-watercolor/5128197075-small.jpg",
+        "images/rainbow-angel-watercolor/5079965810-small.jpg",
+        "images/rainbow-angel-watercolor/5128197309-small.jpg",
+        "images/rainbow-angel-watercolor/5128197397-small.jpg",
+        "images/rainbow-angel-watercolor/5079966212-small.jpg"
+      ]
     },
     {
       "id": "winter-wonderland-oil-painting",
@@ -3497,7 +3876,14 @@
       "etsySection": "",
       "etsyTitle": "Winter Wonderland Oil painting",
       "listedOn": "2023-07-19",
-      "mergeKey": "original:winter wonderland oil painting"
+      "mergeKey": "original:winter wonderland oil painting",
+      "thumbs": [
+        "images/winter-wonderland-oil-painting/5105304672-small.jpg",
+        "images/winter-wonderland-oil-painting/5105304668-small.jpg",
+        "images/winter-wonderland-oil-painting/5105304676-small.jpg",
+        "images/winter-wonderland-oil-painting/5105304674-small.jpg",
+        "images/winter-wonderland-oil-painting/5105304670-small.jpg"
+      ]
     },
     {
       "id": "red-white-and-blue-painting",
@@ -3542,7 +3928,15 @@
       "etsySection": "",
       "etsyTitle": "Red White And Blue Painting",
       "listedOn": "2023-09-12",
-      "mergeKey": "original:red white and blue painting"
+      "mergeKey": "original:red white and blue painting",
+      "thumbs": [
+        "images/red-white-and-blue-painting/5331090801-small.jpg",
+        "images/red-white-and-blue-painting/5331090999-small.jpg",
+        "images/red-white-and-blue-painting/5282912404-small.jpg",
+        "images/red-white-and-blue-painting/5331090899-small.jpg",
+        "images/red-white-and-blue-painting/5331090893-small.jpg",
+        "images/red-white-and-blue-painting/5282912280-small.jpg"
+      ]
     },
     {
       "id": "prehistoric-abstract-original-art",
@@ -3621,7 +4015,10 @@
       "etsySection": "",
       "etsyTitle": "Old School House Whitemarsh Learning Center",
       "listedOn": "2023-09-21",
-      "mergeKey": "original:old school house whitemarsh learning center"
+      "mergeKey": "original:old school house whitemarsh learning center",
+      "thumbs": [
+        "images/old-school-house-whitemarsh-learning-center/5364584963-small.jpg"
+      ]
     },
     {
       "id": "sun-kissed-bouquet",
@@ -3674,7 +4071,18 @@
       "etsySection": "",
       "etsyTitle": "Sun kissed Bouquet",
       "listedOn": "2023-10-09",
-      "mergeKey": "original:sun kissed bouquet"
+      "mergeKey": "original:sun kissed bouquet",
+      "thumbs": [
+        "images/sun-kissed-bouquet/5380081154-small.jpg",
+        "images/sun-kissed-bouquet/5380081232-small.jpg",
+        "images/sun-kissed-bouquet/5428243281-small.jpg",
+        "images/sun-kissed-bouquet/5380081170-small.jpg",
+        "images/sun-kissed-bouquet/5380081150-small.jpg",
+        "images/sun-kissed-bouquet/5428243265-small.jpg",
+        "images/sun-kissed-bouquet/5380081164-small.jpg",
+        "images/sun-kissed-bouquet/5428243285-small.jpg",
+        "images/sun-kissed-bouquet/5428243259-small.jpg"
+      ]
     },
     {
       "id": "abstract-oil-painting-on-wood-panel-city-mood",
@@ -3724,7 +4132,17 @@
       "etsySection": "Abstract Art",
       "etsyTitle": "Abstract Oil Painting on Wood Panel: City Mood (12x12 inches)",
       "listedOn": "2024-01-16",
-      "mergeKey": "original:abstract oil painting on wood panel city mood"
+      "mergeKey": "original:abstract oil painting on wood panel city mood",
+      "thumbs": [
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5727176947-small.jpg",
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5679128310-small.jpg",
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5727176953-small.jpg",
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5727176955-small.jpg",
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5727176959-small.jpg",
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5679128312-small.jpg",
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5679128316-small.jpg",
+        "images/abstract-oil-painting-on-wood-panel-city-mood/5727177001-small.jpg"
+      ]
     },
     {
       "id": "mushroom-family-painting",
@@ -3770,7 +4188,16 @@
       "etsySection": "",
       "etsyTitle": "Mushroom Family Painting",
       "listedOn": "2024-02-06",
-      "mergeKey": "original:mushroom family painting"
+      "mergeKey": "original:mushroom family painting",
+      "thumbs": [
+        "images/mushroom-family-painting/5739914228-small.jpg",
+        "images/mushroom-family-painting/5739914276-small.jpg",
+        "images/mushroom-family-painting/5787988007-small.jpg",
+        "images/mushroom-family-painting/5739914270-small.jpg",
+        "images/mushroom-family-painting/5739914282-small.jpg",
+        "images/mushroom-family-painting/5787988009-small.jpg",
+        "images/mushroom-family-painting/5739914328-small.jpg"
+      ]
     },
     {
       "id": "flying",
@@ -3820,7 +4247,18 @@
       "etsySection": "Abstract Art",
       "etsyTitle": "Flying",
       "listedOn": "2024-03-02",
-      "mergeKey": "original:flying"
+      "mergeKey": "original:flying",
+      "thumbs": [
+        "images/flying/6862429510-small.jpg",
+        "images/flying/6862429480-small.jpg",
+        "images/flying/6910409937-small.jpg",
+        "images/flying/6910409941-small.jpg",
+        "images/flying/6862429512-small.jpg",
+        "images/flying/6910409955-small.jpg",
+        "images/flying/6910409977-small.jpg",
+        "images/flying/6862429490-small.jpg",
+        "images/flying/6862429492-small.jpg"
+      ]
     },
     {
       "id": "blue-moon-abstract-painting",
@@ -3871,7 +4309,19 @@
       "etsySection": "",
       "etsyTitle": "Blue Moon Abstract Painting",
       "listedOn": "2024-04-07",
-      "mergeKey": "original:blue moon abstract painting"
+      "mergeKey": "original:blue moon abstract painting",
+      "thumbs": [
+        "images/blue-moon-abstract-painting/5902181654-small.jpg",
+        "images/blue-moon-abstract-painting/5902181686-small.jpg",
+        "images/blue-moon-abstract-painting/5902181678-small.jpg",
+        "images/blue-moon-abstract-painting/5902181688-small.jpg",
+        "images/blue-moon-abstract-painting/5950261147-small.jpg",
+        "images/blue-moon-abstract-painting/5950261141-small.jpg",
+        "images/blue-moon-abstract-painting/5950261219-small.jpg",
+        "images/blue-moon-abstract-painting/5950261217-small.jpg",
+        "images/blue-moon-abstract-painting/5902181758-small.jpg",
+        "images/blue-moon-abstract-painting/5902181754-small.jpg"
+      ]
     },
     {
       "id": "sunflower-field-original-painting",
@@ -3917,7 +4367,10 @@
       "etsySection": "Bucks County Art",
       "etsyTitle": "Sunflower Field Original Painting",
       "listedOn": "2024-04-12",
-      "mergeKey": "original:sunflower field painting"
+      "mergeKey": "original:sunflower field painting",
+      "thumbs": [
+        "images/sunflower-field-original-painting/5914820260-small.jpg"
+      ]
     },
     {
       "id": "original-pink-tiger-lily-painting-floral-garden-art",
@@ -4024,7 +4477,17 @@
       "etsySection": "",
       "etsyTitle": "Morning Glory Framed Painting",
       "listedOn": "2024-05-21",
-      "mergeKey": "original:morning glory painting"
+      "mergeKey": "original:morning glory painting",
+      "thumbs": [
+        "images/morning-glory-framed-painting/6054456821-small.jpg",
+        "images/morning-glory-framed-painting/6006381286-small.jpg",
+        "images/morning-glory-framed-painting/6054456955-small.jpg",
+        "images/morning-glory-framed-painting/6054456215-small.jpg",
+        "images/morning-glory-framed-painting/6006381482-small.jpg",
+        "images/morning-glory-framed-painting/6054456983-small.jpg",
+        "images/morning-glory-framed-painting/6006381504-small.jpg",
+        "images/morning-glory-framed-painting/6006381648-small.jpg"
+      ]
     },
     {
       "id": "seed-pods-original-painting",
@@ -4071,7 +4534,12 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Seed Pods Original Painting",
       "listedOn": "2024-09-05",
-      "mergeKey": "original:seed pods painting"
+      "mergeKey": "original:seed pods painting",
+      "thumbs": [
+        "images/seed-pods-original-painting/6297106597-small.jpg",
+        "images/seed-pods-original-painting/6249052774-small.jpg",
+        "images/seed-pods-original-painting/6297106075-small.jpg"
+      ]
     },
     {
       "id": "valley-green-print-matte-canvas",
@@ -4111,14 +4579,19 @@
       "etsySection": "Framed Prints",
       "etsyTitle": "Valley Green Print  Matte Canvas, Framed (Multi-color)",
       "listedOn": "2024-09-11",
-      "mergeKey": "print:valley green"
+      "mergeKey": "print:valley green",
+      "thumbs": [
+        "images/valley-green-print-matte-canvas/6266568590-small.jpg",
+        "images/valley-green-print-matte-canvas/6314626217-small.jpg",
+        "images/valley-green-print-matte-canvas/6266577290-small.jpg"
+      ]
     },
     {
       "id": "matte-canvas-framed-multi-color-usa-flag",
       "name": "Matte Canvas, Framed (Multi-color) USA Flag",
       "category": "gifts",
       "subjects": [],
-      "kind": "other",
+      "kind": "print",
       "oneOfAKind": false,
       "images": [
         "images/matte-canvas-framed-multi-color-usa-flag/6326772861.jpg",
@@ -4143,14 +4616,19 @@
       "etsySection": "Framed Prints",
       "etsyTitle": "Matte Canvas, Framed (Multi-color) USA Flag",
       "listedOn": "2024-09-16",
-      "mergeKey": "other:multi color usa flag"
+      "mergeKey": "other:multi color usa flag",
+      "thumbs": [
+        "images/matte-canvas-framed-multi-color-usa-flag/6326772861-small.jpg",
+        "images/matte-canvas-framed-multi-color-usa-flag/6326773637-small.jpg",
+        "images/matte-canvas-framed-multi-color-usa-flag/6278718948-small.jpg"
+      ]
     },
     {
       "id": "matte-canvas-framed-multi-color-singing-choir",
       "name": "Matte Canvas, Framed (Multi-color) Singing Choir",
       "category": "prints",
       "subjects": [],
-      "kind": "other",
+      "kind": "print",
       "oneOfAKind": false,
       "images": [
         "images/matte-canvas-framed-multi-color-singing-choir/6281143566.jpg",
@@ -4175,7 +4653,12 @@
       "etsySection": "",
       "etsyTitle": "Matte Canvas, Framed (Multi-color) Singing Choir",
       "listedOn": "2024-09-17",
-      "mergeKey": "other:multi color singing choir"
+      "mergeKey": "other:multi color singing choir",
+      "thumbs": [
+        "images/matte-canvas-framed-multi-color-singing-choir/6281143566-small.jpg",
+        "images/matte-canvas-framed-multi-color-singing-choir/6281144996-small.jpg",
+        "images/matte-canvas-framed-multi-color-singing-choir/6281146314-small.jpg"
+      ]
     },
     {
       "id": "blue-skies-over-philly",
@@ -4272,7 +4755,14 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Rose Of Sharon Painting",
       "listedOn": "2024-11-03",
-      "mergeKey": "original:rose of sharon painting"
+      "mergeKey": "original:rose of sharon painting",
+      "thumbs": [
+        "images/rose-of-sharon-painting/6448077525-small.jpg",
+        "images/rose-of-sharon-painting/6399984454-small.jpg",
+        "images/rose-of-sharon-painting/6399984450-small.jpg",
+        "images/rose-of-sharon-painting/6448077529-small.jpg",
+        "images/rose-of-sharon-painting/6448077523-small.jpg"
+      ]
     },
     {
       "id": "a-walk-in-the-park-oil-painting",
@@ -4326,7 +4816,19 @@
       "etsySection": "Landscapes",
       "etsyTitle": "A Walk In The Park oil painting",
       "listedOn": "2024-11-08",
-      "mergeKey": "original:a walk in the park oil painting"
+      "mergeKey": "original:a walk in the park oil painting",
+      "thumbs": [
+        "images/a-walk-in-the-park-oil-painting/6414149708-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6462245411-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6414149862-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6462245231-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6414148964-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6462245337-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6414149598-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6462245449-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6462245143-small.jpg",
+        "images/a-walk-in-the-park-oil-painting/6414149900-small.jpg"
+      ]
     },
     {
       "id": "blue-eyed-kitten",
@@ -4364,7 +4866,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Blue Eyed Kitten",
       "listedOn": "2024-12-01",
-      "mergeKey": "original:blue eyed kitten"
+      "mergeKey": "original:blue eyed kitten",
+      "thumbs": [
+        "images/blue-eyed-kitten/6474205864-small.jpg"
+      ]
     },
     {
       "id": "winter-night-original-monotype",
@@ -4409,7 +4914,10 @@
       "etsySection": "Monotypes",
       "etsyTitle": "Winter Night Original monotype",
       "listedOn": "2024-12-07",
-      "mergeKey": "original:winter night monotype"
+      "mergeKey": "original:winter night monotype",
+      "thumbs": [
+        "images/winter-night-original-monotype/6488322586-small.jpg"
+      ]
     },
     {
       "id": "wanamakers-christmas-tree-acrylic-ornament-holiday-keepsake",
@@ -4453,7 +4961,10 @@
       "etsySection": "",
       "etsyTitle": "Wanamakers Christmas Tree Acrylic Ornament: Holiday Keepsake",
       "listedOn": "2024-12-17",
-      "mergeKey": "other:wanamakers christmas tree acrylic ornament holiday keepsake"
+      "mergeKey": "other:wanamakers christmas tree acrylic ornament holiday keepsake",
+      "thumbs": [
+        "images/wanamakers-christmas-tree-acrylic-ornament-holiday-keepsake/6510903470-small.jpg"
+      ]
     },
     {
       "id": "special-thanks-framed-giclee-print",
@@ -4503,7 +5014,16 @@
       "etsySection": "Giclee Print",
       "etsyTitle": "Special Thanks Framed Giclee Print",
       "listedOn": "2024-12-22",
-      "mergeKey": "print:special thanks"
+      "mergeKey": "print:special thanks",
+      "thumbs": [
+        "images/special-thanks-framed-giclee-print/6519818602-small.jpg",
+        "images/special-thanks-framed-giclee-print/6567936037-small.jpg",
+        "images/special-thanks-framed-giclee-print/6519818624-small.jpg",
+        "images/special-thanks-framed-giclee-print/6519818616-small.jpg",
+        "images/special-thanks-framed-giclee-print/6519818618-small.jpg",
+        "images/special-thanks-framed-giclee-print/6567936031-small.jpg",
+        "images/special-thanks-framed-giclee-print/6567936041-small.jpg"
+      ]
     },
     {
       "id": "fine-art-prints-robin-redbreast-bathing-watercolor-painting",
@@ -4601,7 +5121,14 @@
       "etsySection": "Landscapes",
       "etsyTitle": "Tookany Park Oil Painting: Framed Landscape Art (11x14 inches)",
       "listedOn": "2025-02-01",
-      "mergeKey": "original:tookany park oil painting landscape"
+      "mergeKey": "original:tookany park oil painting landscape",
+      "thumbs": [
+        "images/tookany-park-oil-painting-framed-landscape-art/6613292578-small.jpg",
+        "images/tookany-park-oil-painting-framed-landscape-art/6613292604-small.jpg",
+        "images/tookany-park-oil-painting-framed-landscape-art/6661385341-small.jpg",
+        "images/tookany-park-oil-painting-framed-landscape-art/6661385363-small.jpg",
+        "images/tookany-park-oil-painting-framed-landscape-art/6613292568-small.jpg"
+      ]
     },
     {
       "id": "pink-rose-art-print-vintage-floral-wall-decor",
@@ -4714,7 +5241,15 @@
       "etsySection": "",
       "etsyTitle": "Roses in Vase Poster Print: Pastel Painting by Marita McVeigh",
       "listedOn": "2025-02-25",
-      "mergeKey": "print:roses in vase pastel painting by marita mcveigh"
+      "mergeKey": "print:roses in vase pastel painting by marita mcveigh",
+      "thumbs": [
+        "images/roses-in-vase-poster-print-pastel-painting-by-marita-mcveigh/6721942983-small.jpg",
+        "images/roses-in-vase-poster-print-pastel-painting-by-marita-mcveigh/6673898352-small.jpg",
+        "images/roses-in-vase-poster-print-pastel-painting-by-marita-mcveigh/6673901352-small.jpg",
+        "images/roses-in-vase-poster-print-pastel-painting-by-marita-mcveigh/6721949579-small.jpg",
+        "images/roses-in-vase-poster-print-pastel-painting-by-marita-mcveigh/6673906726-small.jpg",
+        "images/roses-in-vase-poster-print-pastel-painting-by-marita-mcveigh/6673907620-small.jpg"
+      ]
     },
     {
       "id": "art-by-marita-mcveigh-matte-vertical-posters",
@@ -4760,7 +5295,10 @@
       "etsySection": "",
       "etsyTitle": "Art by Marita McVeigh Matte Vertical Posters, Wall Art, Home Decor, Print, Wall Decor, Artwork, floral art",
       "listedOn": "2025-04-16",
-      "mergeKey": "print:by marita mcveigh"
+      "mergeKey": "print:by marita mcveigh",
+      "thumbs": [
+        "images/art-by-marita-mcveigh-matte-vertical-posters/6796833720-small.jpg"
+      ]
     },
     {
       "id": "st-michael-s-church-philadelphia-framed-watercolor-art-print",
@@ -4967,7 +5505,14 @@
       "etsySection": "Original Linocuts",
       "etsyTitle": "Autumn Pumpkin Linocut Print: Signed Limited Edition Art",
       "listedOn": "2025-08-19",
-      "mergeKey": "print:autumn pumpkin linocut limited edition"
+      "mergeKey": "print:autumn pumpkin linocut limited edition",
+      "thumbs": [
+        "images/autumn-pumpkin-linocut-print-signed-limited-edition-art/7171841011-small.jpg",
+        "images/autumn-pumpkin-linocut-print-signed-limited-edition-art/7171841027-small.jpg",
+        "images/autumn-pumpkin-linocut-print-signed-limited-edition-art/7123871574-small.jpg",
+        "images/autumn-pumpkin-linocut-print-signed-limited-edition-art/7171841047-small.jpg",
+        "images/autumn-pumpkin-linocut-print-signed-limited-edition-art/7171841009-small.jpg"
+      ]
     },
     {
       "id": "rusty-sunflower-painting",
@@ -5072,7 +5617,17 @@
       "etsySection": "Original Linocuts",
       "etsyTitle": "Nightfall Linocut Print: Mushrooms & Sparkles - Signed Limited Edition",
       "listedOn": "2025-08-24",
-      "mergeKey": "print:nightfall linocut mushrooms sparkles limited edition"
+      "mergeKey": "print:nightfall linocut mushrooms sparkles limited edition",
+      "thumbs": [
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7138488796-small.jpg",
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7186462833-small.jpg",
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7186462817-small.jpg",
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7186462813-small.jpg",
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7138488792-small.jpg",
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7138488814-small.jpg",
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7186462827-small.jpg",
+        "images/nightfall-linocut-print-mushrooms-and-sparkles-signed-limite/7186462831-small.jpg"
+      ]
     },
     {
       "id": "central-park-art",
@@ -5123,7 +5678,17 @@
       "etsySection": "Landscapes",
       "etsyTitle": "Central Park Art",
       "listedOn": "2025-08-25",
-      "mergeKey": "original:central park"
+      "mergeKey": "original:central park",
+      "thumbs": [
+        "images/central-park-art/7141952252-small.jpg",
+        "images/central-park-art/7141952236-small.jpg",
+        "images/central-park-art/7189932741-small.jpg",
+        "images/central-park-art/7141952248-small.jpg",
+        "images/central-park-art/7141952260-small.jpg",
+        "images/central-park-art/7141952244-small.jpg",
+        "images/central-park-art/7141952268-small.jpg",
+        "images/central-park-art/7141952274-small.jpg"
+      ]
     },
     {
       "id": "seagull-painting-original-gouache-art-on-watercolor-paper",
@@ -5172,7 +5737,15 @@
       "etsySection": "beach art",
       "etsyTitle": "Seagull Painting: Original Gouache Art on Watercolor Paper",
       "listedOn": "2025-08-27",
-      "mergeKey": "original:seagull painting gouache on watercolor"
+      "mergeKey": "original:seagull painting gouache on watercolor",
+      "thumbs": [
+        "images/seagull-painting-original-gouache-art-on-watercolor-paper/7147473792-small.jpg",
+        "images/seagull-painting-original-gouache-art-on-watercolor-paper/7195463269-small.jpg",
+        "images/seagull-painting-original-gouache-art-on-watercolor-paper/7147473802-small.jpg",
+        "images/seagull-painting-original-gouache-art-on-watercolor-paper/7147473832-small.jpg",
+        "images/seagull-painting-original-gouache-art-on-watercolor-paper/7195463197-small.jpg",
+        "images/seagull-painting-original-gouache-art-on-watercolor-paper/7195463255-small.jpg"
+      ]
     },
     {
       "id": "water-lily-garden-art",
@@ -5518,7 +6091,14 @@
       "etsySection": "Holiday Ornaments",
       "etsyTitle": "Ceramic Christmas Ornaments, Two-Sided Print, Holiday Decor, Giftable Tree Ornaments, Home Decoration, Seasonal Keepsake",
       "listedOn": "2025-11-03",
-      "mergeKey": "print:ceramic christmas ornaments"
+      "mergeKey": "print:ceramic christmas ornaments",
+      "thumbs": [
+        "images/ceramic-christmas-ornaments/7354898724-small.jpg",
+        "images/ceramic-christmas-ornaments/7354899674-small.jpg",
+        "images/ceramic-christmas-ornaments/7402825301-small.jpg",
+        "images/ceramic-christmas-ornaments/7354902240-small.jpg",
+        "images/ceramic-christmas-ornaments/7354904592-small.jpg"
+      ]
     },
     {
       "id": "framed-winter-bird-canvas-print",
@@ -5567,7 +6147,12 @@
       "etsySection": "Framed Prints",
       "etsyTitle": "Framed Winter Bird Canvas Print, Serene Nature Wall Art",
       "listedOn": "2025-11-04",
-      "mergeKey": "print:winter bird"
+      "mergeKey": "print:winter bird",
+      "thumbs": [
+        "images/framed-winter-bird-canvas-print/7358929502-small.jpg",
+        "images/framed-winter-bird-canvas-print/7358930408-small.jpg",
+        "images/framed-winter-bird-canvas-print/7358931918-small.jpg"
+      ]
     },
     {
       "id": "philadelphia-city-hall-snowy-clock-tower-spiral-notebook",
@@ -5613,7 +6198,10 @@
       "etsySection": "",
       "etsyTitle": "Philadelphia City Hall Snowy Clock Tower Spiral Notebook | Ruled Journal",
       "listedOn": "2025-11-30",
-      "mergeKey": "other:philadelphia city hall snowy clock tower spiral notebook"
+      "mergeKey": "other:philadelphia city hall snowy clock tower spiral notebook",
+      "thumbs": [
+        "images/philadelphia-city-hall-snowy-clock-tower-spiral-notebook/7504980907-small.jpg"
+      ]
     },
     {
       "id": "winter-chickadee-notebook-spiral-ruled-journal",
@@ -5659,7 +6247,10 @@
       "etsySection": "",
       "etsyTitle": "Winter Chickadee Notebook spiral ruled journal | bird art, snowy pine, red berries",
       "listedOn": "2025-12-04",
-      "mergeKey": "other:winter chickadee notebook spiral ruled journal"
+      "mergeKey": "other:winter chickadee notebook spiral ruled journal",
+      "thumbs": [
+        "images/winter-chickadee-notebook-spiral-ruled-journal/7473043670-small.jpg"
+      ]
     },
     {
       "id": "summers-last-blooms-still-life",
@@ -5708,7 +6299,15 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Summers Last Blooms Still Life",
       "listedOn": "2026-01-01",
-      "mergeKey": "original:summers last blooms still life"
+      "mergeKey": "original:summers last blooms still life",
+      "thumbs": [
+        "images/summers-last-blooms-still-life/7558695992-small.jpg",
+        "images/summers-last-blooms-still-life/7606638853-small.jpg",
+        "images/summers-last-blooms-still-life/7558695988-small.jpg",
+        "images/summers-last-blooms-still-life/7606638843-small.jpg",
+        "images/summers-last-blooms-still-life/7606638841-small.jpg",
+        "images/summers-last-blooms-still-life/7558695994-small.jpg"
+      ]
     },
     {
       "id": "summer-joy-original-watercolor",
@@ -5997,7 +6596,19 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Snow Crocus Original Painting",
       "listedOn": "2026-06-22",
-      "mergeKey": "original:snow crocus painting"
+      "mergeKey": "original:snow crocus painting",
+      "thumbs": [
+        "images/snow-crocus-original-painting/8214704919-small.jpg",
+        "images/snow-crocus-original-painting/8166771442-small.jpg",
+        "images/snow-crocus-original-painting/8166771450-small.jpg",
+        "images/snow-crocus-original-painting/8214704907-small.jpg",
+        "images/snow-crocus-original-painting/8214704935-small.jpg",
+        "images/snow-crocus-original-painting/8166771432-small.jpg",
+        "images/snow-crocus-original-painting/8166771414-small.jpg",
+        "images/snow-crocus-original-painting/8214704943-small.jpg",
+        "images/snow-crocus-original-painting/8166771456-small.jpg",
+        "images/snow-crocus-original-painting/8214704937-small.jpg"
+      ]
     },
     {
       "id": "garden-melody-original-watercolor",
@@ -6330,7 +6941,15 @@
       "etsySection": "Original Art",
       "etsyTitle": "Our Deer Friend Original painting",
       "listedOn": "2026-07-11",
-      "mergeKey": "original:our deer friend painting"
+      "mergeKey": "original:our deer friend painting",
+      "thumbs": [
+        "images/our-deer-friend-original-painting/8288737749-small.jpg",
+        "images/our-deer-friend-original-painting/8288737757-small.jpg",
+        "images/our-deer-friend-original-painting/8240829516-small.jpg",
+        "images/our-deer-friend-original-painting/8240829510-small.jpg",
+        "images/our-deer-friend-original-painting/8240829514-small.jpg",
+        "images/our-deer-friend-original-painting/8240829526-small.jpg"
+      ]
     },
     {
       "id": "sundown-original-art",
@@ -6383,7 +7002,17 @@
       "etsySection": "Original Watercolors",
       "etsyTitle": "Sundown Original Art",
       "listedOn": "2026-07-17",
-      "mergeKey": "original:sundown"
+      "mergeKey": "original:sundown",
+      "thumbs": [
+        "images/sundown-original-art/8264646680-small.jpg",
+        "images/sundown-original-art/8312560209-small.jpg",
+        "images/sundown-original-art/8312560205-small.jpg",
+        "images/sundown-original-art/8312560207-small.jpg",
+        "images/sundown-original-art/8264646678-small.jpg",
+        "images/sundown-original-art/8264646660-small.jpg",
+        "images/sundown-original-art/8312560187-small.jpg",
+        "images/sundown-original-art/8312560227-small.jpg"
+      ]
     },
     {
       "id": "sunset-over-bay-garden-flag",
@@ -6434,7 +7063,14 @@
       "etsySection": "Garden Flags",
       "etsyTitle": "Sunset Over Bay Garden Flag | House Banner",
       "listedOn": "2026-07-17",
-      "mergeKey": "other:sunset over bay garden flag"
+      "mergeKey": "other:sunset over bay garden flag",
+      "thumbs": [
+        "images/sunset-over-bay-garden-flag/8312618913-small.jpg",
+        "images/sunset-over-bay-garden-flag/8264705694-small.jpg",
+        "images/sunset-over-bay-garden-flag/8312619675-small.jpg",
+        "images/sunset-over-bay-garden-flag/8312620019-small.jpg",
+        "images/sunset-over-bay-garden-flag/8312620439-small.jpg"
+      ]
     },
     {
       "id": "summer-daisies-original-cyanotype",
@@ -6486,7 +7122,17 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Summer Daisies Original Cyanotype",
       "listedOn": "2026-07-17",
-      "mergeKey": "original:summer daisies cyanotype"
+      "mergeKey": "original:summer daisies cyanotype",
+      "thumbs": [
+        "images/summer-daisies-original-cyanotype/8264830514-small.jpg",
+        "images/summer-daisies-original-cyanotype/8264830504-small.jpg",
+        "images/summer-daisies-original-cyanotype/8312743739-small.jpg",
+        "images/summer-daisies-original-cyanotype/8312743745-small.jpg",
+        "images/summer-daisies-original-cyanotype/8312743729-small.jpg",
+        "images/summer-daisies-original-cyanotype/8264830502-small.jpg",
+        "images/summer-daisies-original-cyanotype/8264830508-small.jpg",
+        "images/summer-daisies-original-cyanotype/8264830516-small.jpg"
+      ]
     },
     {
       "id": "daisies-original-cyanotype",
@@ -6537,7 +7183,16 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Daisies Original Cyanotype",
       "listedOn": "2026-07-17",
-      "mergeKey": "original:daisies cyanotype"
+      "mergeKey": "original:daisies cyanotype",
+      "thumbs": [
+        "images/daisies-original-cyanotype/8264884292-small.jpg",
+        "images/daisies-original-cyanotype/8312796845-small.jpg",
+        "images/daisies-original-cyanotype/8264884298-small.jpg",
+        "images/daisies-original-cyanotype/8264884286-small.jpg",
+        "images/daisies-original-cyanotype/8312796853-small.jpg",
+        "images/daisies-original-cyanotype/8264884304-small.jpg",
+        "images/daisies-original-cyanotype/8312796859-small.jpg"
+      ]
     },
     {
       "id": "hydrangea-garden-original-watercolor",
@@ -6546,7 +7201,7 @@
       "subjects": [
         "Florals"
       ],
-      "kind": "original",
+      "kind": "print",
       "oneOfAKind": true,
       "size": "8.5 × 11 in",
       "images": [
@@ -6589,7 +7244,16 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Hydrangea Garden Watercolor Print",
       "listedOn": "2026-07-22",
-      "mergeKey": "original:hydrangea garden watercolor"
+      "mergeKey": "original:hydrangea garden watercolor",
+      "thumbs": [
+        "images/hydrangea-garden-original-watercolor/8333354435-small.jpg",
+        "images/hydrangea-garden-original-watercolor/8285440940-small.jpg",
+        "images/hydrangea-garden-original-watercolor/8758695618-small.jpg",
+        "images/hydrangea-garden-original-watercolor/8806507329-small.jpg",
+        "images/hydrangea-garden-original-watercolor/8758695598-small.jpg",
+        "images/hydrangea-garden-original-watercolor/8758695614-small.jpg",
+        "images/hydrangea-garden-original-watercolor/8806507315-small.jpg"
+      ]
     },
     {
       "id": "beach-umbrella-original-painting",
@@ -6643,7 +7307,19 @@
       "etsySection": "beach art",
       "etsyTitle": "Beach Umbrella Original Painting",
       "listedOn": "2026-07-22",
-      "mergeKey": "original:beach umbrella painting"
+      "mergeKey": "original:beach umbrella painting",
+      "thumbs": [
+        "images/beach-umbrella-original-painting/8333411653-small.jpg",
+        "images/beach-umbrella-original-painting/8285498742-small.jpg",
+        "images/beach-umbrella-original-painting/8333411639-small.jpg",
+        "images/beach-umbrella-original-painting/8285498738-small.jpg",
+        "images/beach-umbrella-original-painting/8333411641-small.jpg",
+        "images/beach-umbrella-original-painting/8285498734-small.jpg",
+        "images/beach-umbrella-original-painting/8285498736-small.jpg",
+        "images/beach-umbrella-original-painting/8285498714-small.jpg",
+        "images/beach-umbrella-original-painting/8285498740-small.jpg",
+        "images/beach-umbrella-original-painting/8333411655-small.jpg"
+      ]
     },
     {
       "id": "hosta-original-cyanotype",
@@ -6698,7 +7374,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Hosta Original Cyanotype",
       "listedOn": "2026-07-24",
-      "mergeKey": "original:hosta cyanotype"
+      "mergeKey": "original:hosta cyanotype",
+      "thumbs": [
+        "images/hosta-original-cyanotype/8341922243-small.jpg",
+        "images/hosta-original-cyanotype/8294025134-small.jpg",
+        "images/hosta-original-cyanotype/8294025120-small.jpg",
+        "images/hosta-original-cyanotype/8341922239-small.jpg",
+        "images/hosta-original-cyanotype/8341922237-small.jpg",
+        "images/hosta-original-cyanotype/8294025146-small.jpg",
+        "images/hosta-original-cyanotype/8341922281-small.jpg",
+        "images/hosta-original-cyanotype/8341922247-small.jpg",
+        "images/hosta-original-cyanotype/8341922245-small.jpg",
+        "images/hosta-original-cyanotype/8341922249-small.jpg"
+      ]
     },
     {
       "id": "golden-buds-original-cyanotype",
@@ -6750,7 +7438,17 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Golden Buds Original Cyanotype",
       "listedOn": "2026-07-24",
-      "mergeKey": "original:golden buds cyanotype"
+      "mergeKey": "original:golden buds cyanotype",
+      "thumbs": [
+        "images/golden-buds-original-cyanotype/8294074162-small.jpg",
+        "images/golden-buds-original-cyanotype/8341971177-small.jpg",
+        "images/golden-buds-original-cyanotype/8341971137-small.jpg",
+        "images/golden-buds-original-cyanotype/8341971143-small.jpg",
+        "images/golden-buds-original-cyanotype/8341971151-small.jpg",
+        "images/golden-buds-original-cyanotype/8341971161-small.jpg",
+        "images/golden-buds-original-cyanotype/8341971129-small.jpg",
+        "images/golden-buds-original-cyanotype/8341971145-small.jpg"
+      ]
     },
     {
       "id": "assorted-flowers-original-cyanotype",
@@ -6804,7 +7502,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Assorted Flowers Original Cyanotype",
       "listedOn": "2026-07-24",
-      "mergeKey": "original:assorted flowers cyanotype"
+      "mergeKey": "original:assorted flowers cyanotype",
+      "thumbs": [
+        "images/assorted-flowers-original-cyanotype/8294108600-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8294108598-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8294108612-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8342005559-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8294108604-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8294108608-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8342005561-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8342005567-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8342005563-small.jpg",
+        "images/assorted-flowers-original-cyanotype/8294108616-small.jpg"
+      ]
     },
     {
       "id": "daylily-original-cyanotype",
@@ -6858,7 +7568,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Daylily Original Cyanotype",
       "listedOn": "2026-07-25",
-      "mergeKey": "original:daylily cyanotype"
+      "mergeKey": "original:daylily cyanotype",
+      "thumbs": [
+        "images/daylily-original-cyanotype/8344996235-small.jpg",
+        "images/daylily-original-cyanotype/8297099076-small.jpg",
+        "images/daylily-original-cyanotype/8344996283-small.jpg",
+        "images/daylily-original-cyanotype/8297099102-small.jpg",
+        "images/daylily-original-cyanotype/8297099120-small.jpg",
+        "images/daylily-original-cyanotype/8344996257-small.jpg",
+        "images/daylily-original-cyanotype/8297099112-small.jpg",
+        "images/daylily-original-cyanotype/8344996269-small.jpg",
+        "images/daylily-original-cyanotype/8297099078-small.jpg",
+        "images/daylily-original-cyanotype/8344996273-small.jpg"
+      ]
     },
     {
       "id": "daylily-garden-cyanotype",
@@ -6867,7 +7589,7 @@
       "subjects": [
         "Florals"
       ],
-      "kind": "other",
+      "kind": "original",
       "oneOfAKind": false,
       "size": "8.5 × 11 in",
       "images": [
@@ -6912,7 +7634,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Daylily Garden Cyanotype",
       "listedOn": "2026-07-25",
-      "mergeKey": "other:daylily garden cyanotype"
+      "mergeKey": "other:daylily garden cyanotype",
+      "thumbs": [
+        "images/daylily-garden-cyanotype/8345065953-small.jpg",
+        "images/daylily-garden-cyanotype/8345065969-small.jpg",
+        "images/daylily-garden-cyanotype/8345066003-small.jpg",
+        "images/daylily-garden-cyanotype/8297168870-small.jpg",
+        "images/daylily-garden-cyanotype/8297168888-small.jpg",
+        "images/daylily-garden-cyanotype/8345065993-small.jpg",
+        "images/daylily-garden-cyanotype/8345065979-small.jpg",
+        "images/daylily-garden-cyanotype/8297168902-small.jpg",
+        "images/daylily-garden-cyanotype/8345065997-small.jpg",
+        "images/daylily-garden-cyanotype/8297168894-small.jpg"
+      ]
     },
     {
       "id": "maple-leaves-original-cyanotype",
@@ -6966,7 +7700,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Maple Leaves Original Cyanotype",
       "listedOn": "2026-07-26",
-      "mergeKey": "original:maple leaves cyanotype"
+      "mergeKey": "original:maple leaves cyanotype",
+      "thumbs": [
+        "images/maple-leaves-original-cyanotype/8300525472-small.jpg",
+        "images/maple-leaves-original-cyanotype/8348420101-small.jpg",
+        "images/maple-leaves-original-cyanotype/8300525462-small.jpg",
+        "images/maple-leaves-original-cyanotype/8300525476-small.jpg",
+        "images/maple-leaves-original-cyanotype/8300525494-small.jpg",
+        "images/maple-leaves-original-cyanotype/8348420069-small.jpg",
+        "images/maple-leaves-original-cyanotype/8348420067-small.jpg",
+        "images/maple-leaves-original-cyanotype/8348420107-small.jpg",
+        "images/maple-leaves-original-cyanotype/8300525486-small.jpg",
+        "images/maple-leaves-original-cyanotype/8348420085-small.jpg"
+      ]
     },
     {
       "id": "white-snowflakes-on-navy-blue-ceramic-ornament",
@@ -7020,7 +7766,19 @@
       "etsySection": "Holiday Ornaments",
       "etsyTitle": "White Snowflakes on Navy Blue Ceramic Ornament",
       "listedOn": "2026-08-18",
-      "mergeKey": "other:white snowflakes on navy blue ceramic ornament"
+      "mergeKey": "other:white snowflakes on navy blue ceramic ornament",
+      "thumbs": [
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8448495133-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8400614348-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8448496469-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8448496947-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8400616002-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8448498179-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8400617008-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8400617432-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8448499301-small.jpg",
+        "images/white-snowflakes-on-navy-blue-ceramic-ornament/8400618796-small.jpg"
+      ]
     },
     {
       "id": "sassafras-leaves-cyanotype-print",
@@ -7071,7 +7829,18 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Sassafras Leaves Cyanotype Print",
       "listedOn": "2026-08-23",
-      "mergeKey": "print:sassafras leaves cyanotype"
+      "mergeKey": "print:sassafras leaves cyanotype",
+      "thumbs": [
+        "images/sassafras-leaves-cyanotype-print/8421146928-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8469022059-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8469022049-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8421146932-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8421146950-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8421146982-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8469022047-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8469022045-small.jpg",
+        "images/sassafras-leaves-cyanotype-print/8421146952-small.jpg"
+      ]
     },
     {
       "id": "single-feather-cyanotype-print",
@@ -7123,7 +7892,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Single Feather Cyanotype Print",
       "listedOn": "2026-08-23",
-      "mergeKey": "print:single feather cyanotype"
+      "mergeKey": "print:single feather cyanotype",
+      "thumbs": [
+        "images/single-feather-cyanotype-print/8469166109-small.jpg",
+        "images/single-feather-cyanotype-print/8421290108-small.jpg",
+        "images/single-feather-cyanotype-print/8421290116-small.jpg",
+        "images/single-feather-cyanotype-print/8469166119-small.jpg",
+        "images/single-feather-cyanotype-print/8469166125-small.jpg",
+        "images/single-feather-cyanotype-print/8469166113-small.jpg",
+        "images/single-feather-cyanotype-print/8469166137-small.jpg",
+        "images/single-feather-cyanotype-print/8469166139-small.jpg",
+        "images/single-feather-cyanotype-print/8469166149-small.jpg",
+        "images/single-feather-cyanotype-print/8421290134-small.jpg"
+      ]
     },
     {
       "id": "snowflakes-cyanotype-print",
@@ -7174,7 +7955,18 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Snowflakes Cyanotype Print",
       "listedOn": "2026-08-23",
-      "mergeKey": "print:snowflakes cyanotype"
+      "mergeKey": "print:snowflakes cyanotype",
+      "thumbs": [
+        "images/snowflakes-cyanotype-print/8421567926-small.jpg",
+        "images/snowflakes-cyanotype-print/8421567904-small.jpg",
+        "images/snowflakes-cyanotype-print/8421567910-small.jpg",
+        "images/snowflakes-cyanotype-print/8469444087-small.jpg",
+        "images/snowflakes-cyanotype-print/8421567916-small.jpg",
+        "images/snowflakes-cyanotype-print/8421567932-small.jpg",
+        "images/snowflakes-cyanotype-print/8469444073-small.jpg",
+        "images/snowflakes-cyanotype-print/8421567930-small.jpg",
+        "images/snowflakes-cyanotype-print/8469444075-small.jpg"
+      ]
     },
     {
       "id": "maple-leaves-cyanotype-print",
@@ -7225,7 +8017,16 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Maple Leaves Cyanotype Print",
       "listedOn": "2026-08-24",
-      "mergeKey": "print:maple leaves cyanotype"
+      "mergeKey": "print:maple leaves cyanotype",
+      "thumbs": [
+        "images/maple-leaves-cyanotype-print/8426809258-small.jpg",
+        "images/maple-leaves-cyanotype-print/8426809254-small.jpg",
+        "images/maple-leaves-cyanotype-print/8426809252-small.jpg",
+        "images/maple-leaves-cyanotype-print/8426809250-small.jpg",
+        "images/maple-leaves-cyanotype-print/8426809240-small.jpg",
+        "images/maple-leaves-cyanotype-print/8474680127-small.jpg",
+        "images/maple-leaves-cyanotype-print/8474680111-small.jpg"
+      ]
     },
     {
       "id": "daylilies-cyanotype-print",
@@ -7276,7 +8077,16 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Daylilies Cyanotype Print",
       "listedOn": "2026-08-26",
-      "mergeKey": "print:daylilies cyanotype"
+      "mergeKey": "print:daylilies cyanotype",
+      "thumbs": [
+        "images/daylilies-cyanotype-print/8483956445-small.jpg",
+        "images/daylilies-cyanotype-print/8483956439-small.jpg",
+        "images/daylilies-cyanotype-print/8436087324-small.jpg",
+        "images/daylilies-cyanotype-print/8436087314-small.jpg",
+        "images/daylilies-cyanotype-print/8436087320-small.jpg",
+        "images/daylilies-cyanotype-print/8483956441-small.jpg",
+        "images/daylilies-cyanotype-print/8436087312-small.jpg"
+      ]
     },
     {
       "id": "black-eyed-susan-s",
@@ -7326,7 +8136,15 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Black Eyed Susan’s, Original Cyanotype",
       "listedOn": "2026-08-30",
-      "mergeKey": "original:black eyed susan s"
+      "mergeKey": "original:black eyed susan s",
+      "thumbs": [
+        "images/black-eyed-susan-s/8453617590-small.jpg",
+        "images/black-eyed-susan-s/8501470107-small.jpg",
+        "images/black-eyed-susan-s/8453617578-small.jpg",
+        "images/black-eyed-susan-s/8453617566-small.jpg",
+        "images/black-eyed-susan-s/8501470105-small.jpg",
+        "images/black-eyed-susan-s/8501470091-small.jpg"
+      ]
     },
     {
       "id": "two-daisies-cyanotype-print",
@@ -7373,7 +8191,12 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Two Daisies Cyanotype Print",
       "listedOn": "2026-08-31",
-      "mergeKey": "print:two daisies cyanotype"
+      "mergeKey": "print:two daisies cyanotype",
+      "thumbs": [
+        "images/two-daisies-cyanotype-print/8506511227-small.jpg",
+        "images/two-daisies-cyanotype-print/8506511235-small.jpg",
+        "images/two-daisies-cyanotype-print/8458663094-small.jpg"
+      ]
     },
     {
       "id": "maggie-in-the-garden-print",
@@ -7423,7 +8246,15 @@
       "etsySection": "Print",
       "etsyTitle": "Maggie In The Garden Print",
       "listedOn": "2026-09-01",
-      "mergeKey": "print:maggie in the garden"
+      "mergeKey": "print:maggie in the garden",
+      "thumbs": [
+        "images/maggie-in-the-garden-print/8511913377-small.jpg",
+        "images/maggie-in-the-garden-print/8464051592-small.jpg",
+        "images/maggie-in-the-garden-print/8511913387-small.jpg",
+        "images/maggie-in-the-garden-print/8511913399-small.jpg",
+        "images/maggie-in-the-garden-print/8511913391-small.jpg",
+        "images/maggie-in-the-garden-print/8464051594-small.jpg"
+      ]
     },
     {
       "id": "grasses-cyanotype-print",
@@ -7477,7 +8308,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Grasses Cyanotype Print",
       "listedOn": "2026-09-02",
-      "mergeKey": "print:grasses cyanotype"
+      "mergeKey": "print:grasses cyanotype",
+      "thumbs": [
+        "images/grasses-cyanotype-print/8515920807-small.jpg",
+        "images/grasses-cyanotype-print/8515920751-small.jpg",
+        "images/grasses-cyanotype-print/8515920785-small.jpg",
+        "images/grasses-cyanotype-print/8515920763-small.jpg",
+        "images/grasses-cyanotype-print/8515920753-small.jpg",
+        "images/grasses-cyanotype-print/8468065016-small.jpg",
+        "images/grasses-cyanotype-print/8515920809-small.jpg",
+        "images/grasses-cyanotype-print/8515920727-small.jpg",
+        "images/grasses-cyanotype-print/8468065050-small.jpg",
+        "images/grasses-cyanotype-print/8515920755-small.jpg"
+      ]
     },
     {
       "id": "daisy-cyanotype-print",
@@ -7527,7 +8370,14 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Daisy Cyanotype Print",
       "listedOn": "2026-09-02",
-      "mergeKey": "print:daisy cyanotype"
+      "mergeKey": "print:daisy cyanotype",
+      "thumbs": [
+        "images/daisy-cyanotype-print/8468291836-small.jpg",
+        "images/daisy-cyanotype-print/8468291850-small.jpg",
+        "images/daisy-cyanotype-print/8516147411-small.jpg",
+        "images/daisy-cyanotype-print/8516147419-small.jpg",
+        "images/daisy-cyanotype-print/8468291816-small.jpg"
+      ]
     },
     {
       "id": "three-pansies-cyanotype-print",
@@ -7580,7 +8430,18 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Three Pansies Cyanotype Print",
       "listedOn": "2026-09-04",
-      "mergeKey": "print:three pansies cyanotype"
+      "mergeKey": "print:three pansies cyanotype",
+      "thumbs": [
+        "images/three-pansies-cyanotype-print/8525056633-small.jpg",
+        "images/three-pansies-cyanotype-print/8525056651-small.jpg",
+        "images/three-pansies-cyanotype-print/8477149462-small.jpg",
+        "images/three-pansies-cyanotype-print/8525056637-small.jpg",
+        "images/three-pansies-cyanotype-print/8477149422-small.jpg",
+        "images/three-pansies-cyanotype-print/8477149410-small.jpg",
+        "images/three-pansies-cyanotype-print/8477149418-small.jpg",
+        "images/three-pansies-cyanotype-print/8525056631-small.jpg",
+        "images/three-pansies-cyanotype-print/8477149436-small.jpg"
+      ]
     },
     {
       "id": "little-blossoms-cyanotype",
@@ -7589,7 +8450,7 @@
       "subjects": [
         "Florals"
       ],
-      "kind": "other",
+      "kind": "both",
       "oneOfAKind": false,
       "images": [
         "images/little-blossoms-cyanotype/8529986623.jpg",
@@ -7634,7 +8495,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Little Blossoms Cyanotype",
       "listedOn": "2026-09-05",
-      "mergeKey": "other:little blossoms cyanotype"
+      "mergeKey": "other:little blossoms cyanotype",
+      "thumbs": [
+        "images/little-blossoms-cyanotype/8529986623-small.jpg",
+        "images/little-blossoms-cyanotype/8482083194-small.jpg",
+        "images/little-blossoms-cyanotype/8529986627-small.jpg",
+        "images/little-blossoms-cyanotype/8529986619-small.jpg",
+        "images/little-blossoms-cyanotype/8482083202-small.jpg",
+        "images/little-blossoms-cyanotype/8529986625-small.jpg",
+        "images/little-blossoms-cyanotype/8482083200-small.jpg",
+        "images/little-blossoms-cyanotype/8529986629-small.jpg",
+        "images/little-blossoms-cyanotype/8529986615-small.jpg",
+        "images/little-blossoms-cyanotype/8482083206-small.jpg"
+      ]
     },
     {
       "id": "t-shirt-design-cyanotype-print",
@@ -7687,7 +8560,18 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "T Shirt design cyanotype print",
       "listedOn": "2026-09-09",
-      "mergeKey": "print:t shirt design cyanotype"
+      "mergeKey": "print:t shirt design cyanotype",
+      "thumbs": [
+        "images/t-shirt-design-cyanotype-print/8500498030-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8548373361-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8500498042-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8500498026-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8500498022-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8548373369-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8548373381-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8500498044-small.jpg",
+        "images/t-shirt-design-cyanotype-print/8548373373-small.jpg"
+      ]
     },
     {
       "id": "black-eyed-susans-original-mixed-media",
@@ -7739,7 +8623,17 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Black Eyed Susans Original Mixed Media",
       "listedOn": "2026-09-15",
-      "mergeKey": "original:black eyed susans mixed media"
+      "mergeKey": "original:black eyed susans mixed media",
+      "thumbs": [
+        "images/black-eyed-susans-original-mixed-media/8528214244-small.jpg",
+        "images/black-eyed-susans-original-mixed-media/8576079955-small.jpg",
+        "images/black-eyed-susans-original-mixed-media/8528214274-small.jpg",
+        "images/black-eyed-susans-original-mixed-media/8528214294-small.jpg",
+        "images/black-eyed-susans-original-mixed-media/8528214260-small.jpg",
+        "images/black-eyed-susans-original-mixed-media/8528214262-small.jpg",
+        "images/black-eyed-susans-original-mixed-media/8528214218-small.jpg",
+        "images/black-eyed-susans-original-mixed-media/8528214264-small.jpg"
+      ]
     },
     {
       "id": "black-eyed-susans-original-mixed-media-round",
@@ -7792,7 +8686,18 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Black Eyed Susans Original Mixed Media Round",
       "listedOn": "2026-09-15",
-      "mergeKey": "original:black eyed susans mixed media round"
+      "mergeKey": "original:black eyed susans mixed media round",
+      "thumbs": [
+        "images/black-eyed-susans-original-mixed-media-round/8528907616-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8576768861-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8576768833-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8528907650-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8528907644-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8528907620-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8576768847-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8576768869-small.jpg",
+        "images/black-eyed-susans-original-mixed-media-round/8528907634-small.jpg"
+      ]
     },
     {
       "id": "rose-cyanotype-print",
@@ -7843,7 +8748,16 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Rose Cyanotype Print",
       "listedOn": "2026-09-22",
-      "mergeKey": "print:rose cyanotype"
+      "mergeKey": "print:rose cyanotype",
+      "thumbs": [
+        "images/rose-cyanotype-print/8562057630-small.jpg",
+        "images/rose-cyanotype-print/8562057622-small.jpg",
+        "images/rose-cyanotype-print/8562057626-small.jpg",
+        "images/rose-cyanotype-print/8562057618-small.jpg",
+        "images/rose-cyanotype-print/8609913269-small.jpg",
+        "images/rose-cyanotype-print/8609913283-small.jpg",
+        "images/rose-cyanotype-print/8562057604-small.jpg"
+      ]
     },
     {
       "id": "golden-nature-cyanotype-matted-print",
@@ -7898,7 +8812,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Golden Nature Cyanotype Matted Print",
       "listedOn": "2026-09-29",
-      "mergeKey": "print:golden nature cyanotype"
+      "mergeKey": "print:golden nature cyanotype",
+      "thumbs": [
+        "images/golden-nature-cyanotype-matted-print/8644953679-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8644953841-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8597110182-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8644954371-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8644954605-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8597110886-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8644955193-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8644955441-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8597111708-small.jpg",
+        "images/golden-nature-cyanotype-matted-print/8644955887-small.jpg"
+      ]
     },
     {
       "id": "azalea-and-grass-cyanotype-print",
@@ -7953,7 +8879,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Azalea And Grass Cyanotype Print",
       "listedOn": "2026-09-29",
-      "mergeKey": "print:azalea and grass cyanotype"
+      "mergeKey": "print:azalea and grass cyanotype",
+      "thumbs": [
+        "images/azalea-and-grass-cyanotype-print/8598659210-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8646501865-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8646501875-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8646501857-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8646501867-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8598659534-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8646501861-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8598659528-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8646501873-small.jpg",
+        "images/azalea-and-grass-cyanotype-print/8598659538-small.jpg"
+      ]
     },
     {
       "id": "color-playground-original-watercolor",
@@ -8006,7 +8944,19 @@
       "etsySection": "Original Watercolors",
       "etsyTitle": "Color Playground Original Watercolor",
       "listedOn": "2026-10-01",
-      "mergeKey": "original:color playground watercolor"
+      "mergeKey": "original:color playground watercolor",
+      "thumbs": [
+        "images/color-playground-original-watercolor/8608916138-small.jpg",
+        "images/color-playground-original-watercolor/8608917180-small.jpg",
+        "images/color-playground-original-watercolor/8608917658-small.jpg",
+        "images/color-playground-original-watercolor/8608917572-small.jpg",
+        "images/color-playground-original-watercolor/8656749421-small.jpg",
+        "images/color-playground-original-watercolor/8608917710-small.jpg",
+        "images/color-playground-original-watercolor/8656749483-small.jpg",
+        "images/color-playground-original-watercolor/8608917610-small.jpg",
+        "images/color-playground-original-watercolor/8608917166-small.jpg",
+        "images/color-playground-original-watercolor/8656749115-small.jpg"
+      ]
     },
     {
       "id": "delicate-grasses-original-cyanotype",
@@ -8063,7 +9013,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Delicate Grasses Original Cyanotype",
       "listedOn": "2026-10-05",
-      "mergeKey": "original:delicate grasses cyanotype"
+      "mergeKey": "original:delicate grasses cyanotype",
+      "thumbs": [
+        "images/delicate-grasses-original-cyanotype/8676168943-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8628343112-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8676168933-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8628343182-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8628343102-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8628343116-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8676168987-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8628343168-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8628343174-small.jpg",
+        "images/delicate-grasses-original-cyanotype/8676168999-small.jpg"
+      ]
     },
     {
       "id": "wild-grass-cyanotype",
@@ -8072,7 +9034,7 @@
       "subjects": [
         "Leaves"
       ],
-      "kind": "other",
+      "kind": "both",
       "oneOfAKind": false,
       "images": [
         "images/wild-grass-cyanotype/8681057399.jpg",
@@ -8116,7 +9078,18 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Wild Grass Cyanotype",
       "listedOn": "2026-10-06",
-      "mergeKey": "other:wild grass cyanotype"
+      "mergeKey": "other:wild grass cyanotype",
+      "thumbs": [
+        "images/wild-grass-cyanotype/8681057399-small.jpg",
+        "images/wild-grass-cyanotype/8681057801-small.jpg",
+        "images/wild-grass-cyanotype/8681057777-small.jpg",
+        "images/wild-grass-cyanotype/8681057781-small.jpg",
+        "images/wild-grass-cyanotype/8681057793-small.jpg",
+        "images/wild-grass-cyanotype/8633236292-small.jpg",
+        "images/wild-grass-cyanotype/8633236302-small.jpg",
+        "images/wild-grass-cyanotype/8633236266-small.jpg",
+        "images/wild-grass-cyanotype/8681057843-small.jpg"
+      ]
     },
     {
       "id": "gold-spun-original-mixed-media-flower",
@@ -8171,7 +9144,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Gold Spun Original Mixed Media Flower",
       "listedOn": "2026-10-08",
-      "mergeKey": "original:gold spun mixed media flower"
+      "mergeKey": "original:gold spun mixed media flower",
+      "thumbs": [
+        "images/gold-spun-original-mixed-media-flower/8692905011-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8692905393-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8692905399-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8692905371-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8645081156-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8645081142-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8692905381-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8692905395-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8692905367-small.jpg",
+        "images/gold-spun-original-mixed-media-flower/8645081122-small.jpg"
+      ]
     },
     {
       "id": "colors-of-the-wind-original-mixed-media",
@@ -8224,7 +9209,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Colors Of The Wind Original Mixed Media",
       "listedOn": "2026-10-08",
-      "mergeKey": "original:colors of the wind mixed media"
+      "mergeKey": "original:colors of the wind mixed media",
+      "thumbs": [
+        "images/colors-of-the-wind-original-mixed-media/8693166475-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8645343642-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8645343592-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8693166879-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8693166863-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8693166885-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8645343594-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8693166881-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8693166861-small.jpg",
+        "images/colors-of-the-wind-original-mixed-media/8693166865-small.jpg"
+      ]
     },
     {
       "id": "chicken-scratch-art",
@@ -8272,7 +9269,16 @@
       "etsySection": "Original Watercolors",
       "etsyTitle": "Chicken Scratch Art",
       "listedOn": "2025-02-05",
-      "mergeKey": "original:chicken scratch"
+      "mergeKey": "original:chicken scratch",
+      "thumbs": [
+        "images/chicken-scratch-art/6623464714-small.jpg",
+        "images/chicken-scratch-art/6623464694-small.jpg",
+        "images/chicken-scratch-art/6623464686-small.jpg",
+        "images/chicken-scratch-art/6623464708-small.jpg",
+        "images/chicken-scratch-art/6623464674-small.jpg",
+        "images/chicken-scratch-art/6671548419-small.jpg",
+        "images/chicken-scratch-art/6671548441-small.jpg"
+      ]
     },
     {
       "id": "winter-sky-original-oil-painting",
@@ -8317,7 +9323,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "Winter Sky Original Oil Painting",
       "listedOn": "2019-03-04",
-      "mergeKey": "original:winter sky oil painting"
+      "mergeKey": "original:winter sky oil painting",
+      "thumbs": [
+        "images/winter-sky-original-oil-painting/1800412222-small.jpg"
+      ]
     },
     {
       "id": "goat-study-print",
@@ -8369,7 +9378,19 @@
       "etsySection": "Print",
       "etsyTitle": "Goat Study Print",
       "listedOn": "2026-10-21",
-      "mergeKey": "print:goat study"
+      "mergeKey": "print:goat study",
+      "thumbs": [
+        "images/goat-study-print/8766365885-small.jpg",
+        "images/goat-study-print/8766365881-small.jpg",
+        "images/goat-study-print/8766365871-small.jpg",
+        "images/goat-study-print/8766365877-small.jpg",
+        "images/goat-study-print/8766365891-small.jpg",
+        "images/goat-study-print/8718537142-small.jpg",
+        "images/goat-study-print/8766365911-small.jpg",
+        "images/goat-study-print/8766365919-small.jpg",
+        "images/goat-study-print/8766365903-small.jpg",
+        "images/goat-study-print/8766365905-small.jpg"
+      ]
     },
     {
       "id": "original-etching-greek-chapel",
@@ -8414,7 +9435,12 @@
       "etsySection": "Etchings",
       "etsyTitle": "Original Etching - Greek Chapel",
       "listedOn": "2014-03-13",
-      "mergeKey": "original:etching greek chapel"
+      "mergeKey": "original:etching greek chapel",
+      "thumbs": [
+        "images/original-etching-greek-chapel/576106046-small.jpg",
+        "images/original-etching-greek-chapel/576106180-small.jpg",
+        "images/original-etching-greek-chapel/576224477-small.jpg"
+      ]
     },
     {
       "id": "original-etching-waterfall",
@@ -8461,7 +9487,12 @@
       "etsySection": "Etchings",
       "etsyTitle": "Original Etching - Waterfall",
       "listedOn": "2014-03-19",
-      "mergeKey": "original:etching waterfall"
+      "mergeKey": "original:etching waterfall",
+      "thumbs": [
+        "images/original-etching-waterfall/578705055-small.jpg",
+        "images/original-etching-waterfall/578705303-small.jpg",
+        "images/original-etching-waterfall/578586782-small.jpg"
+      ]
     },
     {
       "id": "red-poinsettia-original-framed-pastel-painting",
@@ -8510,7 +9541,14 @@
       "etsySection": "Original Art",
       "etsyTitle": "Red Poinsettia Original framed pastel painting",
       "listedOn": "2014-07-21",
-      "mergeKey": "original:red poinsettia pastel painting"
+      "mergeKey": "original:red poinsettia pastel painting",
+      "thumbs": [
+        "images/red-poinsettia-original-framed-pastel-painting/630227279-small.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630122254-small.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630227635-small.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630122716-small.jpg",
+        "images/red-poinsettia-original-framed-pastel-painting/630122966-small.jpg"
+      ]
     },
     {
       "id": "tres-manzanas",
@@ -8553,7 +9591,11 @@
       "etsySection": "Original Art",
       "etsyTitle": "Tres Manzanas",
       "listedOn": "2021-08-24",
-      "mergeKey": "original:tres manzanas"
+      "mergeKey": "original:tres manzanas",
+      "thumbs": [
+        "images/tres-manzanas/3333452599-small.jpg",
+        "images/tres-manzanas/3333452669-small.jpg"
+      ]
     },
     {
       "id": "his-eyes-how-they-twinkled-santa-art",
@@ -8599,7 +9641,14 @@
       "etsySection": "Original Art",
       "etsyTitle": "His Eyes How They Twinkled! Santa Art",
       "listedOn": "2021-09-18",
-      "mergeKey": "original:his eyes how they twinkled santa"
+      "mergeKey": "original:his eyes how they twinkled santa",
+      "thumbs": [
+        "images/his-eyes-how-they-twinkled-santa-art/3385990557-small.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3338294192-small.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3338294274-small.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3355232086-small.jpg",
+        "images/his-eyes-how-they-twinkled-santa-art/3402926027-small.jpg"
+      ]
     },
     {
       "id": "a-winter-day-oil-painting",
@@ -8637,7 +9686,10 @@
       "etsySection": "Original Art",
       "etsyTitle": "A Winter Day Oil painting",
       "listedOn": "2022-10-02",
-      "mergeKey": "original:a winter day oil painting"
+      "mergeKey": "original:a winter day oil painting",
+      "thumbs": [
+        "images/a-winter-day-oil-painting/4262769005-small.jpg"
+      ]
     },
     {
       "id": "thoughtfulness-original-oil-painting-flowers",
@@ -8687,7 +9739,16 @@
       "etsySection": "Original Art",
       "etsyTitle": "Thoughtfulness original oil painting (flowers)",
       "listedOn": "2023-07-04",
-      "mergeKey": "original:thoughtfulness oil painting flowers"
+      "mergeKey": "original:thoughtfulness oil painting flowers",
+      "thumbs": [
+        "images/thoughtfulness-original-oil-painting-flowers/5059628158-small.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5107858797-small.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5059628522-small.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5107859341-small.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5107859395-small.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5059629078-small.jpg",
+        "images/thoughtfulness-original-oil-painting-flowers/5059629152-small.jpg"
+      ]
     },
     {
       "id": "loops-abstract-painting",
@@ -8733,7 +9794,14 @@
       "etsySection": "",
       "etsyTitle": "Loops Abstract Painting",
       "listedOn": "2024-08-18",
-      "mergeKey": "original:loops abstract painting"
+      "mergeKey": "original:loops abstract painting",
+      "thumbs": [
+        "images/loops-abstract-painting/6254028861-small.jpg",
+        "images/loops-abstract-painting/6254028915-small.jpg",
+        "images/loops-abstract-painting/6205998552-small.jpg",
+        "images/loops-abstract-painting/6205998504-small.jpg",
+        "images/loops-abstract-painting/6205998468-small.jpg"
+      ]
     },
     {
       "id": "irish-cottage-oil-painting",
@@ -8785,7 +9853,17 @@
       "etsySection": "Landscapes",
       "etsyTitle": "Irish Cottage Oil Painting",
       "listedOn": "2025-01-13",
-      "mergeKey": "original:irish cottage oil painting"
+      "mergeKey": "original:irish cottage oil painting",
+      "thumbs": [
+        "images/irish-cottage-oil-painting/6614184065-small.jpg",
+        "images/irish-cottage-oil-painting/6614184063-small.jpg",
+        "images/irish-cottage-oil-painting/6566067974-small.jpg",
+        "images/irish-cottage-oil-painting/6614184055-small.jpg",
+        "images/irish-cottage-oil-painting/6566067964-small.jpg",
+        "images/irish-cottage-oil-painting/6566067978-small.jpg",
+        "images/irish-cottage-oil-painting/6566067946-small.jpg",
+        "images/irish-cottage-oil-painting/6614184047-small.jpg"
+      ]
     },
     {
       "id": "wildwood-original-oil-painting",
@@ -8839,7 +9917,19 @@
       "etsySection": "Beach art",
       "etsyTitle": "Wildwood Original Oil Painting",
       "listedOn": "2025-09-21",
-      "mergeKey": "original:wildwood oil painting"
+      "mergeKey": "original:wildwood oil painting",
+      "thumbs": [
+        "images/wildwood-original-oil-painting/7218996622-small.jpg",
+        "images/wildwood-original-oil-painting/7218996744-small.jpg",
+        "images/wildwood-original-oil-painting/7218996766-small.jpg",
+        "images/wildwood-original-oil-painting/7218996668-small.jpg",
+        "images/wildwood-original-oil-painting/7218996794-small.jpg",
+        "images/wildwood-original-oil-painting/7218996798-small.jpg",
+        "images/wildwood-original-oil-painting/7266963773-small.jpg",
+        "images/wildwood-original-oil-painting/7266963881-small.jpg",
+        "images/wildwood-original-oil-painting/7266963843-small.jpg",
+        "images/wildwood-original-oil-painting/7266963921-small.jpg"
+      ]
     },
     {
       "id": "white-wolf-original-oil-painting",
@@ -8891,7 +9981,19 @@
       "etsySection": "Original Art",
       "etsyTitle": "White Wolf Original Oil Painting",
       "listedOn": "2026-01-12",
-      "mergeKey": "original:white wolf oil painting"
+      "mergeKey": "original:white wolf oil painting",
+      "thumbs": [
+        "images/white-wolf-original-oil-painting/7642909353-small.jpg",
+        "images/white-wolf-original-oil-painting/7594955834-small.jpg",
+        "images/white-wolf-original-oil-painting/7594955844-small.jpg",
+        "images/white-wolf-original-oil-painting/7594955860-small.jpg",
+        "images/white-wolf-original-oil-painting/7642909327-small.jpg",
+        "images/white-wolf-original-oil-painting/7642909383-small.jpg",
+        "images/white-wolf-original-oil-painting/7642909377-small.jpg",
+        "images/white-wolf-original-oil-painting/7594955836-small.jpg",
+        "images/white-wolf-original-oil-painting/7642909347-small.jpg",
+        "images/white-wolf-original-oil-painting/7594955862-small.jpg"
+      ]
     },
     {
       "id": "starry-night-cyanotype",
@@ -8900,7 +10002,7 @@
       "subjects": [
         "Florals"
       ],
-      "kind": "other",
+      "kind": "both",
       "oneOfAKind": false,
       "images": [
         "images/starry-night-cyanotype/8731331180.jpg",
@@ -8943,7 +10045,17 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Starry Night Cyanotype",
       "listedOn": "2026-10-23",
-      "mergeKey": "other:starry night cyanotype"
+      "mergeKey": "other:starry night cyanotype",
+      "thumbs": [
+        "images/starry-night-cyanotype/8731331180-small.jpg",
+        "images/starry-night-cyanotype/8779159979-small.jpg",
+        "images/starry-night-cyanotype/8731331488-small.jpg",
+        "images/starry-night-cyanotype/8779159947-small.jpg",
+        "images/starry-night-cyanotype/8731331480-small.jpg",
+        "images/starry-night-cyanotype/8779159945-small.jpg",
+        "images/starry-night-cyanotype/8731331524-small.jpg",
+        "images/starry-night-cyanotype/8779159977-small.jpg"
+      ]
     },
     {
       "id": "artist-tools-original-cyanotype",
@@ -8995,7 +10107,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Artist Tools Original Cyanotype",
       "listedOn": "2026-10-24",
-      "mergeKey": "original:artist tools cyanotype"
+      "mergeKey": "original:artist tools cyanotype",
+      "thumbs": [
+        "images/artist-tools-original-cyanotype/8784237501-small.jpg",
+        "images/artist-tools-original-cyanotype/8736412682-small.jpg",
+        "images/artist-tools-original-cyanotype/8736412684-small.jpg",
+        "images/artist-tools-original-cyanotype/8736412698-small.jpg",
+        "images/artist-tools-original-cyanotype/8736412686-small.jpg",
+        "images/artist-tools-original-cyanotype/8736412674-small.jpg",
+        "images/artist-tools-original-cyanotype/8736412654-small.jpg",
+        "images/artist-tools-original-cyanotype/8784237805-small.jpg",
+        "images/artist-tools-original-cyanotype/8784237841-small.jpg",
+        "images/artist-tools-original-cyanotype/8784237835-small.jpg"
+      ]
     },
     {
       "id": "autumn-at-peace-valley-print",
@@ -9046,7 +10170,15 @@
       "etsySection": "Bucks County Art",
       "etsyTitle": "Autumn At Peace Valley Print",
       "listedOn": "2026-10-28",
-      "mergeKey": "print:autumn at peace valley"
+      "mergeKey": "print:autumn at peace valley",
+      "thumbs": [
+        "images/autumn-at-peace-valley-print/8758783926-small.jpg",
+        "images/autumn-at-peace-valley-print/8806595871-small.jpg",
+        "images/autumn-at-peace-valley-print/8758784284-small.jpg",
+        "images/autumn-at-peace-valley-print/8758784280-small.jpg",
+        "images/autumn-at-peace-valley-print/8806595877-small.jpg",
+        "images/autumn-at-peace-valley-print/8806595869-small.jpg"
+      ]
     },
     {
       "id": "falling-leaves-original-cyanotype",
@@ -9100,7 +10232,18 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Falling Leaves Original Cyanotype.",
       "listedOn": "2026-11-01",
-      "mergeKey": "original:falling leaves cyanotype"
+      "mergeKey": "original:falling leaves cyanotype",
+      "thumbs": [
+        "images/falling-leaves-original-cyanotype/8779731930-small.jpg",
+        "images/falling-leaves-original-cyanotype/8827561313-small.jpg",
+        "images/falling-leaves-original-cyanotype/8779732322-small.jpg",
+        "images/falling-leaves-original-cyanotype/8779732326-small.jpg",
+        "images/falling-leaves-original-cyanotype/8827561283-small.jpg",
+        "images/falling-leaves-original-cyanotype/8779732314-small.jpg",
+        "images/falling-leaves-original-cyanotype/8779732332-small.jpg",
+        "images/falling-leaves-original-cyanotype/8779732304-small.jpg",
+        "images/falling-leaves-original-cyanotype/8827561295-small.jpg"
+      ]
     },
     {
       "id": "salt-and-pepper-original-painting",
@@ -9148,7 +10291,15 @@
       "etsySection": "Still Lifes",
       "etsyTitle": "Salt And Pepper Original Painting",
       "listedOn": "2026-11-02",
-      "mergeKey": "original:salt and pepper painting"
+      "mergeKey": "original:salt and pepper painting",
+      "thumbs": [
+        "images/salt-and-pepper-original-painting/8833754087-small.jpg",
+        "images/salt-and-pepper-original-painting/8785930436-small.jpg",
+        "images/salt-and-pepper-original-painting/8833754605-small.jpg",
+        "images/salt-and-pepper-original-painting/8785930432-small.jpg",
+        "images/salt-and-pepper-original-painting/8785930490-small.jpg",
+        "images/salt-and-pepper-original-painting/8833754619-small.jpg"
+      ]
     },
     {
       "id": "pin-oak-leaves-cyanotype",
@@ -9157,7 +10308,7 @@
       "subjects": [
         "Leaves"
       ],
-      "kind": "other",
+      "kind": "both",
       "oneOfAKind": false,
       "images": [
         "images/pin-oak-leaves-cyanotype/8839733507.jpg",
@@ -9202,7 +10353,19 @@
       "etsySection": "Cyanotypes/Sunprint",
       "etsyTitle": "Pin Oak Leaves Cyanotype",
       "listedOn": "2026-11-03",
-      "mergeKey": "other:pin oak leaves cyanotype"
+      "mergeKey": "other:pin oak leaves cyanotype",
+      "thumbs": [
+        "images/pin-oak-leaves-cyanotype/8839733507-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912200-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733853-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733819-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733877-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733883-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912112-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912182-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8839733839-small.jpg",
+        "images/pin-oak-leaves-cyanotype/8791912154-small.jpg"
+      ]
     },
     {
       "id": "blue-morning-glory-watercolor",
@@ -9257,7 +10420,19 @@
       "etsySection": "Floral Art",
       "etsyTitle": "Blue Morning Glory Watercolor",
       "listedOn": "2026-11-10",
-      "mergeKey": "original:blue morning glory watercolor"
+      "mergeKey": "original:blue morning glory watercolor",
+      "thumbs": [
+        "images/blue-morning-glory-watercolor/8880345501-small.jpg",
+        "images/blue-morning-glory-watercolor/8880345705-small.jpg",
+        "images/blue-morning-glory-watercolor/8832543482-small.jpg",
+        "images/blue-morning-glory-watercolor/8880345715-small.jpg",
+        "images/blue-morning-glory-watercolor/8832543492-small.jpg",
+        "images/blue-morning-glory-watercolor/8832543480-small.jpg",
+        "images/blue-morning-glory-watercolor/8832543470-small.jpg",
+        "images/blue-morning-glory-watercolor/8832543486-small.jpg",
+        "images/blue-morning-glory-watercolor/8880345689-small.jpg",
+        "images/blue-morning-glory-watercolor/8832543484-small.jpg"
+      ]
     }
   ]
 }
