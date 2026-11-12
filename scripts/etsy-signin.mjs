@@ -41,24 +41,30 @@ if (!key || !secret) stop("the keystring and shared secret are both needed.");
 // PKCE: a one-time secret (verifier) stays here; Etsy only sees its fingerprint (challenge).
 const verifier = b64url(randomBytes(48));
 const challenge = b64url(createHash("sha256").update(verifier).digest());
-const state = b64url(randomBytes(12));
-const url = "https://www.etsy.com/oauth/connect?" + new URLSearchParams({
-  response_type: "code", client_id: key, redirect_uri: REDIRECT, scope: "listings_r",
-  state, code_challenge: challenge, code_challenge_method: "S256",
-});
+const state = b64url(randomBytes(8));
+// Etsy's full link is too long for Messages to make tappable, so text her a short one: the sign-in page on
+// her site turns it into Etsy's link (etsy-signin/index.html). The full link is the fallback.
+const url = /^[A-Za-z0-9]+$/.test(key)
+  ? `${REDIRECT}#go.${key}.${challenge}.${state}`
+  : "https://www.etsy.com/oauth/connect?" + new URLSearchParams({
+    response_type: "code", client_id: key, redirect_uri: REDIRECT, scope: "listings_r",
+    state, code_challenge: challenge, code_challenge_method: "S256",
+  });
+let copied = false;
+try { execFileSync("pbcopy", { input: url }); copied = true; } catch { /* not a Mac: copy it by hand */ }
 
 console.log(`
-Next: Marita signs in to HER Etsy account and clicks "Allow access".
-  • Use a private window, so you're not signed in as yourself
-    (Safari: File → New Private Window; Chrome: File → New Incognito Window).
-  • Copy this whole link into that window:
+Next: Marita signs in to HER Etsy account and taps "Allow access".
+  • ${copied ? "The link is copied: paste it (Cmd+V) into a text to Marita." : "Text Marita this link:"}
+    She taps it on her phone, where she's already signed in to Etsy.
+    (Doing it on this Mac instead? Use a private window, so you're not signed in as yourself.)
 
 ${url}
 
-  • After she clicks Allow, a page shows a code. Click "Copy the code" and paste it below.
-  • The code only works for a few minutes, so keep this window open.
+  • After she taps Allow, a page shows a code. She taps "Copy the code" and texts it back.
+    Paste it below. It only works for a few minutes, so keep this window open.
 `);
-const pasted = await ask("Paste the code here: ");
+const pasted = (await ask("Paste the code here: ")).replace(/\s+/g, "");
 const [gotState, code] = pasted.includes(":") ? pasted.split(/:(.*)/s) : ["", pasted];
 if (!code) stop("no code was pasted.");
 if (gotState !== state) stop("that code is from a different sign-in. Start again and use the newest link.");

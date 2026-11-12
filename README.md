@@ -97,9 +97,9 @@ It's read-only (Etsy permission `listings_r`): it can't change anything in her s
    Repository permissions → Secrets: Read and write. Copy it, then in the repo: Settings → Secrets and
    variables → Actions → New repository secret, name `GH_SECRETS_TOKEN`, paste, Add secret.
 3. **Sign-in:** in Terminal, in this folder, run `node scripts/etsy-signin.mjs`. Type the Etsy keystring
-   and shared secret when asked (hidden). Copy the link it prints into a private browser window,
-   Marita signs in to her Etsy account and clicks Allow access, then click "Copy the code" and paste it
-   into Terminal. It checks it's the artworkbymarita shop and saves `ETSY_REFRESH_TOKEN` to GitHub.
+   and shared secret when asked (hidden). It copies a short link: text it to Marita. She taps it on her
+   phone (already signed in to Etsy), taps Allow access, then taps "Copy the code" and texts it back.
+   Paste it into Terminal within a few minutes. It checks it's the artworkbymarita shop and saves `ETSY_REFRESH_TOKEN` to GitHub.
 4. **Check:** Actions → Sync from Etsy → Run workflow. The run's summary should say
    "Etsy listing options: read for N of N listings with options".
 

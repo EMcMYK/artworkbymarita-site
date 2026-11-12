@@ -28,14 +28,25 @@
   <div id="result"><p>Checking what Etsy sent back…</p></div>
 </main>
 <script>
-  const q = new URLSearchParams(location.search);
   const box = document.getElementById("result");
+  // The short link texted to Marita (#go.<keystring>.<challenge>.<state>, made by scripts/etsy-signin.mjs).
+  // Etsy's own link is too long for Messages to make tappable, so this page builds it and goes there.
+  // The keystring is Etsy's public app id; the secret half of the sign-in never leaves the terminal.
+  const go = location.hash.match(/^#go\.([A-Za-z0-9]+)\.([\w-]{43})\.([\w-]+)$/);
+  if (go) {
+    box.innerHTML = `<p>Taking you to Etsy…</p>`;
+    location.replace("https://www.etsy.com/oauth/connect?" + new URLSearchParams({
+      response_type: "code", client_id: go[1], redirect_uri: "https://artworkbymarita-site.pages.dev/etsy-signin/", scope: "listings_r",
+      state: go[3], code_challenge: go[2], code_challenge_method: "S256",
+    }));
+  }
+  const q = new URLSearchParams(location.search);
   const code = q.get("code"), state = q.get("state"), error = q.get("error");
   if (code && state) {
-    box.innerHTML = `<p>Thank you! Etsy said yes. Copy this code and paste it into the terminal window that's waiting for it:</p>
+    box.innerHTML = `<p>Thank you! Etsy said yes. Tap the button to copy this code, then text it back to Ed:</p>
       <code class="code" id="code"></code>
       <button type="button" class="btn copy" id="copy">Copy the code</button>
-      <p class="fineprint">The code works once and only for a few minutes. You can close this page after pasting it.</p>`;
+      <p class="fineprint">The code works once and only for a few minutes. You can close this page after sending it.</p>`;
     // The terminal script checks the state part, so both travel together.
     document.getElementById("code").textContent = `${state}:${code}`;
     document.getElementById("copy").addEventListener("click", async (e) => {
@@ -45,7 +56,7 @@
   } else if (error) {
     box.innerHTML = `<p>Etsy didn't give permission this time (<span id="err"></span>). Nothing changed. Start again from the terminal when you're ready.</p>`;
     document.getElementById("err").textContent = q.get("error_description") || error;
-  } else {
+  } else if (!go) {
     box.innerHTML = `<p>This page is only used during the Etsy sign-in. <a href="/">Go to the website</a>.</p>`;
   }
 </script>
