@@ -79,12 +79,20 @@ const token = await tokenRes.json().catch(() => ({}));
 if (!tokenRes.ok || !token.access_token || !token.refresh_token) stop(`Etsy didn't accept the code (${tokenRes.status}: ${token.error_description || token.error || "no reason given"}).`);
 const authed = { ...headers, authorization: `Bearer ${token.access_token}` };
 
-// Make sure it's Marita's shop, not whoever was signed in to Etsy in that browser.
-const me = await (await fetch(`${API}/users/me`, { headers: authed })).json().catch(() => ({}));
-const shop = me.shop_id ? await (await fetch(`${API}/shops/${me.shop_id}`, { headers: authed })).json().catch(() => ({})) : {};
-if (String(shop.shop_name || "").toLowerCase() !== String(settings.shopName).toLowerCase())
-  stop(`the Etsy account that signed in has the shop "${shop.shop_name || "none"}", not "${settings.shopName}". Sign in as Marita in a private window.`);
-console.log(`\nSigned in as the ${shop.shop_name} shop.`);
+// Make sure it's Marita's account, not whoever was signed in to Etsy in that browser. Etsy's tokens start
+// with the id of the person who said yes ("12345678.abc…"); her shop's public record names its owner's id.
+// (Asking Etsy "who am I" needs a permission this sign-in doesn't ask for, so it isn't used.)
+const signedInAs = String(token.access_token).split(".")[0];
+const found = await (await fetch(`${API}/shops?shop_name=${encodeURIComponent(settings.shopName)}`, { headers })).json().catch(() => ({}));
+const shop = (found.results || []).find((s) => String(s.shop_name).toLowerCase() === String(settings.shopName).toLowerCase());
+if (!shop) stop(`couldn't look up the ${settings.shopName} shop on Etsy (${found.error || "no shop with that name"}).`);
+// If the shop record doesn't name its owner, ask Etsy which shop the signed-in person owns instead.
+const owned = shop.user_id ? null
+  : await (await fetch(`${API}/users/${signedInAs}/shops`, { headers })).json().catch(() => ({}));
+if (owned ? String(owned.shop_id) !== String(shop.shop_id) : String(shop.user_id) !== signedInAs)
+  stop(`the Etsy account that said yes isn't the owner of ${shop.shop_name}. Marita needs to be signed in to her own Etsy account when she taps Allow.`);
+console.log(`\nSigned in as the owner of the ${shop.shop_name} shop.`);
+const me = { shop_id: shop.shop_id };
 
 // Try reading options on one listing that has them.
 const active = await (await fetch(`${API}/shops/${me.shop_id}/listings/active?limit=100`, { headers })).json().catch(() => ({}));
@@ -104,3 +112,4 @@ await new Promise((resolve, reject) => {
   gh.stdin.end(token.refresh_token);
 }).catch((e) => stop(`couldn't save the secret to GitHub (${e.message}).`));
 console.log(`Saved the sign-in to GitHub (${repo} → secret ETSY_REFRESH_TOKEN). Done!`);
+process.exit(0);
