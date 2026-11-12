@@ -1,37 +1,12 @@
 {
-  "ranAt": "2026-11-11T19:31:24.753Z",
+  "ranAt": "2026-11-12T18:34:33.774Z",
   "added": [],
   "merged": [],
-  "updated": [
-    "Pin Oak Leaves Cyanotype: original or print",
-    "Starry Night Cyanotype: original or print",
-    "Wild Grass Cyanotype: original or print",
-    "Little Blossoms Cyanotype: original or print",
-    "Classic Matte Paper Poster size: original or print",
-    "Matte Canvas, Framed (Multi-color) Singing Choir: original or print",
-    "Matte Canvas, Framed (Multi-color) USA Flag: original or print",
-    "Daylily Garden Cyanotype: original or print",
-    "Hydrangea Garden Original Watercolor: original or print"
-  ],
+  "updated": [],
   "sold": [],
   "hidden": [],
   "back": [],
   "skipped": [],
   "problems": [],
-  "optionsCheck": {
-    "result": "refused",
-    "listings": [
-      "4614169104",
-      "4609158151",
-      "4607680964"
-    ],
-    "batch": {
-      "status": 401,
-      "said": "{\"error\":\"Access token is required for this request (requires scope: listings_r).\"}\n"
-    },
-    "single": {
-      "status": 401,
-      "said": "{\"error\":\"Access token is required for this request (requires scope: listings_r).\"}\n"
-    }
-  }
+  "options": "not signed in (see README → Etsy sign-in)"
 }
