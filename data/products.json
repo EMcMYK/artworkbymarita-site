@@ -6927,7 +6927,10 @@
           "label": "Original, 8 × 8\"",
           "price": 100,
           "etsyListingId": 4536364234,
-          "url": "https://www.etsy.com/listing/4536364234/our-deer-friend-original-painting"
+          "url": "https://www.etsy.com/listing/4536364234/our-deer-friend-original-painting",
+          "available": false,
+          "goneOn": "2026-11-13",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -6959,7 +6962,8 @@
         "images/our-deer-friend-original-painting/8240829510-small.jpg",
         "images/our-deer-friend-original-painting/8240829514-small.jpg",
         "images/our-deer-friend-original-painting/8240829526-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "sundown-original-art",
