@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- The site's home is maritamcveigh.com. Anyone arriving at the old Cloudflare address or at www goes
+       there, to the same page. Branch previews (abc.artworkbymarita-site.pages.dev) and the Etsy sign-in
+       page (etsy-signin/, its own file) stay where they are. -->
+  <script>
+    if (location.hostname === "artworkbymarita-site.pages.dev" || location.hostname === "www.maritamcveigh.com")
+      location.replace("https://maritamcveigh.com" + location.pathname + location.search + location.hash);
+  </script>
+  <link rel="canonical" href="https://maritamcveigh.com/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Marita McVeigh · Artwork</title>
   <meta name="description" content="I’m Marita McVeigh, and I like painting the joyful part of life, with a lot of colors: original paintings, cyanotypes, prints and gifts. Every piece is for sale in my Etsy shop.">

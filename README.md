@@ -3,7 +3,7 @@
 A storefront for Marita McVeigh's artwork that copies itself from her Etsy shop,
 [artworkbymarita](https://www.etsy.com/shop/artworkbymarita). Etsy stays the only place anything is
 edited. Every piece has "Buy on Etsy" buttons, so checkout and shipping stay on Etsy. Hosting is free
-on Cloudflare Pages.
+on Cloudflare Pages, at [maritamcveigh.com](https://maritamcveigh.com).
 
 ## How it works
 
@@ -79,6 +79,10 @@ All the rules are in `data/etsy-sync.json`. After changing a rule, run the workf
 2. **Cloudflare Pages:** Workers & Pages → Create → Pages → Connect to Git → `artworkbymarita-site`.
    Framework preset: None. Build command: leave empty. Build output directory: `/`.
 3. Run **Sync from Etsy** once by hand. The first run downloads every photo, so it takes a while.
+4. **Domain:** maritamcveigh.com is registered at Name.com with its name servers pointed at Cloudflare.
+   In Workers & Pages → `artworkbymarita-site` → Custom domains, both `maritamcveigh.com` and
+   `www.maritamcveigh.com` are added. A line at the top of `index.html` sends the old pages.dev address and
+   www to maritamcveigh.com. The Etsy sign-in page stays on pages.dev, since that is the callback Etsy has.
 
 ## Etsy sign-in (reads listing options)
 

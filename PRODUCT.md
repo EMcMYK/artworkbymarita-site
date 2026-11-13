@@ -28,7 +28,7 @@ Joyful, colorful paintings and prints by a regular person who simply loves makin
 
 - **Daily Etsy sync:** a GitHub Action ("Sync from Etsy") reads her shop every morning and rewrites `data/products.json` and `images/`. Cloudflare Pages republishes the site a minute later. Rules for sorting pieces into sections and subjects live in `data/etsy-sync.json`.
 - **Upkeep:** Ed (her son) maintains the code and design. Marita does not edit the site; listings only change on Etsy.
-- **Hosting:** static site on Cloudflare Pages, live at artworkbymarita-site.pages.dev. Every pushed branch gets its own preview address.
+- **Hosting:** static site on Cloudflare Pages at maritamcveigh.com (registered at Name.com, DNS on Cloudflare). The old artworkbymarita-site.pages.dev address and www forward to it; the Etsy sign-in page stays on pages.dev, where Etsy expects it. Every pushed branch gets its own preview address.
 
 ## Capabilities and Constraints
 
@@ -39,7 +39,7 @@ Joyful, colorful paintings and prints by a regular person who simply loves makin
 - **Folders:** `images/` belongs to the sync, which deletes any folder in it that no product uses, except `images/about/`. Site photos go in `images/about/`.
 - **Required notice:** the footer carries the notice Etsy requires of sites using its API. Keep it.
 - **Stack:** plain static HTML, CSS and JavaScript (`index.html`, `assets/site.js`, `assets/style.css`, `config.js`); no build step.
-- **Undecided:** the contact email (`contactEmail` in `config.js` is empty, so the site points to Etsy messages); whether to bring back the artworkbymarita.com domain, which is currently offline.
+- **Undecided:** the contact email (`contactEmail` in `config.js` is empty, so the site points to Etsy messages); an email address at maritamcveigh.com (Cloudflare Email Routing, waiting on Marita to verify her inbox).
 
 ## Brand Commitments
 
