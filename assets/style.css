@@ -136,6 +136,8 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
    card's own rows, so the wrapper itself steps aside (display: contents) and just passes the type down. */
 .card-cap { display: contents; font-weight: 400; font-size: clamp(16px, .6vw + 13.5px, 22px); line-height: 1.35; }
 .card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
+.card-info { display: flex; flex-direction: column; justify-content: flex-end; }  /* price on the bottom line, level across the row */
+.card-kind { color: var(--clay); }  /* "Original" / "Print": upright, so it reads as what the piece is, apart from the italic price */
 .card-meta { font-style: italic; color: var(--clay); }
 .dot { display: inline-block; width: .55em; height: .55em; border-radius: 50%; background: var(--sold); margin-right: 6px; vertical-align: .05em; }
 @media (min-width: 761px) { .card { border-radius: 0; } }

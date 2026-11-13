@@ -97,8 +97,7 @@
       : `<span class="no-photo">${esc(p.name)}</span>`}</div>`;
   }
 
-  // The one word on a card that says what you'd be buying, before the price: "Original", "Print",
-  // "Original or print". "" leaves the card with just the price.
+  // The word on its own line under a card's name: "Original" or "Print"; "" for gifts and unmarked pieces.
   // A listing that sells both the original and prints says "Original": the original is the headline.
   function cardKind(p) {
     if (p.category === "gifts") return "";
@@ -106,24 +105,25 @@
     if (p.kind === "print") return "Print";
     return "";  // Etsy doesn't say: no guessing
   }
-  // "Original · $75", "Print · from $35"; just the price when cardKind has nothing to say, or on a page
-  // where every card is the same kind (Prints). A listing selling both shows its lowest price, which is a
-  // print's, so it reads "Original · prints from $35" rather than suggesting the original costs $35.
+  // The price line. A listing selling both shows its lowest price, which is a print's, so under "Original"
+  // it reads "Prints from $35" rather than suggesting the original costs $35.
   function cardPrice(p, kinds = true) {
-    const price = priceText(p), kind = kinds ? cardKind(p) : "";
-    if (!kind || !price) return price;
-    const from = price.replace(/^From /, "from ");  // "from $35" never splits across lines
-    return p.kind === "both" ? `${kind} · prints ${from.startsWith("from") ? from : `from ${from}`}` : `${kind} · ${from}`;
+    const price = priceText(p);
+    if (!(kinds && p.kind === "both" && cardKind(p)) || !price) return price;
+    return `Prints ${price.startsWith("From ") ? price.replace(/^From /, "from ") : `from ${price}`}`;
   }
 
-  // A piece on its Paper card: the art whole, its name, then what it is and the price in quiet italic.
-  // kinds: false leaves out the Original/Print word (the Prints section, where every card is a print).
+  // A piece on its Paper card: the art whole, its name, what it is ("Original"), then the price in quiet
+  // italic. "What it is" and the price share the card's last row with the cards beside it, the price at the
+  // bottom, so prices line up even beside a gift with no "Original"/"Print" line. kinds: false leaves that
+  // line out (the Prints section, where every card is a print).
   function card(p, { showPrice = true, kinds = true } = {}) {
+    const kind = kinds && showPrice && !p.soldOut ? cardKind(p) : "";
     return `<a class="card" href="#${esc(p.id)}">
       ${picture(p)}
       <span class="card-cap">
         <span class="card-title">${esc(shortTitle(p))}</span>
-        <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : !showPrice && p.originalSold ? `<span class="dot" aria-hidden="true"></span>Original sold` : esc(showPrice ? cardPrice(p, kinds) : "")}</span>
+        <span class="card-info">${kind ? `<span class="card-kind">${esc(kind)}</span>` : ""}<span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : !showPrice && p.originalSold ? `<span class="dot" aria-hidden="true"></span>Original sold` : esc(showPrice ? cardPrice(p, kinds) : "")}</span></span>
       </span>
     </a>`;
   }
