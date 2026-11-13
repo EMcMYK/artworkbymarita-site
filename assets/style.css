@@ -236,7 +236,7 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 
 /* one piece */
 .back { display: inline-flex; align-items: center; min-height: 44px; margin: 14px 0 6px; font-size: 16px; }
-.back::before { content: "‹ "; }
+.back::before { content: "‹"; margin-right: .3em; }  /* a flex row drops a trailing space, so the gap is a margin */
 .piece { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: start; }
 .stage { container-type: inline-size; --mat-pad: clamp(16px, 3vw, 40px); --img-max: min(70vh, 680px); }
 /* The mat is as tall as this piece's tallest photo (--tallest = its height / width, measured in site.js),

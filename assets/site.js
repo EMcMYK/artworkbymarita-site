@@ -89,12 +89,14 @@
   // The smaller copy of a photo (saved by the sync) for cards and thumbnails; the full photo if there isn't one yet.
   const smallPhoto = (p, i = 0) => (p.thumbs && p.thumbs[i]) || (p.images && p.images[i]);
 
-  // A piece shown whole on its mat, never cropped. `main` = the big photo on a product page.
+  // A piece shown whole on its mat, never cropped. `main` = the big photo on a product page. On a card the
+  // caption right under the photo names the piece, so the card photo is decorative (alt="") and the link
+  // reads "Pin Oak Leaves, Original, Prints from $35" once instead of the name twice.
   function picture(p, index = 0, main = false) {
     const img = main ? p.images && p.images[index] : smallPhoto(p, index);
     return `<div class="mat">${img
-      ? `<img src="${esc(img)}" alt="${esc(p.name)}" ${main ? 'fetchpriority="high" decoding="async"' : 'loading="lazy"'}>`
-      : `<span class="no-photo">${esc(p.name)}</span>`}</div>`;
+      ? `<img src="${esc(img)}" alt="${main ? esc(p.name) : ""}" ${main ? 'fetchpriority="high" decoding="async"' : 'loading="lazy"'}>`
+      : `<span class="no-photo"${main ? "" : ' aria-hidden="true"'}>${esc(p.name)}</span>`}</div>`;
   }
 
   // The word on its own line under a card's name: "Original" or "Print"; "" for gifts and unmarked pieces.
@@ -226,7 +228,7 @@
 
   function homePage() {
     if (!ALL.length) return `<div class="wrap"><section class="intro"><h1>${esc(CONFIG.siteName)}</h1><p>${esc(CONFIG.tagline)}</p>
-      <p class="empty">Her artwork shows up here after the first sync from Etsy.${CONFIG.etsyUrl ? ` Until then, see it all on <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">her Etsy shop</a>.` : ""}</p></section></div>`;
+      <p class="empty">My artwork shows up here after the first sync from Etsy.${CONFIG.etsyUrl ? ` Until then, see it all in <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">my Etsy shop</a>.` : ""}</p></section></div>`;
     const sale = forSale();
     const rooms = CATEGORIES.map((c) => ({ c, list: inCategory(c.id) })).filter((x) => x.list.length);
     const newest = newestFirst(sale).slice(0, 8);  // 4 × 2 on desktop; tablets and phones show 6
@@ -280,7 +282,7 @@
       <h1 class="splash-heading" data-section="${esc(c.id)}">${esc(c.title)}</h1>
       <p class="lede">${esc(c.note)}</p>
       ${filterRow(esc(c.id), here, subject, list.length)}
-      ${list.length ? grid(list, { kinds: c.id !== "prints" }) : `<p class="empty">Nothing here right now. <a href="#${esc(c.id)}">See all ${esc(c.title.toLowerCase())}</a></p>`}
+      ${list.length ? grid(list, { kinds: c.id !== "prints" }) : `<p class="empty">No ${subject ? `${esc(subject.toLowerCase())} ` : ""}${esc(c.title.toLowerCase())} right now. <a href="#${esc(c.id)}">See all ${esc(c.title.toLowerCase())}</a></p>`}
     </section>`;
   }
 
@@ -336,7 +338,7 @@
           <div class="info-head">
             <h1>${esc(shortTitle(p))}</h1>
             <p class="facts">${esc(kindLine(p))}${p.size && buyable(p).length < 2 ? ` · ${esc(p.size)}` : ""}${p.oneOfAKind && !p.soldOut ? " · One of a kind" : ""}</p>
-            ${p.soldOut ? "" : `<p class="price">${esc(priceText(p))}</p>`}
+            ${p.soldOut ? "" : `<p class="price">${esc(cardPrice(p))}</p>`}
             ${p.originalSold && !p.soldOut ? `<p class="sold-note"><span class="dot" aria-hidden="true"></span>The original has sold. Prints are still available.</p>` : ""}
           </div>
           <div class="prose">${describe(p.description || [], p)}</div>
@@ -434,7 +436,7 @@
       <h1>Contact</h1>
       ${email ? `<p>For questions about a piece, commissions or anything else, email:</p>
         <p class="email"><span id="email">${esc(email)}</span> <button type="button" class="link-btn" id="copyEmail">Copy</button></p>` : ""}
-      ${CONFIG.etsyUrl ? `<p>${email ? "You can also message her on Etsy" : "The quickest way to reach her is a message on Etsy"}: open <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">her Etsy shop</a> and choose “Message”.</p>` : ""}
+      ${CONFIG.etsyUrl ? `<p>${email ? "You can also message me on Etsy" : "The quickest way to reach me is a message on Etsy"}: open <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">my Etsy shop</a> and choose “Message”.</p>` : ""}
       <p class="fineprint">Questions about an order? Etsy has the order details, so a message there is fastest.</p>
     </section>`;
   }
