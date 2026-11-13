@@ -97,13 +97,33 @@
       : `<span class="no-photo">${esc(p.name)}</span>`}</div>`;
   }
 
-  // A piece on its Paper card: the art whole, its name, then the price in quiet italic.
-  function card(p, { showPrice = true } = {}) {
+  // The one word on a card that says what you'd be buying, before the price: "Original", "Print",
+  // "Original or print". "" leaves the card with just the price.
+  // A listing that sells both the original and prints says "Original": the original is the headline.
+  function cardKind(p) {
+    if (p.category === "gifts") return "";
+    if (p.kind === "original" || p.kind === "both") return "Original";
+    if (p.kind === "print") return "Print";
+    return "";  // Etsy doesn't say: no guessing
+  }
+  // "Original · $75", "Print · from $35"; just the price when cardKind has nothing to say, or on a page
+  // where every card is the same kind (Prints). A listing selling both shows its lowest price, which is a
+  // print's, so it reads "Original · prints from $35" rather than suggesting the original costs $35.
+  function cardPrice(p, kinds = true) {
+    const price = priceText(p), kind = kinds ? cardKind(p) : "";
+    if (!kind || !price) return price;
+    const from = price.replace(/^From /, "from ");  // "from $35" never splits across lines
+    return p.kind === "both" ? `${kind} · prints ${from.startsWith("from") ? from : `from ${from}`}` : `${kind} · ${from}`;
+  }
+
+  // A piece on its Paper card: the art whole, its name, then what it is and the price in quiet italic.
+  // kinds: false leaves out the Original/Print word (the Prints section, where every card is a print).
+  function card(p, { showPrice = true, kinds = true } = {}) {
     return `<a class="card" href="#${esc(p.id)}">
       ${picture(p)}
       <span class="card-cap">
         <span class="card-title">${esc(shortTitle(p))}</span>
-        <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : !showPrice && p.originalSold ? `<span class="dot" aria-hidden="true"></span>Original sold` : esc(showPrice ? priceText(p) : "")}</span>
+        <span class="card-meta">${p.soldOut ? `<span class="dot" aria-hidden="true"></span>Sold` : !showPrice && p.originalSold ? `<span class="dot" aria-hidden="true"></span>Original sold` : esc(showPrice ? cardPrice(p, kinds) : "")}</span>
       </span>
     </a>`;
   }
@@ -227,6 +247,18 @@
   }
 
   // "See more": everything for sale, newest first.
+  // The subject chips and how many pieces are showing ("11 pieces"). The count is a status line: route()
+  // fills it in just after the page is drawn, so screen readers announce it when a filter changes.
+  function filterRow(base, here, subject, count) {
+    return `<div class="filter-row">
+      ${here.length ? `<nav class="filters" aria-label="Filter by subject">
+        <a href="#${base}"${subject ? "" : ' aria-current="true"'}>All</a>
+        ${here.map((s) => `<a href="#${base}/${slug(s)}"${s === subject ? ' aria-current="true"' : ""}>${esc(s)}</a>`).join("")}
+      </nav>` : ""}
+      <p class="count" role="status" data-count="${count === 1 ? "1 piece" : `${count} pieces`}"></p>
+    </div>`;
+  }
+
   // What's new, with the same subject filters as the section pages (#new/florals and so on).
   function newPage(subject) {
     const all = newestFirst(forSale());
@@ -235,10 +267,7 @@
     return `<section class="wrap block">
       <h1>What’s new</h1>
       <p class="lede">Everything I have for sale, newest first.</p>
-      ${here.length ? `<nav class="filters" aria-label="Filter by subject">
-        <a href="#new"${subject ? "" : ' aria-current="true"'}>All</a>
-        ${here.map((s) => `<a href="#new/${slug(s)}"${s === subject ? ' aria-current="true"' : ""}>${esc(s)}</a>`).join("")}
-      </nav>` : ""}
+      ${filterRow("new", here, subject, list.length)}
       ${grid(list)}
     </section>`;
   }
@@ -250,11 +279,8 @@
     return `<section class="wrap block">
       <h1 class="splash-heading" data-section="${esc(c.id)}">${esc(c.title)}</h1>
       <p class="lede">${esc(c.note)}</p>
-      ${here.length ? `<nav class="filters" aria-label="Filter by subject">
-        <a href="#${esc(c.id)}"${subject ? "" : ' aria-current="true"'}>All</a>
-        ${here.map((s) => `<a href="#${esc(c.id)}/${slug(s)}"${s === subject ? ' aria-current="true"' : ""}>${esc(s)}</a>`).join("")}
-      </nav>` : ""}
-      ${list.length ? grid(list) : `<p class="empty">Nothing here right now. <a href="#${esc(c.id)}">See all ${esc(c.title.toLowerCase())}</a></p>`}
+      ${filterRow(esc(c.id), here, subject, list.length)}
+      ${list.length ? grid(list, { kinds: c.id !== "prints" }) : `<p class="empty">Nothing here right now. <a href="#${esc(c.id)}">See all ${esc(c.title.toLowerCase())}</a></p>`}
     </section>`;
   }
 
@@ -464,7 +490,7 @@
     } else {
       route(history.state?.scrollY);
     }
-    pageReady.then(focusPage);
+    pageReady.then(() => focusPage(cameFrom));
   }
 
   // About and Privacy load their text after the page appears; this settles once the heading is there.
@@ -472,8 +498,14 @@
 
   // After moving to another page, put keyboard and screen-reader focus on its heading, so the change
   // is announced and Tab continues from the top of the new page. The scroll position is left alone.
-  function focusPage() {
+  // Changing only the subject filter on the same page (#cyanotypes → #cyanotypes/leaves) keeps focus on the
+  // chip just chosen instead, so trying the next one is one Tab away; the count line announces the result.
+  const pageOf = (h) => decodeURIComponent(String(h || "").replace(/^#/, "")).split("/")[0];
+  function focusPage(cameFrom) {
     if (app.contains(document.activeElement)) return;  // "See what's new" already focused its heading
+    const chip = cameFrom !== undefined && pageOf(cameFrom) === pageOf(location.hash)
+      && app.querySelector('.filters a[aria-current]');
+    if (chip) { chip.focus({ preventScroll: true }); return; }
     const h = app.querySelector("h1");
     if (!h) return;
     h.tabIndex = -1;
@@ -520,6 +552,9 @@
       }
     }
     window.scrollTo(0, restoreTo || 0);
+    // Fill the "11 pieces" status line a moment after the page is drawn, so it's announced as a change.
+    const count = app.querySelector(".count[data-count]");
+    if (count) setTimeout(() => { count.textContent = count.dataset.count; }, 100);
   }
 
   async function start() {

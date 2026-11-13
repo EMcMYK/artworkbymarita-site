@@ -23,7 +23,7 @@ window.SITE_CONFIG = {
   // "one" is the name for a single piece, used on its own page ("Original · Cyanotype").
   categories: [
     { id: "paintings", title: "Paintings", one: "Painting", note: "Original oils and watercolors" },
-    { id: "cyanotypes", title: "Cyanotypes", one: "Cyanotype", note: "Sun prints in Prussian blue" },
+    { id: "cyanotypes", title: "Cyanotypes", one: "Cyanotype", note: "A cyanotype, also known as a sunprint, is a photographic process that uses the sun or UV light to expose the image." },
     { id: "printmaking", title: "Printmaking", one: "Printmaking", note: "Etchings and hand-pulled prints" },
     { id: "prints", title: "Prints", one: "Print", note: "Prints of my paintings and cyanotypes, in several sizes" },
     { id: "gifts", title: "Gifts", one: "Gift", note: "Cards and smaller pieces" }

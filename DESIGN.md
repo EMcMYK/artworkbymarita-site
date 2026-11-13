@@ -251,9 +251,10 @@ Solid, friendly and obvious: there is one kind of button and it is blue.
 - **State:** hover turns border and text Cyanotype blue; the selected filter fills Cyanotype blue with Paper text.
 - **Tap area:** 44px tall, wider than the visible pill, for both the filters and the tags.
 - **Where:** subject filters on each section page; the same subject filters on What's new.
+- **Count:** how many pieces are showing ("11 pieces"), Small in Clay gray, at the right end of the chip row (under the chips when they wrap). Screen readers hear it when a filter changes, and keyboard focus stays on the chip just chosen.
 
 ### Cards / Containers
-**Piece card.** Paper, padded 12 to 24px, soft 6px corners on phones and square on wider screens, no border or shadow at rest. The art sits whole in a slightly wide box (15:14), top-aligned; below it the name (two lines at most) and the price in Clay gray italic. Cards in a row share their title and price lines, so prices line up, and a row only makes room for a second title line when one of its names wraps. Hover: the lift.
+**Piece card.** Paper, padded 12 to 24px, soft 6px corners on phones and square on wider screens, no border or shadow at rest. The art sits whole in a slightly wide box (15:14), top-aligned; below it the name (two lines at most), then what it is and the price in Clay gray italic: "Original · $75", "Print · from $35". A listing selling both the original and prints says "Original · prints from $35", since its lowest price is a print's. Gifts and pieces Etsy doesn't mark show only the price, and so does every card in the Prints section, where all of them are prints. Cards in a row share their title and price lines, so prices line up, and a row only makes room for a second title line when one of its names wraps. Hover: the lift.
 
 **Section card (Browse the art).** Paper, 6px corners, a fixed height per breakpoint (300px desktop, 150px tablet, 109px phone). The section name in Alegreya Sans over its splash, a whole piece from that section, and a blue arrow: on desktop the name and arrow run along the top and the piece fills the card below; on tablets and phones they sit in a row with the piece at the right. The piece is one not already in What's new. When the card is too narrow (under 280px inside), the picture drops out. Hover: the lift.
 
