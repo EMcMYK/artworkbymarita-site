@@ -1,0 +1,13 @@
+# Cloudflare Pages reads this file; it isn't served itself.
+# The whole repo is published, so the notes and tools in it would otherwise be readable on the website.
+# They're for Ed and the sync, not visitors: send those addresses to the front page instead.
+# (They stay readable on GitHub, where the repo lives.)
+/README.md            /  301
+/PRODUCT.md           /  301
+/DESIGN.md            /  301
+/.gitignore           /  301
+/scripts/*            /  301
+/.github/*            /  301
+/.impeccable/*        /  301
+/data/etsy-sync.json  /  301
+/data/etsy-sync-last.json  /  301
