@@ -306,6 +306,10 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .page figure { margin: 20px 0; }
 .page figure img { border-radius: 6px; }
 .page figcaption { font-size: 16px; line-height: 1.35; color: var(--clay); margin-top: 8px; }
+.page figure.float-right { float: right; width: 42%; margin: 4px 0 16px 28px; }
+.page figure.float-right img { width: 100%; height: auto; display: block; }
+.page .clear { clear: both; }
+@media (max-width: 600px) { .page figure.float-right { float: none; width: 100%; margin: 4px 0 20px; } }
 .email { font-size: 20px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .email span { user-select: all; }
 .link-btn { font: inherit; font-size: 16px; color: var(--cyanotype); background: none; border: 1px solid var(--cyanotype); border-radius: 6px; padding: 2px 12px; cursor: pointer; }
