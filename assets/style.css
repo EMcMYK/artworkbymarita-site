@@ -316,9 +316,10 @@ h2 { font-size: clamp(28px, 1.1vw + 21px, 36px); line-height: 1.2; }
 .page figure.float-right img { width: 100%; height: auto; display: block; }
 .page .clear { clear: both; }
 @media (max-width: 600px) { .page figure.float-right { float: none; width: 100%; margin: 4px 0 20px; } }
-.email { font-size: 20px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
-.email span { user-select: all; }
-.link-btn { font: inherit; font-size: 16px; color: var(--cyanotype); background: none; border: 1px solid var(--cyanotype); border-radius: 6px; padding: 2px 12px; cursor: pointer; }
+.email { font-size: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.email #email { user-select: all; display: inline-flex; align-items: center; min-height: 44px; }  /* tap to write; 44px to tap */
+.link-btn { position: relative; font: inherit; font-size: 16px; color: var(--cyanotype); background: none; border: 1px solid var(--cyanotype); border-radius: 6px; padding: 2px 12px; cursor: pointer; }
+.link-btn::after { content: ""; position: absolute; inset: -6px -4px; }  /* a 44px-tall tap area around the 32px button */
 
 /* footer: badge and email, the studio line, links; then the small print, centered */
 .footer { margin-top: clamp(64px, 7.4vw, 107px); border-top: 1px solid var(--cyanotype); padding: 16px 0 24px; color: var(--clay); font-size: 18px; line-height: 1.35; }

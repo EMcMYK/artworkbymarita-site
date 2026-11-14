@@ -39,7 +39,7 @@ Joyful, colorful paintings and prints by a regular person who simply loves makin
 - **Folders:** `images/` belongs to the sync, which deletes any folder in it that no product uses, except `images/about/`. Site photos go in `images/about/`.
 - **Required notice:** the footer carries the notice Etsy requires of sites using its API. Keep it.
 - **Stack:** plain static HTML, CSS and JavaScript (`index.html`, `assets/site.js`, `assets/style.css`, `config.js`); no build step.
-- **Undecided:** the contact email (`contactEmail` in `config.js` is empty, so the site points to Etsy messages); an email address at maritamcveigh.com (Cloudflare Email Routing, waiting on Marita to verify her inbox).
+- **Contact email:** hello@maritamcveigh.com (`contactEmail` in `config.js`), forwarded to Marita's own inbox by Cloudflare Email Routing. It receives only; replies go out from her own address.
 
 ## Brand Commitments
 

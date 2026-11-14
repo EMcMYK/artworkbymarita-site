@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
   policiesUrl: "",
 
   // The contact address shown on the Contact page. Leave "" to send people to Etsy messages instead.
-  contactEmail: "",
+  contactEmail: "hello@maritamcveigh.com",
 
   // The Sold gallery: one-of-a-kind originals that sold on Etsy (decided with Mom).
   showSoldGallery: true,

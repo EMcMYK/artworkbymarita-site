@@ -435,7 +435,7 @@
     return `<section class="wrap block narrow">
       <h1>Contact</h1>
       ${email ? `<p>For questions about a piece, commissions or anything else, email:</p>
-        <p class="email"><span id="email">${esc(email)}</span> <button type="button" class="link-btn" id="copyEmail">Copy</button></p>` : ""}
+        <p class="email"><a id="email" href="mailto:${esc(email)}">${esc(email)}</a> <button type="button" class="link-btn" id="copyEmail">Copy</button></p>` : ""}
       ${CONFIG.etsyUrl ? `<p>${email ? "You can also message me on Etsy" : "The quickest way to reach me is a message on Etsy"}: open <a href="${esc(CONFIG.etsyUrl)}" target="_blank" rel="noopener">my Etsy shop</a> and choose “Message”.</p>` : ""}
       <p class="fineprint">Questions about an order? Etsy has the order details, so a message there is fastest.</p>
     </section>`;
