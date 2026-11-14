@@ -80,17 +80,39 @@ if (!tokenRes.ok || !token.access_token || !token.refresh_token) stop(`Etsy didn
 const authed = { ...headers, authorization: `Bearer ${token.access_token}` };
 
 // Make sure it's Marita's account, not whoever was signed in to Etsy in that browser. Etsy's tokens start
-// with the id of the person who said yes ("12345678.abc…"); her shop's public record names its owner's id.
-// (Asking Etsy "who am I" needs a permission this sign-in doesn't ask for, so it isn't used.)
+// with the id of the person who said yes ("12345678.abc…"). (Asking Etsy "who am I" needs a permission this
+// sign-in doesn't ask for, so it isn't used.) Two ways to check, each tried twice in case Etsy hiccups:
+//   1. the shop that person owns (/users/<id>/shops) is the artworkbymarita shop, or
+//   2. the artworkbymarita shop's public record names that person as its owner.
+// If neither answers, it stops and shows exactly what Etsy said.
 const signedInAs = String(token.access_token).split(".")[0];
-const found = await (await fetch(`${API}/shops?shop_name=${encodeURIComponent(settings.shopName)}`, { headers })).json().catch(() => ({}));
-const shop = (found.results || []).find((s) => String(s.shop_name).toLowerCase() === String(settings.shopName).toLowerCase());
-if (!shop) stop(`couldn't look up the ${settings.shopName} shop on Etsy (${found.error || "no shop with that name"}).`);
-// If the shop record doesn't name its owner, ask Etsy which shop the signed-in person owns instead.
-const owned = shop.user_id ? null
-  : await (await fetch(`${API}/users/${signedInAs}/shops`, { headers })).json().catch(() => ({}));
-if (owned ? String(owned.shop_id) !== String(shop.shop_id) : String(shop.user_id) !== signedInAs)
-  stop(`the Etsy account that said yes isn't the owner of ${shop.shop_name}. Marita needs to be signed in to her own Etsy account when she taps Allow.`);
+const want = String(settings.shopName).toLowerCase();
+async function getJson(url) {
+  let last;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const res = await fetch(url, { headers: authed });
+    const text = await res.text();
+    let body = null; try { body = JSON.parse(text); } catch { /* not JSON */ }
+    last = { ok: res.ok, status: res.status, body, said: (body && (body.error || body.message)) || text.slice(0, 120) };
+    if (res.ok || res.status < 500 && res.status !== 429) return last;
+    await new Promise((r) => setTimeout(r, 2000));
+  }
+  return last;
+}
+let shop = null;
+const owned = await getJson(`${API}/users/${signedInAs}/shops`);
+if (owned.ok && owned.body?.shop_name) {
+  if (String(owned.body.shop_name).toLowerCase() !== want)
+    stop(`the Etsy account that said yes owns the shop "${owned.body.shop_name}", not ${settings.shopName}. Marita needs to be signed in to her own Etsy account when she taps Allow.`);
+  shop = owned.body;
+} else {
+  const found = await getJson(`${API}/shops?shop_name=${encodeURIComponent(settings.shopName)}`);
+  const match = (found.body?.results || []).find((s) => String(s.shop_name).toLowerCase() === want);
+  if (!match) stop(`Etsy didn't confirm whose shop this is. Asking for the signed-in person's shop: ${owned.status} (${owned.said}). Looking up ${settings.shopName}: ${found.status} (${found.ok ? `${found.body?.count ?? 0} shops found` : found.said}).`);
+  if (String(match.user_id) !== signedInAs)
+    stop(`the Etsy account that said yes isn't the owner of ${match.shop_name}. Marita needs to be signed in to her own Etsy account when she taps Allow.`);
+  shop = match;
+}
 console.log(`\nSigned in as the owner of the ${shop.shop_name} shop.`);
 const me = { shop_id: shop.shop_id };
 
