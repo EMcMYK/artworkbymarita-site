@@ -5,7 +5,7 @@ window.SITE_CONFIG = {
   tagline: "Original paintings, cyanotypes, etchings and prints.",
 
   // Links. Leave a link as "" to hide it.
-  etsyUrl: "https://www.etsy.com/shop/artworkbymarita",
+  etsyUrl: "https://www.etsy.com/shop/MaritaMcVeigh",
   instagramUrl: "https://www.instagram.com/marita1112/",
   facebookUrl: "https://www.facebook.com/marita.mcveigh/",
   fineArtAmericaUrl: "https://fineartamerica.com/profiles/marita-mcveigh",   // the palette icon in the footer

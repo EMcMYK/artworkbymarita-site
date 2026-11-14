@@ -16,7 +16,7 @@ Their job: look through Marita's newest and favorite work, find a piece they lik
 
 ## Product Purpose
 
-Marita McVeigh's website: a gallery of her artwork that copies itself from her Etsy shop (artworkbymarita) and sends every sale to Etsy. Etsy stays the only place listings are edited and the only place checkout and shipping happen; the site shows the work and hands visitors to the right Etsy listing.
+Marita McVeigh's website: a gallery of her artwork that copies itself from her Etsy shop (MaritaMcVeigh, formerly artworkbymarita) and sends every sale to Etsy. Etsy stays the only place listings are edited and the only place checkout and shipping happen; the site shows the work and hands visitors to the right Etsy listing.
 
 Success: a visitor enjoys the work, finds a piece, and reaches its Etsy listing with no friction; new work appears on the site without anyone touching it.
 
@@ -43,7 +43,7 @@ Joyful, colorful paintings and prints by a regular person who simply loves makin
 
 ## Brand Commitments
 
-- **Name:** Marita McVeigh. Etsy shop: artworkbymarita.
+- **Name:** Marita McVeigh. Etsy shop: MaritaMcVeigh (renamed from artworkbymarita in Nov 2026; if she renames it again, change `shopName` in `data/etsy-sync.json`).
 - **Voice:** the site speaks as Marita, in first person: warm and chatty, in short, plain sentences, the way she talks. Friendly, not salesy; plain, not arty; bright, not deep. Words to use: joyful, color, flowers, new, bloom, learning, made by hand. Avoid anything dark, political or "deep", art jargon, and sales talk. Do: "Here's what I've been painting lately." Don't: "Shop our exclusive collection today!"
 - **Quote:** "I like painting the joyful part of life, with a lot of colors."
 - **Artwork is always shown whole, never cropped.** Studio photos may be cropped.

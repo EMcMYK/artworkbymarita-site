@@ -7,7 +7,7 @@
 //   1. Asks for the Etsy app's keystring and shared secret (typing stays hidden; nothing is saved on disk).
 //   2. Opens Etsy's "allow access" page. Marita signs in to HER Etsy account there and clicks Allow.
 //      Etsy then shows a one-time code on artworkbymarita-site.pages.dev/etsy-signin/; paste it here.
-//   3. Checks the sign-in belongs to the artworkbymarita shop and that listing options can be read.
+//   3. Checks the sign-in belongs to her shop (shopName in data/etsy-sync.json) and that listing options can be read.
 //   4. Saves the sign-in to GitHub as the secret ETSY_REFRESH_TOKEN (with the GitHub CLI, `gh`).
 //      The token is never printed. The sync renews it every morning.
 //
@@ -82,8 +82,8 @@ const authed = { ...headers, authorization: `Bearer ${token.access_token}` };
 // Make sure it's Marita's account, not whoever was signed in to Etsy in that browser. Etsy's tokens start
 // with the id of the person who said yes ("12345678.abc…"). (Asking Etsy "who am I" needs a permission this
 // sign-in doesn't ask for, so it isn't used.) Two ways to check, each tried twice in case Etsy hiccups:
-//   1. the shop that person owns (/users/<id>/shops) is the artworkbymarita shop, or
-//   2. the artworkbymarita shop's public record names that person as its owner.
+//   1. the shop that person owns (/users/<id>/shops) is her shop (shopName in data/etsy-sync.json), or
+//   2. her shop's public record names that person as its owner.
 // If neither answers, it stops and shows exactly what Etsy said.
 const signedInAs = String(token.access_token).split(".")[0];
 const want = String(settings.shopName).toLowerCase();

@@ -2,7 +2,7 @@
   Etsy → website. Run by .github/workflows/etsy-sync.yml every morning, and whenever you press
   "Run workflow" on GitHub's Actions tab. Etsy stays the only place anything is edited.
 
-  It only READS Mom's Etsy shop (artworkbymarita). It never changes anything on Etsy.
+  It only READS Mom's Etsy shop (MaritaMcVeigh, formerly artworkbymarita). It never changes anything on Etsy.
 
   • New Etsy listings are added: photos (saved into images/<product-id>/), description, tags, price,
     and a "Buy on Etsy" link.
@@ -81,7 +81,10 @@ export async function sync({ root = process.cwd(), fetch = globalThis.fetch, tod
 
   // 1. The shop, its sections and every active listing.
   const shops = await etsy(`/shops?shop_name=${encodeURIComponent(settings.shopName)}`);
-  const shopId = shops.results?.[0]?.shop_id;
+  // Etsy's name search can return near matches too (and still finds a shop by its old name), so prefer
+  // the exact name and fall back to the first result.
+  const want = String(settings.shopName).toLowerCase();
+  const shopId = ((shops.results || []).find((s) => String(s.shop_name).toLowerCase() === want) || shops.results?.[0])?.shop_id;
   if (!shopId) throw new Error(`Couldn't find the Etsy shop "${settings.shopName}".`);
   const sections = new Map(((await etsy(`/shops/${shopId}/sections`, { optional: true }))?.results || [])
     .map((s) => [String(s.shop_section_id), decode(s.title)]));
