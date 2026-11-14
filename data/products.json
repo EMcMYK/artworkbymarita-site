@@ -211,7 +211,14 @@
           "price": 185,
           "etsyListingId": 173698827,
           "url": "https://www.etsy.com/listing/173698827/original-signed-etching-laundry-day",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Matted And Unframed / 12x14 inches",
+              "price": 185,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -3137,7 +3144,14 @@
           "price": 30,
           "etsyListingId": 1307899174,
           "url": "https://www.etsy.com/listing/1307899174/classic-matte-paper-poster-size-8x10",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "20x25 cm / 8x10″ - Horizontal",
+              "price": 30,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -4562,7 +4576,24 @@
           "price": 81.27,
           "etsyListingId": 1792888563,
           "url": "https://www.etsy.com/listing/1792888563/valley-green-print-matte-canvas-framed",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Black",
+              "price": 81.27,
+              "available": true
+            },
+            {
+              "name": "Espresso",
+              "price": 81.27,
+              "available": true
+            },
+            {
+              "name": "White",
+              "price": 81.27,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -4605,7 +4636,24 @@
           "price": 81.27,
           "etsyListingId": 1795730325,
           "url": "https://www.etsy.com/listing/1795730325/matte-canvas-framed-multi-color-usa-flag",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Black",
+              "price": 81.27,
+              "available": true
+            },
+            {
+              "name": "Espresso",
+              "price": 81.27,
+              "available": true
+            },
+            {
+              "name": "White",
+              "price": 81.27,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -4642,7 +4690,24 @@
           "price": 81.27,
           "etsyListingId": 1782031942,
           "url": "https://www.etsy.com/listing/1782031942/matte-canvas-framed-multi-color-singing",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Black",
+              "price": 81.27,
+              "available": true
+            },
+            {
+              "name": "Espresso",
+              "price": 81.27,
+              "available": true
+            },
+            {
+              "name": "White",
+              "price": 81.27,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -5224,7 +5289,39 @@
           "price": 8.15,
           "etsyListingId": 1880026221,
           "url": "https://www.etsy.com/listing/1880026221/roses-in-vase-poster-print-pastel",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "5&quot; x 7&quot; (Vertical) / Semi Glossy",
+              "price": 8.7,
+              "available": true
+            },
+            {
+              "name": "5&quot; x 7&quot; (Vertical) / Matte",
+              "price": 8.7,
+              "available": true
+            },
+            {
+              "name": "8″ x 10″ (Vertical) / Semi Glossy",
+              "price": 9.75,
+              "available": true
+            },
+            {
+              "name": "8″ x 10″ (Vertical) / Matte",
+              "price": 9.75,
+              "available": true
+            },
+            {
+              "name": "11″ x 14″ (Vertical) / Semi Glossy",
+              "price": 8.15,
+              "available": true
+            },
+            {
+              "name": "11″ x 14″ (Vertical) / Matte",
+              "price": 8.15,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -6075,7 +6172,29 @@
           "price": 16.8,
           "etsyListingId": 4398250258,
           "url": "https://www.etsy.com/listing/4398250258/ceramic-christmas-ornaments-two-sided",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "1 pc",
+              "price": 16.8,
+              "available": true
+            },
+            {
+              "name": "3 pcs",
+              "price": 46.88,
+              "available": true
+            },
+            {
+              "name": "5 pcs",
+              "price": 76.93,
+              "available": true
+            },
+            {
+              "name": "10 pcs",
+              "price": 152.15,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -6129,7 +6248,24 @@
           "price": 65,
           "etsyListingId": 4398966256,
           "url": "https://www.etsy.com/listing/4398966256/framed-winter-bird-canvas-print-serene",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Black",
+              "price": 65,
+              "available": true
+            },
+            {
+              "name": "Espresso",
+              "price": 65,
+              "available": true
+            },
+            {
+              "name": "White",
+              "price": 65,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -7234,7 +7370,19 @@
           "price": 35,
           "etsyListingId": 4542307730,
           "url": "https://www.etsy.com/listing/4542307730/hydrangea-garden-original-watercolor",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "8x10 Matted",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "11x14 Matted",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -7754,7 +7902,29 @@
           "price": 16.8,
           "etsyListingId": 4558360741,
           "url": "https://www.etsy.com/listing/4558360741/white-snowflakes-on-navy-blue-ceramic",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "1 pc",
+              "price": 16.8,
+              "available": true
+            },
+            {
+              "name": "3 pcs",
+              "price": 46.88,
+              "available": true
+            },
+            {
+              "name": "5 pcs",
+              "price": 76.93,
+              "available": true
+            },
+            {
+              "name": "10 pcs",
+              "price": 152.15,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8298,7 +8468,19 @@
           "price": 35,
           "etsyListingId": 4567526711,
           "url": "https://www.etsy.com/listing/4567526711/wild-grasses-cyanotype-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Print 8x10 Matted",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Matted",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8360,7 +8542,19 @@
           "price": 35,
           "etsyListingId": 4567560239,
           "url": "https://www.etsy.com/listing/4567560239/daisy-cyanotype-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Print 8x10 Matted",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Matted",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8400,7 +8594,7 @@
       "subjects": [
         "Florals"
       ],
-      "kind": "print",
+      "kind": "both",
       "oneOfAKind": false,
       "images": [
         "images/three-pansies-cyanotype-print/8525056633.jpg",
@@ -8420,7 +8614,24 @@
           "price": 35,
           "etsyListingId": 4569014087,
           "url": "https://www.etsy.com/listing/4569014087/three-pansies-cyanotype-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Original 8x10 Mat",
+              "price": 50,
+              "available": true
+            },
+            {
+              "name": "Print 8x10 Mat",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Mat",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8485,7 +8696,24 @@
           "price": 35,
           "etsyListingId": 4569748536,
           "url": "https://www.etsy.com/listing/4569748536/little-blossoms-cyanotype-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Original 11x14 mat",
+              "price": 75,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Mat",
+              "price": 45,
+              "available": true
+            },
+            {
+              "name": "Print 8x10 Mat",
+              "price": 35,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8550,7 +8778,19 @@
           "price": 35,
           "etsyListingId": 4572188014,
           "url": "https://www.etsy.com/listing/4572188014/t-shirt-design-cyanotype-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "print 8x10",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "print 11x14",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8738,7 +8978,19 @@
           "price": 35,
           "etsyListingId": 4580440657,
           "url": "https://www.etsy.com/listing/4580440657/rose-cyanotype-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "print 11x14 / print 8x10",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "print 11x14 / print 11x14",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8802,7 +9054,19 @@
           "price": 35,
           "etsyListingId": 4585088539,
           "url": "https://www.etsy.com/listing/4585088539/golden-nature-cyanotype-matted-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "11x14 Matted print",
+              "price": 45,
+              "available": true
+            },
+            {
+              "name": "8x10 Matted print",
+              "price": 35,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8869,7 +9133,19 @@
           "price": 35,
           "etsyListingId": 4585287318,
           "url": "https://www.etsy.com/listing/4585287318/azalea-and-grass-cyanotype-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "11x14 matted print",
+              "price": 45,
+              "available": true
+            },
+            {
+              "name": "8x10 Matted print",
+              "price": 35,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8912,7 +9188,7 @@
       "name": "Color Playground Original Watercolor",
       "category": "paintings",
       "subjects": [],
-      "kind": "original",
+      "kind": "both",
       "oneOfAKind": false,
       "size": "11 × 14 in",
       "images": [
@@ -8934,7 +9210,24 @@
           "price": 35,
           "etsyListingId": 4586614127,
           "url": "https://www.etsy.com/listing/4586614127/color-playground-original-watercolor",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Original 11x14",
+              "price": 75,
+              "available": true
+            },
+            {
+              "name": "Print 8x10",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -8980,7 +9273,7 @@
         "Florals",
         "Leaves"
       ],
-      "kind": "original",
+      "kind": "both",
       "oneOfAKind": false,
       "size": "8 × 10 in",
       "images": [
@@ -9002,7 +9295,24 @@
           "price": 35,
           "etsyListingId": 4589144418,
           "url": "https://www.etsy.com/listing/4589144418/delicate-grasses-original-cyanotype",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Original w/11x14 mat",
+              "price": 75,
+              "available": true
+            },
+            {
+              "name": "Print w/8x10 mat",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print w/11x14 mat",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -9068,7 +9378,24 @@
           "price": 35,
           "etsyListingId": 4589771917,
           "url": "https://www.etsy.com/listing/4589771917/wild-grass-cyanotype",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Original 11x14 mat",
+              "price": 75,
+              "available": true
+            },
+            {
+              "name": "Print 8x10 mat",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Mat",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -9134,7 +9461,19 @@
           "price": 35,
           "etsyListingId": 4591309309,
           "url": "https://www.etsy.com/listing/4591309309/gold-spun-original-mixed-media-flower",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "5x7 unmatted",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "8x10 matted",
+              "price": 50,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -9199,7 +9538,19 @@
           "price": 60,
           "etsyListingId": 4591340777,
           "url": "https://www.etsy.com/listing/4591340777/colors-of-the-wind-original-mixed-media",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "8 1/2x11 unmatted",
+              "price": 60,
+              "available": true
+            },
+            {
+              "name": "11x14 Matted",
+              "price": 75,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -9368,7 +9719,19 @@
           "price": 35,
           "etsyListingId": 4600343640,
           "url": "https://www.etsy.com/listing/4600343640/goat-study-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "8x10 matted",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "11x14 Matted",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -10035,7 +10398,24 @@
           "price": 35,
           "etsyListingId": 4601951092,
           "url": "https://www.etsy.com/listing/4601951092/starry-night-cyanotype",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Original 11x14 Mat",
+              "price": 75,
+              "available": true
+            },
+            {
+              "name": "Print 8x10 Mat",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Mat",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -10160,7 +10540,19 @@
           "price": 35,
           "etsyListingId": 4605133920,
           "url": "https://www.etsy.com/listing/4605133920/autumn-at-peace-valley-print",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "8x10 Matted",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "11x14",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -10201,7 +10593,7 @@
       "subjects": [
         "Leaves"
       ],
-      "kind": "original",
+      "kind": "both",
       "oneOfAKind": false,
       "size": "11 × 14 in",
       "images": [
@@ -10222,7 +10614,24 @@
           "price": 35,
           "etsyListingId": 4607680964,
           "url": "https://www.etsy.com/listing/4607680964/falling-leaves-original-cyanotype",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Print 8x10 Mat",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Mat",
+              "price": 45,
+              "available": true
+            },
+            {
+              "name": "Original 11x14 Mat",
+              "price": 75,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -10343,7 +10752,24 @@
           "price": 35,
           "etsyListingId": 4609158151,
           "url": "https://www.etsy.com/listing/4609158151/pin-oak-leaves-cyanotype",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Print 8x10 Mat",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Original 11x14 Mat",
+              "price": 75,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Mat",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
@@ -10388,7 +10814,7 @@
       "subjects": [
         "Florals"
       ],
-      "kind": "original",
+      "kind": "both",
       "oneOfAKind": false,
       "size": "11 × 14 in",
       "images": [
@@ -10410,7 +10836,24 @@
           "price": 35,
           "etsyListingId": 4614169104,
           "url": "https://www.etsy.com/listing/4614169104/blue-morning-glory-watercolor",
-          "hasVariations": true
+          "hasVariations": true,
+          "choices": [
+            {
+              "name": "Original 11x14 Mat",
+              "price": 100,
+              "available": true
+            },
+            {
+              "name": "Print 8x10 Mat",
+              "price": 35,
+              "available": true
+            },
+            {
+              "name": "Print 11x14 Mat",
+              "price": 45,
+              "available": true
+            }
+          ]
         }
       ],
       "description": [
