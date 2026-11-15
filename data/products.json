@@ -10890,6 +10890,68 @@
         "images/blue-morning-glory-watercolor/8880345689-small.jpg",
         "images/blue-morning-glory-watercolor/8832543484-small.jpg"
       ]
+    },
+    {
+      "id": "coreopsis-original-cyanotype",
+      "name": "Coreopsis original cyanotype",
+      "category": "cyanotypes",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "8 × 10 in",
+      "images": [
+        "images/coreopsis-original-cyanotype/8864019442.jpg",
+        "images/coreopsis-original-cyanotype/8864019750.jpg",
+        "images/coreopsis-original-cyanotype/8864019736.jpg",
+        "images/coreopsis-original-cyanotype/8911795895.jpg",
+        "images/coreopsis-original-cyanotype/8864019740.jpg",
+        "images/coreopsis-original-cyanotype/8911795939.jpg",
+        "images/coreopsis-original-cyanotype/8864019766.jpg",
+        "images/coreopsis-original-cyanotype/8911795943.jpg"
+      ],
+      "thumbs": [
+        "images/coreopsis-original-cyanotype/8864019442-small.jpg",
+        "images/coreopsis-original-cyanotype/8864019750-small.jpg",
+        "images/coreopsis-original-cyanotype/8864019736-small.jpg",
+        "images/coreopsis-original-cyanotype/8911795895-small.jpg",
+        "images/coreopsis-original-cyanotype/8864019740-small.jpg",
+        "images/coreopsis-original-cyanotype/8911795939-small.jpg",
+        "images/coreopsis-original-cyanotype/8864019766-small.jpg",
+        "images/coreopsis-original-cyanotype/8911795943-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Coreopsis original cyanotype",
+          "label": "Original, 8 × 10\"",
+          "price": 60,
+          "etsyListingId": 4617964858,
+          "url": "https://www.etsy.com/listing/4617964858/coreopsis-original-cyanotype"
+        }
+      ],
+      "description": [
+        "Original cyanotype in a white mat measuring 8x10 inches for easy framing. This  piece was made from coreopsis flowers growing in my garden.  A cyanotype is a photographic process that uses coated watercolor paper. I placed the flowers on the paper put glass over it and place it in the sun to process the image."
+      ],
+      "tags": [
+        "cyanotype",
+        "sunprint",
+        "coreopsis",
+        "garden art",
+        "flower art",
+        "floral art",
+        "botanical vibes",
+        "8x10",
+        "works on paper",
+        "unframed",
+        "matted",
+        "blue",
+        "original art"
+      ],
+      "etsySection": "Cyanotypes/Sunprint",
+      "etsyTitle": "Coreopsis original cyanotype",
+      "listedOn": "2026-11-15",
+      "mergeKey": "original:coreopsis cyanotype"
     }
   ]
 }
