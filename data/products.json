@@ -7128,7 +7128,10 @@
           "label": "Original, 5 × 7\"",
           "price": 50,
           "etsyListingId": 4539504943,
-          "url": "https://www.etsy.com/listing/4539504943/sundown-original-art"
+          "url": "https://www.etsy.com/listing/4539504943/sundown-original-art",
+          "available": false,
+          "goneOn": "2026-11-19",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7162,7 +7165,8 @@
         "images/sundown-original-art/8264646660-small.jpg",
         "images/sundown-original-art/8312560187-small.jpg",
         "images/sundown-original-art/8312560227-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "sunset-over-bay-garden-flag",
@@ -7188,7 +7192,10 @@
           "label": "12 × 18\"",
           "price": 22.99,
           "etsyListingId": 4539529762,
-          "url": "https://www.etsy.com/listing/4539529762/sunset-over-bay-garden-flag-house-banner"
+          "url": "https://www.etsy.com/listing/4539529762/sunset-over-bay-garden-flag-house-banner",
+          "available": false,
+          "goneOn": "2026-11-19",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7220,7 +7227,8 @@
         "images/sunset-over-bay-garden-flag/8312619675-small.jpg",
         "images/sunset-over-bay-garden-flag/8312620019-small.jpg",
         "images/sunset-over-bay-garden-flag/8312620439-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "summer-daisies-original-cyanotype",
@@ -7248,7 +7256,10 @@
           "label": "Original, 5 × 7\"",
           "price": 60,
           "etsyListingId": 4539528581,
-          "url": "https://www.etsy.com/listing/4539528581/summer-daisies-original-cyanotype"
+          "url": "https://www.etsy.com/listing/4539528581/summer-daisies-original-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-19",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7282,7 +7293,8 @@
         "images/summer-daisies-original-cyanotype/8264830502-small.jpg",
         "images/summer-daisies-original-cyanotype/8264830508-small.jpg",
         "images/summer-daisies-original-cyanotype/8264830516-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "daisies-original-cyanotype",
@@ -7309,7 +7321,10 @@
           "label": "Original, 5 × 7\"",
           "price": 60,
           "etsyListingId": 4539550790,
-          "url": "https://www.etsy.com/listing/4539550790/daisies-original-cyanotype"
+          "url": "https://www.etsy.com/listing/4539550790/daisies-original-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-19",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7342,7 +7357,8 @@
         "images/daisies-original-cyanotype/8312796853-small.jpg",
         "images/daisies-original-cyanotype/8264884304-small.jpg",
         "images/daisies-original-cyanotype/8312796859-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "hydrangea-garden-original-watercolor",
