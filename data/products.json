@@ -7257,9 +7257,7 @@
           "price": 60,
           "etsyListingId": 4539528581,
           "url": "https://www.etsy.com/listing/4539528581/summer-daisies-original-cyanotype",
-          "available": false,
-          "goneOn": "2026-11-19",
-          "goneWhy": "removed"
+          "available": true
         }
       ],
       "description": [
@@ -7293,8 +7291,7 @@
         "images/summer-daisies-original-cyanotype/8264830502-small.jpg",
         "images/summer-daisies-original-cyanotype/8264830508-small.jpg",
         "images/summer-daisies-original-cyanotype/8264830516-small.jpg"
-      ],
-      "hidden": true
+      ]
     },
     {
       "id": "daisies-original-cyanotype",
@@ -7322,9 +7319,7 @@
           "price": 60,
           "etsyListingId": 4539550790,
           "url": "https://www.etsy.com/listing/4539550790/daisies-original-cyanotype",
-          "available": false,
-          "goneOn": "2026-11-19",
-          "goneWhy": "removed"
+          "available": true
         }
       ],
       "description": [
@@ -7357,8 +7352,7 @@
         "images/daisies-original-cyanotype/8312796853-small.jpg",
         "images/daisies-original-cyanotype/8264884304-small.jpg",
         "images/daisies-original-cyanotype/8312796859-small.jpg"
-      ],
-      "hidden": true
+      ]
     },
     {
       "id": "hydrangea-garden-original-watercolor",
@@ -10968,6 +10962,57 @@
       "etsyTitle": "Coreopsis original cyanotype",
       "listedOn": "2026-11-15",
       "mergeKey": "original:coreopsis cyanotype"
+    },
+    {
+      "id": "chair-family",
+      "name": "Chair Family",
+      "category": "paintings",
+      "subjects": [
+        "Landscapes"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/chair-family/6267131163.jpg",
+        "images/chair-family/6267129977.jpg",
+        "images/chair-family/6219090708.jpg",
+        "images/chair-family/6219090828.jpg",
+        "images/chair-family/6267130323.jpg",
+        "images/chair-family/6267130625.jpg"
+      ],
+      "thumbs": [
+        "images/chair-family/6267131163-small.jpg",
+        "images/chair-family/6267129977-small.jpg",
+        "images/chair-family/6219090708-small.jpg",
+        "images/chair-family/6219090828-small.jpg",
+        "images/chair-family/6267130323-small.jpg",
+        "images/chair-family/6267130625-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Chair Family",
+          "label": "Buy",
+          "price": 100,
+          "etsyListingId": 1783136187,
+          "url": "https://www.etsy.com/listing/1783136187/chair-family"
+        }
+      ],
+      "description": [
+        "Three Colorful Adirondack chairs in the landscape. Two large and one small. Inspired by my colorful backyard chairs."
+      ],
+      "tags": [
+        "three chairs",
+        "colorful chairs art",
+        "chairs in landscape",
+        "landscape",
+        "whimsical art",
+        "small art",
+        "outdoors"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Chair Family",
+      "listedOn": "2024-08-23",
+      "mergeKey": "original:chair family"
     }
   ]
 }
