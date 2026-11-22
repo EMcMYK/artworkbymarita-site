@@ -164,7 +164,10 @@
           "label": "Original, 24 × 24\"",
           "price": 250,
           "etsyListingId": 158804551,
-          "url": "https://www.etsy.com/listing/158804551/caladium-original-oil-painting"
+          "url": "https://www.etsy.com/listing/158804551/caladium-original-oil-painting",
+          "available": false,
+          "goneOn": "2026-11-22",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -191,7 +194,8 @@
       "mergeKey": "original:caladium oil painting",
       "thumbs": [
         "images/caladium-original-oil-painting/506507664-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "original-signed-etching-laundry-day",
@@ -2567,7 +2571,10 @@
           "label": "Original, 8 × 10\", framed",
           "price": 235,
           "etsyListingId": 1107969595,
-          "url": "https://www.etsy.com/listing/1107969595/curious-original-framed-bird-art"
+          "url": "https://www.etsy.com/listing/1107969595/curious-original-framed-bird-art",
+          "available": false,
+          "goneOn": "2026-11-22",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -2597,7 +2604,8 @@
         "images/curious-original-framed-bird-art/3418863852-small.jpg",
         "images/curious-original-framed-bird-art/3418863888-small.jpg",
         "images/curious-original-framed-bird-art/3466537543-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "first-snowfall-painting",
@@ -6194,7 +6202,10 @@
               "price": 152.15,
               "available": true
             }
-          ]
+          ],
+          "available": false,
+          "goneOn": "2026-11-22",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -6227,7 +6238,8 @@
         "images/ceramic-christmas-ornaments/7402825301-small.jpg",
         "images/ceramic-christmas-ornaments/7354902240-small.jpg",
         "images/ceramic-christmas-ornaments/7354904592-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "framed-winter-bird-canvas-print",
