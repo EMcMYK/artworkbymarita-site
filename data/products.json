@@ -11025,6 +11025,69 @@
       "etsyTitle": "Chair Family",
       "listedOn": "2024-08-23",
       "mergeKey": "original:chair family"
+    },
+    {
+      "id": "confetti-bouquet-original-oil-painting",
+      "name": "Confetti Bouquet Original Oil Painting",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/confetti-bouquet-original-oil-painting/8956613951.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840508.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840486.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614281.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840484.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614273.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614255.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840496.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614251.jpg"
+      ],
+      "thumbs": [
+        "images/confetti-bouquet-original-oil-painting/8956613951-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840508-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840486-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614281-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840484-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614273-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614255-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8908840496-small.jpg",
+        "images/confetti-bouquet-original-oil-painting/8956614251-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Confetti Bouquet Original Oil Painting, Textured Impasto Floral Still Life, Framed Yellow & Pink Flower Art, Ready to Hang Cottagecore Decor",
+          "label": "Original, framed",
+          "price": 150,
+          "etsyListingId": 4623405542,
+          "url": "https://www.etsy.com/listing/4623405542/confetti-bouquet-original-oil-painting"
+        }
+      ],
+      "description": [
+        "Oil Painting\nBring a joyful burst of color into your home with \"Confetti Bouquet,\" a one-of-a-kind expressionistic oil painting. Anchored by a lush, heavily textured yellow rose and a bright black-eyed Susan, this lively arrangement scatters deep berry-pink roses, soft blue hydrangeas, and rich greenery in a turquoise vase like festive petals.\nPainted in oil with thick, expressive brushstrokes (impasto) against a luminous, textured white background, the surface has rich depth and movement that catches the light throughout the day. It comes nestled in a charming distressed white wooden frame with hanging hardware already attached, so you can hang it straight out of the box."
+      ],
+      "tags": [
+        "flower painting",
+        "textured floral art",
+        "framed original art",
+        "garden art",
+        "cottage core decor",
+        "expressionist art",
+        "blue vase painting",
+        "cheerful art",
+        "colorful bouquet",
+        "yellow flowers",
+        "blue flowers",
+        "impasto oil painting",
+        "gift for flower love"
+      ],
+      "etsySection": "Floral Art",
+      "etsyTitle": "Confetti Bouquet Original Oil Painting, Textured Impasto Floral Still Life, Framed Yellow & Pink Flower Art, Ready to Hang Cottagecore Decor",
+      "listedOn": "2026-11-22",
+      "mergeKey": "original:confetti bouquet oil painting"
     }
   ]
 }
