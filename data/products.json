@@ -668,7 +668,10 @@
           "label": "17 × 20\", framed",
           "price": 300,
           "etsyListingId": 239476875,
-          "url": "https://www.etsy.com/listing/239476875/rosey-framed-pastel-painting"
+          "url": "https://www.etsy.com/listing/239476875/rosey-framed-pastel-painting",
+          "available": false,
+          "goneOn": "2026-11-24",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -695,7 +698,8 @@
       "mergeKey": "original:rosey pastel painting",
       "thumbs": [
         "images/rosey-framed-pastel-painting/798094636-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "pretzel-park",
@@ -1630,7 +1634,10 @@
           "label": "Original",
           "price": 250,
           "etsyListingId": 782968061,
-          "url": "https://www.etsy.com/listing/782968061/white-covered-bridge-original-oil"
+          "url": "https://www.etsy.com/listing/782968061/white-covered-bridge-original-oil",
+          "available": false,
+          "goneOn": "2026-11-24",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -1660,7 +1667,8 @@
         "images/white-covered-bridge-original-oil-painting/2208699294-small.jpg",
         "images/white-covered-bridge-original-oil-painting/2256295867-small.jpg",
         "images/white-covered-bridge-original-oil-painting/2256295991-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "pennsylvania-farm-original-watercolor",
@@ -7404,7 +7412,10 @@
               "price": 45,
               "available": true
             }
-          ]
+          ],
+          "available": false,
+          "goneOn": "2026-11-24",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7437,7 +7448,8 @@
         "images/hydrangea-garden-original-watercolor/8758695598-small.jpg",
         "images/hydrangea-garden-original-watercolor/8758695614-small.jpg",
         "images/hydrangea-garden-original-watercolor/8806507315-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "beach-umbrella-original-painting",
@@ -7467,7 +7479,10 @@
           "label": "Original, 8.5 × 11\"",
           "price": 100,
           "etsyListingId": 4542315934,
-          "url": "https://www.etsy.com/listing/4542315934/beach-umbrella-original-painting"
+          "url": "https://www.etsy.com/listing/4542315934/beach-umbrella-original-painting",
+          "available": false,
+          "goneOn": "2026-11-24",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7503,7 +7518,8 @@
         "images/beach-umbrella-original-painting/8285498714-small.jpg",
         "images/beach-umbrella-original-painting/8285498740-small.jpg",
         "images/beach-umbrella-original-painting/8333411655-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "hosta-original-cyanotype",
