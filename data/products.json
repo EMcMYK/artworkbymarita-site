@@ -7550,7 +7550,10 @@
           "label": "Original, 5 × 7\"",
           "price": 30,
           "etsyListingId": 4543500315,
-          "url": "https://www.etsy.com/listing/4543500315/hosta-original-cyanotype"
+          "url": "https://www.etsy.com/listing/4543500315/hosta-original-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-26",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7586,7 +7589,8 @@
         "images/hosta-original-cyanotype/8341922247-small.jpg",
         "images/hosta-original-cyanotype/8341922245-small.jpg",
         "images/hosta-original-cyanotype/8341922249-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "golden-buds-original-cyanotype",
@@ -7614,7 +7618,10 @@
           "label": "Original, 5 × 7\"",
           "price": 30,
           "etsyListingId": 4543507879,
-          "url": "https://www.etsy.com/listing/4543507879/golden-buds-original-cyanotype"
+          "url": "https://www.etsy.com/listing/4543507879/golden-buds-original-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-26",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7648,7 +7655,8 @@
         "images/golden-buds-original-cyanotype/8341971161-small.jpg",
         "images/golden-buds-original-cyanotype/8341971129-small.jpg",
         "images/golden-buds-original-cyanotype/8341971145-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "assorted-flowers-original-cyanotype",
@@ -7678,7 +7686,10 @@
           "label": "Original, 5 × 7\"",
           "price": 30,
           "etsyListingId": 4543513343,
-          "url": "https://www.etsy.com/listing/4543513343/assorted-flowers-original-cyanotype"
+          "url": "https://www.etsy.com/listing/4543513343/assorted-flowers-original-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-26",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7714,7 +7725,8 @@
         "images/assorted-flowers-original-cyanotype/8342005567-small.jpg",
         "images/assorted-flowers-original-cyanotype/8342005563-small.jpg",
         "images/assorted-flowers-original-cyanotype/8294108616-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "daylily-original-cyanotype",
@@ -7744,7 +7756,10 @@
           "label": "Original, 8.5 × 11\"",
           "price": 75,
           "etsyListingId": 4543956162,
-          "url": "https://www.etsy.com/listing/4543956162/daylily-original-cyanotype"
+          "url": "https://www.etsy.com/listing/4543956162/daylily-original-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-26",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7780,7 +7795,8 @@
         "images/daylily-original-cyanotype/8344996269-small.jpg",
         "images/daylily-original-cyanotype/8297099078-small.jpg",
         "images/daylily-original-cyanotype/8344996273-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "daylily-garden-cyanotype",
@@ -7810,7 +7826,10 @@
           "label": "8.5 × 11\"",
           "price": 75,
           "etsyListingId": 4543966434,
-          "url": "https://www.etsy.com/listing/4543966434/daylily-garden-cyanotype"
+          "url": "https://www.etsy.com/listing/4543966434/daylily-garden-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-26",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7846,7 +7865,8 @@
         "images/daylily-garden-cyanotype/8297168902-small.jpg",
         "images/daylily-garden-cyanotype/8345065997-small.jpg",
         "images/daylily-garden-cyanotype/8297168894-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "maple-leaves-original-cyanotype",
