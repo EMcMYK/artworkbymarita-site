@@ -1635,9 +1635,7 @@
           "price": 250,
           "etsyListingId": 782968061,
           "url": "https://www.etsy.com/listing/782968061/white-covered-bridge-original-oil",
-          "available": false,
-          "goneOn": "2026-11-24",
-          "goneWhy": "removed"
+          "available": true
         }
       ],
       "description": [
@@ -1667,8 +1665,7 @@
         "images/white-covered-bridge-original-oil-painting/2208699294-small.jpg",
         "images/white-covered-bridge-original-oil-painting/2256295867-small.jpg",
         "images/white-covered-bridge-original-oil-painting/2256295991-small.jpg"
-      ],
-      "hidden": true
+      ]
     },
     {
       "id": "pennsylvania-farm-original-watercolor",
@@ -6211,9 +6208,7 @@
               "available": true
             }
           ],
-          "available": false,
-          "goneOn": "2026-11-22",
-          "goneWhy": "removed"
+          "available": true
         }
       ],
       "description": [
@@ -6246,8 +6241,7 @@
         "images/ceramic-christmas-ornaments/7402825301-small.jpg",
         "images/ceramic-christmas-ornaments/7354902240-small.jpg",
         "images/ceramic-christmas-ornaments/7354904592-small.jpg"
-      ],
-      "hidden": true
+      ]
     },
     {
       "id": "framed-winter-bird-canvas-print",
@@ -7413,9 +7407,7 @@
               "available": true
             }
           ],
-          "available": false,
-          "goneOn": "2026-11-24",
-          "goneWhy": "removed"
+          "available": true
         }
       ],
       "description": [
@@ -7448,8 +7440,7 @@
         "images/hydrangea-garden-original-watercolor/8758695598-small.jpg",
         "images/hydrangea-garden-original-watercolor/8758695614-small.jpg",
         "images/hydrangea-garden-original-watercolor/8806507315-small.jpg"
-      ],
-      "hidden": true
+      ]
     },
     {
       "id": "beach-umbrella-original-painting",
@@ -7687,9 +7678,7 @@
           "price": 30,
           "etsyListingId": 4543513343,
           "url": "https://www.etsy.com/listing/4543513343/assorted-flowers-original-cyanotype",
-          "available": false,
-          "goneOn": "2026-11-26",
-          "goneWhy": "removed"
+          "available": true
         }
       ],
       "description": [
@@ -7725,8 +7714,7 @@
         "images/assorted-flowers-original-cyanotype/8342005567-small.jpg",
         "images/assorted-flowers-original-cyanotype/8342005563-small.jpg",
         "images/assorted-flowers-original-cyanotype/8294108616-small.jpg"
-      ],
-      "hidden": true
+      ]
     },
     {
       "id": "daylily-original-cyanotype",
@@ -7827,9 +7815,7 @@
           "price": 75,
           "etsyListingId": 4543966434,
           "url": "https://www.etsy.com/listing/4543966434/daylily-garden-cyanotype",
-          "available": false,
-          "goneOn": "2026-11-26",
-          "goneWhy": "removed"
+          "available": true
         }
       ],
       "description": [
@@ -7865,8 +7851,7 @@
         "images/daylily-garden-cyanotype/8297168902-small.jpg",
         "images/daylily-garden-cyanotype/8345065997-small.jpg",
         "images/daylily-garden-cyanotype/8297168894-small.jpg"
-      ],
-      "hidden": true
+      ]
     },
     {
       "id": "maple-leaves-original-cyanotype",
@@ -7896,7 +7881,10 @@
           "label": "Original, 11 × 14\"",
           "price": 75,
           "etsyListingId": 4544437414,
-          "url": "https://www.etsy.com/listing/4544437414/maple-leaves-original-cyanotype"
+          "url": "https://www.etsy.com/listing/4544437414/maple-leaves-original-cyanotype",
+          "available": false,
+          "goneOn": "2026-11-27",
+          "goneWhy": "removed"
         }
       ],
       "description": [
@@ -7932,7 +7920,8 @@
         "images/maple-leaves-original-cyanotype/8348420107-small.jpg",
         "images/maple-leaves-original-cyanotype/8300525486-small.jpg",
         "images/maple-leaves-original-cyanotype/8348420085-small.jpg"
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": "white-snowflakes-on-navy-blue-ceramic-ornament",
@@ -11124,6 +11113,278 @@
       "etsyTitle": "Confetti Bouquet Original Oil Painting, Textured Impasto Floral Still Life, Framed Yellow & Pink Flower Art, Ready to Hang Cottagecore Decor",
       "listedOn": "2026-11-22",
       "mergeKey": "original:confetti bouquet oil painting"
+    },
+    {
+      "id": "fire-flower-original-abstract-encaustic-painting",
+      "name": "Fire Flower Original abstract encaustic painting",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "8 × 10 in",
+      "images": [
+        "images/fire-flower-original-abstract-encaustic-painting/430280847.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/430275652.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/430275518.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/3735073520.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/3782662535.jpg"
+      ],
+      "thumbs": [
+        "images/fire-flower-original-abstract-encaustic-painting/430280847-small.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/430275652-small.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/430275518-small.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/3735073520-small.jpg",
+        "images/fire-flower-original-abstract-encaustic-painting/3782662535-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Fire Flower Original abstract encaustic painting",
+          "label": "Original, 8 × 10\"",
+          "price": 130,
+          "etsyListingId": 121968653,
+          "url": "https://www.etsy.com/listing/121968653/fire-flower-original-abstract-encaustic"
+        }
+      ],
+      "description": [
+        "This is an 8x10 inch Original abstract encaustic painting entitled: \"Fire Flower\" . A lot of my art is garden inspired. Maybe the viewer sees something different but I see a flower in this one. I had no plan when I made this piece but went where it took me. It is vibrantly colored. It is painted with encaustics which are melted wax pigments. It is painted on a flat encaustic panel and is framed."
+      ],
+      "tags": [
+        "encaustic",
+        "painting",
+        "art",
+        "flower",
+        "fire",
+        "garden",
+        "wax",
+        "colorful",
+        "vibrant",
+        "bright",
+        "decor",
+        "home",
+        "paint"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Fire Flower Original abstract encaustic painting",
+      "listedOn": "2013-01-29",
+      "mergeKey": "original:fire flower abstract encaustic painting"
+    },
+    {
+      "id": "country-flowers-original-oil-painting",
+      "name": "Country Flowers Original oil painting",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/country-flowers-original-oil-painting/1712485807.jpg"
+      ],
+      "thumbs": [
+        "images/country-flowers-original-oil-painting/1712485807-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Country Flowers Original oil painting",
+          "label": "Original",
+          "price": 125,
+          "etsyListingId": 654348445,
+          "url": "https://www.etsy.com/listing/654348445/country-flowers-original-oil-painting"
+        }
+      ],
+      "description": [
+        "I love painting flowers and gardens. This painting depicts a variety of flowers blooming in a country garden. This is not framed but the sides of the canvas are painted and it is wired for hanging. So it can be hung without a frame."
+      ],
+      "tags": [
+        "garden art",
+        "decor",
+        "wall decor",
+        "flower art",
+        "country garden",
+        "daylily",
+        "daisy",
+        "nature",
+        "flowers",
+        "floral",
+        "art in bloom",
+        "lily",
+        "painting"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Country Flowers Original oil painting",
+      "listedOn": "2018-10-27",
+      "mergeKey": "original:country flowers oil painting"
+    },
+    {
+      "id": "wild-flowers-original-framed-oil-pastel-painting",
+      "name": "Wild Flowers Original Framed Oil Pastel Painting",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793374.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793532.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793560.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793616.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793720.jpg"
+      ],
+      "thumbs": [
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793374-small.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793532-small.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793560-small.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793616-small.jpg",
+        "images/wild-flowers-original-framed-oil-pastel-painting/2149793720-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Wild Flowers Original Framed Oil Pastel Painting",
+          "label": "Original, framed",
+          "price": 300,
+          "etsyListingId": 755858472,
+          "url": "https://www.etsy.com/listing/755858472/wild-flowers-original-framed-oil-pastel"
+        }
+      ],
+      "description": [
+        "This painting continues my floral bouquet series. It is painted with oil pastels in a very free manner. It is framed in a black frame. The measurements are the outside edges of the frame."
+      ],
+      "tags": [
+        "flower art",
+        "oil pastel",
+        "floral art",
+        "wildflowers",
+        "garden art",
+        "bouquet art",
+        "still life",
+        "flower series",
+        "nature art",
+        "florist"
+      ],
+      "etsySection": "Floral Art",
+      "etsyTitle": "Wild Flowers Original Framed Oil Pastel Painting",
+      "listedOn": "2020-01-12",
+      "mergeKey": "original:wild flowers oil pastel painting"
+    },
+    {
+      "id": "peaceful-pond-painting",
+      "name": "Peaceful Pond Painting",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "images": [
+        "images/peaceful-pond-painting/4017214180.jpg",
+        "images/peaceful-pond-painting/4064865623.jpg",
+        "images/peaceful-pond-painting/4017216600.jpg",
+        "images/peaceful-pond-painting/4017217066.jpg",
+        "images/peaceful-pond-painting/4017217792.jpg"
+      ],
+      "thumbs": [
+        "images/peaceful-pond-painting/4017214180-small.jpg",
+        "images/peaceful-pond-painting/4064865623-small.jpg",
+        "images/peaceful-pond-painting/4017216600-small.jpg",
+        "images/peaceful-pond-painting/4017217066-small.jpg",
+        "images/peaceful-pond-painting/4017217792-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Peaceful Pond Painting",
+          "label": "Buy",
+          "price": 100,
+          "etsyListingId": 1255921696,
+          "url": "https://www.etsy.com/listing/1255921696/peaceful-pond-painting"
+        }
+      ],
+      "description": [
+        "This piece was inspired by a backyard pond at my friends home. Pretty water lilies, fish, waterfall make for a very peaceful setting. Painted with oils on canvas.  Not framed but it is a standard size so easy to get a frame. Or it can be hung as is without a frame."
+      ],
+      "tags": [
+        "fish pond art",
+        "water lilies",
+        "waterfall",
+        "small painting",
+        "nature art",
+        "backyard pond",
+        "peaceful scene",
+        "goldfish",
+        "colorful art",
+        "pond art",
+        "canvas art",
+        "nature lover",
+        "garden pond"
+      ],
+      "etsySection": "Original Art",
+      "etsyTitle": "Peaceful Pond Painting",
+      "listedOn": "2022-07-17",
+      "mergeKey": "original:peaceful pond painting"
+    },
+    {
+      "id": "sunflower-harvest-bouquet-original-art",
+      "name": "Sunflower Harvest Bouquet Original Art",
+      "category": "paintings",
+      "subjects": [
+        "Florals"
+      ],
+      "kind": "original",
+      "oneOfAKind": true,
+      "size": "8 × 10 in",
+      "images": [
+        "images/sunflower-harvest-bouquet-original-art/6267035463.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218995850.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218996008.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6267035821.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218996250.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218996346.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6267036087.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6267036173.jpg"
+      ],
+      "thumbs": [
+        "images/sunflower-harvest-bouquet-original-art/6267035463-small.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218995850-small.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218996008-small.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6267035821-small.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218996250-small.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6218996346-small.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6267036087-small.jpg",
+        "images/sunflower-harvest-bouquet-original-art/6267036173-small.jpg"
+      ],
+      "options": [
+        {
+          "title": "Sunflower Harvest Bouquet Original Art",
+          "label": "Original, 8 × 10\"",
+          "price": 100,
+          "etsyListingId": 1783116099,
+          "url": "https://www.etsy.com/listing/1783116099/sunflower-harvest-bouquet-original-art"
+        }
+      ],
+      "description": [
+        "Fresh Cut Sunflower bouquet original art. Painted with Turner Acrylic Gouache on an 8x10 wood panel. Sunny and Bright."
+      ],
+      "tags": [
+        "sunflower still life",
+        "sunflowers",
+        "sunflower bouquet",
+        "small art",
+        "nature art",
+        "floral art",
+        "flowers",
+        "painting on wood",
+        "garden art",
+        "fresh cut flowers",
+        "alla prima",
+        "florist",
+        "art lover"
+      ],
+      "etsySection": "Floral Art",
+      "etsyTitle": "Sunflower Harvest Bouquet Original Art",
+      "listedOn": "2024-08-23",
+      "mergeKey": "original:sunflower harvest bouquet"
     }
   ]
 }
